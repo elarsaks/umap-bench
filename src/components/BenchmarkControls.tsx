@@ -1,14 +1,18 @@
 import React, { useState } from "react";
-import type { DatasetConfig, UMAPConfig } from "../types/benchmark";
-import { DATASET_CONFIGS } from "../utils/dataGeneration";
+import type { DatasetConfig, UMAPConfig, WasmRelease } from "../types/benchmark.ts";
+import { DATASET_CONFIGS } from "../utils/dataGeneration.ts";
 
 interface BenchmarkControlsProps {
   onRunBenchmark: (
     datasetConfig: DatasetConfig,
-    umapConfig: UMAPConfig
+    umapConfig: UMAPConfig,
+    wasmRelease: WasmRelease
   ) => void;
   isRunning: boolean;
   onClearResults: () => void;
+  wasmReleases: WasmRelease[];
+  selectedWasmRelease: WasmRelease;
+  onSelectWasmRelease: (release: WasmRelease) => void;
 }
 
 const DEFAULT_UMAP_CONFIG: UMAPConfig = {
@@ -23,6 +27,9 @@ export const BenchmarkControls: React.FC<BenchmarkControlsProps> = ({
   onRunBenchmark,
   isRunning,
   onClearResults,
+  wasmReleases,
+  selectedWasmRelease,
+  onSelectWasmRelease,
 }) => {
   const [selectedDataset, setSelectedDataset] = useState<DatasetConfig>(
     DATASET_CONFIGS[0]
@@ -31,7 +38,7 @@ export const BenchmarkControls: React.FC<BenchmarkControlsProps> = ({
 
   const handleRunBenchmark = () => {
     if (!isRunning) {
-      onRunBenchmark(selectedDataset, umapConfig);
+      onRunBenchmark(selectedDataset, umapConfig, selectedWasmRelease);
     }
   };
 
@@ -61,6 +68,30 @@ export const BenchmarkControls: React.FC<BenchmarkControlsProps> = ({
         <div className="dataset-info">
           <span>Size: {selectedDataset.size} points</span>
           <span>Dimensions: {selectedDataset.dimensions}</span>
+        </div>
+      </div>
+
+      <div className="control-section">
+        <h4>umap-wasm Release</h4>
+        <select
+          value={selectedWasmRelease.tag}
+          onChange={(e) => {
+            const next = wasmReleases.find((r) => r.tag === e.target.value);
+            if (next) onSelectWasmRelease(next);
+          }}
+          disabled={isRunning || wasmReleases.length === 0}
+        >
+          {wasmReleases.map((release) => (
+            <option key={release.tag} value={release.tag}>
+              {release.name}
+            </option>
+          ))}
+        </select>
+        <div className="dataset-info">
+          <span>Selected: {selectedWasmRelease.tag}</span>
+          {selectedWasmRelease.notes ? (
+            <span>{selectedWasmRelease.notes}</span>
+          ) : null}
         </div>
       </div>
 

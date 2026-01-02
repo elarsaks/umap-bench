@@ -1,5 +1,5 @@
 import React from "react";
-import type { BenchmarkResult } from "../types/benchmark";
+import type { BenchmarkResult } from "../types/benchmark.ts";
 
 interface BenchmarkResultsProps {
   results: BenchmarkResult[];
@@ -126,6 +126,7 @@ export const BenchmarkResults: React.FC<BenchmarkResultsProps> = ({
                 <th>Quality (%)</th>
                 <th>FPS</th>
                 <th>Latency (ms)</th>
+                <th>Wasm Release</th>
                 <th>Dataset</th>
               </tr>
             </thead>
@@ -138,6 +139,7 @@ export const BenchmarkResults: React.FC<BenchmarkResultsProps> = ({
                   <td>{(result.embeddingQuality * 100).toFixed(1)}</td>
                   <td>{result.visualizationFPS.toFixed(1)}</td>
                   <td>{result.responsiveness.toFixed(2)}</td>
+                  <td>{result.wasmRelease}</td>
                   <td>
                     {result.datasetSize}×{result.dimensions}
                   </td>
@@ -162,6 +164,7 @@ function calculateAverages(results: BenchmarkResult[]): BenchmarkResult {
       datasetSize: 0,
       dimensions: 0,
       timestamp: new Date(),
+      wasmRelease: "N/A",
     };
   }
 
@@ -196,5 +199,6 @@ function calculateAverages(results: BenchmarkResult[]): BenchmarkResult {
     datasetSize: totals.datasetSize / count,
     dimensions: totals.dimensions / count,
     timestamp: new Date(),
+    wasmRelease: results[0].wasmRelease,
   };
 }

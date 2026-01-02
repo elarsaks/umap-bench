@@ -4,6 +4,7 @@ import type {
   BenchmarkResult,
   DatasetConfig,
   UMAPConfig,
+  WasmRelease,
 } from "./types/benchmark";
 import {
   generate3DClusteredData,
@@ -19,6 +20,7 @@ import { BenchmarkResults } from "./components/BenchmarkResults";
 import { VisualizationCanvas } from "./components/VisualizationCanvas";
 import { PerformanceMonitor, FPSMonitor } from "./utils/performanceMonitor";
 import { calculateTrustworthiness } from "./utils/embeddingQuality";
+import { WASM_RELEASES } from "./config/wasmReleases";
 import "./App.css";
 
 function App() {
@@ -28,9 +30,16 @@ function App() {
   const [currentClusters, setCurrentClusters] = useState<number[]>([]);
   const [currentEdges, setCurrentEdges] = useState<Array<[number, number]>>([]);
   const [currentFPS, setCurrentFPS] = useState(0);
+  const [selectedWasmRelease, setSelectedWasmRelease] = useState<WasmRelease>(
+    WASM_RELEASES[0]
+  );
 
   const runBenchmark = useCallback(
-    async (datasetConfig: DatasetConfig, umapConfig: UMAPConfig) => {
+    async (
+      datasetConfig: DatasetConfig,
+      umapConfig: UMAPConfig,
+      wasmRelease: WasmRelease
+    ) => {
       setIsRunning(true);
 
       try {
@@ -135,6 +144,7 @@ function App() {
           responsiveness,
           datasetSize: datasetConfig.size,
           dimensions: datasetConfig.dimensions,
+          wasmRelease: wasmRelease.tag,
           timestamp: new Date(),
         };
 
@@ -175,6 +185,9 @@ function App() {
           <BenchmarkControls
             onRunBenchmark={runBenchmark}
             isRunning={isRunning}
+            wasmReleases={WASM_RELEASES}
+            selectedWasmRelease={selectedWasmRelease}
+            onSelectWasmRelease={setSelectedWasmRelease}
             onClearResults={clearResults}
           />
         </div>

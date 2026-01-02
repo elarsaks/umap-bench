@@ -9,25 +9,25 @@ Prerequisites
 Quick start (Linux / WSL)
 ```bash
 cd /mnt/c/Users/elars/Desktop/Thesis/umap-bench
-npm install
-npm run dev
+yarn install
+yarn dev
 ```
 
 Open the dev server at: http://localhost:5173
 
 Build
 ```bash
-npm run build
+yarn build
 ```
 
 Preview
 ```bash
-npm run preview
+yarn preview
 ```
 
 Select umap-wasm release
 - Set `UMAP_WASM_RELEASE` to the desired tag before running the app (optional):
 ```bash
 export UMAP_WASM_RELEASE=v1.2.3
-npm run dev
+yarn dev
 ```

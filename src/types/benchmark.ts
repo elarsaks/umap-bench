@@ -6,6 +6,7 @@ export interface BenchmarkResult {
   responsiveness: number;
   datasetSize: number;
   dimensions: number;
+  wasmRelease: string;
   timestamp: Date;
 }
 
@@ -30,4 +31,12 @@ export interface UMAPConfig {
   nComponents: number;
   spread: number;
   learningRate: number;
+}
+
+export interface WasmRelease {
+  tag: string;
+  name: string;
+  releaseUrl: string;
+  sourceZipUrl: string;
+  notes?: string;
 }

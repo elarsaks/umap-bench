@@ -1,4 +1,4 @@
-import type { DatasetConfig } from "../types/benchmark";
+import type { DatasetConfig } from "../types/benchmark.ts";
 
 export interface ClusteredDataset {
   data: number[][];
