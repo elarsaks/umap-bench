@@ -3,7 +3,7 @@
 Minimal Vite + React + TypeScript benchmark app for experimenting with UMAP implementations.
 
 Prerequisites
-- Node.js 18+ (recommended)
+- Node.js 22+ (recommended)
 - npm
 
 Quick start (Linux / WSL)
@@ -31,6 +31,3 @@ Select umap-wasm release
 export UMAP_WASM_RELEASE=v1.2.3
 npm run dev
 ```
-
-Environment
-- Add local secrets to a `.env` file. Do not commit `.env*` to git.
