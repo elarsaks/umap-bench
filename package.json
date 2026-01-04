@@ -2,6 +2,11 @@
   "name": "umap-bench",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://elarsaks.github.io/umap-bench/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elarsaks/umap-bench.git"
+  },
   "type": "module",
   "packageManager": "yarn@1.22.22",
   "scripts": {
