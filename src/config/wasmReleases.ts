@@ -1,4 +1,4 @@
-import type { WasmRelease } from "@types/benchmark";
+import type { WasmRelease } from "@/types/benchmark";
 
 export const WASM_RELEASES: WasmRelease[] = [
   {

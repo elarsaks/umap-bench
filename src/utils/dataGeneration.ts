@@ -1,4 +1,4 @@
-import type { DatasetConfig } from "@types/benchmark";
+import type { DatasetConfig } from "@/types/benchmark";
 
 export interface ClusteredDataset {
   data: number[][];
