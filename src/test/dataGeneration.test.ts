@@ -3,7 +3,7 @@ import {
   generateRandomData,
   generate3DClusteredData,
   generateClusteredData,
-} from '../utils/dataGeneration';
+} from '@utils/dataGeneration';
 
 describe('dataGeneration', () => {
   describe('generateRandomData', () => {

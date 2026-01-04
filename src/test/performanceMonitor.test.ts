@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { PerformanceMonitor, FPSMonitor } from '../utils/performanceMonitor';
+import { PerformanceMonitor, FPSMonitor } from '@utils/performanceMonitor';
 
 describe('PerformanceMonitor', () => {
   let monitor: PerformanceMonitor;
