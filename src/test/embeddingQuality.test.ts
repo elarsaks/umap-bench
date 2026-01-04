@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { calculateTrustworthiness, calculateStress } from '../utils/embeddingQuality';
+import { calculateTrustworthiness, calculateStress } from '@utils/embeddingQuality';
 
 describe('embeddingQuality', () => {
   describe('calculateTrustworthiness', () => {

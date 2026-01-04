@@ -1,4 +1,4 @@
-import type { PerformanceMetrics } from "../types/benchmark.ts";
+import type { PerformanceMetrics } from "@types/benchmark";
 
 export class PerformanceMonitor {
   private metrics: PerformanceMetrics = {

@@ -15,12 +15,12 @@ import {
   generateSwissRoll,
   generateMNISTLike,
 } from "./utils/dataGeneration";
-import { BenchmarkControls } from "./components/BenchmarkControls";
-import { BenchmarkResults } from "./components/BenchmarkResults";
-import { VisualizationCanvas } from "./components/VisualizationCanvas";
-import { PerformanceMonitor, FPSMonitor } from "./utils/performanceMonitor";
-import { calculateTrustworthiness } from "./utils/embeddingQuality";
-import { WASM_RELEASES } from "./config/wasmReleases";
+import { BenchmarkControls } from "@components/BenchmarkControls";
+import { BenchmarkResults } from "@components/BenchmarkResults";
+import { VisualizationCanvas } from "@components/VisualizationCanvas";
+import { PerformanceMonitor, FPSMonitor } from "@utils/performanceMonitor";
+import { calculateTrustworthiness } from "@utils/embeddingQuality";
+import { WASM_RELEASES } from "@config/wasmReleases";
 import "./App.css";
 
 function App() {

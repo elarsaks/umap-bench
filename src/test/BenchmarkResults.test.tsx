@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { BenchmarkResults } from '../components/BenchmarkResults';
-import type { BenchmarkResult } from '../types/benchmark';
+import { BenchmarkResults } from '@components/BenchmarkResults';
+import type { BenchmarkResult } from '@types/benchmark';
 
 describe('BenchmarkResults', () => {
   const mockResult: BenchmarkResult = {
