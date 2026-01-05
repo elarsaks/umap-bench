@@ -6,10 +6,32 @@ Minimal Vite + React + TypeScript benchmark app for experimenting with UMAP impl
 - Node.js 22+ (recommended)
 - npm or yarn
 
+## Environment setup
+
+### Install dependencies
+```bash
+yarn install
+```
+
+### Install Playwright browsers
+- macOS / Windows
+	```bash
+	npx playwright install chromium
+	```
+- Linux / WSL (adds required system libs; Ubuntu 24.04 uses *t64* packages)
+	```bash
+	sudo apt update
+	sudo apt install -y libnspr4 libnss3 libxss1 libasound2t64 libatk1.0-0t64 libatk-bridge2.0-0t64 \
+		libcups2t64 libx11-xcb1 libxcb1 libxcomposite1 libxrandr2 libxrender1 libxfixes3 \
+		libxtst6 libgbm1 libgtk-3-0t64 libpangocairo-1.0-0 libdbus-1-3
+	npx playwright install --with-deps chromium
+	```
+
+If Chromium still fails to launch, run `ldd $(npx playwright install chromium --dry-run | tail -n 1)` and install any libraries marked "not found".
+
 ## Quick start (Linux / WSL)
 ```bash
 cd /mnt/c/Users/elars/Desktop/Thesis/umap-bench
-yarn install
 yarn dev
 ```
 
@@ -27,35 +49,60 @@ yarn preview
 
 ## Testing
 
-Run unit tests with Vitest:
-```bash
-yarn test
-```
+### Unit Tests (Application Logic)
+Tests for utilities, components, and business logic using Vitest.
 
-Run tests in watch mode during development:
-```bash
-yarn test:watch
-```
+Located in: `src/test/`
 
-Run tests with coverage report:
-```bash
-yarn test:coverage
-```
+- Quick run
+	```bash
+	yarn test
+	```
+- Watch mode
+	```bash
+	yarn test:watch
+	```
+- Coverage report
+	```bash
+	yarn test:coverage
+	```
+- UI runner
+	```bash
+	yarn test:ui
+	```
 
-View coverage report in browser:
-```bash
-yarn test:ui
-```
+### Performance Benchmarks (Experimental)
+Playwright-based tests for measuring UMAP implementation performance across different releases and datasets.
 
-### Test Structure
+Located in: `bench/`
 
-The test suite includes:
-- **Data Generation Tests** (`dataGeneration.test.ts`) - Validates random and clustered dataset generation with correct dimensions and properties
-- **Embedding Quality Tests** (`embeddingQuality.test.ts`) - Tests trustworthiness and stress metrics for embedding quality assessment
-- **Performance Monitor Tests** (`performanceMonitor.test.ts`) - Verifies performance metric collection and FPS monitoring
-- **Component Tests** (`BenchmarkResults.test.tsx`) - Tests React component rendering and calculation logic
+- Install browsers once (Linux/WSL: add `--with-deps` if needed)
+	```bash
+	npx playwright install chromium
+	```
+- Headless benchmark suite
+	```bash
+	yarn bench
+	```
+- Run benchmark suite N times and record machine specs (default 10)
+	```bash
+	yarn bench:loop
+	# or customize
+	RUNS=5 yarn bench:loop
+	node scripts/run-benchmarks.cjs --runs=20
+	```
+- Headed run (see the browser)
+	```bash
+	yarn bench:headed
+	```
+- Interactive runner
+	```bash
+	yarn bench:ui
+	```
 
-Tests focus on utility functions and business logic rather than the third-party UMAP algorithm implementation.
+Performance tests include smoke checks and performance measurements. Results are saved to `bench/test-results/` with machine specifications for cross-machine comparison.
+
+Note: Playwright no longer generates an HTML report by default. The runner writes machine-readable JSON results to `bench/test-results/` and removes the `playwright-report/` folder to avoid clutter. If you still want the HTML report, run Playwright with the `html` reporter or remove the cleanup in `scripts/run-benchmarks.cjs`.
 
 ## Features
 
