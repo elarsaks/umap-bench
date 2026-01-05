@@ -24,6 +24,27 @@ yarn bench:headed
 # Interactive UI mode
 yarn bench:ui
 
+# Run only small / mid / large benches via grep tags
+npx playwright test bench/specs/benchmark-sizes.spec.ts --grep @small
+npx playwright test bench/specs/benchmark-sizes.spec.ts --grep @mid
+npx playwright test bench/specs/benchmark-sizes.spec.ts --grep @large
+
+# Loop benchmarks with machine metadata
+yarn bench:loop              # all sizes
+BENCH_SCOPE=small yarn bench:loop  # bash/zsh
+BENCH_SCOPE=mid yarn bench:loop
+BENCH_SCOPE=large yarn bench:loop
+
+# Windows PowerShell examples
+$env:BENCH_SCOPE="small"; yarn bench:loop
+$env:BENCH_SCOPE="mid"; yarn bench:loop
+$env:BENCH_SCOPE="large"; yarn bench:loop
+
+# Shorthand scripts (Unix shells)
+yarn bench:loop:small
+yarn bench:loop:mid
+yarn bench:loop:large
+
 # Run multiple times with machine specs
 yarn bench:loop         # defaults to 10 runs
 RUNS=20 yarn bench:loop # customize

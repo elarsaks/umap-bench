@@ -21,7 +21,10 @@
     "bench": "node scripts/run-benchmarks.cjs --runs=1",
     "bench:headed": "playwright test --headed",
     "bench:ui": "playwright test --ui",
-    "bench:loop": "node scripts/run-benchmarks.cjs"
+    "bench:loop": "node scripts/run-benchmarks.cjs",
+    "bench:loop:small": "BENCH_SCOPE=small node scripts/run-benchmarks.cjs",
+    "bench:loop:mid": "BENCH_SCOPE=mid node scripts/run-benchmarks.cjs",
+    "bench:loop:large": "BENCH_SCOPE=large node scripts/run-benchmarks.cjs"
   },
   "dependencies": {
     "plotly.js": "^3.3.1",

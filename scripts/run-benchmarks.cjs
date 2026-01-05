@@ -10,19 +10,80 @@ const os = require('os');
 const { spawnSync, execSync } = require('child_process');
 
 const DEFAULT_RUNS = 10;
+const VALID_SCOPES = new Set(['small', 'mid', 'large']);
+
+function extractUiMetrics(summary) {
+  const collected = [];
+
+  const readAttachment = (att) => {
+    if (!att) return null;
+    if (att.body) {
+      try {
+        const raw = Buffer.from(att.body, 'base64').toString('utf-8');
+        return JSON.parse(raw);
+      } catch (e) {
+        return null;
+      }
+    }
+    if (att.path && fs.existsSync(att.path)) {
+      try {
+        const raw = fs.readFileSync(att.path, 'utf-8');
+        return JSON.parse(raw);
+      } catch (e) {
+        return null;
+      }
+    }
+    return null;
+  };
+
+  const walkSuites = (suite) => {
+    if (!suite) return;
+    if (suite.suites) suite.suites.forEach(walkSuites);
+    if (suite.specs) {
+      for (const spec of suite.specs) {
+        if (!spec.tests) continue;
+        for (const test of spec.tests) {
+          if (!test.results) continue;
+          for (const result of test.results) {
+            const attachments = result.attachments || [];
+            for (const att of attachments) {
+              if (att.name === 'benchmark-metrics') {
+                const parsed = readAttachment(att);
+                if (parsed) collected.push(parsed);
+              }
+            }
+          }
+        }
+      }
+    }
+  };
+
+  if (summary && summary.suites) {
+    summary.suites.forEach(walkSuites);
+  }
+
+  return collected;
+}
 
 function parseArgs() {
   const args = process.argv.slice(2);
-  const result = { runs: DEFAULT_RUNS };
+  const result = { runs: DEFAULT_RUNS, scope: null };
   for (const arg of args) {
     if (arg.startsWith('--runs=')) {
       const n = Number(arg.split('=')[1]);
       if (Number.isFinite(n) && n > 0) result.runs = Math.floor(n);
     }
+    if (arg.startsWith('--scope=')) {
+      const scope = arg.split('=')[1];
+      if (VALID_SCOPES.has(scope)) result.scope = scope;
+    }
   }
   if (process.env.RUNS) {
     const n = Number(process.env.RUNS);
     if (Number.isFinite(n) && n > 0) result.runs = Math.floor(n);
+  }
+  if (process.env.BENCH_SCOPE && VALID_SCOPES.has(process.env.BENCH_SCOPE)) {
+    result.scope = process.env.BENCH_SCOPE;
   }
   return result;
 }
@@ -53,9 +114,18 @@ function getMachineInfo() {
   };
 }
 
-function runPlaywrightOnce(runIndex) {
+function buildPlaywrightArgs(scope) {
+  const base = ['playwright', 'test', '--reporter=json'];
+  if (scope && VALID_SCOPES.has(scope)) {
+    base.push('--grep', `@${scope}`);
+  }
+  return base;
+}
+
+function runPlaywrightOnce(runIndex, scope) {
   const start = Date.now();
-  const result = spawnSync('npx', ['playwright', 'test', '--reporter=json'], {
+  const args = buildPlaywrightArgs(scope);
+  const result = spawnSync('npx', args, {
     encoding: 'utf-8',
     stdio: 'pipe',
   });
@@ -68,6 +138,8 @@ function runPlaywrightOnce(runIndex) {
     summary = null;
   }
 
+  const uiMetrics = summary ? extractUiMetrics(summary) : [];
+
   return {
     run: runIndex,
     success: result.status === 0,
@@ -76,20 +148,22 @@ function runPlaywrightOnce(runIndex) {
     stats: summary?.stats ?? null,
     status: summary?.status ?? null,
     errors: summary?.errors ?? [],
+    uiMetrics,
     stdoutPreview: (result.stdout || '').slice(0, 2000),
     stderrPreview: (result.stderr || '').slice(0, 2000),
   };
 }
 
 function main() {
-  const { runs } = parseArgs();
+  const { runs, scope } = parseArgs();
   const runResults = [];
 
   console.log(`Running Playwright benchmark suite ${runs} time(s)...`);
+  if (scope) console.log(`Scope: ${scope}`);
 
   for (let i = 1; i <= runs; i++) {
     console.log(`\n--- Run ${i}/${runs} ---`);
-    const res = runPlaywrightOnce(i);
+    const res = runPlaywrightOnce(i, scope);
     runResults.push(res);
     console.log(`Result: ${res.success ? 'PASS' : 'FAIL'} in ${res.durationMs} ms`);
     if (!res.success) {
