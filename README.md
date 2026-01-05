@@ -74,26 +74,26 @@ yarn preview
 	```
 - Headless benchmark suite
 	```bash
-	yarn test:bench
+	yarn bench
 	```
 - Run benchmark suite N times and record machine specs (default 10)
 	```bash
-	yarn test:bench:loop
+	yarn bench:loop
 	# or customize
-	RUNS=5 yarn test:bench:loop
+	RUNS=5 yarn bench:loop
 	node scripts/bench-loop.cjs --runs=20
 	```
 - Headed run (see the browser)
 	```bash
-	yarn test:bench:headed
+	yarn bench:headed
 	```
 - Interactive runner
 	```bash
-	yarn test:bench:ui
+	yarn bench:ui
 	```
 - Alias (keeps the old name)
 	```bash
-	yarn test:e2e
+	yarn e2e
 	```
 
 Benchmark tests live in `e2e/` and currently include a smoke check that the app loads and the benchmark controls render.
