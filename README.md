@@ -49,7 +49,11 @@ yarn preview
 
 ## Testing
 
-### Unit tests (Vitest)
+### Unit Tests (Application Logic)
+Tests for utilities, components, and business logic using Vitest.
+
+Located in: `src/test/`
+
 - Quick run
 	```bash
 	yarn test
@@ -67,7 +71,11 @@ yarn preview
 	yarn test:ui
 	```
 
-### Benchmark tests (Playwright)
+### Performance Benchmarks (Experimental)
+Playwright-based tests for measuring UMAP implementation performance across different releases and datasets.
+
+Located in: `bench/`
+
 - Install browsers once (Linux/WSL: add `--with-deps` if needed)
 	```bash
 	npx playwright install chromium
@@ -81,7 +89,7 @@ yarn preview
 	yarn bench:loop
 	# or customize
 	RUNS=5 yarn bench:loop
-	node scripts/bench-loop.cjs --runs=20
+	node scripts/run-benchmarks.cjs --runs=20
 	```
 - Headed run (see the browser)
 	```bash
@@ -91,12 +99,10 @@ yarn preview
 	```bash
 	yarn bench:ui
 	```
-- Alias (keeps the old name)
-	```bash
-	yarn e2e
-	```
 
-Benchmark tests live in `e2e/` and currently include a smoke check that the app loads and the benchmark controls render.
+Performance tests include smoke checks and performance measurements. Results are saved to `bench/test-results/` with machine specifications for cross-machine comparison.
+
+Note: Playwright no longer generates an HTML report by default. The runner writes machine-readable JSON results to `bench/test-results/` and removes the `playwright-report/` folder to avoid clutter. If you still want the HTML report, run Playwright with the `html` reporter or remove the cleanup in `scripts/run-benchmarks.cjs`.
 
 ## Features
 

@@ -105,10 +105,37 @@ function main() {
     results: runResults,
   };
 
-  const outDir = path.join(process.cwd(), 'test-results');
+  const outDir = path.join(process.cwd(), 'bench', 'results');
   fs.mkdirSync(outDir, { recursive: true });
+  // If Playwright wrote a JSON report, embed it into our payload
+  try {
+    const pwResults = path.join(process.cwd(), 'playwright-results', 'results.json');
+    if (fs.existsSync(pwResults)) {
+      const data = fs.readFileSync(pwResults, 'utf-8');
+      try {
+        payload.playwright = JSON.parse(data);
+      } catch (e) {
+        payload.playwright = { raw: data };
+      }
+      // remove the playwright-results file so only our file remains
+      try { fs.rmSync(pwResults, { force: true }); } catch (e) { }
+    }
+  } catch (e) {
+    // ignore
+  }
+
   const outFile = path.join(outDir, `bench-runs-${Date.now()}.json`);
   fs.writeFileSync(outFile, JSON.stringify(payload, null, 2));
+
+  // Remove Playwright HTML report folder (if present) to avoid clutter
+  try {
+    const pwReportDir = path.join(process.cwd(), 'playwright-report');
+    if (fs.existsSync(pwReportDir)) {
+      fs.rmSync(pwReportDir, { recursive: true, force: true });
+    }
+  } catch (e) {
+    // ignore
+  }
 
   console.log(`\nSaved run data to ${outFile}`);
 }
