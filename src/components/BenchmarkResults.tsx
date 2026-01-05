@@ -1,5 +1,5 @@
 import React from "react";
-import type { BenchmarkResult } from "@types/benchmark";
+import type { BenchmarkResult } from "@/types/benchmark";
 
 interface BenchmarkResultsProps {
   results: BenchmarkResult[];

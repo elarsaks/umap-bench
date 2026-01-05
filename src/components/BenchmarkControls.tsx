@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import type { DatasetConfig, UMAPConfig, WasmRelease } from "@types/benchmark";
+import type { DatasetConfig, UMAPConfig, WasmRelease } from "@/types/benchmark";
 import { DATASET_CONFIGS } from "@utils/dataGeneration";
 
 interface BenchmarkControlsProps {
