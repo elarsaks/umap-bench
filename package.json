@@ -17,7 +17,12 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "test:e2e": "playwright test",
+    "test:bench": "playwright test",
+    "test:bench:ui": "playwright test --ui",
+    "test:bench:headed": "playwright test --headed",
+    "test:bench:loop": "node scripts/bench-loop.cjs"
   },
   "dependencies": {
     "plotly.js": "^3.3.1",
