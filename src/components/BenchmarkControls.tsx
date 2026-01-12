@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import type { DatasetConfig, UMAPConfig, WasmRelease } from "@/types/benchmark";
+import type { DatasetConfig, UMAPConfig, WasmConfig } from "@/types/benchmark";
 import { DATASET_CONFIGS } from "@utils/dataGeneration";
+import { WasmConfigSelector } from "./WasmConfigSelector";
 
 const ControlsContainer = styled.div`
   padding: 2rem;
@@ -129,13 +130,12 @@ interface BenchmarkControlsProps {
   onRunBenchmark: (
     datasetConfig: DatasetConfig,
     umapConfig: UMAPConfig,
-    wasmRelease: WasmRelease
+    wasmConfig: WasmConfig
   ) => void;
   isRunning: boolean;
   onClearResults: () => void;
-  wasmReleases: WasmRelease[];
-  selectedWasmRelease: WasmRelease;
-  onSelectWasmRelease: (release: WasmRelease) => void;
+  wasmConfig: WasmConfig;
+  onUpdateWasmConfig: (config: WasmConfig) => void;
 }
 
 const DEFAULT_UMAP_CONFIG: UMAPConfig = {
@@ -150,9 +150,8 @@ export const BenchmarkControls: React.FC<BenchmarkControlsProps> = ({
   onRunBenchmark,
   isRunning,
   onClearResults,
-  wasmReleases,
-  selectedWasmRelease,
-  onSelectWasmRelease,
+  wasmConfig,
+  onUpdateWasmConfig,
 }) => {
   const [selectedDataset, setSelectedDataset] = useState<DatasetConfig>(
     DATASET_CONFIGS[0]
@@ -161,7 +160,7 @@ export const BenchmarkControls: React.FC<BenchmarkControlsProps> = ({
 
   const handleRunBenchmark = () => {
     if (!isRunning) {
-      onRunBenchmark(selectedDataset, umapConfig, selectedWasmRelease);
+      onRunBenchmark(selectedDataset, umapConfig, wasmConfig);
     }
   };
 
@@ -195,27 +194,8 @@ export const BenchmarkControls: React.FC<BenchmarkControlsProps> = ({
       </SectionContainer>
 
       <SectionContainer className="control-section">
-        <SectionTitle>umap-wasm Release</SectionTitle>
-        <Select
-          value={selectedWasmRelease.tag}
-          onChange={(e) => {
-            const next = wasmReleases.find((r) => r.tag === e.target.value);
-            if (next) onSelectWasmRelease(next);
-          }}
-          disabled={isRunning || wasmReleases.length === 0}
-        >
-          {wasmReleases.map((release) => (
-            <option key={release.tag} value={release.tag}>
-              {release.name}
-            </option>
-          ))}
-        </Select>
-        <DatasetInfo className="dataset-info">
-          <span>Selected: {selectedWasmRelease.tag}</span>
-          {selectedWasmRelease.notes ? (
-            <span>{selectedWasmRelease.notes}</span>
-          ) : null}
-        </DatasetInfo>
+        <SectionTitle>WASM Optimization Features</SectionTitle>
+        <WasmConfigSelector wasmConfig={wasmConfig} onUpdateWasmConfig={onUpdateWasmConfig} />
       </SectionContainer>
 
       <SectionContainer className="control-section">

@@ -242,6 +242,13 @@
   resolved "https://registry.yarnpkg.com/@csstools/css-tokenizer/-/css-tokenizer-3.0.4.tgz#333fedabc3fd1a8e5d0100013731cf19e6a8c5d3"
   integrity sha512-Vd/9EVDiu6PPJt9yAh6roZP6El1xHrdvIVGjyBsHR0RYwNHgL7FJPyIIW4fANJNG6FtyZfvlRPpFI4ZM/lubvw==
 
+"@elarsaks/umap-wasm@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@elarsaks/umap-wasm/-/umap-wasm-0.1.5.tgz#69728d0e6ae0b8e28fe04504aa80e063a39f9951"
+  integrity sha512-HoZO3YL0R3srjojw+bbWyAqrVjNYI7cincMm1B1r/RmjN/75LbiyNGcKgzJxwb/x/JyUcOQ4SOcc0k+j4rFOyQ==
+  dependencies:
+    ml-levenberg-marquardt "^2.1.1"
+
 "@emotion/is-prop-valid@1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-1.4.0.tgz#e9ad47adff0b5c94c72db3669ce46de33edf28c0"
@@ -2952,7 +2959,7 @@ ml-array-rescale@^1.3.7:
     ml-array-max "^1.2.4"
     ml-array-min "^1.2.3"
 
-ml-levenberg-marquardt@^2.0.0:
+ml-levenberg-marquardt@^2.0.0, ml-levenberg-marquardt@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ml-levenberg-marquardt/-/ml-levenberg-marquardt-2.1.1.tgz#6a26751657adb340ed5ae4daadf5bfd2f757bdd4"
   integrity sha512-2+HwUqew4qFFFYujYlQtmFUrxCB4iJAPqnUYro3P831wj70eJZcANwcRaIMGUVaH9NDKzfYuA4N5u67KExmaRA==
