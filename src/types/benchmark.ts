@@ -6,7 +6,7 @@ export interface BenchmarkResult {
   responsiveness: number;
   datasetSize: number;
   dimensions: number;
-  wasmRelease: string;
+  wasmConfig: WasmConfig;
   timestamp: Date;
 }
 
@@ -31,6 +31,12 @@ export interface UMAPConfig {
   nComponents: number;
   spread: number;
   learningRate: number;
+}
+
+export interface WasmConfig {
+  useWasmDistance: boolean;
+  useWasmTree: boolean;
+  useWasmMatrix: boolean;
 }
 
 export interface WasmRelease {

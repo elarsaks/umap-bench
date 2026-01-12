@@ -4,7 +4,7 @@ import type {
   BenchmarkResult,
   DatasetConfig,
   UMAPConfig,
-  WasmRelease,
+  WasmConfig,
 } from "./types/benchmark";
 import {
   generate3DClusteredData,
@@ -20,7 +20,6 @@ import { BenchmarkResults } from "@components/BenchmarkResults";
 import { VisualizationCanvas } from "@components/VisualizationCanvas";
 import { PerformanceMonitor, FPSMonitor } from "@utils/performanceMonitor";
 import { calculateTrustworthiness } from "@utils/embeddingQuality";
-import { WASM_RELEASES } from "@config/wasmReleases";
 import "./App.css";
 
 function App() {
@@ -30,15 +29,17 @@ function App() {
   const [currentClusters, setCurrentClusters] = useState<number[]>([]);
   const [currentEdges, setCurrentEdges] = useState<Array<[number, number]>>([]);
   const [currentFPS, setCurrentFPS] = useState(0);
-  const [selectedWasmRelease, setSelectedWasmRelease] = useState<WasmRelease>(
-    WASM_RELEASES[0]
-  );
+  const [wasmConfig, setWasmConfig] = useState<WasmConfig>({
+    useWasmDistance: false,
+    useWasmTree: false,
+    useWasmMatrix: false,
+  });
 
   const runBenchmark = useCallback(
     async (
       datasetConfig: DatasetConfig,
       umapConfig: UMAPConfig,
-      wasmRelease: WasmRelease
+      config: WasmConfig
     ) => {
       setIsRunning(true);
 
@@ -112,6 +113,9 @@ function App() {
           nComponents: umapConfig.nComponents,
           spread: umapConfig.spread,
           learningRate: umapConfig.learningRate,
+          useWasmDistance: config.useWasmDistance,
+          useWasmTree: config.useWasmTree,
+          useWasmMatrix: config.useWasmMatrix,
         });
 
         const embeddedData = await umap.fitAsync(originalData);
@@ -144,7 +148,7 @@ function App() {
           responsiveness,
           datasetSize: datasetConfig.size,
           dimensions: datasetConfig.dimensions,
-          wasmRelease: wasmRelease.tag,
+          wasmConfig: config,
           timestamp: new Date(),
         };
 
@@ -185,9 +189,8 @@ function App() {
           <BenchmarkControls
             onRunBenchmark={runBenchmark}
             isRunning={isRunning}
-            wasmReleases={WASM_RELEASES}
-            selectedWasmRelease={selectedWasmRelease}
-            onSelectWasmRelease={setSelectedWasmRelease}
+            wasmConfig={wasmConfig}
+            onUpdateWasmConfig={setWasmConfig}
             onClearResults={clearResults}
           />
         </div>
