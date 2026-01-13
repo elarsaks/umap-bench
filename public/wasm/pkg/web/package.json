@@ -1,0 +1,21 @@
+{
+  "name": "umap-wasm-core",
+  "type": "module",
+  "description": "UMAP core routines in Rust compiled to WebAssembly",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "files": [
+    "umap_wasm_core_bg.wasm",
+    "umap_wasm_core.js",
+    "umap_wasm_core.d.ts"
+  ],
+  "main": "umap_wasm_core.js",
+  "types": "umap_wasm_core.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

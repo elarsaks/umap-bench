@@ -1,5 +1,5 @@
-import { useState, useCallback } from "react";
-import { UMAP } from "umap-js";
+import { useState, useCallback, useEffect } from "react";
+import { UMAP, initWasm, isWasmAvailable } from "@elarsaks/umap-wasm";
 import type {
   BenchmarkResult,
   DatasetConfig,
@@ -29,11 +29,26 @@ function App() {
   const [currentClusters, setCurrentClusters] = useState<number[]>([]);
   const [currentEdges, setCurrentEdges] = useState<Array<[number, number]>>([]);
   const [currentFPS, setCurrentFPS] = useState(0);
+  const [wasmReady, setWasmReady] = useState(false);
   const [wasmConfig, setWasmConfig] = useState<WasmConfig>({
     useWasmDistance: false,
     useWasmTree: false,
     useWasmMatrix: false,
+    useWasmNNDescent: false,
   });
+
+  // Initialize WASM module on mount
+  useEffect(() => {
+    initWasm()
+      .then(() => {
+        setWasmReady(true);
+        console.log("WASM module initialized successfully");
+      })
+      .catch((err) => {
+        console.warn("WASM initialization failed:", err);
+        setWasmReady(false);
+      });
+  }, []);
 
   const runBenchmark = useCallback(
     async (
@@ -41,6 +56,13 @@ function App() {
       umapConfig: UMAPConfig,
       config: WasmConfig
     ) => {
+      // Check if WASM features are requested but WASM is not available
+      const needsWasm = config.useWasmDistance || config.useWasmTree || config.useWasmMatrix || config.useWasmNNDescent;
+      if (needsWasm && !isWasmAvailable()) {
+        alert("WASM features requested but WASM module is not initialized. Please wait for initialization or disable WASM features.");
+        return;
+      }
+
       setIsRunning(true);
 
       try {
@@ -116,6 +138,7 @@ function App() {
           useWasmDistance: config.useWasmDistance,
           useWasmTree: config.useWasmTree,
           useWasmMatrix: config.useWasmMatrix,
+          useWasmNNDescent: config.useWasmNNDescent,
         });
 
         const embeddedData = await umap.fitAsync(originalData);
