@@ -92,6 +92,11 @@ export const WasmConfigSelector: React.FC<WasmConfigSelectorProps> = ({
       label: "useWasmMatrix",
       desc: "Sparse matrix operations in optimization loops",
     },
+    {
+      key: "useWasmNNDescent",
+      label: "useWasmNNDescent",
+      desc: "Nearest-neighbour graph refinement (NN-Descent)",
+    },
   ];
 
   return (

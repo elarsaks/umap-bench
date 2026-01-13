@@ -13,7 +13,12 @@ describe('BenchmarkResults', () => {
     responsiveness: 16,
     datasetSize: 1000,
     dimensions: 50,
-    wasmRelease: 'v1.0.0',
+    wasmConfig: {
+      useWasmDistance: true,
+      useWasmTree: false,
+      useWasmMatrix: true,
+      useWasmNNDescent: false,
+    },
     timestamp: new Date('2026-01-04T12:00:00Z'),
   };
 
@@ -65,7 +70,12 @@ describe('BenchmarkResults', () => {
       responsiveness: 0.001,
       datasetSize: 0,
       dimensions: 1000,
-      wasmRelease: 'test',
+      wasmConfig: {
+        useWasmDistance: false,
+        useWasmTree: false,
+        useWasmMatrix: false,
+        useWasmNNDescent: false,
+      },
       timestamp: new Date(),
     };
 

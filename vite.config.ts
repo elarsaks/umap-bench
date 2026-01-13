@@ -2,8 +2,8 @@ import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
-export default defineConfig({
-  base: '/umap-bench/',
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/umap-bench/' : '/',
   plugins: [react()],
   resolve: {
     alias: {
@@ -31,4 +31,4 @@ export default defineConfig({
       ],
     },
   },
-});
+}));
