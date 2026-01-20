@@ -97,6 +97,11 @@ export const WasmConfigSelector: React.FC<WasmConfigSelectorProps> = ({
       label: "useWasmNNDescent",
       desc: "Nearest-neighbour graph refinement (NN-Descent)",
     },
+    {
+      key: "useWasmOptimizer",
+      label: "useWasmOptimizer",
+      desc: "Gradient descent optimization",
+    },
   ];
 
   return (

@@ -34,6 +34,7 @@ function App() {
     useWasmTree: false,
     useWasmMatrix: false,
     useWasmNNDescent: false,
+    useWasmOptimizer: false,
   });
 
   // Initialize WASM module on mount
@@ -54,7 +55,12 @@ function App() {
       config: WasmConfig
     ) => {
       // Check if WASM features are requested but WASM is not available
-      const needsWasm = config.useWasmDistance || config.useWasmTree || config.useWasmMatrix || config.useWasmNNDescent;
+      const needsWasm =
+        config.useWasmDistance ||
+        config.useWasmTree ||
+        config.useWasmMatrix ||
+        config.useWasmNNDescent ||
+        config.useWasmOptimizer;
       if (needsWasm && !isWasmAvailable()) {
         alert("WASM features requested but WASM module is not initialized. Please wait for initialization or disable WASM features.");
         return;
@@ -136,6 +142,7 @@ function App() {
           useWasmTree: config.useWasmTree,
           useWasmMatrix: config.useWasmMatrix,
           useWasmNNDescent: config.useWasmNNDescent,
+          useWasmOptimizer: config.useWasmOptimizer,
         });
 
         const embeddedData = await umap.fitAsync(originalData);
