@@ -2,6 +2,7 @@
 /* eslint-disable */
 export const memory: WebAssembly.Memory;
 export const __wbg_flattree_free: (a: number, b: number) => void;
+export const __wbg_optimizerstate_free: (a: number, b: number) => void;
 export const __wbg_wasmsparsematrix_free: (a: number, b: number) => void;
 export const build_rp_tree: (a: number, b: number, c: number, d: number, e: number, f: bigint) => number;
 export const cosine: (a: number, b: number, c: number, d: number) => number;
@@ -13,6 +14,12 @@ export const flattree_indices: (a: number) => [number, number];
 export const flattree_n_nodes: (a: number) => number;
 export const flattree_offsets: (a: number) => any;
 export const nn_descent: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number, n: number, o: number, p: number, q: bigint) => [number, number, number, number];
+export const optimize_layout_batch: (a: number, b: bigint, c: number) => [number, number];
+export const optimize_layout_step: (a: number, b: bigint) => [number, number];
+export const optimizerstate_current_epoch: (a: number) => number;
+export const optimizerstate_head_embedding: (a: number) => [number, number];
+export const optimizerstate_n_epochs: (a: number) => number;
+export const optimizerstate_new: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number, n: number, o: number, p: number, q: number, r: number, s: number, t: number) => number;
 export const search_flat_tree: (a: number, b: number, c: number, d: bigint) => [number, number];
 export const sparse_add: (a: number, b: number) => number;
 export const sparse_eliminate_zeros: (a: number) => number;
