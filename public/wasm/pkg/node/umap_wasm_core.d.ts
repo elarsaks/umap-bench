@@ -31,6 +31,27 @@ export class FlatTree {
   children(): Int32Array;
 }
 
+export class OptimizerState {
+  free(): void;
+  [Symbol.dispose](): void;
+  /**
+   * Create a new optimizer state with the given parameters.
+   */
+  constructor(head: Uint32Array, tail: Uint32Array, head_embedding: Float64Array, tail_embedding: Float64Array, epochs_per_sample: Float64Array, epochs_per_negative_sample: Float64Array, move_other: boolean, initial_alpha: number, gamma: number, a: number, b: number, dim: number, n_epochs: number, n_vertices: number);
+  /**
+   * Get the current epoch number.
+   */
+  readonly current_epoch: number;
+  /**
+   * Get the current embedding as a flat array.
+   */
+  readonly head_embedding: Float64Array;
+  /**
+   * Get the total number of epochs.
+   */
+  readonly n_epochs: number;
+}
+
 export class WasmSparseMatrix {
   free(): void;
   [Symbol.dispose](): void;
@@ -177,6 +198,39 @@ export function euclidean(x: Float64Array, y: Float64Array): number;
  * A flattened array containing [distances, indices, flags] for the k-NN graph
  */
 export function nn_descent(data_flat: Float64Array, n_samples: number, dim: number, leaf_array_flat: Int32Array, n_leaves: number, leaf_size: number, n_neighbors: number, n_iters: number, max_candidates: number, delta: number, rho: number, rp_tree_init: boolean, distance_metric: string, seed: bigint): Float64Array;
+
+/**
+ * Perform multiple optimization steps in a batch.
+ * 
+ * This function runs multiple epochs of optimization, which can be more
+ * efficient than calling optimize_layout_step repeatedly due to reduced
+ * JavaScript/WASM boundary crossings.
+ * 
+ * # Arguments
+ * * `state` - Mutable reference to the optimizer state
+ * * `rng_seed` - Seed for random number generation
+ * * `n_steps` - Number of steps to perform
+ * 
+ * # Returns
+ * The final embedding as a flat vector
+ */
+export function optimize_layout_batch(state: OptimizerState, rng_seed: bigint, n_steps: number): Float64Array;
+
+/**
+ * Perform a single optimization step for UMAP layout.
+ * 
+ * This function executes one epoch of the stochastic gradient descent algorithm
+ * used to optimize the low-dimensional embedding. It processes attractive forces
+ * between known neighbors and repulsive forces from negative samples.
+ * 
+ * # Arguments
+ * * `state` - Mutable reference to the optimizer state
+ * * `rng_seed` - Seed for random number generation (will be updated internally)
+ * 
+ * # Returns
+ * The updated embedding as a flat vector
+ */
+export function optimize_layout_step(state: OptimizerState, rng_seed: bigint): Float64Array;
 
 /**
  * Search a flattened tree to find the leaf containing the query point.

@@ -142,6 +142,10 @@ const FlatTreeFinalization = (typeof FinalizationRegistry === 'undefined')
     ? { register: () => {}, unregister: () => {} }
     : new FinalizationRegistry(ptr => wasm.__wbg_flattree_free(ptr >>> 0, 1));
 
+const OptimizerStateFinalization = (typeof FinalizationRegistry === 'undefined')
+    ? { register: () => {}, unregister: () => {} }
+    : new FinalizationRegistry(ptr => wasm.__wbg_optimizerstate_free(ptr >>> 0, 1));
+
 const WasmSparseMatrixFinalization = (typeof FinalizationRegistry === 'undefined')
     ? { register: () => {}, unregister: () => {} }
     : new FinalizationRegistry(ptr => wasm.__wbg_wasmsparsematrix_free(ptr >>> 0, 1));
@@ -223,6 +227,86 @@ class FlatTree {
 }
 if (Symbol.dispose) FlatTree.prototype[Symbol.dispose] = FlatTree.prototype.free;
 exports.FlatTree = FlatTree;
+
+/**
+ * Represents the state needed for gradient descent optimization in UMAP.
+ * This struct holds all the necessary data for performing iterative layout optimization.
+ */
+class OptimizerState {
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+        OptimizerStateFinalization.unregister(this);
+        return ptr;
+    }
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_optimizerstate_free(ptr, 0);
+    }
+    /**
+     * Get the current epoch number.
+     * @returns {number}
+     */
+    get current_epoch() {
+        const ret = wasm.optimizerstate_current_epoch(this.__wbg_ptr);
+        return ret >>> 0;
+    }
+    /**
+     * Get the current embedding as a flat array.
+     * @returns {Float64Array}
+     */
+    get head_embedding() {
+        const ret = wasm.optimizerstate_head_embedding(this.__wbg_ptr);
+        var v1 = getArrayF64FromWasm0(ret[0], ret[1]).slice();
+        wasm.__wbindgen_free(ret[0], ret[1] * 8, 8);
+        return v1;
+    }
+    /**
+     * Create a new optimizer state with the given parameters.
+     * @param {Uint32Array} head
+     * @param {Uint32Array} tail
+     * @param {Float64Array} head_embedding
+     * @param {Float64Array} tail_embedding
+     * @param {Float64Array} epochs_per_sample
+     * @param {Float64Array} epochs_per_negative_sample
+     * @param {boolean} move_other
+     * @param {number} initial_alpha
+     * @param {number} gamma
+     * @param {number} a
+     * @param {number} b
+     * @param {number} dim
+     * @param {number} n_epochs
+     * @param {number} n_vertices
+     */
+    constructor(head, tail, head_embedding, tail_embedding, epochs_per_sample, epochs_per_negative_sample, move_other, initial_alpha, gamma, a, b, dim, n_epochs, n_vertices) {
+        const ptr0 = passArray32ToWasm0(head, wasm.__wbindgen_malloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ptr1 = passArray32ToWasm0(tail, wasm.__wbindgen_malloc);
+        const len1 = WASM_VECTOR_LEN;
+        const ptr2 = passArrayF64ToWasm0(head_embedding, wasm.__wbindgen_malloc);
+        const len2 = WASM_VECTOR_LEN;
+        const ptr3 = passArrayF64ToWasm0(tail_embedding, wasm.__wbindgen_malloc);
+        const len3 = WASM_VECTOR_LEN;
+        const ptr4 = passArrayF64ToWasm0(epochs_per_sample, wasm.__wbindgen_malloc);
+        const len4 = WASM_VECTOR_LEN;
+        const ptr5 = passArrayF64ToWasm0(epochs_per_negative_sample, wasm.__wbindgen_malloc);
+        const len5 = WASM_VECTOR_LEN;
+        const ret = wasm.optimizerstate_new(ptr0, len0, ptr1, len1, ptr2, len2, ptr3, len3, ptr4, len4, ptr5, len5, move_other, initial_alpha, gamma, a, b, dim, n_epochs, n_vertices);
+        this.__wbg_ptr = ret >>> 0;
+        OptimizerStateFinalization.register(this, this.__wbg_ptr, this);
+        return this;
+    }
+    /**
+     * Get the total number of epochs.
+     * @returns {number}
+     */
+    get n_epochs() {
+        const ret = wasm.optimizerstate_n_epochs(this.__wbg_ptr);
+        return ret >>> 0;
+    }
+}
+if (Symbol.dispose) OptimizerState.prototype[Symbol.dispose] = OptimizerState.prototype.free;
+exports.OptimizerState = OptimizerState;
 
 /**
  * Internal 2-dimensional sparse matrix class implemented in Rust/WASM.
@@ -545,6 +629,60 @@ function nn_descent(data_flat, n_samples, dim, leaf_array_flat, n_leaves, leaf_s
     return v4;
 }
 exports.nn_descent = nn_descent;
+
+/**
+ * Perform multiple optimization steps in a batch.
+ *
+ * This function runs multiple epochs of optimization, which can be more
+ * efficient than calling optimize_layout_step repeatedly due to reduced
+ * JavaScript/WASM boundary crossings.
+ *
+ * # Arguments
+ * * `state` - Mutable reference to the optimizer state
+ * * `rng_seed` - Seed for random number generation
+ * * `n_steps` - Number of steps to perform
+ *
+ * # Returns
+ * The final embedding as a flat vector
+ * @param {OptimizerState} state
+ * @param {bigint} rng_seed
+ * @param {number} n_steps
+ * @returns {Float64Array}
+ */
+function optimize_layout_batch(state, rng_seed, n_steps) {
+    _assertClass(state, OptimizerState);
+    const ret = wasm.optimize_layout_batch(state.__wbg_ptr, rng_seed, n_steps);
+    var v1 = getArrayF64FromWasm0(ret[0], ret[1]).slice();
+    wasm.__wbindgen_free(ret[0], ret[1] * 8, 8);
+    return v1;
+}
+exports.optimize_layout_batch = optimize_layout_batch;
+
+/**
+ * Perform a single optimization step for UMAP layout.
+ *
+ * This function executes one epoch of the stochastic gradient descent algorithm
+ * used to optimize the low-dimensional embedding. It processes attractive forces
+ * between known neighbors and repulsive forces from negative samples.
+ *
+ * # Arguments
+ * * `state` - Mutable reference to the optimizer state
+ * * `rng_seed` - Seed for random number generation (will be updated internally)
+ *
+ * # Returns
+ * The updated embedding as a flat vector
+ * @param {OptimizerState} state
+ * @param {bigint} rng_seed
+ * @returns {Float64Array}
+ */
+function optimize_layout_step(state, rng_seed) {
+    _assertClass(state, OptimizerState);
+    const ret = wasm.optimize_layout_step(state.__wbg_ptr, rng_seed);
+    var v1 = getArrayF64FromWasm0(ret[0], ret[1]).slice();
+    wasm.__wbindgen_free(ret[0], ret[1] * 8, 8);
+    return v1;
+}
+exports.optimize_layout_step = optimize_layout_step;
 
 /**
  * Search a flattened tree to find the leaf containing the query point.
