@@ -29,7 +29,6 @@ function App() {
   const [currentClusters, setCurrentClusters] = useState<number[]>([]);
   const [currentEdges, setCurrentEdges] = useState<Array<[number, number]>>([]);
   const [currentFPS, setCurrentFPS] = useState(0);
-  const [wasmReady, setWasmReady] = useState(false);
   const [wasmConfig, setWasmConfig] = useState<WasmConfig>({
     useWasmDistance: false,
     useWasmTree: false,
@@ -41,12 +40,10 @@ function App() {
   useEffect(() => {
     initWasm()
       .then(() => {
-        setWasmReady(true);
         console.log("WASM module initialized successfully");
       })
       .catch((err) => {
         console.warn("WASM initialization failed:", err);
-        setWasmReady(false);
       });
   }, []);
 
