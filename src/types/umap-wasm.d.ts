@@ -4,5 +4,6 @@ declare module "@elarsaks/umap-wasm" {
   interface UMAPParameters {
     useWasmTree?: boolean;
     useWasmMatrix?: boolean;
+    useWasmOptimizer?: boolean;
   }
 }

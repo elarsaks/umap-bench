@@ -38,6 +38,7 @@ export interface WasmConfig {
   useWasmTree: boolean;
   useWasmMatrix: boolean;
   useWasmNNDescent: boolean;
+  useWasmOptimizer: boolean;
 }
 
 export interface WasmRelease {

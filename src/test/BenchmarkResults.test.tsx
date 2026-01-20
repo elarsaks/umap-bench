@@ -18,6 +18,7 @@ describe('BenchmarkResults', () => {
       useWasmTree: false,
       useWasmMatrix: true,
       useWasmNNDescent: false,
+      useWasmOptimizer: false,
     },
     timestamp: new Date('2026-01-04T12:00:00Z'),
   };
@@ -75,6 +76,7 @@ describe('BenchmarkResults', () => {
         useWasmTree: false,
         useWasmMatrix: false,
         useWasmNNDescent: false,
+        useWasmOptimizer: false,
       },
       timestamp: new Date(),
     };

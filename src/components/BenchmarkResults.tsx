@@ -12,6 +12,7 @@ function formatWasmConfig(config: WasmConfig): string {
   if (config.useWasmTree) enabled.push("Tree");
   if (config.useWasmMatrix) enabled.push("Matrix");
   if (config.useWasmNNDescent) enabled.push("NN");
+  if (config.useWasmOptimizer) enabled.push("Opt");
   return enabled.length > 0 ? enabled.join(", ") : "None";
 }
 
@@ -173,12 +174,13 @@ function calculateAverages(results: BenchmarkResult[]): BenchmarkResult {
       datasetSize: 0,
       dimensions: 0,
       timestamp: new Date(),
-      wasmConfig: {
-        useWasmDistance: false,
-        useWasmTree: false,
-        useWasmMatrix: false,
-        useWasmNNDescent: false,
-      },
+        wasmConfig: {
+          useWasmDistance: false,
+          useWasmTree: false,
+          useWasmMatrix: false,
+          useWasmNNDescent: false,
+          useWasmOptimizer: false,
+        },
     };
   }
 
