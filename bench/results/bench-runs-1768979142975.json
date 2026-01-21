@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-01-21T07:05:42.975Z",
+  "runs": 1,
+  "machine": {
+    "platform": "linux",
+    "release": "6.6.87.2-microsoft-standard-WSL2",
+    "arch": "x64",
+    "cpuModel": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+    "cpuCores": 12,
+    "totalMemBytes": 8240971776,
+    "loadAvg": [
+      1.14,
+      0.43,
+      0.49
+    ],
+    "hostname": "DESKTOP-7R7IE5L"
+  },
+  "git": {
+    "commit": "1ad66a0096643d2dcefd7da0db708323396238a3",
+    "branch": "improve-bench-tests",
+    "statusDirty": true
+  },
+  "wasmFeatures": "all",
+  "results": []
+}

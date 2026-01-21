@@ -67,7 +67,7 @@ function extractUiMetrics(summary) {
 
 function parseArgs() {
   const args = process.argv.slice(2);
-  const result = { runs: DEFAULT_RUNS, scope: null };
+  const result = { runs: DEFAULT_RUNS, scope: null, wasmFeatures: null };
   for (const arg of args) {
     if (arg.startsWith('--runs=')) {
       const n = Number(arg.split('=')[1]);
@@ -77,6 +77,13 @@ function parseArgs() {
       const scope = arg.split('=')[1];
       if (VALID_SCOPES.has(scope)) result.scope = scope;
     }
+    if (arg === '--wasm') {
+      result.wasmFeatures = 'all';
+    }
+    if (arg.startsWith('--wasm=')) {
+      const value = arg.split('=')[1];
+      if (value && value.trim().length > 0) result.wasmFeatures = value.trim();
+    }
   }
   if (process.env.RUNS) {
     const n = Number(process.env.RUNS);
@@ -84,6 +91,9 @@ function parseArgs() {
   }
   if (process.env.BENCH_SCOPE && VALID_SCOPES.has(process.env.BENCH_SCOPE)) {
     result.scope = process.env.BENCH_SCOPE;
+  }
+  if (process.env.WASM_FEATURES) {
+    result.wasmFeatures = process.env.WASM_FEATURES.trim();
   }
   return result;
 }
@@ -122,11 +132,15 @@ function buildPlaywrightArgs(scope) {
   return base;
 }
 
-function runPlaywrightOnce(runIndex, scope) {
+function runPlaywrightOnce(runIndex, scope, wasmFeatures) {
   const start = Date.now();
   const args = buildPlaywrightArgs(scope);
   const result = spawnSync('npx', args, {
     encoding: 'utf-8',
+    env: {
+      ...process.env,
+      ...(wasmFeatures ? { WASM_FEATURES: wasmFeatures } : {}),
+    },
     stdio: 'pipe',
   });
   const durationMs = Date.now() - start;
@@ -155,32 +169,41 @@ function runPlaywrightOnce(runIndex, scope) {
 }
 
 function main() {
-  const { runs, scope } = parseArgs();
+  const { runs, scope, wasmFeatures } = parseArgs();
   const runResults = [];
 
   console.log(`Running Playwright benchmark suite ${runs} time(s)...`);
   if (scope) console.log(`Scope: ${scope}`);
+  if (wasmFeatures) console.log(`WASM features: ${wasmFeatures}`);
 
-  for (let i = 1; i <= runs; i++) {
-    console.log(`\n--- Run ${i}/${runs} ---`);
-    const res = runPlaywrightOnce(i, scope);
-    runResults.push(res);
-    console.log(`Result: ${res.success ? 'PASS' : 'FAIL'} in ${res.durationMs} ms`);
-    if (!res.success) {
-      console.log('stderr preview:', res.stderrPreview);
-    }
-  }
+  const outDir = path.join(process.cwd(), 'bench', 'results');
+  fs.mkdirSync(outDir, { recursive: true });
+  const timestamp = Date.now();
+  const outFile = path.join(outDir, `bench-runs-${timestamp}.json`);
 
   const payload = {
     generatedAt: new Date().toISOString(),
     runs,
     machine: getMachineInfo(),
     git: getGitMeta(),
+    wasmFeatures: wasmFeatures ?? 'none',
     results: runResults,
   };
 
-  const outDir = path.join(process.cwd(), 'bench', 'results');
-  fs.mkdirSync(outDir, { recursive: true });
+  fs.writeFileSync(outFile, JSON.stringify(payload, null, 2));
+
+  for (let i = 1; i <= runs; i++) {
+    console.log(`\n--- Run ${i}/${runs} ---`);
+    const res = runPlaywrightOnce(i, scope, wasmFeatures);
+    runResults.push(res);
+    console.log(`Result: ${res.success ? 'PASS' : 'FAIL'} in ${res.durationMs} ms`);
+    if (!res.success) {
+      console.log('stderr preview:', res.stderrPreview);
+    }
+
+    fs.writeFileSync(outFile, JSON.stringify(payload, null, 2));
+  }
+
   // If Playwright wrote a JSON report, embed it into our payload
   try {
     const pwResults = path.join(process.cwd(), 'playwright-results', 'results.json');
@@ -197,8 +220,6 @@ function main() {
   } catch (e) {
     // ignore
   }
-
-  const outFile = path.join(outDir, `bench-runs-${Date.now()}.json`);
   fs.writeFileSync(outFile, JSON.stringify(payload, null, 2));
 
   // Remove Playwright HTML report folder (if present) to avoid clutter

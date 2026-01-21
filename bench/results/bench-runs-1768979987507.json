@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-05T11:34:52.089Z",
+  "generatedAt": "2026-01-21T07:19:47.507Z",
   "runs": 10,
   "machine": {
     "platform": "linux",
@@ -7,28 +7,29 @@
     "arch": "x64",
     "cpuModel": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
     "cpuCores": 12,
-    "totalMemBytes": 8240967680,
+    "totalMemBytes": 8240971776,
     "loadAvg": [
-      1.24,
-      0.9,
-      0.51
+      0.03,
+      0.44,
+      0.66
     ],
     "hostname": "DESKTOP-7R7IE5L"
   },
   "git": {
-    "commit": "f6d8a7032b9be9ad55605c03119d706b831debae",
-    "branch": "create-bencmark-tests",
+    "commit": "1ad66a0096643d2dcefd7da0db708323396238a3",
+    "branch": "improve-bench-tests",
     "statusDirty": true
   },
+  "wasmFeatures": "all",
   "results": [
     {
       "run": 1,
       "success": true,
       "exitCode": 0,
-      "durationMs": 44488,
+      "durationMs": 38787,
       "stats": {
-        "startTime": "2026-01-05T11:27:58.110Z",
-        "duration": 25590.220999999998,
+        "startTime": "2026-01-21T07:20:01.252Z",
+        "duration": 27790.652,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -36,7 +37,36 @@
       },
       "status": null,
       "errors": [],
-      "uiMetrics": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 1,
+              "runtimeMs": 2897.5,
+              "memoryMb": 0,
+              "qualityPercent": 98.2,
+              "fps": 60,
+              "latencyMs": 6.59,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "150×4"
+            },
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 2,
+              "runtimeMs": 3768.2,
+              "memoryMb": 0,
+              "qualityPercent": 85.6,
+              "fps": 46,
+              "latencyMs": 21.17,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "100×10"
+            }
+          ]
+        }
+      ],
       "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn dev\",\n      \"url\": \"http://localhost:5173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 30000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n                  \"workerIndex\": 0,\n                 ",
       "stderrPreview": ""
     },
@@ -44,10 +74,10 @@
       "run": 2,
       "success": true,
       "exitCode": 0,
-      "durationMs": 41838,
+      "durationMs": 37977,
       "stats": {
-        "startTime": "2026-01-05T11:28:40.363Z",
-        "duration": 25210.815000000002,
+        "startTime": "2026-01-21T07:20:39.478Z",
+        "duration": 27561.365,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -55,7 +85,36 @@
       },
       "status": null,
       "errors": [],
-      "uiMetrics": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 1,
+              "runtimeMs": 2965.5,
+              "memoryMb": 0,
+              "qualityPercent": 98.6,
+              "fps": 59.9,
+              "latencyMs": 6.94,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "150×4"
+            },
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 2,
+              "runtimeMs": 3727.9,
+              "memoryMb": 0,
+              "qualityPercent": 84.6,
+              "fps": 50,
+              "latencyMs": 21.98,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "100×10"
+            }
+          ]
+        }
+      ],
       "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn dev\",\n      \"url\": \"http://localhost:5173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 30000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n                  \"workerIndex\": 0,\n                 ",
       "stderrPreview": ""
     },
@@ -63,10 +122,10 @@
       "run": 3,
       "success": true,
       "exitCode": 0,
-      "durationMs": 41253,
+      "durationMs": 37964,
       "stats": {
-        "startTime": "2026-01-05T11:29:21.916Z",
-        "duration": 24873.559999999998,
+        "startTime": "2026-01-21T07:21:17.897Z",
+        "duration": 27175.590999999997,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -74,7 +133,36 @@
       },
       "status": null,
       "errors": [],
-      "uiMetrics": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 1,
+              "runtimeMs": 2888.3,
+              "memoryMb": 0,
+              "qualityPercent": 98.3,
+              "fps": 60,
+              "latencyMs": 6.04,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "150×4"
+            },
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 2,
+              "runtimeMs": 3629.3,
+              "memoryMb": 0,
+              "qualityPercent": 84.8,
+              "fps": 50.2,
+              "latencyMs": 19.73,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "100×10"
+            }
+          ]
+        }
+      ],
       "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn dev\",\n      \"url\": \"http://localhost:5173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 30000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n                  \"workerIndex\": 0,\n                 ",
       "stderrPreview": ""
     },
@@ -82,10 +170,10 @@
       "run": 4,
       "success": true,
       "exitCode": 0,
-      "durationMs": 44479,
+      "durationMs": 34653,
       "stats": {
-        "startTime": "2026-01-05T11:30:05.907Z",
-        "duration": 25377.799,
+        "startTime": "2026-01-21T07:21:52.581Z",
+        "duration": 27074.099000000002,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -93,7 +181,36 @@
       },
       "status": null,
       "errors": [],
-      "uiMetrics": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 1,
+              "runtimeMs": 2876.7,
+              "memoryMb": 0,
+              "qualityPercent": 98.6,
+              "fps": 60,
+              "latencyMs": 6.2,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "150×4"
+            },
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 2,
+              "runtimeMs": 3633.6,
+              "memoryMb": 0,
+              "qualityPercent": 86.6,
+              "fps": 50.2,
+              "latencyMs": 21.11,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "100×10"
+            }
+          ]
+        }
+      ],
       "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn dev\",\n      \"url\": \"http://localhost:5173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 30000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n                  \"workerIndex\": 0,\n                 ",
       "stderrPreview": ""
     },
@@ -101,10 +218,10 @@
       "run": 5,
       "success": true,
       "exitCode": 0,
-      "durationMs": 42874,
+      "durationMs": 37482,
       "stats": {
-        "startTime": "2026-01-05T11:30:48.255Z",
-        "duration": 25901.86,
+        "startTime": "2026-01-21T07:22:29.937Z",
+        "duration": 27179.163999999997,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -112,7 +229,36 @@
       },
       "status": null,
       "errors": [],
-      "uiMetrics": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 1,
+              "runtimeMs": 2885.3,
+              "memoryMb": 0,
+              "qualityPercent": 98.8,
+              "fps": 60,
+              "latencyMs": 6.47,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "150×4"
+            },
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 2,
+              "runtimeMs": 3620.8,
+              "memoryMb": 0,
+              "qualityPercent": 84.3,
+              "fps": 50,
+              "latencyMs": 20.97,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "100×10"
+            }
+          ]
+        }
+      ],
       "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn dev\",\n      \"url\": \"http://localhost:5173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 30000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n                  \"workerIndex\": 0,\n                 ",
       "stderrPreview": ""
     },
@@ -120,10 +266,10 @@
       "run": 6,
       "success": true,
       "exitCode": 0,
-      "durationMs": 42432,
+      "durationMs": 37823,
       "stats": {
-        "startTime": "2026-01-05T11:31:32.525Z",
-        "duration": 25868.836,
+        "startTime": "2026-01-21T07:23:07.476Z",
+        "duration": 27466.936,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -131,7 +277,36 @@
       },
       "status": null,
       "errors": [],
-      "uiMetrics": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 1,
+              "runtimeMs": 2890.9,
+              "memoryMb": 0,
+              "qualityPercent": 98.6,
+              "fps": 60,
+              "latencyMs": 7.01,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "150×4"
+            },
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 2,
+              "runtimeMs": 3644,
+              "memoryMb": 0,
+              "qualityPercent": 88,
+              "fps": 50.2,
+              "latencyMs": 22.96,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "100×10"
+            }
+          ]
+        }
+      ],
       "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn dev\",\n      \"url\": \"http://localhost:5173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 30000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n                  \"workerIndex\": 0,\n                 ",
       "stderrPreview": ""
     },
@@ -139,10 +314,10 @@
       "run": 7,
       "success": true,
       "exitCode": 0,
-      "durationMs": 45287,
+      "durationMs": 38023,
       "stats": {
-        "startTime": "2026-01-05T11:32:16.467Z",
-        "duration": 25403.509,
+        "startTime": "2026-01-21T07:23:45.489Z",
+        "duration": 27518.364999999998,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -150,7 +325,36 @@
       },
       "status": null,
       "errors": [],
-      "uiMetrics": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 1,
+              "runtimeMs": 2872.8,
+              "memoryMb": 0,
+              "qualityPercent": 98.4,
+              "fps": 60,
+              "latencyMs": 6.32,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "150×4"
+            },
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 2,
+              "runtimeMs": 3666.3,
+              "memoryMb": 0,
+              "qualityPercent": 85,
+              "fps": 50,
+              "latencyMs": 21.12,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "100×10"
+            }
+          ]
+        }
+      ],
       "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn dev\",\n      \"url\": \"http://localhost:5173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 30000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n                  \"workerIndex\": 0,\n                 ",
       "stderrPreview": ""
     },
@@ -158,10 +362,10 @@
       "run": 8,
       "success": true,
       "exitCode": 0,
-      "durationMs": 43650,
+      "durationMs": 35518,
       "stats": {
-        "startTime": "2026-01-05T11:33:00.896Z",
-        "duration": 24642.018999999997,
+        "startTime": "2026-01-21T07:24:20.599Z",
+        "duration": 27923.164000000004,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -169,7 +373,36 @@
       },
       "status": null,
       "errors": [],
-      "uiMetrics": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 1,
+              "runtimeMs": 2887.8,
+              "memoryMb": 0,
+              "qualityPercent": 98.7,
+              "fps": 60,
+              "latencyMs": 7.05,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "150×4"
+            },
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 2,
+              "runtimeMs": 3694,
+              "memoryMb": 0,
+              "qualityPercent": 86.6,
+              "fps": 49,
+              "latencyMs": 22.63,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "100×10"
+            }
+          ]
+        }
+      ],
       "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn dev\",\n      \"url\": \"http://localhost:5173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 30000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n                  \"workerIndex\": 0,\n                 ",
       "stderrPreview": ""
     },
@@ -177,10 +410,10 @@
       "run": 9,
       "success": true,
       "exitCode": 0,
-      "durationMs": 43518,
+      "durationMs": 38339,
       "stats": {
-        "startTime": "2026-01-05T11:33:43.912Z",
-        "duration": 25117.559999999998,
+        "startTime": "2026-01-21T07:24:59.141Z",
+        "duration": 27713.188000000002,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -188,7 +421,36 @@
       },
       "status": null,
       "errors": [],
-      "uiMetrics": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 1,
+              "runtimeMs": 2882.1,
+              "memoryMb": 0,
+              "qualityPercent": 98.9,
+              "fps": 60,
+              "latencyMs": 6.55,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "150×4"
+            },
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 2,
+              "runtimeMs": 3639.6,
+              "memoryMb": 0,
+              "qualityPercent": 86.2,
+              "fps": 50.2,
+              "latencyMs": 20.64,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "100×10"
+            }
+          ]
+        }
+      ],
       "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn dev\",\n      \"url\": \"http://localhost:5173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 30000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n                  \"workerIndex\": 0,\n                 ",
       "stderrPreview": ""
     },
@@ -196,10 +458,10 @@
       "run": 10,
       "success": true,
       "exitCode": 0,
-      "durationMs": 41219,
+      "durationMs": 41829,
       "stats": {
-        "startTime": "2026-01-05T11:34:25.492Z",
-        "duration": 24778.359,
+        "startTime": "2026-01-21T07:25:38.055Z",
+        "duration": 30622.135000000002,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -207,7 +469,36 @@
       },
       "status": null,
       "errors": [],
-      "uiMetrics": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 1,
+              "runtimeMs": 2909.2,
+              "memoryMb": 0,
+              "qualityPercent": 98.3,
+              "fps": 60.1,
+              "latencyMs": 6.56,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "150×4"
+            },
+            {
+              "scenario": "small bench: sequential lightweight datasets @small",
+              "datasetLabel": "",
+              "run": 2,
+              "runtimeMs": 3762.6,
+              "memoryMb": 0,
+              "qualityPercent": 81.9,
+              "fps": 48,
+              "latencyMs": 23.66,
+              "wasmFeatures": "Dist, Tree, Matrix, NN, Opt",
+              "dataset": "100×10"
+            }
+          ]
+        }
+      ],
       "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn dev\",\n      \"url\": \"http://localhost:5173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 30000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n                  \"workerIndex\": 0,\n                 ",
       "stderrPreview": ""
     }
