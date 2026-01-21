@@ -161,15 +161,10 @@ function main() {
   console.log(`Running Playwright benchmark suite ${runs} time(s)...`);
   if (scope) console.log(`Scope: ${scope}`);
 
-  for (let i = 1; i <= runs; i++) {
-    console.log(`\n--- Run ${i}/${runs} ---`);
-    const res = runPlaywrightOnce(i, scope);
-    runResults.push(res);
-    console.log(`Result: ${res.success ? 'PASS' : 'FAIL'} in ${res.durationMs} ms`);
-    if (!res.success) {
-      console.log('stderr preview:', res.stderrPreview);
-    }
-  }
+  const outDir = path.join(process.cwd(), 'bench', 'results');
+  fs.mkdirSync(outDir, { recursive: true });
+  const timestamp = Date.now();
+  const outFile = path.join(outDir, `bench-runs-${timestamp}.json`);
 
   const payload = {
     generatedAt: new Date().toISOString(),
@@ -179,8 +174,20 @@ function main() {
     results: runResults,
   };
 
-  const outDir = path.join(process.cwd(), 'bench', 'results');
-  fs.mkdirSync(outDir, { recursive: true });
+  fs.writeFileSync(outFile, JSON.stringify(payload, null, 2));
+
+  for (let i = 1; i <= runs; i++) {
+    console.log(`\n--- Run ${i}/${runs} ---`);
+    const res = runPlaywrightOnce(i, scope);
+    runResults.push(res);
+    console.log(`Result: ${res.success ? 'PASS' : 'FAIL'} in ${res.durationMs} ms`);
+    if (!res.success) {
+      console.log('stderr preview:', res.stderrPreview);
+    }
+
+    fs.writeFileSync(outFile, JSON.stringify(payload, null, 2));
+  }
+
   // If Playwright wrote a JSON report, embed it into our payload
   try {
     const pwResults = path.join(process.cwd(), 'playwright-results', 'results.json');
@@ -197,8 +204,6 @@ function main() {
   } catch (e) {
     // ignore
   }
-
-  const outFile = path.join(outDir, `bench-runs-${Date.now()}.json`);
   fs.writeFileSync(outFile, JSON.stringify(payload, null, 2));
 
   // Remove Playwright HTML report folder (if present) to avoid clutter
