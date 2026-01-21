@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { applyWasmConfig, getWasmConfigFromEnv } from './wasm-config';
 
 const datasetSelect = (page: Page) =>
   page.locator('.control-section', { hasText: 'Dataset Selection' }).getByRole('combobox');
@@ -56,6 +57,8 @@ const attachBenchmarkMetrics = async (
 
 test('small bench: sequential lightweight datasets @small', async ({ page }, testInfo) => {
   await page.goto('/');
+  const { selection: wasmSelection } = getWasmConfigFromEnv();
+  await applyWasmConfig(page, wasmSelection);
 
   const datasetDropdown = datasetSelect(page);
 
@@ -75,6 +78,8 @@ test('small bench: sequential lightweight datasets @small', async ({ page }, tes
 
 test('mid bench: two moderate datasets @mid', async ({ page }, testInfo) => {
   await page.goto('/');
+  const { selection: wasmSelection } = getWasmConfigFromEnv();
+  await applyWasmConfig(page, wasmSelection);
 
   const datasetDropdown = datasetSelect(page);
 
@@ -94,6 +99,8 @@ test('mid bench: two moderate datasets @mid', async ({ page }, testInfo) => {
 
 test('large bench: two heavier datasets @large', async ({ page }, testInfo) => {
   await page.goto('/');
+  const { selection: wasmSelection } = getWasmConfigFromEnv();
+  await applyWasmConfig(page, wasmSelection);
 
   const datasetDropdown = datasetSelect(page);
 

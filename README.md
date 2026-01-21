@@ -90,7 +90,7 @@ Located in: `bench/`
 	# or customize
 	yarn bench:loop --runs=5
 	yarn bench:loop --scope=small
-	yarn bench:loop --scope=small --runs=3
+	yarn bench:loop --scope=small --runs=3 --wasm=all
 	```
 	Scopes: `small`, `mid`, `large`.
 - Headed run (see the browser)

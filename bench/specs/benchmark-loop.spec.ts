@@ -1,4 +1,5 @@
 import { test, expect, type Page } from "@playwright/test";
+import { applyWasmConfig, getWasmConfigFromEnv } from "./wasm-config";
 
 const datasetSelect = (page: Page) =>
   page
@@ -9,26 +10,20 @@ const runButton = (page: Page) => page.locator(".run-benchmark-btn");
 
 const clearButton = (page: Page) => page.locator(".clear-results-btn");
 
-const wasmToggle = (page: Page, label: string) =>
-  page
-    .locator(".toggle-control", { hasText: label })
-    .locator('input[type="checkbox"]');
+const allDisabledConfig = {
+  useWasmDistance: false,
+  useWasmTree: false,
+  useWasmMatrix: false,
+  useWasmNNDescent: false,
+  useWasmOptimizer: false,
+};
 
-const setWasmConfig = async (page: Page, enabled: boolean) => {
-  const toggles = [
-    "useWasmDistance",
-    "useWasmTree",
-    "useWasmMatrix",
-    "useWasmNNDescent",
-    "useWasmOptimizer",
-  ];
-
-  for (const label of toggles) {
-    const checkbox = wasmToggle(page, label);
-    if ((await checkbox.isChecked()) !== enabled) {
-      await checkbox.click();
-    }
-  }
+const allEnabledConfig = {
+  useWasmDistance: true,
+  useWasmTree: true,
+  useWasmMatrix: true,
+  useWasmNNDescent: true,
+  useWasmOptimizer: true,
 };
 
 const clearResults = async (page: Page) => {
@@ -128,13 +123,16 @@ test("bench loop: 10x small/mid/large with JS then WASM @loop", async (
     },
   ];
 
-  const configs = [
-    { label: "js-only", enabled: false },
-    { label: "wasm-all", enabled: true },
-  ];
+  const envConfig = getWasmConfigFromEnv();
+  const configs = process.env.WASM_FEATURES
+    ? [{ label: `wasm-${envConfig.raw}`, config: envConfig.selection }]
+    : [
+        { label: "js-only", config: allDisabledConfig },
+        { label: "wasm-all", config: allEnabledConfig },
+      ];
 
   for (const config of configs) {
-    await setWasmConfig(page, config.enabled);
+    await applyWasmConfig(page, config.config);
 
     for (const dataset of datasets) {
       await datasetDropdown.selectOption({ label: dataset.label });
