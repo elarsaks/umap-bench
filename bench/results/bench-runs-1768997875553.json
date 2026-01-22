@@ -1,0 +1,146 @@
+{
+  "generatedAt": "2026-01-21T12:17:55.553Z",
+  "runs": 10,
+  "machine": {
+    "platform": "linux",
+    "release": "6.6.87.2-microsoft-standard-WSL2",
+    "arch": "x64",
+    "cpuModel": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+    "cpuCores": 12,
+    "totalMemBytes": 8240971776,
+    "loadAvg": [
+      0.22,
+      0.5,
+      0.39
+    ],
+    "hostname": "DESKTOP-7R7IE5L"
+  },
+  "git": {
+    "commit": "e4383f2fdda5d38ee1c12e9b81d17747b7ebae11",
+    "branch": "create-notebook",
+    "statusDirty": true
+  },
+  "wasmFeatures": "none",
+  "results": [
+    {
+      "run": 1,
+      "success": false,
+      "exitCode": 1,
+      "durationMs": 2951,
+      "stats": null,
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "stdoutPreview": "",
+      "stderrPreview": "You are running Node.js 16.20.2.\nPlaywright requires Node.js 18 or higher. \nPlease update your version of Node.js.\n"
+    },
+    {
+      "run": 2,
+      "success": false,
+      "exitCode": 1,
+      "durationMs": 904,
+      "stats": null,
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "stdoutPreview": "",
+      "stderrPreview": "You are running Node.js 16.20.2.\nPlaywright requires Node.js 18 or higher. \nPlease update your version of Node.js.\n"
+    },
+    {
+      "run": 3,
+      "success": false,
+      "exitCode": 1,
+      "durationMs": 988,
+      "stats": null,
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "stdoutPreview": "",
+      "stderrPreview": "You are running Node.js 16.20.2.\nPlaywright requires Node.js 18 or higher. \nPlease update your version of Node.js.\n"
+    },
+    {
+      "run": 4,
+      "success": false,
+      "exitCode": 1,
+      "durationMs": 1064,
+      "stats": null,
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "stdoutPreview": "",
+      "stderrPreview": "You are running Node.js 16.20.2.\nPlaywright requires Node.js 18 or higher. \nPlease update your version of Node.js.\n"
+    },
+    {
+      "run": 5,
+      "success": false,
+      "exitCode": 1,
+      "durationMs": 954,
+      "stats": null,
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "stdoutPreview": "",
+      "stderrPreview": "You are running Node.js 16.20.2.\nPlaywright requires Node.js 18 or higher. \nPlease update your version of Node.js.\n"
+    },
+    {
+      "run": 6,
+      "success": false,
+      "exitCode": 1,
+      "durationMs": -1582,
+      "stats": null,
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "stdoutPreview": "",
+      "stderrPreview": "You are running Node.js 16.20.2.\nPlaywright requires Node.js 18 or higher. \nPlease update your version of Node.js.\n"
+    },
+    {
+      "run": 7,
+      "success": false,
+      "exitCode": 1,
+      "durationMs": 776,
+      "stats": null,
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "stdoutPreview": "",
+      "stderrPreview": "You are running Node.js 16.20.2.\nPlaywright requires Node.js 18 or higher. \nPlease update your version of Node.js.\n"
+    },
+    {
+      "run": 8,
+      "success": false,
+      "exitCode": 1,
+      "durationMs": 832,
+      "stats": null,
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "stdoutPreview": "",
+      "stderrPreview": "You are running Node.js 16.20.2.\nPlaywright requires Node.js 18 or higher. \nPlease update your version of Node.js.\n"
+    },
+    {
+      "run": 9,
+      "success": false,
+      "exitCode": 1,
+      "durationMs": 703,
+      "stats": null,
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "stdoutPreview": "",
+      "stderrPreview": "You are running Node.js 16.20.2.\nPlaywright requires Node.js 18 or higher. \nPlease update your version of Node.js.\n"
+    },
+    {
+      "run": 10,
+      "success": false,
+      "exitCode": 1,
+      "durationMs": 781,
+      "stats": null,
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "stdoutPreview": "",
+      "stderrPreview": "You are running Node.js 16.20.2.\nPlaywright requires Node.js 18 or higher. \nPlease update your version of Node.js.\n"
+    }
+  ]
+}

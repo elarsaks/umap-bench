@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-01-21T07:03:57.005Z",
-  "runs": 1,
+  "generatedAt": "2026-01-21T12:18:14.697Z",
+  "runs": 10,
   "machine": {
     "platform": "linux",
     "release": "6.6.87.2-microsoft-standard-WSL2",
@@ -9,24 +9,24 @@
     "cpuCores": 12,
     "totalMemBytes": 8240971776,
     "loadAvg": [
-      0.25,
-      0.26,
-      0.46
+      0.51,
+      0.55,
+      0.41
     ],
     "hostname": "DESKTOP-7R7IE5L"
   },
   "git": {
-    "commit": "1ad66a0096643d2dcefd7da0db708323396238a3",
-    "branch": "improve-bench-tests",
+    "commit": "e4383f2fdda5d38ee1c12e9b81d17747b7ebae11",
+    "branch": "create-notebook",
     "statusDirty": true
   },
-  "wasmFeatures": "all",
+  "wasmFeatures": "none",
   "results": [
     {
       "run": 1,
       "success": false,
       "exitCode": 1,
-      "durationMs": 690,
+      "durationMs": 995,
       "stats": null,
       "status": null,
       "errors": [],

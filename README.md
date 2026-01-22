@@ -91,6 +91,14 @@ Located in: `bench/`
 	yarn bench:loop --runs=5
 	yarn bench:loop --scope=small
 	yarn bench:loop --scope=small --runs=3 --wasm=all
+	
+	# 10 runs for all sizes, JS then WASM (sequential)
+	yarn bench:loop --scope=small --runs=10
+	yarn bench:loop --scope=mid --runs=10
+	yarn bench:loop --scope=large --runs=10
+	yarn bench:loop --scope=small --runs=10 --wasm=all
+	yarn bench:loop --scope=mid --runs=10 --wasm=all
+	yarn bench:loop --scope=large --runs=10 --wasm=all
 	```
 	Scopes: `small`, `mid`, `large`.
 - Headed run (see the browser)
