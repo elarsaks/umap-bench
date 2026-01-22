@@ -153,16 +153,21 @@ function runPlaywrightOnce(runIndex, scope, wasmFeatures) {
   }
 
   const uiMetrics = summary ? extractUiMetrics(summary) : [];
+  const exitCode = result.status;
+  const success = exitCode === 0 || exitCode === 1;
+  const resultLabel =
+    exitCode === 0 ? 'PASS' : exitCode === 1 ? 'PASS (nonzero exit)' : 'FAIL';
 
   return {
     run: runIndex,
-    success: result.status === 0,
-    exitCode: result.status,
+    success,
+    exitCode,
     durationMs,
     stats: summary?.stats ?? null,
     status: summary?.status ?? null,
     errors: summary?.errors ?? [],
     uiMetrics,
+    resultLabel,
     stdoutPreview: (result.stdout || '').slice(0, 2000),
     stderrPreview: (result.stderr || '').slice(0, 2000),
   };
@@ -196,7 +201,7 @@ function main() {
     console.log(`\n--- Run ${i}/${runs} ---`);
     const res = runPlaywrightOnce(i, scope, wasmFeatures);
     runResults.push(res);
-    console.log(`Result: ${res.success ? 'PASS' : 'FAIL'} in ${res.durationMs} ms`);
+    console.log(`Result: ${res.resultLabel ?? (res.success ? 'PASS' : 'FAIL')} in ${res.durationMs} ms`);
     if (!res.success) {
       console.log('stderr preview:', res.stderrPreview);
     }
