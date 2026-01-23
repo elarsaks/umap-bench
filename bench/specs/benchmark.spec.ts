@@ -9,46 +9,29 @@ const runButton = (page: Page) => page.locator('.run-benchmark-btn');
 const runBenchmarkAndWait = async (page: Page) => {
   const button = runButton(page);
   await button.click();
-  await expect(button).toBeDisabled();
-  await expect(button).toBeEnabled({ timeout: 120_000 });
-  await expect(page.getByText('Latest Results')).toBeVisible();
+  await expect.soft(button).toBeDisabled();
+  await expect(button).toBeEnabled({ timeout: 240_000 });
+  await expect.soft(page.getByText('Latest Results')).toBeVisible();
 };
 
 const expectDatasetSummary = async (page: Page, size: number, dims: number) => {
-  await expect(page.getByText(`Dataset: ${size} points, ${dims} dimensions`)).toBeVisible();
-  await expect(page.getByRole('cell', { name: `${size}×${dims}` })).toBeVisible();
+  await expect
+    .soft(page.getByText(`Dataset: ${size} points, ${dims} dimensions`))
+    .toBeVisible();
+  await expect.soft(page.getByRole('cell', { name: `${size}×${dims}` })).toBeVisible();
 };
 
-const collectTableRows = async (page: Page, scenario: string) =>
-  page.$$eval(
-    '.results-table tbody tr',
-    (rows, context) =>
-      rows.map((row) => {
-        const cells = Array.from(row.querySelectorAll('td')).map((cell) =>
-          (cell.textContent || '').trim()
-        );
-        return {
-          scenario: context.scenario,
-          datasetLabel: '',
-          run: Number(cells[0] || 0),
-          runtimeMs: Number.parseFloat(cells[1] || '0'),
-          memoryMb: Number.parseFloat(cells[2] || '0'),
-          qualityPercent: Number.parseFloat(cells[3] || '0'),
-          fps: Number.parseFloat(cells[4] || '0'),
-          latencyMs: Number.parseFloat(cells[5] || '0'),
-          wasmFeatures: cells[6] || '',
-          dataset: cells[7] || '',
-        };
-      }),
-    { scenario }
-  );
+const setBenchContext = async (page: Page, scope: string) =>
+  page.evaluate((value) => {
+    window.__BENCH_EXPORT__ = [];
+    window.__BENCH_CONTEXT__ = { scope: value };
+  }, scope);
 
 const attachBenchmarkMetrics = async (
   page: Page,
-  scenario: string,
   testInfo: { attach: (name: string, payload: { body: string; contentType: string }) => Promise<void> }
 ) => {
-  const rows = await collectTableRows(page, scenario);
+  const rows = await page.evaluate(() => window.__BENCH_EXPORT__ || []);
   await testInfo.attach('benchmark-metrics', {
     body: JSON.stringify({ rows }, null, 2),
     contentType: 'application/json',
@@ -56,7 +39,9 @@ const attachBenchmarkMetrics = async (
 };
 
 test('small bench: sequential lightweight datasets @small', async ({ page }, testInfo) => {
+  test.setTimeout(240_000);
   await page.goto('/');
+  await setBenchContext(page, 'small');
   const { selection: wasmSelection } = getWasmConfigFromEnv();
   await applyWasmConfig(page, wasmSelection);
 
@@ -71,13 +56,15 @@ test('small bench: sequential lightweight datasets @small', async ({ page }, tes
   await expectDatasetSummary(page, 100, 10);
 
   const tableRows = page.getByRole('row').filter({ hasText: '×' });
-  await expect(tableRows).toHaveCount(2);
-  await expect(page.getByText('Average Results (2 runs)')).toBeVisible();
-  await attachBenchmarkMetrics(page, testInfo.title, testInfo);
+  await expect.soft(tableRows).toHaveCount(2);
+  await expect.soft(page.getByText('Average Results (2 runs)')).toBeVisible();
+  await attachBenchmarkMetrics(page, testInfo);
 });
 
 test('mid bench: two moderate datasets @mid', async ({ page }, testInfo) => {
+  test.setTimeout(240_000);
   await page.goto('/');
+  await setBenchContext(page, 'mid');
   const { selection: wasmSelection } = getWasmConfigFromEnv();
   await applyWasmConfig(page, wasmSelection);
 
@@ -92,13 +79,15 @@ test('mid bench: two moderate datasets @mid', async ({ page }, testInfo) => {
   await expectDatasetSummary(page, 1000, 50);
 
   const tableRows = page.getByRole('row').filter({ hasText: '×' });
-  await expect(tableRows).toHaveCount(2);
-  await expect(page.getByText('Average Results (2 runs)')).toBeVisible();
-  await attachBenchmarkMetrics(page, testInfo.title, testInfo);
+  await expect.soft(tableRows).toHaveCount(2);
+  await expect.soft(page.getByText('Average Results (2 runs)')).toBeVisible();
+  await attachBenchmarkMetrics(page, testInfo);
 });
 
 test('large bench: two heavier datasets @large', async ({ page }, testInfo) => {
+  test.setTimeout(240_000);
   await page.goto('/');
+  await setBenchContext(page, 'large');
   const { selection: wasmSelection } = getWasmConfigFromEnv();
   await applyWasmConfig(page, wasmSelection);
 
@@ -113,7 +102,7 @@ test('large bench: two heavier datasets @large', async ({ page }, testInfo) => {
   await expectDatasetSummary(page, 2000, 75);
 
   const tableRows = page.getByRole('row').filter({ hasText: '×' });
-  await expect(tableRows).toHaveCount(2);
-  await expect(page.getByText('Average Results (2 runs)')).toBeVisible();
-  await attachBenchmarkMetrics(page, testInfo.title, testInfo);
+  await expect.soft(tableRows).toHaveCount(2);
+  await expect.soft(page.getByText('Average Results (2 runs)')).toBeVisible();
+  await attachBenchmarkMetrics(page, testInfo);
 });

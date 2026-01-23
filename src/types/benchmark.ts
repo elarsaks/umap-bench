@@ -10,6 +10,21 @@ export interface BenchmarkResult {
   timestamp: Date;
 }
 
+export interface BenchmarkExportRow {
+  runId: number;
+  timestamp: string;
+  scope: string | null;
+  datasetName: string;
+  datasetSize: number;
+  dimensions: number;
+  wasmMode: string;
+  runtimeMs: number;
+  memoryDeltaMb: number;
+  trustworthiness: number;
+  fpsAvg: number;
+  responsivenessMs: number;
+}
+
 export interface PerformanceMetrics {
   start: number;
   end: number;
@@ -47,4 +62,11 @@ export interface WasmRelease {
   releaseUrl: string;
   sourceZipUrl: string;
   notes?: string;
+}
+
+declare global {
+  interface Window {
+    __BENCH_EXPORT__?: BenchmarkExportRow[];
+    __BENCH_CONTEXT__?: { scope?: string };
+  }
 }
