@@ -17,6 +17,7 @@ export interface BenchmarkExportRow {
   datasetName: string;
   datasetSize: number;
   dimensions: number;
+  wasmFeatures: string;
   wasmMode: string;
   runtimeMs: number;
   memoryDeltaMb: number;

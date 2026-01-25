@@ -181,24 +181,16 @@ function App() {
           timestamp: new Date(),
         };
 
-        const wasmEnabled = [
-          config.useWasmDistance,
-          config.useWasmTree,
-          config.useWasmMatrix,
-          config.useWasmNNDescent,
-          config.useWasmOptimizer,
-        ].some(Boolean);
-        const wasmMode = wasmEnabled
-          ? `wasm:${[
-              config.useWasmDistance ? "Dist" : null,
-              config.useWasmTree ? "Tree" : null,
-              config.useWasmMatrix ? "Matrix" : null,
-              config.useWasmNNDescent ? "NN" : null,
-              config.useWasmOptimizer ? "Opt" : null,
-            ]
-              .filter(Boolean)
-              .join(",")}`
-          : "js";
+        const wasmFeatureList = [
+          config.useWasmDistance ? "Dist" : null,
+          config.useWasmTree ? "Tree" : null,
+          config.useWasmMatrix ? "Matrix" : null,
+          config.useWasmNNDescent ? "NN" : null,
+          config.useWasmOptimizer ? "Opt" : null,
+        ].filter(Boolean);
+        const wasmEnabled = wasmFeatureList.length > 0;
+        const wasmFeatures = wasmEnabled ? wasmFeatureList.join(",") : "none";
+        const wasmMode = wasmEnabled ? `wasm:${wasmFeatures}` : "js";
 
         const exportRow: BenchmarkExportRow = {
           runId: runCounter.current++,
@@ -207,6 +199,7 @@ function App() {
           datasetName: datasetConfig.name,
           datasetSize: datasetConfig.size,
           dimensions: datasetConfig.dimensions,
+          wasmFeatures,
           wasmMode,
           runtimeMs: runtime,
           memoryDeltaMb: memoryUsage,
