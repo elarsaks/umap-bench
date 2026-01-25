@@ -101,6 +101,10 @@ Located in: `bench/`
 	yarn bench:loop --scope=large --runs=10 --wasm=all
 	```
 	Scopes: `small`, `mid`, `large`.
+- Dev quick run (small scope, JS then WASM, 3 runs each)
+	```bash
+	yarn bench:dev
+	```
 - Headed run (see the browser)
 	```bash
 	yarn bench:headed

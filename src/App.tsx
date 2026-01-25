@@ -31,6 +31,7 @@ function App() {
   const [currentEdges, setCurrentEdges] = useState<Array<[number, number]>>([]);
   const [currentFPS, setCurrentFPS] = useState(0);
   const runCounter = useRef(1);
+  const [wasmReady, setWasmReady] = useState(false);
   const [wasmConfig, setWasmConfig] = useState<WasmConfig>({
     useWasmDistance: false,
     useWasmTree: false,
@@ -43,9 +44,11 @@ function App() {
   useEffect(() => {
     initWasm()
       .then(() => {
+        setWasmReady(isWasmAvailable());
         console.log("WASM module initialized successfully");
       })
       .catch((err) => {
+        setWasmReady(false);
         console.warn("WASM initialization failed:", err);
       });
   }, []);
@@ -249,6 +252,7 @@ function App() {
           <BenchmarkControls
             onRunBenchmark={runBenchmark}
             isRunning={isRunning}
+            wasmReady={wasmReady}
             wasmConfig={wasmConfig}
             onUpdateWasmConfig={setWasmConfig}
             onClearResults={clearResults}
