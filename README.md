@@ -101,6 +101,18 @@ Located in: `bench/`
 	yarn bench:loop --scope=large --runs=10 --wasm=all
 	```
 	Scopes: `small`, `mid`, `large`.
+- Run each single WASM feature (sequential)
+	```bash
+	yarn bench:loop:sequence
+	# or customize
+	yarn bench:loop:sequence --scope=small --runs=3
+	```
+- Run full test set: JS-only, each single WASM feature, then all WASM
+	```bash
+	yarn bench:loop:full
+	# or customize
+	yarn bench:loop:full --scope=small --runs=3
+	```
 - 3 runs per scope (JS then WASM)
 	```bash
 	yarn bench:small:3
