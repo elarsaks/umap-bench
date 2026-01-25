@@ -1,0 +1,191 @@
+{
+  "generatedAt": "2026-01-25T10:57:25.630Z",
+  "runs": 3,
+  "machine": {
+    "platform": "linux",
+    "release": "6.6.87.2-microsoft-standard-WSL2",
+    "arch": "x64",
+    "cpuModel": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+    "cpuCores": 12,
+    "totalMemBytes": 8240971776,
+    "loadAvg": [
+      4.09,
+      2.13,
+      0.98
+    ],
+    "hostname": "DESKTOP-7R7IE5L"
+  },
+  "git": {
+    "commit": "b0c60c7b4379423d597725dc2f65eab8d539f73f",
+    "branch": "create-notebook",
+    "statusDirty": true
+  },
+  "wasmFeatures": "all",
+  "results": [
+    {
+      "run": 1,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 119021,
+      "stats": {
+        "startTime": "2026-01-25T10:57:38.223Z",
+        "duration": 103441.711,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-25T10:59:01.973Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (1K points, 3D manifold)",
+              "datasetSize": 1000,
+              "dimensions": 3,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 6050.199999988079,
+              "memoryDeltaMb": 30.925113677978516,
+              "trustworthiness": 0.9967566649685855,
+              "fpsAvg": 59.778818372733504,
+              "responsivenessMs": 19.71875
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-25T10:59:23.593Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 50,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 11077.799999982119,
+              "memoryDeltaMb": 20.682936668395996,
+              "trustworthiness": 0.9425072168449652,
+              "fpsAvg": 41.45691442132771,
+              "responsivenessMs": 36.553333330154416
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn dev\",\n      \"url\": \"http://localhost:5173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"mid bench: two moderate datasets @mid\",\n          \"ok\": true,\n          \"tags\": [\n            \"mid\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 240000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n                  \"workerIndex\": 0,\n                  \"parallelIndex",
+      "stderrPreview": ""
+    },
+    {
+      "run": 2,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 113060,
+      "stats": {
+        "startTime": "2026-01-25T10:59:38.433Z",
+        "duration": 96409.79699999999,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-25T11:00:58.452Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (1K points, 3D manifold)",
+              "datasetSize": 1000,
+              "dimensions": 3,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 6034.4000000059605,
+              "memoryDeltaMb": 30.35194683074951,
+              "trustworthiness": 0.9963275598573612,
+              "fpsAvg": 59.97443712551124,
+              "responsivenessMs": 21.4375
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-25T11:01:16.735Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 50,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 8909.800000011921,
+              "memoryDeltaMb": 22.432058334350586,
+              "trustworthiness": 0.9427302598064188,
+              "fpsAvg": 46.507025529662776,
+              "responsivenessMs": 37.586666665474574
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn dev\",\n      \"url\": \"http://localhost:5173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"mid bench: two moderate datasets @mid\",\n          \"ok\": true,\n          \"tags\": [\n            \"mid\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 240000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n                  \"workerIndex\": 0,\n                  \"parallelIndex",
+      "stderrPreview": ""
+    },
+    {
+      "run": 3,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 129664,
+      "stats": {
+        "startTime": "2026-01-25T11:01:30.506Z",
+        "duration": 112890.964,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-25T11:03:05.180Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (1K points, 3D manifold)",
+              "datasetSize": 1000,
+              "dimensions": 3,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 6567.200000017881,
+              "memoryDeltaMb": 24.329492568969727,
+              "trustworthiness": 0.9966406860247919,
+              "fpsAvg": 59.80392156862745,
+              "responsivenessMs": 20.643749998882413
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-25T11:03:26.422Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 50,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 9939.59999999404,
+              "memoryDeltaMb": 6.184165954589844,
+              "trustworthiness": 0.944566649685855,
+              "fpsAvg": 44.625148750232064,
+              "responsivenessMs": 39.83333333134651
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn dev\",\n      \"url\": \"http://localhost:5173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"mid bench: two moderate datasets @mid\",\n          \"ok\": true,\n          \"tags\": [\n            \"mid\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 240000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n                  \"workerIndex\": 0,\n                  \"parallelIndex",
+      "stderrPreview": ""
+    }
+  ]
+}
