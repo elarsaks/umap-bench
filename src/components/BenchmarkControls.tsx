@@ -133,6 +133,7 @@ interface BenchmarkControlsProps {
     wasmConfig: WasmConfig
   ) => void;
   isRunning: boolean;
+  wasmReady: boolean;
   onClearResults: () => void;
   wasmConfig: WasmConfig;
   onUpdateWasmConfig: (config: WasmConfig) => void;
@@ -149,6 +150,7 @@ const DEFAULT_UMAP_CONFIG: UMAPConfig = {
 export const BenchmarkControls: React.FC<BenchmarkControlsProps> = ({
   onRunBenchmark,
   isRunning,
+  wasmReady,
   onClearResults,
   wasmConfig,
   onUpdateWasmConfig,
@@ -163,6 +165,8 @@ export const BenchmarkControls: React.FC<BenchmarkControlsProps> = ({
       onRunBenchmark(selectedDataset, umapConfig, wasmConfig);
     }
   };
+  const needsWasm = Object.values(wasmConfig).some(Boolean);
+  const runDisabled = isRunning || (needsWasm && !wasmReady);
 
   const updateUmapConfig = (key: keyof UMAPConfig, value: number) => {
     setUmapConfig((prev) => ({ ...prev, [key]: value }));
@@ -294,10 +298,14 @@ export const BenchmarkControls: React.FC<BenchmarkControlsProps> = ({
       <ControlActions className="control-actions">
         <RunButton
           onClick={handleRunBenchmark}
-          disabled={isRunning}
+          disabled={runDisabled}
           className="run-benchmark-btn"
         >
-          {isRunning ? "Running..." : "Run Benchmark"}
+          {isRunning
+            ? "Running..."
+            : needsWasm && !wasmReady
+            ? "Waiting for WASM..."
+            : "Run Benchmark"}
         </RunButton>
 
         <ClearButton

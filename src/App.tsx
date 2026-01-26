@@ -1,6 +1,7 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { UMAP, initWasm, isWasmAvailable } from "@elarsaks/umap-wasm";
 import type {
+  BenchmarkExportRow,
   BenchmarkResult,
   DatasetConfig,
   UMAPConfig,
@@ -29,6 +30,8 @@ function App() {
   const [currentClusters, setCurrentClusters] = useState<number[]>([]);
   const [currentEdges, setCurrentEdges] = useState<Array<[number, number]>>([]);
   const [currentFPS, setCurrentFPS] = useState(0);
+  const runCounter = useRef(1);
+  const [wasmReady, setWasmReady] = useState(false);
   const [wasmConfig, setWasmConfig] = useState<WasmConfig>({
     useWasmDistance: false,
     useWasmTree: false,
@@ -41,9 +44,11 @@ function App() {
   useEffect(() => {
     initWasm()
       .then(() => {
+        setWasmReady(isWasmAvailable());
         console.log("WASM module initialized successfully");
       })
       .catch((err) => {
+        setWasmReady(false);
         console.warn("WASM initialization failed:", err);
       });
   }, []);
@@ -179,6 +184,35 @@ function App() {
           timestamp: new Date(),
         };
 
+        const wasmFeatureList = [
+          config.useWasmDistance ? "Dist" : null,
+          config.useWasmTree ? "Tree" : null,
+          config.useWasmMatrix ? "Matrix" : null,
+          config.useWasmNNDescent ? "NN" : null,
+          config.useWasmOptimizer ? "Opt" : null,
+        ].filter(Boolean);
+        const wasmEnabled = wasmFeatureList.length > 0;
+        const wasmFeatures = wasmEnabled ? wasmFeatureList.join(",") : "none";
+        const wasmMode = wasmEnabled ? `wasm:${wasmFeatures}` : "js";
+
+        const exportRow: BenchmarkExportRow = {
+          runId: runCounter.current++,
+          timestamp: new Date().toISOString(),
+          scope: window.__BENCH_CONTEXT__?.scope ?? null,
+          datasetName: datasetConfig.name,
+          datasetSize: datasetConfig.size,
+          dimensions: datasetConfig.dimensions,
+          wasmFeatures,
+          wasmMode,
+          runtimeMs: runtime,
+          memoryDeltaMb: memoryUsage,
+          trustworthiness,
+          fpsAvg: visualizationFPS,
+          responsivenessMs: responsiveness,
+        };
+        if (!window.__BENCH_EXPORT__) window.__BENCH_EXPORT__ = [];
+        window.__BENCH_EXPORT__.push(exportRow);
+
         // Update state
         setResults((prev) => [...prev, result]);
         setCurrentEmbedding(embeddedData);
@@ -200,6 +234,8 @@ function App() {
     setCurrentClusters([]);
     setCurrentEdges([]);
     setCurrentFPS(0);
+    runCounter.current = 1;
+    window.__BENCH_EXPORT__ = [];
   }, []);
 
   return (
@@ -216,6 +252,7 @@ function App() {
           <BenchmarkControls
             onRunBenchmark={runBenchmark}
             isRunning={isRunning}
+            wasmReady={wasmReady}
             wasmConfig={wasmConfig}
             onUpdateWasmConfig={setWasmConfig}
             onClearResults={clearResults}

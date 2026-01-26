@@ -11,6 +11,19 @@ const { spawnSync, execSync } = require('child_process');
 
 const DEFAULT_RUNS = 10;
 const VALID_SCOPES = new Set(['small', 'mid', 'large']);
+const WASM_SEQUENCE = [
+  { label: 'dist', value: 'dist' },
+  { label: 'tree', value: 'tree' },
+  { label: 'matrix', value: 'matrix' },
+  { label: 'nn', value: 'nn' },
+  { label: 'opt', value: 'opt' },
+];
+
+const WASM_FULL_SET = [
+  { label: 'js', value: 'none' },
+  ...WASM_SEQUENCE,
+  { label: 'all', value: 'all' },
+];
 
 function extractUiMetrics(summary) {
   const collected = [];
@@ -67,7 +80,13 @@ function extractUiMetrics(summary) {
 
 function parseArgs() {
   const args = process.argv.slice(2);
-  const result = { runs: DEFAULT_RUNS, scope: null, wasmFeatures: null };
+  const result = {
+    runs: DEFAULT_RUNS,
+    scope: null,
+    wasmFeatures: null,
+    wasmSequence: false,
+    wasmFullSet: false,
+  };
   for (const arg of args) {
     if (arg.startsWith('--runs=')) {
       const n = Number(arg.split('=')[1]);
@@ -82,7 +101,18 @@ function parseArgs() {
     }
     if (arg.startsWith('--wasm=')) {
       const value = arg.split('=')[1];
-      if (value && value.trim().length > 0) result.wasmFeatures = value.trim();
+      if (value && value.trim().length > 0) {
+        const trimmed = value.trim();
+        if (trimmed === 'sequence') {
+          result.wasmSequence = true;
+          result.wasmFeatures = null;
+        } else if (trimmed === 'full') {
+          result.wasmFullSet = true;
+          result.wasmFeatures = null;
+        } else {
+          result.wasmFeatures = trimmed;
+        }
+      }
     }
   }
   if (process.env.RUNS) {
@@ -93,7 +123,16 @@ function parseArgs() {
     result.scope = process.env.BENCH_SCOPE;
   }
   if (process.env.WASM_FEATURES) {
-    result.wasmFeatures = process.env.WASM_FEATURES.trim();
+    const raw = process.env.WASM_FEATURES.trim();
+    if (raw === 'sequence') {
+      result.wasmSequence = true;
+      result.wasmFeatures = null;
+    } else if (raw === 'full') {
+      result.wasmFullSet = true;
+      result.wasmFeatures = null;
+    } else {
+      result.wasmFeatures = raw;
+    }
   }
   return result;
 }
@@ -153,28 +192,40 @@ function runPlaywrightOnce(runIndex, scope, wasmFeatures) {
   }
 
   const uiMetrics = summary ? extractUiMetrics(summary) : [];
+  const exitCode = result.status;
+  const success = exitCode === 0 || exitCode === 1;
+  const resultLabel =
+    exitCode === 0 ? 'PASS' : exitCode === 1 ? 'PASS (nonzero exit)' : 'FAIL';
 
   return {
     run: runIndex,
-    success: result.status === 0,
-    exitCode: result.status,
+    wasmFeatures: wasmFeatures ?? 'none',
+    success,
+    exitCode,
     durationMs,
     stats: summary?.stats ?? null,
     status: summary?.status ?? null,
     errors: summary?.errors ?? [],
     uiMetrics,
+    resultLabel,
     stdoutPreview: (result.stdout || '').slice(0, 2000),
     stderrPreview: (result.stderr || '').slice(0, 2000),
   };
 }
 
 function main() {
-  const { runs, scope, wasmFeatures } = parseArgs();
+  const { runs, scope, wasmFeatures, wasmSequence, wasmFullSet } = parseArgs();
   const runResults = [];
 
   console.log(`Running Playwright benchmark suite ${runs} time(s)...`);
   if (scope) console.log(`Scope: ${scope}`);
-  if (wasmFeatures) console.log(`WASM features: ${wasmFeatures}`);
+  if (wasmFullSet) {
+    console.log('WASM full set: js -> dist -> tree -> matrix -> nn -> opt -> all');
+  } else if (wasmSequence) {
+    console.log('WASM sequence: dist -> tree -> matrix -> nn -> opt');
+  } else if (wasmFeatures) {
+    console.log(`WASM features: ${wasmFeatures}`);
+  }
 
   const outDir = path.join(process.cwd(), 'bench', 'results');
   fs.mkdirSync(outDir, { recursive: true });
@@ -186,22 +237,45 @@ function main() {
     runs,
     machine: getMachineInfo(),
     git: getGitMeta(),
-    wasmFeatures: wasmFeatures ?? 'none',
+    wasmFeatures: wasmFullSet
+      ? 'full'
+      : wasmSequence
+        ? 'sequence'
+        : (wasmFeatures ?? 'none'),
     results: runResults,
   };
 
   fs.writeFileSync(outFile, JSON.stringify(payload, null, 2));
 
-  for (let i = 1; i <= runs; i++) {
-    console.log(`\n--- Run ${i}/${runs} ---`);
-    const res = runPlaywrightOnce(i, scope, wasmFeatures);
-    runResults.push(res);
-    console.log(`Result: ${res.success ? 'PASS' : 'FAIL'} in ${res.durationMs} ms`);
-    if (!res.success) {
-      console.log('stderr preview:', res.stderrPreview);
-    }
+  if (wasmFullSet || wasmSequence) {
+    const steps = wasmFullSet ? WASM_FULL_SET : WASM_SEQUENCE;
+    for (const step of steps) {
+      console.log(`\n=== WASM config: ${step.label} (${step.value}) ===`);
+      for (let i = 1; i <= runs; i++) {
+        console.log(`\n--- Run ${i}/${runs} ---`);
+        const res = runPlaywrightOnce(i, scope, step.value);
+        res.sequenceLabel = step.label;
+        runResults.push(res);
+        console.log(`Result: ${res.resultLabel ?? (res.success ? 'PASS' : 'FAIL')} in ${res.durationMs} ms`);
+        if (!res.success) {
+          console.log('stderr preview:', res.stderrPreview);
+        }
 
-    fs.writeFileSync(outFile, JSON.stringify(payload, null, 2));
+        fs.writeFileSync(outFile, JSON.stringify(payload, null, 2));
+      }
+    }
+  } else {
+    for (let i = 1; i <= runs; i++) {
+      console.log(`\n--- Run ${i}/${runs} ---`);
+      const res = runPlaywrightOnce(i, scope, wasmFeatures);
+      runResults.push(res);
+      console.log(`Result: ${res.resultLabel ?? (res.success ? 'PASS' : 'FAIL')} in ${res.durationMs} ms`);
+      if (!res.success) {
+        console.log('stderr preview:', res.stderrPreview);
+      }
+
+      fs.writeFileSync(outFile, JSON.stringify(payload, null, 2));
+    }
   }
 
   // If Playwright wrote a JSON report, embed it into our payload

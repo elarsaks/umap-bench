@@ -19,6 +19,9 @@ export default defineConfig({
   reporter: [['json']],
   use: {
     baseURL: 'http://localhost:5173',
+    launchOptions: {
+      args: ['--enable-precise-memory-info'],
+    },
     trace: 'on-first-retry',
   },
   projects: [
