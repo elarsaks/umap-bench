@@ -13,6 +13,16 @@ export default defineConfig(({ mode }) => ({
       '@config': path.resolve(__dirname, './src/config'),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          plotly: ['plotly.js/dist/plotly-gl3d'],
+          umap: ['@elarsaks/umap-wasm'],
+        },
+      },
+    },
+  },
   test: {
     globals: true,
     environment: 'jsdom',

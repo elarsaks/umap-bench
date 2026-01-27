@@ -1,4 +1,12 @@
-import Plot from "react-plotly.js";
+import React, { Suspense } from "react";
+
+const Plot = React.lazy(async () => {
+  const Plotly = await import("plotly.js/dist/plotly-gl3d");
+  const createPlot = (await import("react-plotly.js/factory")).default as (
+    plotly: unknown
+  ) => React.ComponentType<any>;
+  return { default: createPlot(Plotly) };
+}) as React.LazyExoticComponent<React.ComponentType<any>>;
 
 interface VisualizationCanvasProps {
   data: number[][];
@@ -79,20 +87,22 @@ export const VisualizationCanvas: React.FC<VisualizationCanvasProps> = ({
   };
 
   return (
-    <Plot
-      data={[...edgeTraces, nodeTrace]}
-      layout={{
-        width,
-        height,
-        margin: { l: 0, r: 0, b: 0, t: 0 },
-        scene: {
-          xaxis: { title: "X", showgrid: false },
-          yaxis: { title: "Y", showgrid: false },
-          zaxis: { title: "Z", showgrid: false },
-        },
-        showlegend: false,
-      }}
-      config={{ responsive: true }}
-    />
+    <Suspense fallback={<div style={{ width, height }}>Loading plot…</div>}>
+      <Plot
+        data={[...edgeTraces, nodeTrace]}
+        layout={{
+          width,
+          height,
+          margin: { l: 0, r: 0, b: 0, t: 0 },
+          scene: {
+            xaxis: { title: "X", showgrid: false },
+            yaxis: { title: "Y", showgrid: false },
+            zaxis: { title: "Z", showgrid: false },
+          },
+          showlegend: false,
+        }}
+        config={{ responsive: true }}
+      />
+    </Suspense>
   );
 };
