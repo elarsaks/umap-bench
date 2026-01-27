@@ -1,5 +1,4 @@
-import { useState, useCallback, useEffect, useRef } from "react";
-import { UMAP, initWasm, isWasmAvailable } from "@elarsaks/umap-wasm";
+import { useState, useCallback, useRef, useEffect } from "react";
 import type {
   BenchmarkExportRow,
   BenchmarkResult,
@@ -39,19 +38,33 @@ function App() {
     useWasmNNDescent: false,
     useWasmOptimizer: false,
   });
+  type UmapModule = typeof import("@elarsaks/umap-wasm");
+  const umapModuleRef = useRef<UmapModule | null>(null);
 
-  // Initialize WASM module on mount
-  useEffect(() => {
-    initWasm()
-      .then(() => {
-        setWasmReady(isWasmAvailable());
-        console.log("WASM module initialized successfully");
-      })
-      .catch((err) => {
-        setWasmReady(false);
-        console.warn("WASM initialization failed:", err);
-      });
+  const loadUmapModule = useCallback(async (): Promise<UmapModule> => {
+    if (umapModuleRef.current) return umapModuleRef.current;
+    const mod = await import("@elarsaks/umap-wasm");
+    umapModuleRef.current = mod;
+    return mod;
   }, []);
+
+  const ensureWasmReady = useCallback(async () => {
+    const mod = await loadUmapModule();
+    if (!mod.isWasmAvailable()) {
+      await mod.initWasm();
+    }
+    const ready = mod.isWasmAvailable();
+    setWasmReady(ready);
+    return mod;
+  }, [loadUmapModule]);
+
+  useEffect(() => {
+    const needsWasm = Object.values(wasmConfig).some(Boolean);
+    if (!needsWasm || wasmReady) return;
+    ensureWasmReady().catch((err) => {
+      console.warn("WASM initialization failed:", err);
+    });
+  }, [ensureWasmReady, wasmConfig, wasmReady]);
 
   const runBenchmark = useCallback(
     async (
@@ -59,6 +72,8 @@ function App() {
       umapConfig: UMAPConfig,
       config: WasmConfig
     ) => {
+      const mod = await loadUmapModule();
+      const { UMAP, isWasmAvailable } = mod;
       // Check if WASM features are requested but WASM is not available
       const needsWasm =
         config.useWasmDistance ||
@@ -67,8 +82,14 @@ function App() {
         config.useWasmNNDescent ||
         config.useWasmOptimizer;
       if (needsWasm && !isWasmAvailable()) {
-        alert("WASM features requested but WASM module is not initialized. Please wait for initialization or disable WASM features.");
-        return;
+        try {
+          await ensureWasmReady();
+        } catch (err) {
+          alert(
+            "WASM initialization failed. Please disable WASM features or try again."
+          );
+          return;
+        }
       }
 
       setIsRunning(true);
