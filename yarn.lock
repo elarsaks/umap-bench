@@ -242,10 +242,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/css-tokenizer/-/css-tokenizer-3.0.4.tgz#333fedabc3fd1a8e5d0100013731cf19e6a8c5d3"
   integrity sha512-Vd/9EVDiu6PPJt9yAh6roZP6El1xHrdvIVGjyBsHR0RYwNHgL7FJPyIIW4fANJNG6FtyZfvlRPpFI4ZM/lubvw==
 
-"@elarsaks/umap-wasm@^0.4.5":
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/@elarsaks/umap-wasm/-/umap-wasm-0.4.5.tgz#1e88c7736e8eb9277e76014ba1753fd2a6595836"
-  integrity sha512-2/2b9ys8wihY3s7Gwu7RYGvWmerN72oS9SMtdm52OetZZdXg9y6haqBWLgsj54V5JfLQWbQ+zZ3Bgfvv7mGN9w==
+"@elarsaks/umap-wasm@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@elarsaks/umap-wasm/-/umap-wasm-0.5.0.tgz#6b1b49c8d782033cf4c06511248c13a7467a243d"
+  integrity sha512-5Fm8FlmQT21k4Ofb0F5aKVkplOZUViG4eCNN7z6Eh5BCMlhApJbZ3aK5lVFwXamF08a/rONsmevTeRj95d6yXw==
   dependencies:
     ml-levenberg-marquardt "^2.1.1"
 

@@ -1,0 +1,586 @@
+{
+  "generatedAt": "2026-01-28T05:02:38.884Z",
+  "runs": 10,
+  "machine": {
+    "platform": "linux",
+    "release": "6.6.87.2-microsoft-standard-WSL2",
+    "arch": "x64",
+    "cpuModel": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+    "cpuCores": 12,
+    "totalMemBytes": 8240971776,
+    "loadAvg": [
+      0.66,
+      1.16,
+      0.94
+    ],
+    "hostname": "DESKTOP-7R7IE5L"
+  },
+  "git": {
+    "commit": "f73c257c15f125621607f494061012e47770f21c",
+    "branch": "use-umap-wasm-version-0-5-0",
+    "statusDirty": true
+  },
+  "wasmFeatures": "none",
+  "results": [
+    {
+      "run": 1,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 46819,
+      "stats": {
+        "startTime": "2026-01-28T05:02:52.265Z",
+        "duration": 33763.922999999995,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-28T05:03:19.754Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2364.5,
+              "memoryDeltaMb": 4.970305442810059,
+              "trustworthiness": 0.990722433460076,
+              "fpsAvg": 59.992132178682965,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-28T05:03:25.698Z",
+              "scope": "small",
+              "datasetName": "Small Random (100 points)",
+              "datasetSize": 100,
+              "dimensions": 10,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3022.4000000059605,
+              "memoryDeltaMb": 10.229199409484863,
+              "trustworthiness": 0.8724233128834356,
+              "fpsAvg": 49.18839153959666,
+              "responsivenessMs": 20.686666667461395
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn build && yarn preview --host 0.0.0.0 --port 4173\",\n      \"url\": \"http://localhost:4173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 240000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n       ",
+      "stderrPreview": ""
+    },
+    {
+      "run": 2,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 46912,
+      "stats": {
+        "startTime": "2026-01-28T05:03:39.304Z",
+        "duration": 33637.954,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-28T05:04:06.968Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2377.4000000059605,
+              "memoryDeltaMb": 2.8323984146118164,
+              "trustworthiness": 0.9891212505280946,
+              "fpsAvg": 59.99400060029756,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-28T05:04:12.618Z",
+              "scope": "small",
+              "datasetName": "Small Random (100 points)",
+              "datasetSize": 100,
+              "dimensions": 10,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3011.7000000178814,
+              "memoryDeltaMb": 15.924321174621582,
+              "trustworthiness": 0.8666871165644172,
+              "fpsAvg": 48.99510048878299,
+              "responsivenessMs": 20.393333331743875
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn build && yarn preview --host 0.0.0.0 --port 4173\",\n      \"url\": \"http://localhost:4173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 240000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n       ",
+      "stderrPreview": ""
+    },
+    {
+      "run": 3,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 47466,
+      "stats": {
+        "startTime": "2026-01-28T05:04:25.907Z",
+        "duration": 34506.477,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-28T05:04:53.348Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2377.800000011921,
+              "memoryDeltaMb": 2.7116928100585938,
+              "trustworthiness": 0.9881199831009717,
+              "fpsAvg": 59.98800239844764,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-28T05:04:59.314Z",
+              "scope": "small",
+              "datasetName": "Small Random (100 points)",
+              "datasetSize": 100,
+              "dimensions": 10,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3326.7999999821186,
+              "memoryDeltaMb": -0.7738542556762695,
+              "trustworthiness": 0.8644580777096115,
+              "fpsAvg": 45.26667978797443,
+              "responsivenessMs": 21.033333331346512
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn build && yarn preview --host 0.0.0.0 --port 4173\",\n      \"url\": \"http://localhost:4173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 240000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n       ",
+      "stderrPreview": ""
+    },
+    {
+      "run": 4,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 46780,
+      "stats": {
+        "startTime": "2026-01-28T05:05:13.482Z",
+        "duration": 33713.471,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-28T05:05:41.327Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2368.399999976158,
+              "memoryDeltaMb": 3.590632438659668,
+              "trustworthiness": 0.9903548795944234,
+              "fpsAvg": 60.039370078740156,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-28T05:05:46.806Z",
+              "scope": "small",
+              "datasetName": "Small Random (100 points)",
+              "datasetSize": 100,
+              "dimensions": 10,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2983.7000000178814,
+              "memoryDeltaMb": 8.304505348205566,
+              "trustworthiness": 0.8634049079754601,
+              "fpsAvg": 50.15735641315587,
+              "responsivenessMs": 21.56666666865349
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn build && yarn preview --host 0.0.0.0 --port 4173\",\n      \"url\": \"http://localhost:4173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 240000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n       ",
+      "stderrPreview": ""
+    },
+    {
+      "run": 5,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 46401,
+      "stats": {
+        "startTime": "2026-01-28T05:06:00.136Z",
+        "duration": 33465.325,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-28T05:06:27.570Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2395,
+              "memoryDeltaMb": 2.0567665100097656,
+              "trustworthiness": 0.984376848331221,
+              "fpsAvg": 60,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-28T05:06:33.263Z",
+              "scope": "small",
+              "datasetName": "Small Random (100 points)",
+              "datasetSize": 100,
+              "dimensions": 10,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3006.800000011921,
+              "memoryDeltaMb": 11.41353702545166,
+              "trustworthiness": 0.8713803680981596,
+              "fpsAvg": 48.99510049024301,
+              "responsivenessMs": 19.866666666666667
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn build && yarn preview --host 0.0.0.0 --port 4173\",\n      \"url\": \"http://localhost:4173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 240000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n       ",
+      "stderrPreview": ""
+    },
+    {
+      "run": 6,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 47418,
+      "stats": {
+        "startTime": "2026-01-28T05:06:46.763Z",
+        "duration": 34259.081,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-28T05:07:13.998Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2365.300000011921,
+              "memoryDeltaMb": 2.994190216064453,
+              "trustworthiness": 0.9876932826362484,
+              "fpsAvg": 59.99400059850978,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-28T05:07:19.949Z",
+              "scope": "small",
+              "datasetName": "Small Random (100 points)",
+              "datasetSize": 100,
+              "dimensions": 10,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3297.5999999940395,
+              "memoryDeltaMb": 13.6556978225708,
+              "trustworthiness": 0.8666359918200409,
+              "fpsAvg": 49.18839153959666,
+              "responsivenessMs": 20.760000000397365
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn build && yarn preview --host 0.0.0.0 --port 4173\",\n      \"url\": \"http://localhost:4173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 240000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n       ",
+      "stderrPreview": ""
+    },
+    {
+      "run": 7,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 47349,
+      "stats": {
+        "startTime": "2026-01-28T05:07:33.827Z",
+        "duration": 34548.558000000005,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-28T05:08:01.380Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2347,
+              "memoryDeltaMb": 2.073666572570801,
+              "trustworthiness": 0.988483312209548,
+              "fpsAvg": 60,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-28T05:08:07.260Z",
+              "scope": "small",
+              "datasetName": "Small Random (100 points)",
+              "datasetSize": 100,
+              "dimensions": 10,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3257.5,
+              "memoryDeltaMb": 4.932034492492676,
+              "trustworthiness": 0.8828527607361963,
+              "fpsAvg": 48.99510049024301,
+              "responsivenessMs": 20.373333332935967
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn build && yarn preview --host 0.0.0.0 --port 4173\",\n      \"url\": \"http://localhost:4173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 240000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n       ",
+      "stderrPreview": ""
+    },
+    {
+      "run": 8,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 46527,
+      "stats": {
+        "startTime": "2026-01-28T05:08:21.250Z",
+        "duration": 33657.44,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-28T05:08:47.976Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2362.300000011921,
+              "memoryDeltaMb": 2.5490341186523438,
+              "trustworthiness": 0.9882298267849599,
+              "fpsAvg": 60,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-28T05:08:53.772Z",
+              "scope": "small",
+              "datasetName": "Small Random (100 points)",
+              "datasetSize": 100,
+              "dimensions": 10,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3240,
+              "memoryDeltaMb": 6.7245683670043945,
+              "trustworthiness": 0.8678732106339468,
+              "fpsAvg": 50.167224080561695,
+              "responsivenessMs": 21.47333333293597
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn build && yarn preview --host 0.0.0.0 --port 4173\",\n      \"url\": \"http://localhost:4173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 240000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n       ",
+      "stderrPreview": ""
+    },
+    {
+      "run": 9,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 47161,
+      "stats": {
+        "startTime": "2026-01-28T05:09:07.494Z",
+        "duration": 34574.126,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-28T05:09:34.847Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2354,
+              "memoryDeltaMb": 2.6279373168945312,
+              "trustworthiness": 0.9863244613434727,
+              "fpsAvg": 60,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-28T05:09:40.931Z",
+              "scope": "small",
+              "datasetName": "Small Random (100 points)",
+              "datasetSize": 100,
+              "dimensions": 10,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3272.0999999940395,
+              "memoryDeltaMb": -1.4213972091674805,
+              "trustworthiness": 0.8719120654396728,
+              "fpsAvg": 49.18355302015853,
+              "responsivenessMs": 20.093333333730698
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn build && yarn preview --host 0.0.0.0 --port 4173\",\n      \"url\": \"http://localhost:4173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 240000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n       ",
+      "stderrPreview": ""
+    },
+    {
+      "run": 10,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 45645,
+      "stats": {
+        "startTime": "2026-01-28T05:09:54.830Z",
+        "duration": 32892.997,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-28T05:10:21.864Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2364.199999988079,
+              "memoryDeltaMb": 1.452096939086914,
+              "trustworthiness": 0.9854710604140262,
+              "fpsAvg": 60,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-28T05:10:27.353Z",
+              "scope": "small",
+              "datasetName": "Small Random (100 points)",
+              "datasetSize": 100,
+              "dimensions": 10,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2993.4000000059605,
+              "memoryDeltaMb": 6.704712867736816,
+              "trustworthiness": 0.8884458077709612,
+              "fpsAvg": 47.976011994002995,
+              "responsivenessMs": 19.373333332935967
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn build && yarn preview --host 0.0.0.0 --port 4173\",\n      \"url\": \"http://localhost:4173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"small bench: sequential lightweight datasets @small\",\n          \"ok\": true,\n          \"tags\": [\n            \"small\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 240000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n       ",
+      "stderrPreview": ""
+    }
+  ]
+}
