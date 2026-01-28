@@ -267,6 +267,22 @@ export class OptimizerState {
         return v1;
     }
     /**
+     * Get the length of the embedding buffer.
+     * @returns {number}
+     */
+    head_embedding_len() {
+        const ret = wasm.optimizerstate_head_embedding_len(this.__wbg_ptr);
+        return ret >>> 0;
+    }
+    /**
+     * Get a pointer to the embedding buffer (for zero-copy views).
+     * @returns {number}
+     */
+    head_embedding_ptr() {
+        const ret = wasm.optimizerstate_head_embedding_ptr(this.__wbg_ptr);
+        return ret >>> 0;
+    }
+    /**
      * Create a new optimizer state with the given parameters.
      * @param {Uint32Array} head
      * @param {Uint32Array} tail
@@ -306,7 +322,7 @@ export class OptimizerState {
      * @returns {number}
      */
     get n_epochs() {
-        const ret = wasm.optimizerstate_n_epochs(this.__wbg_ptr);
+        const ret = wasm.flattree_dim(this.__wbg_ptr);
         return ret >>> 0;
     }
 }
@@ -657,11 +673,18 @@ export function optimize_layout_batch(state, rng_seed, n_steps) {
 }
 
 /**
+ * Perform multiple optimization steps in place without cloning the embedding.
+ * @param {OptimizerState} state
+ * @param {bigint} rng_seed
+ * @param {number} n_steps
+ */
+export function optimize_layout_batch_in_place(state, rng_seed, n_steps) {
+    _assertClass(state, OptimizerState);
+    wasm.optimize_layout_batch_in_place(state.__wbg_ptr, rng_seed, n_steps);
+}
+
+/**
  * Perform a single optimization step for UMAP layout.
- *
- * This function executes one epoch of the stochastic gradient descent algorithm
- * used to optimize the low-dimensional embedding. It processes attractive forces
- * between known neighbors and repulsive forces from negative samples.
  *
  * # Arguments
  * * `state` - Mutable reference to the optimizer state
@@ -679,6 +702,16 @@ export function optimize_layout_step(state, rng_seed) {
     var v1 = getArrayF64FromWasm0(ret[0], ret[1]).slice();
     wasm.__wbindgen_free(ret[0], ret[1] * 8, 8);
     return v1;
+}
+
+/**
+ * Perform a single optimization step in place without cloning the embedding.
+ * @param {OptimizerState} state
+ * @param {bigint} rng_seed
+ */
+export function optimize_layout_step_in_place(state, rng_seed) {
+    _assertClass(state, OptimizerState);
+    wasm.optimize_layout_step_in_place(state.__wbg_ptr, rng_seed);
 }
 
 /**
