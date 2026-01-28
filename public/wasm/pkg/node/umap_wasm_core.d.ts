@@ -35,6 +35,14 @@ export class OptimizerState {
   free(): void;
   [Symbol.dispose](): void;
   /**
+   * Get the length of the embedding buffer.
+   */
+  head_embedding_len(): number;
+  /**
+   * Get a pointer to the embedding buffer (for zero-copy views).
+   */
+  head_embedding_ptr(): number;
+  /**
    * Create a new optimizer state with the given parameters.
    */
   constructor(head: Uint32Array, tail: Uint32Array, head_embedding: Float64Array, tail_embedding: Float64Array, epochs_per_sample: Float64Array, epochs_per_negative_sample: Float64Array, move_other: boolean, initial_alpha: number, gamma: number, a: number, b: number, dim: number, n_epochs: number, n_vertices: number);
@@ -217,20 +225,26 @@ export function nn_descent(data_flat: Float64Array, n_samples: number, dim: numb
 export function optimize_layout_batch(state: OptimizerState, rng_seed: bigint, n_steps: number): Float64Array;
 
 /**
+ * Perform multiple optimization steps in place without cloning the embedding.
+ */
+export function optimize_layout_batch_in_place(state: OptimizerState, rng_seed: bigint, n_steps: number): void;
+
+/**
  * Perform a single optimization step for UMAP layout.
- * 
- * This function executes one epoch of the stochastic gradient descent algorithm
- * used to optimize the low-dimensional embedding. It processes attractive forces
- * between known neighbors and repulsive forces from negative samples.
- * 
+ *
  * # Arguments
  * * `state` - Mutable reference to the optimizer state
  * * `rng_seed` - Seed for random number generation (will be updated internally)
- * 
+ *
  * # Returns
  * The updated embedding as a flat vector
  */
 export function optimize_layout_step(state: OptimizerState, rng_seed: bigint): Float64Array;
+
+/**
+ * Perform a single optimization step in place without cloning the embedding.
+ */
+export function optimize_layout_step_in_place(state: OptimizerState, rng_seed: bigint): void;
 
 /**
  * Search a flattened tree to find the leaf containing the query point.

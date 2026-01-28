@@ -144,3 +144,15 @@ Note: Playwright no longer generates an HTML report by default. The runner write
 - **Release Selection** - Select different umap-wasm releases directly from the UI to compare performance
 - **Performance Metrics** - Track runtime, memory usage, embedding quality, FPS, and responsiveness
 - **Visualization** - Interactive 3D visualization of UMAP embeddings using Plotly
+
+
+# TODO
+- Switch embeddings/optimizer math to f32
+Estimated speed‑up: ~1.1×–1.4× (memory bandwidth bound), with possible tiny quality impact.
+
+- Keep typed arrays end‑to‑end in tree/matrix conversions (avoid Array.from/JS reshapes)- Estimated speed‑up: ~1.05×–1.25×.
+- Deterministic RNG inside WASM (avoid JS RNG calls during optimization) - Estimated speed‑up: ~1.05×–1.15×.
+- Multithreading?
+
+yarn bench:loop --scope=small --runs=3
+yarn bench:loop --scope=small --runs=3 --wasm=all

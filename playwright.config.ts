@@ -18,7 +18,7 @@ export default defineConfig({
   // captures stdout and embeds the JSON into the single bench payload.
   reporter: [['json']],
   use: {
-    baseURL: 'http://localhost:5173',
+    baseURL: 'http://localhost:4173',
     launchOptions: {
       args: ['--enable-precise-memory-info'],
     },
@@ -31,8 +31,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'yarn dev',
-    url: 'http://localhost:5173',
+    command: 'yarn build && yarn preview --host 0.0.0.0 --port 4173',
+    url: 'http://localhost:4173',
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
   },
