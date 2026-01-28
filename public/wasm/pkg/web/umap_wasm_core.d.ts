@@ -35,6 +35,10 @@ export class OptimizerState {
   free(): void;
   [Symbol.dispose](): void;
   /**
+   * Seed the internal RNG used by the optimizer.
+   */
+  set_rng_seed(seed: bigint): void;
+  /**
    * Get the length of the embedding buffer.
    */
   head_embedding_len(): number;
@@ -46,6 +50,10 @@ export class OptimizerState {
    * Create a new optimizer state with the given parameters.
    */
   constructor(head: Uint32Array, tail: Uint32Array, head_embedding: Float64Array, tail_embedding: Float64Array, epochs_per_sample: Float64Array, epochs_per_negative_sample: Float64Array, move_other: boolean, initial_alpha: number, gamma: number, a: number, b: number, dim: number, n_epochs: number, n_vertices: number);
+  /**
+   * Get the current RNG seed/state.
+   */
+  rng_seed(): bigint;
   /**
    * Get the current epoch number.
    */
@@ -216,35 +224,32 @@ export function nn_descent(data_flat: Float64Array, n_samples: number, dim: numb
  * 
  * # Arguments
  * * `state` - Mutable reference to the optimizer state
- * * `rng_seed` - Seed for random number generation
  * * `n_steps` - Number of steps to perform
  * 
  * # Returns
  * The final embedding as a flat vector
  */
-export function optimize_layout_batch(state: OptimizerState, rng_seed: bigint, n_steps: number): Float64Array;
+export function optimize_layout_batch(state: OptimizerState, n_steps: number): Float64Array;
 
 /**
  * Perform multiple optimization steps in place without cloning the embedding.
  */
-export function optimize_layout_batch_in_place(state: OptimizerState, rng_seed: bigint, n_steps: number): void;
+export function optimize_layout_batch_in_place(state: OptimizerState, n_steps: number): void;
 
 /**
  * Perform a single optimization step for UMAP layout.
  *
  * # Arguments
  * * `state` - Mutable reference to the optimizer state
- * * `rng_seed` - Seed for random number generation (will be updated internally)
- *
  * # Returns
  * The updated embedding as a flat vector
  */
-export function optimize_layout_step(state: OptimizerState, rng_seed: bigint): Float64Array;
+export function optimize_layout_step(state: OptimizerState): Float64Array;
 
 /**
  * Perform a single optimization step in place without cloning the embedding.
  */
-export function optimize_layout_step_in_place(state: OptimizerState, rng_seed: bigint): void;
+export function optimize_layout_step_in_place(state: OptimizerState): void;
 
 /**
  * Search a flattened tree to find the leaf containing the query point.
@@ -333,15 +338,18 @@ export interface InitOutput {
   readonly flattree_n_nodes: (a: number) => number;
   readonly flattree_offsets: (a: number) => any;
   readonly nn_descent: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number, n: number, o: number, p: number, q: bigint) => [number, number, number, number];
-  readonly optimize_layout_batch: (a: number, b: bigint, c: number) => [number, number];
-  readonly optimize_layout_batch_in_place: (a: number, b: bigint, c: number) => void;
-  readonly optimize_layout_step: (a: number, b: bigint) => [number, number];
-  readonly optimize_layout_step_in_place: (a: number, b: bigint) => void;
+  readonly optimize_layout_batch: (a: number, b: number) => [number, number];
+  readonly optimize_layout_batch_in_place: (a: number, b: number) => void;
+  readonly optimize_layout_step: (a: number) => [number, number];
+  readonly optimize_layout_step_in_place: (a: number) => void;
   readonly optimizerstate_current_epoch: (a: number) => number;
   readonly optimizerstate_head_embedding: (a: number) => [number, number];
   readonly optimizerstate_head_embedding_len: (a: number) => number;
   readonly optimizerstate_head_embedding_ptr: (a: number) => number;
+  readonly optimizerstate_n_epochs: (a: number) => number;
   readonly optimizerstate_new: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number, n: number, o: number, p: number, q: number, r: number, s: number, t: number) => number;
+  readonly optimizerstate_rng_seed: (a: number) => bigint;
+  readonly optimizerstate_set_rng_seed: (a: number, b: bigint) => void;
   readonly search_flat_tree: (a: number, b: number, c: number, d: bigint) => [number, number];
   readonly sparse_add: (a: number, b: number) => number;
   readonly sparse_eliminate_zeros: (a: number) => number;
@@ -367,7 +375,6 @@ export interface InitOutput {
   readonly wasmsparsematrix_nnz: (a: number) => number;
   readonly wasmsparsematrix_set: (a: number, b: number, c: number, d: number) => [number, number];
   readonly wasmsparsematrix_to_array: (a: number) => any;
-  readonly optimizerstate_n_epochs: (a: number) => number;
   readonly __wbindgen_externrefs: WebAssembly.Table;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;

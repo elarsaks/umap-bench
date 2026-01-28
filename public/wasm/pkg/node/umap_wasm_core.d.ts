@@ -35,6 +35,10 @@ export class OptimizerState {
   free(): void;
   [Symbol.dispose](): void;
   /**
+   * Seed the internal RNG used by the optimizer.
+   */
+  set_rng_seed(seed: bigint): void;
+  /**
    * Get the length of the embedding buffer.
    */
   head_embedding_len(): number;
@@ -46,6 +50,10 @@ export class OptimizerState {
    * Create a new optimizer state with the given parameters.
    */
   constructor(head: Uint32Array, tail: Uint32Array, head_embedding: Float64Array, tail_embedding: Float64Array, epochs_per_sample: Float64Array, epochs_per_negative_sample: Float64Array, move_other: boolean, initial_alpha: number, gamma: number, a: number, b: number, dim: number, n_epochs: number, n_vertices: number);
+  /**
+   * Get the current RNG seed/state.
+   */
+  rng_seed(): bigint;
   /**
    * Get the current epoch number.
    */
@@ -216,35 +224,32 @@ export function nn_descent(data_flat: Float64Array, n_samples: number, dim: numb
  * 
  * # Arguments
  * * `state` - Mutable reference to the optimizer state
- * * `rng_seed` - Seed for random number generation
  * * `n_steps` - Number of steps to perform
  * 
  * # Returns
  * The final embedding as a flat vector
  */
-export function optimize_layout_batch(state: OptimizerState, rng_seed: bigint, n_steps: number): Float64Array;
+export function optimize_layout_batch(state: OptimizerState, n_steps: number): Float64Array;
 
 /**
  * Perform multiple optimization steps in place without cloning the embedding.
  */
-export function optimize_layout_batch_in_place(state: OptimizerState, rng_seed: bigint, n_steps: number): void;
+export function optimize_layout_batch_in_place(state: OptimizerState, n_steps: number): void;
 
 /**
  * Perform a single optimization step for UMAP layout.
  *
  * # Arguments
  * * `state` - Mutable reference to the optimizer state
- * * `rng_seed` - Seed for random number generation (will be updated internally)
- *
  * # Returns
  * The updated embedding as a flat vector
  */
-export function optimize_layout_step(state: OptimizerState, rng_seed: bigint): Float64Array;
+export function optimize_layout_step(state: OptimizerState): Float64Array;
 
 /**
  * Perform a single optimization step in place without cloning the embedding.
  */
-export function optimize_layout_step_in_place(state: OptimizerState, rng_seed: bigint): void;
+export function optimize_layout_step_in_place(state: OptimizerState): void;
 
 /**
  * Search a flattened tree to find the leaf containing the query point.
