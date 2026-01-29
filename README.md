@@ -99,38 +99,18 @@ Located in: `bench/`
 	yarn bench:loop --scope=small --runs=10 --wasm=all
 	yarn bench:loop --scope=mid --runs=10 --wasm=all
 	yarn bench:loop --scope=large --runs=10 --wasm=all
+	# Run each single WASM feature (sequential)
+	yarn bench:loop:sequence --scope=small --runs=10
+	yarn bench:loop:sequence --scope=mid --runs=10
+	yarn bench:loop:sequence --scope=large --runs=10
 	```
 	Scopes: `small`, `mid`, `large`.
-- Run each single WASM feature (sequential)
-	```bash
-	yarn bench:loop:sequence
-	# or customize
-	yarn bench:loop:sequence --scope=small --runs=3
-	```
+
 - Run full test set: JS-only, each single WASM feature, then all WASM
 	```bash
 	yarn bench:loop:full
 	# or customize
 	yarn bench:loop:full --scope=small --runs=3
-	```
-- 3 runs per scope (JS then WASM)
-	```bash
-	yarn bench:small:3
-	yarn bench:mid:3
-	yarn bench:large:3
-	yarn bench:all:3
-	```
-- Dev quick run (small scope, JS then WASM, 3 runs each)
-	```bash
-	yarn bench:dev
-	```
-- Headed run (see the browser)
-	```bash
-	yarn bench:headed
-	```
-- Interactive runner
-	```bash
-	yarn bench:ui
 	```
 
 Performance tests include smoke checks and performance measurements. Results are saved to `bench/results/` with machine specifications for cross-machine comparison.
