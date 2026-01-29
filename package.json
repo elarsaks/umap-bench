@@ -30,7 +30,9 @@
     "bench:loop:large": "node scripts/run-benchmarks.cjs --scope=large",
     "bench:small:3": "yarn bench:loop --scope=small --runs=3 && yarn bench:loop --scope=small --runs=3 --wasm=all",
     "bench:mid:3": "yarn bench:loop --scope=mid --runs=3 && yarn bench:loop --scope=mid --runs=3 --wasm=all",
-    "bench:large:3": "yarn bench:loop --scope=large --runs=3 && yarn bench:loop --scope=large --runs=3 --wasm=all"
+    "bench:large:3": "yarn bench:loop --scope=large --runs=3 && yarn bench:loop --scope=large --runs=3 --wasm=all",
+    "bench:all:3": "yarn bench:small:3 && yarn bench:mid:3 && yarn bench:large:3",
+    "bench:dev": "yarn bench:small:3"
   },
   "dependencies": {
     "@elarsaks/umap-wasm": "^0.5.0",

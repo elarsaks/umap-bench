@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-28T05:19:27.289Z",
+  "generatedAt": "2026-01-28T11:12:29.010Z",
   "runs": 10,
   "machine": {
     "platform": "linux",
@@ -9,28 +9,28 @@
     "cpuCores": 12,
     "totalMemBytes": 8240971776,
     "loadAvg": [
-      1.26,
-      1.14,
-      1.05
+      1.37,
+      1.23,
+      1.18
     ],
     "hostname": "DESKTOP-7R7IE5L"
   },
   "git": {
-    "commit": "f73c257c15f125621607f494061012e47770f21c",
-    "branch": "use-umap-wasm-version-0-5-0",
+    "commit": "b5f93ad090ac7cfc0c0a69b0d728820aac06df3e",
+    "branch": "generate-test-data",
     "statusDirty": true
   },
-  "wasmFeatures": "none",
+  "wasmFeatures": "all",
   "results": [
     {
       "run": 1,
-      "wasmFeatures": "none",
+      "wasmFeatures": "all",
       "success": true,
       "exitCode": 1,
-      "durationMs": 281963,
+      "durationMs": 281164,
       "stats": {
-        "startTime": "2026-01-28T05:19:40.591Z",
-        "duration": 268936.65,
+        "startTime": "2026-01-28T11:12:42.112Z",
+        "duration": 268348.441,
         "expected": 0,
         "skipped": 0,
         "unexpected": 1,
@@ -45,13 +45,13 @@
     },
     {
       "run": 2,
-      "wasmFeatures": "none",
+      "wasmFeatures": "all",
       "success": true,
       "exitCode": 1,
-      "durationMs": 280898,
+      "durationMs": 282669,
       "stats": {
-        "startTime": "2026-01-28T05:24:21.972Z",
-        "duration": 268457.31200000003,
+        "startTime": "2026-01-28T11:17:22.926Z",
+        "duration": 270203.355,
         "expected": 0,
         "skipped": 0,
         "unexpected": 1,
@@ -66,13 +66,13 @@
     },
     {
       "run": 3,
-      "wasmFeatures": "none",
+      "wasmFeatures": "all",
       "success": true,
       "exitCode": 1,
-      "durationMs": 278972,
+      "durationMs": 281308,
       "stats": {
-        "startTime": "2026-01-28T05:29:02.365Z",
-        "duration": 267045.655,
+        "startTime": "2026-01-28T11:22:05.928Z",
+        "duration": 268516.276,
         "expected": 0,
         "skipped": 0,
         "unexpected": 1,
@@ -87,13 +87,13 @@
     },
     {
       "run": 4,
-      "wasmFeatures": "none",
+      "wasmFeatures": "all",
       "success": true,
       "exitCode": 1,
-      "durationMs": 280191,
+      "durationMs": 282837,
       "stats": {
-        "startTime": "2026-01-28T05:33:41.914Z",
-        "duration": 267688.61799999996,
+        "startTime": "2026-01-28T11:26:48.641Z",
+        "duration": 268629.403,
         "expected": 0,
         "skipped": 0,
         "unexpected": 1,
@@ -108,13 +108,13 @@
     },
     {
       "run": 5,
-      "wasmFeatures": "none",
+      "wasmFeatures": "all",
       "success": true,
       "exitCode": 1,
-      "durationMs": 279131,
+      "durationMs": 347230,
       "stats": {
-        "startTime": "2026-01-28T05:38:21.698Z",
-        "duration": 267039.109,
+        "startTime": "2026-01-28T11:31:57.387Z",
+        "duration": 307113.774,
         "expected": 0,
         "skipped": 0,
         "unexpected": 1,
@@ -129,13 +129,13 @@
     },
     {
       "run": 6,
-      "wasmFeatures": "none",
+      "wasmFeatures": "all",
       "success": true,
       "exitCode": 1,
-      "durationMs": 279887,
+      "durationMs": 2153051,
       "stats": {
-        "startTime": "2026-01-28T05:43:00.768Z",
-        "duration": 267863.903,
+        "startTime": "2026-01-28T11:37:33.567Z",
+        "duration": 294823.171,
         "expected": 0,
         "skipped": 0,
         "unexpected": 1,
@@ -150,13 +150,13 @@
     },
     {
       "run": 7,
-      "wasmFeatures": "none",
+      "wasmFeatures": "all",
       "success": true,
       "exitCode": 1,
-      "durationMs": 278965,
+      "durationMs": 347116,
       "stats": {
-        "startTime": "2026-01-28T05:47:40.759Z",
-        "duration": 266839.97599999997,
+        "startTime": "2026-01-28T12:13:26.100Z",
+        "duration": 292494.733,
         "expected": 0,
         "skipped": 0,
         "unexpected": 1,
@@ -171,13 +171,13 @@
     },
     {
       "run": 8,
-      "wasmFeatures": "none",
+      "wasmFeatures": "all",
       "success": true,
       "exitCode": 1,
-      "durationMs": 279637,
+      "durationMs": 2174926,
       "stats": {
-        "startTime": "2026-01-28T05:52:19.424Z",
-        "duration": 267815.49600000004,
+        "startTime": "2026-01-28T12:49:45.237Z",
+        "duration": 294894.151,
         "expected": 0,
         "skipped": 0,
         "unexpected": 1,
@@ -188,17 +188,17 @@
       "uiMetrics": [],
       "resultLabel": "PASS (nonzero exit)",
       "stdoutPreview": "{\n  \"config\": {\n    \"configFile\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/playwright.config.ts\",\n    \"rootDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/umap-bench-playwright-output\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium\",\n        \"name\": \"chromium\",\n        \"testDir\": \"/mnt/c/Users/elars/Desktop/Thesis/umap-bench/bench\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"tags\": [],\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.57.0\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"yarn build && yarn preview --host 0.0.0.0 --port 4173\",\n      \"url\": \"http://localhost:4173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 120000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"specs/benchmark.spec.ts\",\n      \"file\": \"specs/benchmark.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"large bench: two heavier datasets @large\",\n          \"ok\": false,\n          \"tags\": [\n            \"large\"\n          ],\n          \"tests\": [\n            {\n              \"timeout\": 240000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium\",\n              \"projectName\": \"chromium\",\n              \"results\": [\n                {\n                 ",
-      "stderrPreview": ""
+      "stderrPreview": "npm notice\nnpm notice New major version of npm available! 10.9.4 -> 11.8.0\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v11.8.0\nnpm notice To update run: npm install -g npm@11.8.0\nnpm notice\n"
     },
     {
       "run": 9,
-      "wasmFeatures": "none",
+      "wasmFeatures": "all",
       "success": true,
       "exitCode": 1,
-      "durationMs": 279588,
+      "durationMs": 1169731,
       "stats": {
-        "startTime": "2026-01-28T05:56:59.153Z",
-        "duration": 267679.455,
+        "startTime": "2026-01-28T12:55:25.100Z",
+        "duration": 287652.391,
         "expected": 0,
         "skipped": 0,
         "unexpected": 1,
@@ -213,13 +213,13 @@
     },
     {
       "run": 10,
-      "wasmFeatures": "none",
+      "wasmFeatures": "all",
       "success": true,
       "exitCode": 1,
-      "durationMs": 279008,
+      "durationMs": 360452,
       "stats": {
-        "startTime": "2026-01-28T06:01:39.137Z",
-        "duration": 266708.35599999997,
+        "startTime": "2026-01-28T13:15:09.468Z",
+        "duration": 299492.46400000004,
         "expected": 0,
         "skipped": 0,
         "unexpected": 1,

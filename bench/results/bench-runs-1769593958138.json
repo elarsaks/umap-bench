@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-28T05:02:38.884Z",
+  "generatedAt": "2026-01-28T09:52:38.138Z",
   "runs": 10,
   "machine": {
     "platform": "linux",
@@ -9,15 +9,15 @@
     "cpuCores": 12,
     "totalMemBytes": 8240971776,
     "loadAvg": [
-      0.66,
-      1.16,
-      0.94
+      0.18,
+      0.17,
+      0.15
     ],
     "hostname": "DESKTOP-7R7IE5L"
   },
   "git": {
-    "commit": "f73c257c15f125621607f494061012e47770f21c",
-    "branch": "use-umap-wasm-version-0-5-0",
+    "commit": "b5f93ad090ac7cfc0c0a69b0d728820aac06df3e",
+    "branch": "generate-test-data",
     "statusDirty": true
   },
   "wasmFeatures": "none",
@@ -27,10 +27,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 46819,
+      "durationMs": 54709,
       "stats": {
-        "startTime": "2026-01-28T05:02:52.265Z",
-        "duration": 33763.922999999995,
+        "startTime": "2026-01-28T09:52:52.113Z",
+        "duration": 40996.573,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -43,33 +43,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:03:19.754Z",
+              "timestamp": "2026-01-28T09:53:26.826Z",
               "scope": "small",
               "datasetName": "Iris Dataset (150 points, 4D)",
               "datasetSize": 150,
               "dimensions": 4,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 2364.5,
-              "memoryDeltaMb": 4.970305442810059,
-              "trustworthiness": 0.990722433460076,
-              "fpsAvg": 59.992132178682965,
+              "runtimeMs": 2390.4000000059605,
+              "memoryDeltaMb": 2.2355117797851562,
+              "trustworthiness": 0.9884959864807774,
+              "fpsAvg": 59.99400060029756,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:03:25.698Z",
+              "timestamp": "2026-01-28T09:53:32.759Z",
               "scope": "small",
               "datasetName": "Small Random (100 points)",
               "datasetSize": 100,
               "dimensions": 10,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3022.4000000059605,
-              "memoryDeltaMb": 10.229199409484863,
-              "trustworthiness": 0.8724233128834356,
-              "fpsAvg": 49.18839153959666,
-              "responsivenessMs": 20.686666667461395
+              "runtimeMs": 2993.5999999940395,
+              "memoryDeltaMb": 12.248761177062988,
+              "trustworthiness": 0.8677505112474437,
+              "fpsAvg": 49,
+              "responsivenessMs": 19.36666667064031
             }
           ]
         }
@@ -83,10 +83,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 46912,
+      "durationMs": 50362,
       "stats": {
-        "startTime": "2026-01-28T05:03:39.304Z",
-        "duration": 33637.954,
+        "startTime": "2026-01-28T09:53:49.812Z",
+        "duration": 33664.529,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -99,33 +99,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:04:06.968Z",
+              "timestamp": "2026-01-28T09:54:17.493Z",
               "scope": "small",
               "datasetName": "Iris Dataset (150 points, 4D)",
               "datasetSize": 150,
               "dimensions": 4,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 2377.4000000059605,
-              "memoryDeltaMb": 2.8323984146118164,
-              "trustworthiness": 0.9891212505280946,
-              "fpsAvg": 59.99400060029756,
+              "runtimeMs": 2366.800000011921,
+              "memoryDeltaMb": 5.168988227844238,
+              "trustworthiness": 0.9874228981833545,
+              "fpsAvg": 59.98800240023507,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:04:12.618Z",
+              "timestamp": "2026-01-28T09:54:23.145Z",
               "scope": "small",
               "datasetName": "Small Random (100 points)",
               "datasetSize": 100,
               "dimensions": 10,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3011.7000000178814,
-              "memoryDeltaMb": 15.924321174621582,
-              "trustworthiness": 0.8666871165644172,
-              "fpsAvg": 48.99510048878299,
-              "responsivenessMs": 20.393333331743875
+              "runtimeMs": 3020.5,
+              "memoryDeltaMb": 14.7468843460083,
+              "trustworthiness": 0.881881390593047,
+              "fpsAvg": 49.18839153959666,
+              "responsivenessMs": 21.660000000397364
             }
           ]
         }
@@ -139,10 +139,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 47466,
+      "durationMs": 48620,
       "stats": {
-        "startTime": "2026-01-28T05:04:25.907Z",
-        "duration": 34506.477,
+        "startTime": "2026-01-28T09:54:36.767Z",
+        "duration": 35335.054000000004,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -155,33 +155,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:04:53.348Z",
+              "timestamp": "2026-01-28T09:55:04.959Z",
               "scope": "small",
               "datasetName": "Iris Dataset (150 points, 4D)",
               "datasetSize": 150,
               "dimensions": 4,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 2377.800000011921,
-              "memoryDeltaMb": 2.7116928100585938,
-              "trustworthiness": 0.9881199831009717,
-              "fpsAvg": 59.98800239844764,
+              "runtimeMs": 2366.5,
+              "memoryDeltaMb": 5.394742012023926,
+              "trustworthiness": 0.9875496408956485,
+              "fpsAvg": 60.0039346845934,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:04:59.314Z",
+              "timestamp": "2026-01-28T09:55:11.047Z",
               "scope": "small",
               "datasetName": "Small Random (100 points)",
               "datasetSize": 100,
               "dimensions": 10,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3326.7999999821186,
-              "memoryDeltaMb": -0.7738542556762695,
-              "trustworthiness": 0.8644580777096115,
-              "fpsAvg": 45.26667978797443,
-              "responsivenessMs": 21.033333331346512
+              "runtimeMs": 3318.0999999940395,
+              "memoryDeltaMb": -1.0153617858886719,
+              "trustworthiness": 0.8648466257668712,
+              "fpsAvg": 50.17215937038859,
+              "responsivenessMs": 22.919999998807906
             }
           ]
         }
@@ -195,10 +195,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 46780,
+      "durationMs": 49094,
       "stats": {
-        "startTime": "2026-01-28T05:05:13.482Z",
-        "duration": 33713.471,
+        "startTime": "2026-01-28T09:55:25.492Z",
+        "duration": 35708.562,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -211,33 +211,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:05:41.327Z",
+              "timestamp": "2026-01-28T09:55:54.215Z",
               "scope": "small",
               "datasetName": "Iris Dataset (150 points, 4D)",
               "datasetSize": 150,
               "dimensions": 4,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 2368.399999976158,
-              "memoryDeltaMb": 3.590632438659668,
-              "trustworthiness": 0.9903548795944234,
-              "fpsAvg": 60.039370078740156,
+              "runtimeMs": 2373.0999999940395,
+              "memoryDeltaMb": 1.137228012084961,
+              "trustworthiness": 0.9889607097591888,
+              "fpsAvg": 60.0157418335717,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:05:46.806Z",
+              "timestamp": "2026-01-28T09:56:00.080Z",
               "scope": "small",
               "datasetName": "Small Random (100 points)",
               "datasetSize": 100,
               "dimensions": 10,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 2983.7000000178814,
-              "memoryDeltaMb": 8.304505348205566,
-              "trustworthiness": 0.8634049079754601,
-              "fpsAvg": 50.15735641315587,
-              "responsivenessMs": 21.56666666865349
+              "runtimeMs": 3254.199999988079,
+              "memoryDeltaMb": 18.955506324768066,
+              "trustworthiness": 0.8663496932515338,
+              "fpsAvg": 49.19323101256676,
+              "responsivenessMs": 19.713333330551784
             }
           ]
         }
@@ -251,10 +251,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 46401,
+      "durationMs": 48668,
       "stats": {
-        "startTime": "2026-01-28T05:06:00.136Z",
-        "duration": 33465.325,
+        "startTime": "2026-01-28T09:56:14.652Z",
+        "duration": 35219.477,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -267,33 +267,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:06:27.570Z",
+              "timestamp": "2026-01-28T09:56:42.826Z",
               "scope": "small",
               "datasetName": "Iris Dataset (150 points, 4D)",
               "datasetSize": 150,
               "dimensions": 4,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 2395,
-              "memoryDeltaMb": 2.0567665100097656,
-              "trustworthiness": 0.984376848331221,
-              "fpsAvg": 60,
+              "runtimeMs": 2370.7000000178814,
+              "memoryDeltaMb": 5.0429887771606445,
+              "trustworthiness": 0.9873341782847487,
+              "fpsAvg": 59.98800240023507,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:06:33.263Z",
+              "timestamp": "2026-01-28T09:56:48.769Z",
               "scope": "small",
               "datasetName": "Small Random (100 points)",
               "datasetSize": 100,
               "dimensions": 10,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3006.800000011921,
-              "memoryDeltaMb": 11.41353702545166,
-              "trustworthiness": 0.8713803680981596,
-              "fpsAvg": 48.99510049024301,
-              "responsivenessMs": 19.866666666666667
+              "runtimeMs": 3295.5999999940395,
+              "memoryDeltaMb": -0.9450101852416992,
+              "trustworthiness": 0.8783026584867075,
+              "fpsAvg": 49.18355302015853,
+              "responsivenessMs": 20.553333334128062
             }
           ]
         }
@@ -307,10 +307,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 47418,
+      "durationMs": 48062,
       "stats": {
-        "startTime": "2026-01-28T05:06:46.763Z",
-        "duration": 34259.081,
+        "startTime": "2026-01-28T09:57:03.100Z",
+        "duration": 34839.182,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -323,33 +323,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:07:13.998Z",
+              "timestamp": "2026-01-28T09:57:30.864Z",
               "scope": "small",
               "datasetName": "Iris Dataset (150 points, 4D)",
               "datasetSize": 150,
               "dimensions": 4,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 2365.300000011921,
-              "memoryDeltaMb": 2.994190216064453,
-              "trustworthiness": 0.9876932826362484,
-              "fpsAvg": 59.99400059850978,
+              "runtimeMs": 2378.5999999940395,
+              "memoryDeltaMb": 3.1032066345214844,
+              "trustworthiness": 0.9885762568652302,
+              "fpsAvg": 59.98200539766566,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:07:19.949Z",
+              "timestamp": "2026-01-28T09:57:36.853Z",
               "scope": "small",
               "datasetName": "Small Random (100 points)",
               "datasetSize": 100,
               "dimensions": 10,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3297.5999999940395,
-              "memoryDeltaMb": 13.6556978225708,
-              "trustworthiness": 0.8666359918200409,
-              "fpsAvg": 49.18839153959666,
-              "responsivenessMs": 20.760000000397365
+              "runtimeMs": 3281.4000000059605,
+              "memoryDeltaMb": 11.634366035461426,
+              "trustworthiness": 0.8874642126789366,
+              "fpsAvg": 48.209366390901856,
+              "responsivenessMs": 20.14666666984558
             }
           ]
         }
@@ -363,10 +363,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 47349,
+      "durationMs": 47556,
       "stats": {
-        "startTime": "2026-01-28T05:07:33.827Z",
-        "duration": 34548.558000000005,
+        "startTime": "2026-01-28T09:57:51.706Z",
+        "duration": 33791.346,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -379,33 +379,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:08:01.380Z",
+              "timestamp": "2026-01-28T09:58:19.576Z",
               "scope": "small",
               "datasetName": "Iris Dataset (150 points, 4D)",
               "datasetSize": 150,
               "dimensions": 4,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 2347,
-              "memoryDeltaMb": 2.073666572570801,
-              "trustworthiness": 0.988483312209548,
-              "fpsAvg": 60,
+              "runtimeMs": 2386.5999999940395,
+              "memoryDeltaMb": 2.6529159545898438,
+              "trustworthiness": 0.988546683565695,
+              "fpsAvg": 60.0039346845934,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:08:07.260Z",
+              "timestamp": "2026-01-28T09:58:25.173Z",
               "scope": "small",
               "datasetName": "Small Random (100 points)",
               "datasetSize": 100,
               "dimensions": 10,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3257.5,
-              "memoryDeltaMb": 4.932034492492676,
-              "trustworthiness": 0.8828527607361963,
-              "fpsAvg": 48.99510049024301,
-              "responsivenessMs": 20.373333332935967
+              "runtimeMs": 3006.2000000178814,
+              "memoryDeltaMb": 8.120797157287598,
+              "trustworthiness": 0.8801022494887526,
+              "fpsAvg": 49.99500050024797,
+              "responsivenessMs": 19.233333337306977
             }
           ]
         }
@@ -419,10 +419,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 46527,
+      "durationMs": 47412,
       "stats": {
-        "startTime": "2026-01-28T05:08:21.250Z",
-        "duration": 33657.44,
+        "startTime": "2026-01-28T09:58:39.091Z",
+        "duration": 33825.434,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -435,33 +435,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:08:47.976Z",
+              "timestamp": "2026-01-28T09:59:06.949Z",
               "scope": "small",
               "datasetName": "Iris Dataset (150 points, 4D)",
               "datasetSize": 150,
               "dimensions": 4,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 2362.300000011921,
-              "memoryDeltaMb": 2.5490341186523438,
-              "trustworthiness": 0.9882298267849599,
-              "fpsAvg": 60,
+              "runtimeMs": 2376.100000023842,
+              "memoryDeltaMb": 1.90673828125,
+              "trustworthiness": 0.986227291930714,
+              "fpsAvg": 60.02164715248772,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:08:53.772Z",
+              "timestamp": "2026-01-28T09:59:12.562Z",
               "scope": "small",
               "datasetName": "Small Random (100 points)",
               "datasetSize": 100,
               "dimensions": 10,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3240,
-              "memoryDeltaMb": 6.7245683670043945,
-              "trustworthiness": 0.8678732106339468,
-              "fpsAvg": 50.167224080561695,
-              "responsivenessMs": 21.47333333293597
+              "runtimeMs": 2994.699999988079,
+              "memoryDeltaMb": 10.952168464660645,
+              "trustworthiness": 0.8618098159509202,
+              "fpsAvg": 48.99510049024301,
+              "responsivenessMs": 19.62666666507721
             }
           ]
         }
@@ -475,10 +475,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 47161,
+      "durationMs": 49374,
       "stats": {
-        "startTime": "2026-01-28T05:09:07.494Z",
-        "duration": 34574.126,
+        "startTime": "2026-01-28T09:59:26.447Z",
+        "duration": 35841.233,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -491,33 +491,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:09:34.847Z",
+              "timestamp": "2026-01-28T09:59:55.243Z",
               "scope": "small",
               "datasetName": "Iris Dataset (150 points, 4D)",
               "datasetSize": 150,
               "dimensions": 4,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 2354,
-              "memoryDeltaMb": 2.6279373168945312,
-              "trustworthiness": 0.9863244613434727,
+              "runtimeMs": 2377.100000023842,
+              "memoryDeltaMb": 2.6595773696899414,
+              "trustworthiness": 0.9870806928601605,
               "fpsAvg": 60,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:09:40.931Z",
+              "timestamp": "2026-01-28T10:00:01.223Z",
               "scope": "small",
               "datasetName": "Small Random (100 points)",
               "datasetSize": 100,
               "dimensions": 10,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3272.0999999940395,
-              "memoryDeltaMb": -1.4213972091674805,
-              "trustworthiness": 0.8719120654396728,
-              "fpsAvg": 49.18355302015853,
-              "responsivenessMs": 20.093333333730698
+              "runtimeMs": 3351.199999988079,
+              "memoryDeltaMb": -0.6473445892333984,
+              "trustworthiness": 0.8700715746421268,
+              "fpsAvg": 48.223600039649085,
+              "responsivenessMs": 20.960000000397365
             }
           ]
         }
@@ -531,10 +531,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 45645,
+      "durationMs": 48430,
       "stats": {
-        "startTime": "2026-01-28T05:09:54.830Z",
-        "duration": 32892.997,
+        "startTime": "2026-01-28T10:00:15.569Z",
+        "duration": 35158.045,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -547,33 +547,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:10:21.864Z",
+              "timestamp": "2026-01-28T10:00:43.686Z",
               "scope": "small",
               "datasetName": "Iris Dataset (150 points, 4D)",
               "datasetSize": 150,
               "dimensions": 4,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 2364.199999988079,
-              "memoryDeltaMb": 1.452096939086914,
-              "trustworthiness": 0.9854710604140262,
-              "fpsAvg": 60,
+              "runtimeMs": 2373.9000000059605,
+              "memoryDeltaMb": 3.2231950759887695,
+              "trustworthiness": 0.9903379805661174,
+              "fpsAvg": 59.99400059850978,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:10:27.353Z",
+              "timestamp": "2026-01-28T10:00:49.603Z",
               "scope": "small",
               "datasetName": "Small Random (100 points)",
               "datasetSize": 100,
               "dimensions": 10,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 2993.4000000059605,
-              "memoryDeltaMb": 6.704712867736816,
-              "trustworthiness": 0.8884458077709612,
-              "fpsAvg": 47.976011994002995,
-              "responsivenessMs": 19.373333332935967
+              "runtimeMs": 3255.699999988079,
+              "memoryDeltaMb": -1.7285528182983398,
+              "trustworthiness": 0.8628220858895705,
+              "fpsAvg": 47.99520048023805,
+              "responsivenessMs": 21.206666668256123
             }
           ]
         }
