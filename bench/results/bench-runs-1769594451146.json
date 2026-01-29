@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-28T05:10:28.068Z",
+  "generatedAt": "2026-01-28T10:00:51.146Z",
   "runs": 10,
   "machine": {
     "platform": "linux",
@@ -9,15 +9,15 @@
     "cpuCores": 12,
     "totalMemBytes": 8240971776,
     "loadAvg": [
-      0.96,
-      1.12,
-      1.02
+      1.07,
+      1.04,
+      0.65
     ],
     "hostname": "DESKTOP-7R7IE5L"
   },
   "git": {
-    "commit": "f73c257c15f125621607f494061012e47770f21c",
-    "branch": "use-umap-wasm-version-0-5-0",
+    "commit": "b5f93ad090ac7cfc0c0a69b0d728820aac06df3e",
+    "branch": "generate-test-data",
     "statusDirty": true
   },
   "wasmFeatures": "none",
@@ -27,10 +27,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 57728,
+      "durationMs": 57066,
       "stats": {
-        "startTime": "2026-01-28T05:10:41.188Z",
-        "duration": 44897.935,
+        "startTime": "2026-01-28T10:01:04.862Z",
+        "duration": 43696.488000000005,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -43,33 +43,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:11:10.426Z",
+              "timestamp": "2026-01-28T10:01:35.103Z",
               "scope": "mid",
               "datasetName": "Swiss Roll (1K points, 3D manifold)",
               "datasetSize": 1000,
               "dimensions": 3,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3528.7000000178814,
-              "memoryDeltaMb": 22.008756637573242,
-              "trustworthiness": 0.9968528612667685,
-              "fpsAvg": 60.12221565184147,
+              "runtimeMs": 3577.0999999940395,
+              "memoryDeltaMb": 26.187074661254883,
+              "trustworthiness": 0.9968201732042792,
+              "fpsAvg": 59.97600959580419,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:11:24.943Z",
+              "timestamp": "2026-01-28T10:01:47.419Z",
               "scope": "mid",
               "datasetName": "Medium Clustered (1K points)",
               "datasetSize": 1000,
               "dimensions": 50,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 7182.0999999940395,
-              "memoryDeltaMb": 19.151851654052734,
-              "trustworthiness": 0.9435503481066395,
-              "fpsAvg": 41.32231404934445,
-              "responsivenessMs": 75.8
+              "runtimeMs": 5496.699999988079,
+              "memoryDeltaMb": 22.840511322021484,
+              "trustworthiness": 0.9420776872134488,
+              "fpsAvg": 46.924920128074774,
+              "responsivenessMs": 39.40666666428248
             }
           ]
         }
@@ -83,10 +83,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 54218,
+      "durationMs": 57704,
       "stats": {
-        "startTime": "2026-01-28T05:11:39.196Z",
-        "duration": 41112.37,
+        "startTime": "2026-01-28T10:02:01.737Z",
+        "duration": 44525.382000000005,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -99,33 +99,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:12:07.439Z",
+              "timestamp": "2026-01-28T10:02:32.271Z",
               "scope": "mid",
               "datasetName": "Swiss Roll (1K points, 3D manifold)",
               "datasetSize": 1000,
               "dimensions": 3,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3538,
-              "memoryDeltaMb": 22.255517959594727,
-              "trustworthiness": 0.9967424859908304,
-              "fpsAvg": 60.027553631879144,
+              "runtimeMs": 3927.399999976158,
+              "memoryDeltaMb": 24.608646392822266,
+              "trustworthiness": 0.9965555272542027,
+              "fpsAvg": 60.1637242328054,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:12:19.164Z",
+              "timestamp": "2026-01-28T10:02:45.098Z",
               "scope": "mid",
               "datasetName": "Medium Clustered (1K points)",
               "datasetSize": 1000,
               "dimensions": 50,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 5512.199999988079,
-              "memoryDeltaMb": 24.587334632873535,
-              "trustworthiness": 0.9438480217354389,
-              "fpsAvg": 47.19299970532032,
-              "responsivenessMs": 42.980000003178915
+              "runtimeMs": 6329.299999982119,
+              "memoryDeltaMb": 30.19642734527588,
+              "trustworthiness": 0.9447279673968416,
+              "fpsAvg": 24.995001000097943,
+              "responsivenessMs": 40.286666669448216
             }
           ]
         }
@@ -139,10 +139,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 54702,
+      "durationMs": 58863,
       "stats": {
-        "startTime": "2026-01-28T05:12:33.147Z",
-        "duration": 41862.327000000005,
+        "startTime": "2026-01-28T10:02:59.706Z",
+        "duration": 45426.697,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -155,33 +155,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:13:02.441Z",
+              "timestamp": "2026-01-28T10:03:30.442Z",
               "scope": "mid",
               "datasetName": "Swiss Roll (1K points, 3D manifold)",
               "datasetSize": 1000,
               "dimensions": 3,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3539.5999999940395,
-              "memoryDeltaMb": 20.633291244506836,
-              "trustworthiness": 0.9966502801833927,
-              "fpsAvg": 59.982005399452724,
+              "runtimeMs": 3601,
+              "memoryDeltaMb": 24.180585861206055,
+              "trustworthiness": 0.9968068432671082,
+              "fpsAvg": 59.97443712551124,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:13:13.537Z",
+              "timestamp": "2026-01-28T10:03:43.994Z",
               "scope": "mid",
               "datasetName": "Medium Clustered (1K points)",
               "datasetSize": 1000,
               "dimensions": 50,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 5022.699999988079,
-              "memoryDeltaMb": 25.39285373687744,
-              "trustworthiness": 0.9444544065206317,
-              "fpsAvg": 45.958637227590906,
-              "responsivenessMs": 35.12000000278155
+              "runtimeMs": 6900.699999988079,
+              "memoryDeltaMb": 35.05460739135742,
+              "trustworthiness": 0.9446006113092206,
+              "fpsAvg": 46.35108481262328,
+              "responsivenessMs": 46.45333333214124
             }
           ]
         }
@@ -195,10 +195,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 53655,
+      "durationMs": 58700,
       "stats": {
-        "startTime": "2026-01-28T05:13:28.321Z",
-        "duration": 40351.305,
+        "startTime": "2026-01-28T10:03:58.606Z",
+        "duration": 45229.751,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -211,33 +211,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:13:56.445Z",
+              "timestamp": "2026-01-28T10:04:30.241Z",
               "scope": "mid",
               "datasetName": "Swiss Roll (1K points, 3D manifold)",
               "datasetSize": 1000,
               "dimensions": 3,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3573.0999999940395,
-              "memoryDeltaMb": 31.724428176879883,
-              "trustworthiness": 0.9966834776702327,
-              "fpsAvg": 59.98800239844764,
+              "runtimeMs": 3691.4000000059605,
+              "memoryDeltaMb": 20.963973999023438,
+              "trustworthiness": 0.9965450840550178,
+              "fpsAvg": 59.86231667272316,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:14:07.536Z",
+              "timestamp": "2026-01-28T10:04:42.702Z",
               "scope": "mid",
               "datasetName": "Medium Clustered (1K points)",
               "datasetSize": 1000,
               "dimensions": 50,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 4973.100000023842,
-              "memoryDeltaMb": 26.35302734375,
-              "trustworthiness": 0.9452682119205298,
-              "fpsAvg": 47.1976401179941,
-              "responsivenessMs": 35.72000000079473
+              "runtimeMs": 5769.4000000059605,
+              "memoryDeltaMb": 24.691871643066406,
+              "trustworthiness": 0.9444075394803871,
+              "fpsAvg": 43.99560044021821,
+              "responsivenessMs": 43.106666668256125
             }
           ]
         }
@@ -251,10 +251,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 53046,
+      "durationMs": 57748,
       "stats": {
-        "startTime": "2026-01-28T05:14:20.966Z",
-        "duration": 40753.141,
+        "startTime": "2026-01-28T10:04:57.171Z",
+        "duration": 44418.072,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -267,33 +267,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:14:49.420Z",
+              "timestamp": "2026-01-28T10:05:28.023Z",
               "scope": "mid",
               "datasetName": "Swiss Roll (1K points, 3D manifold)",
               "datasetSize": 1000,
               "dimensions": 3,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3536.899999976158,
-              "memoryDeltaMb": 21.372629165649414,
-              "trustworthiness": 0.9963527763627101,
-              "fpsAvg": 60.02164715248772,
+              "runtimeMs": 3776.5,
+              "memoryDeltaMb": 25.35137367248535,
+              "trustworthiness": 0.9964843776532518,
+              "fpsAvg": 59.98800240023507,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:15:00.588Z",
+              "timestamp": "2026-01-28T10:05:40.470Z",
               "scope": "mid",
               "datasetName": "Medium Clustered (1K points)",
               "datasetSize": 1000,
               "dimensions": 50,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 4966.4000000059605,
-              "memoryDeltaMb": 24.05387592315674,
-              "trustworthiness": 0.9447761929020208,
-              "fpsAvg": 46.89214805890552,
-              "responsivenessMs": 35.753333336114885
+              "runtimeMs": 5617.299999982119,
+              "memoryDeltaMb": 25.479888916015625,
+              "trustworthiness": 0.9448110035659705,
+              "fpsAvg": 45.9448661597867,
+              "responsivenessMs": 41.040000001589455
             }
           ]
         }
@@ -307,10 +307,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 52950,
+      "durationMs": 56677,
       "stats": {
-        "startTime": "2026-01-28T05:15:14.101Z",
-        "duration": 40574.54,
+        "startTime": "2026-01-28T10:05:54.857Z",
+        "duration": 43409.554000000004,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -323,33 +323,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:15:42.626Z",
+              "timestamp": "2026-01-28T10:06:25.032Z",
               "scope": "mid",
               "datasetName": "Swiss Roll (1K points, 3D manifold)",
               "datasetSize": 1000,
               "dimensions": 3,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3618.4000000059605,
-              "memoryDeltaMb": 30.41771125793457,
-              "trustworthiness": 0.9966972321276957,
-              "fpsAvg": 59.98200539766566,
+              "runtimeMs": 3598.4000000059605,
+              "memoryDeltaMb": 20.902650833129883,
+              "trustworthiness": 0.9969766513839362,
+              "fpsAvg": 60,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:15:53.543Z",
+              "timestamp": "2026-01-28T10:06:37.126Z",
               "scope": "mid",
               "datasetName": "Medium Clustered (1K points)",
               "datasetSize": 1000,
               "dimensions": 50,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 4800.899999976158,
-              "memoryDeltaMb": 33.40426731109619,
-              "trustworthiness": 0.9422086941755816,
-              "fpsAvg": 50.03924646693998,
-              "responsivenessMs": 35.63999999761582
+              "runtimeMs": 5391,
+              "memoryDeltaMb": 16.593875885009766,
+              "trustworthiness": 0.9447195618950586,
+              "fpsAvg": 47.23014857762174,
+              "responsivenessMs": 40.00000000198682
             }
           ]
         }
@@ -363,10 +363,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 52994,
+      "durationMs": 56074,
       "stats": {
-        "startTime": "2026-01-28T05:16:06.971Z",
-        "duration": 40701.815,
+        "startTime": "2026-01-28T10:06:51.346Z",
+        "duration": 43000.710999999996,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -379,33 +379,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:16:35.213Z",
+              "timestamp": "2026-01-28T10:07:21.438Z",
               "scope": "mid",
               "datasetName": "Swiss Roll (1K points, 3D manifold)",
               "datasetSize": 1000,
               "dimensions": 3,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3526.0999999940395,
-              "memoryDeltaMb": 27.09318733215332,
-              "trustworthiness": 0.9965058583800306,
-              "fpsAvg": 59.98800239844764,
+              "runtimeMs": 3612.5999999940395,
+              "memoryDeltaMb": 23.279314041137695,
+              "trustworthiness": 0.9968064187468161,
+              "fpsAvg": 59.90415335498908,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:16:46.538Z",
+              "timestamp": "2026-01-28T10:07:33.215Z",
               "scope": "mid",
               "datasetName": "Medium Clustered (1K points)",
               "datasetSize": 1000,
               "dimensions": 50,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 5047.100000023842,
-              "memoryDeltaMb": 38.69723987579346,
-              "trustworthiness": 0.9450489896417049,
-              "fpsAvg": 47.174447174447174,
-              "responsivenessMs": 39.506666664282484
+              "runtimeMs": 5320.5,
+              "memoryDeltaMb": 11.919288635253906,
+              "trustworthiness": 0.9441596196298183,
+              "fpsAvg": 44.94606472286836,
+              "responsivenessMs": 37.186666669448215
             }
           ]
         }
@@ -419,10 +419,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 53393,
+      "durationMs": 57351,
       "stats": {
-        "startTime": "2026-01-28T05:17:00.002Z",
-        "duration": 41070.293000000005,
+        "startTime": "2026-01-28T10:07:48.379Z",
+        "duration": 43323.316,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -435,33 +435,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:17:28.388Z",
+              "timestamp": "2026-01-28T10:08:18.385Z",
               "scope": "mid",
               "datasetName": "Swiss Roll (1K points, 3D manifold)",
               "datasetSize": 1000,
               "dimensions": 3,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3515.600000023842,
-              "memoryDeltaMb": 31.07916831970215,
-              "trustworthiness": 0.9963897945321787,
-              "fpsAvg": 59.99400060029756,
+              "runtimeMs": 3566,
+              "memoryDeltaMb": 32.85748100280762,
+              "trustworthiness": 0.9968166921378842,
+              "fpsAvg": 60.12221565184147,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:17:39.928Z",
+              "timestamp": "2026-01-28T10:08:30.564Z",
               "scope": "mid",
               "datasetName": "Medium Clustered (1K points)",
               "datasetSize": 1000,
               "dimensions": 50,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 5310.0999999940395,
-              "memoryDeltaMb": 14.126747131347656,
-              "trustworthiness": 0.9443788419086432,
-              "fpsAvg": 43.35402502684165,
-              "responsivenessMs": 35.7866666674614
+              "runtimeMs": 5444.4000000059605,
+              "memoryDeltaMb": 24.979973793029785,
+              "trustworthiness": 0.9450988283239938,
+              "fpsAvg": 47.216210899352184,
+              "responsivenessMs": 42.16000000238419
             }
           ]
         }
@@ -475,10 +475,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 52546,
+      "durationMs": 56446,
       "stats": {
-        "startTime": "2026-01-28T05:17:53.537Z",
-        "duration": 40083.814,
+        "startTime": "2026-01-28T10:08:45.154Z",
+        "duration": 42998.893,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -491,33 +491,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:18:21.595Z",
+              "timestamp": "2026-01-28T10:09:15.081Z",
               "scope": "mid",
               "datasetName": "Swiss Roll (1K points, 3D manifold)",
               "datasetSize": 1000,
               "dimensions": 3,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3558.0999999940395,
-              "memoryDeltaMb": 23.47542381286621,
-              "trustworthiness": 0.997042452029207,
-              "fpsAvg": 60.021647150727624,
+              "runtimeMs": 3620.5,
+              "memoryDeltaMb": 32.865583419799805,
+              "trustworthiness": 0.9963746816097809,
+              "fpsAvg": 60.04528004689645,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:18:32.476Z",
+              "timestamp": "2026-01-28T10:09:27.035Z",
               "scope": "mid",
               "datasetName": "Medium Clustered (1K points)",
               "datasetSize": 1000,
               "dimensions": 50,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 4900.199999988079,
-              "memoryDeltaMb": 15.866768836975098,
-              "trustworthiness": 0.9459635761589404,
-              "fpsAvg": 48.218854556755375,
-              "responsivenessMs": 35.17999999920527
+              "runtimeMs": 5432.199999988079,
+              "memoryDeltaMb": 12.325237274169922,
+              "trustworthiness": 0.9443175411784683,
+              "fpsAvg": 47.216210899352184,
+              "responsivenessMs": 38.04666666785876
             }
           ]
         }
@@ -531,10 +531,10 @@
       "wasmFeatures": "none",
       "success": true,
       "exitCode": 0,
-      "durationMs": 53316,
+      "durationMs": 57860,
       "stats": {
-        "startTime": "2026-01-28T05:18:46.090Z",
-        "duration": 40850.88,
+        "startTime": "2026-01-28T10:09:42.222Z",
+        "duration": 43794.379,
         "expected": 1,
         "skipped": 0,
         "unexpected": 0,
@@ -547,33 +547,33 @@
           "rows": [
             {
               "runId": 1,
-              "timestamp": "2026-01-28T05:19:14.302Z",
+              "timestamp": "2026-01-28T10:10:12.813Z",
               "scope": "mid",
               "datasetName": "Swiss Roll (1K points, 3D manifold)",
               "datasetSize": 1000,
               "dimensions": 3,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 3508.2000000178814,
-              "memoryDeltaMb": 27.537649154663086,
-              "trustworthiness": 0.9964799626422143,
-              "fpsAvg": 60.09852216748769,
+              "runtimeMs": 3619.7000000178814,
+              "memoryDeltaMb": 22.775304794311523,
+              "trustworthiness": 0.997050433010698,
+              "fpsAvg": 59.94005994005994,
               "responsivenessMs": 0
             },
             {
               "runId": 2,
-              "timestamp": "2026-01-28T05:19:25.795Z",
+              "timestamp": "2026-01-28T10:10:24.878Z",
               "scope": "mid",
               "datasetName": "Medium Clustered (1K points)",
               "datasetSize": 1000,
               "dimensions": 50,
               "wasmFeatures": "none",
               "wasmMode": "js",
-              "runtimeMs": 5360.0999999940395,
-              "memoryDeltaMb": 20.336853981018066,
-              "trustworthiness": 0.9452395143487858,
-              "fpsAvg": 44.99100179883573,
-              "responsivenessMs": 39.97333333492279
+              "runtimeMs": 5413.4000000059605,
+              "memoryDeltaMb": 16.91773223876953,
+              "trustworthiness": 0.9446418746816098,
+              "fpsAvg": 46.95773803688636,
+              "responsivenessMs": 39.560000002384186
             }
           ]
         }
