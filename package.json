@@ -11,7 +11,9 @@
   "packageManager": "yarn@1.22.22",
   "scripts": {
     "postinstall": "mkdir -p public/wasm/pkg && cp -r node_modules/@elarsaks/umap-wasm/wasm/pkg/* public/wasm/pkg/",
+    "predev": "node scripts/sync-wasm.cjs",
     "dev": "vite",
+    "prebuild": "node scripts/sync-wasm.cjs",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -35,7 +37,7 @@
     "bench:dev": "yarn bench:small:3"
   },
   "dependencies": {
-    "@elarsaks/umap-wasm": "^0.5.0",
+    "@elarsaks/umap-wasm": "^0.5.1",
     "plotly.js": "^3.3.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

@@ -12,11 +12,11 @@ export default defineConfig({
   retries: 0,
   workers: 1,
   outputDir,
-  // Use JSON reporter to keep machine-readable output and avoid HTML artifacts.
-  // Configure to write JSON to stdout (no outputFile) so Playwright does not
-  // create a separate `playwright-results` folder during runs — our runner
-  // captures stdout and embeds the JSON into the single bench payload.
-  reporter: [['json']],
+  // Use line reporter for live progress and JSON reporter for machine output.
+  reporter: [
+    ['line'],
+    ['json', { outputFile: join(outputDir, 'results.json') }],
+  ],
   use: {
     baseURL: 'http://localhost:4173',
     launchOptions: {
@@ -31,7 +31,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'yarn build && yarn preview --host 0.0.0.0 --port 4173',
+    command: 'yarn preview --host 0.0.0.0 --port 4173',
     url: 'http://localhost:4173',
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,

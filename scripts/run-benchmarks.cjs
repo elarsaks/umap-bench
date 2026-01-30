@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /*
- * Run Playwright benchmark tests multiple times and capture per-run stats
- * plus machine metadata for cross-machine comparison.
+ * Runs Playwright benchmarks multiple times and stores per-run results
+ * together with machine + git metadata. Used for cross-machine comparison
+ * and tracking changes across commits.
  */
 
 const fs = require('fs');
@@ -11,140 +12,144 @@ const { spawnSync, execSync } = require('child_process');
 
 const DEFAULT_RUNS = 10;
 const VALID_SCOPES = new Set(['small', 'mid', 'large']);
-const WASM_SEQUENCE = [
-  { label: 'dist', value: 'dist' },
-  { label: 'tree', value: 'tree' },
-  { label: 'matrix', value: 'matrix' },
-  { label: 'nn', value: 'nn' },
-  { label: 'opt', value: 'opt' },
-];
 
-const WASM_FULL_SET = [
-  { label: 'js', value: 'none' },
-  ...WASM_SEQUENCE,
-  { label: 'all', value: 'all' },
-];
+const PW_TMP_RESULTS = path.join(
+  os.tmpdir(),
+  'umap-bench-playwright-output',
+  'results.json'
+);
 
-function extractUiMetrics(summary) {
-  const collected = [];
+const OUT_DIR = path.join(process.cwd(), 'bench', 'results');
 
-  const readAttachment = (att) => {
-    if (!att) return null;
-    if (att.body) {
-      try {
-        const raw = Buffer.from(att.body, 'base64').toString('utf-8');
-        return JSON.parse(raw);
-      } catch (e) {
-        return null;
-      }
-    }
-    if (att.path && fs.existsSync(att.path)) {
-      try {
-        const raw = fs.readFileSync(att.path, 'utf-8');
-        return JSON.parse(raw);
-      } catch (e) {
-        return null;
-      }
-    }
+// "sequence" and "full" are treated as special WASM modes.
+// They are passed through WASM_FEATURES as literal values.
+const WASM_MODES = new Set(['sequence', 'full']);
+const WASM_MODE_LABELS = {
+  sequence: 'dist -> tree -> matrix -> nn -> opt',
+  full: 'js -> dist -> tree -> matrix -> nn -> opt -> all',
+};
+
+function safeJsonParse(raw) {
+  try {
+    return JSON.parse(raw);
+  } catch {
     return null;
-  };
-
-  const walkSuites = (suite) => {
-    if (!suite) return;
-    if (suite.suites) suite.suites.forEach(walkSuites);
-    if (suite.specs) {
-      for (const spec of suite.specs) {
-        if (!spec.tests) continue;
-        for (const test of spec.tests) {
-          if (!test.results) continue;
-          for (const result of test.results) {
-            const attachments = result.attachments || [];
-            for (const att of attachments) {
-              if (att.name === 'benchmark-metrics') {
-                const parsed = readAttachment(att);
-                if (parsed) collected.push(parsed);
-              }
-            }
-          }
-        }
-      }
-    }
-  };
-
-  if (summary && summary.suites) {
-    summary.suites.forEach(walkSuites);
   }
-
-  return collected;
 }
 
-function parseArgs() {
+function safeReadFile(filePath, encoding = 'utf-8') {
+  try {
+    if (!fs.existsSync(filePath)) return null;
+    return fs.readFileSync(filePath, encoding);
+  } catch {
+    return null;
+  }
+}
+
+function safeUnlink(filePath) {
+  try {
+    if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
+  } catch {
+    // ignore
+  }
+}
+
+function safeRm(targetPath, opts) {
+  try {
+    if (fs.existsSync(targetPath)) fs.rmSync(targetPath, opts);
+  } catch {
+    // ignore
+  }
+}
+
+function parseArgsAndEnv() {
   const args = process.argv.slice(2);
-  const result = {
+
+  const config = {
     runs: DEFAULT_RUNS,
-    scope: null,
-    wasmFeatures: null,
-    wasmSequence: false,
-    wasmFullSet: false,
+    scope: null, // 'small' | 'mid' | 'large'
+    wasm: 'none', // 'none' | string | 'sequence' | 'full'
+    preloadWasm: null, // null = default based on wasm mode
   };
+
+  // CLI args
   for (const arg of args) {
     if (arg.startsWith('--runs=')) {
       const n = Number(arg.split('=')[1]);
-      if (Number.isFinite(n) && n > 0) result.runs = Math.floor(n);
+      if (Number.isFinite(n) && n > 0) config.runs = Math.floor(n);
+      continue;
     }
+
     if (arg.startsWith('--scope=')) {
       const scope = arg.split('=')[1];
-      if (VALID_SCOPES.has(scope)) result.scope = scope;
+      if (VALID_SCOPES.has(scope)) config.scope = scope;
+      continue;
     }
+
+    // Older usage: --wasm defaults to "all"
     if (arg === '--wasm') {
-      result.wasmFeatures = 'all';
+      config.wasm = 'all';
+      continue;
     }
+
+    if (arg === '--preload-wasm') {
+      config.preloadWasm = true;
+      continue;
+    }
+
+    if (arg === '--no-preload-wasm') {
+      config.preloadWasm = false;
+      continue;
+    }
+
     if (arg.startsWith('--wasm=')) {
-      const value = arg.split('=')[1];
-      if (value && value.trim().length > 0) {
-        const trimmed = value.trim();
-        if (trimmed === 'sequence') {
-          result.wasmSequence = true;
-          result.wasmFeatures = null;
-        } else if (trimmed === 'full') {
-          result.wasmFullSet = true;
-          result.wasmFeatures = null;
-        } else {
-          result.wasmFeatures = trimmed;
-        }
-      }
+      const value = (arg.split('=')[1] || '').trim();
+      if (!value) continue;
+      config.wasm = value;
+      continue;
     }
   }
+
+  // Env overrides
   if (process.env.RUNS) {
     const n = Number(process.env.RUNS);
-    if (Number.isFinite(n) && n > 0) result.runs = Math.floor(n);
+    if (Number.isFinite(n) && n > 0) config.runs = Math.floor(n);
   }
+
   if (process.env.BENCH_SCOPE && VALID_SCOPES.has(process.env.BENCH_SCOPE)) {
-    result.scope = process.env.BENCH_SCOPE;
+    config.scope = process.env.BENCH_SCOPE;
   }
+
   if (process.env.WASM_FEATURES) {
-    const raw = process.env.WASM_FEATURES.trim();
-    if (raw === 'sequence') {
-      result.wasmSequence = true;
-      result.wasmFeatures = null;
-    } else if (raw === 'full') {
-      result.wasmFullSet = true;
-      result.wasmFeatures = null;
-    } else {
-      result.wasmFeatures = raw;
+    const value = process.env.WASM_FEATURES.trim();
+    if (value) config.wasm = value;
+  }
+
+  if (process.env.PRELOAD_WASM) {
+    const raw = process.env.PRELOAD_WASM.trim().toLowerCase();
+    if (raw) {
+      config.preloadWasm = ['1', 'true', 'yes'].includes(raw);
     }
   }
-  return result;
+
+  if (config.preloadWasm === null) {
+    config.preloadWasm = WASM_MODES.has(config.wasm);
+  }
+
+  return config;
 }
 
 function getGitMeta() {
   try {
-    return {
-      commit: execSync('git rev-parse HEAD', { encoding: 'utf-8' }).trim(),
-      branch: execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf-8' }).trim(),
-      statusDirty: execSync('git status --short', { encoding: 'utf-8' }).trim().length > 0,
-    };
-  } catch (e) {
+    const commit = execSync('git rev-parse HEAD', { encoding: 'utf-8' }).trim();
+    const branch = execSync('git rev-parse --abbrev-ref HEAD', {
+      encoding: 'utf-8',
+    }).trim();
+    const statusDirty =
+      execSync('git status --short', { encoding: 'utf-8' }).trim().length > 0;
+
+    return { commit, branch, statusDirty };
+  } catch {
     return null;
   }
 }
@@ -164,38 +169,109 @@ function getMachineInfo() {
 }
 
 function buildPlaywrightArgs(scope) {
-  const base = ['playwright', 'test', '--reporter=json'];
+  const args = ['playwright', 'test'];
   if (scope && VALID_SCOPES.has(scope)) {
-    base.push('--grep', `@${scope}`);
+    args.push('--grep', `@${scope}`);
   }
-  return base;
+  return args;
 }
 
-function runPlaywrightOnce(runIndex, scope, wasmFeatures) {
+// Playwright stores benchmark metrics as test attachments.
+// Each run may produce multiple metrics entries.
+function extractUiMetrics(summary) {
+  const collected = [];
+
+  const readAttachmentJson = (att) => {
+    if (!att) return null;
+
+    // Attachments can be inline (base64) or written to disk.
+    if (att.body) {
+      const raw = Buffer.from(att.body, 'base64').toString('utf-8');
+      return safeJsonParse(raw);
+    }
+
+    if (att.path) {
+      const raw = safeReadFile(att.path, 'utf-8');
+      return raw ? safeJsonParse(raw) : null;
+    }
+
+    return null;
+  };
+
+  const walkSuite = (suite) => {
+    if (!suite) return;
+
+    if (Array.isArray(suite.suites)) suite.suites.forEach(walkSuite);
+
+    if (!Array.isArray(suite.specs)) return;
+    for (const spec of suite.specs) {
+      if (!Array.isArray(spec.tests)) continue;
+
+      for (const test of spec.tests) {
+        if (!Array.isArray(test.results)) continue;
+
+        for (const result of test.results) {
+          const attachments = result.attachments || [];
+          for (const att of attachments) {
+            if (att.name !== 'benchmark-metrics') continue;
+            const parsed = readAttachmentJson(att);
+            if (parsed) collected.push(parsed);
+          }
+        }
+      }
+    }
+  };
+
+  if (summary && Array.isArray(summary.suites)) {
+    summary.suites.forEach(walkSuite);
+  }
+
+  return collected;
+}
+
+function readPlaywrightTmpSummary() {
+  const raw = safeReadFile(PW_TMP_RESULTS, 'utf-8');
+  if (!raw) return null;
+
+  // Each run should be isolated; remove tmp file after reading.
+  safeUnlink(PW_TMP_RESULTS);
+
+  return safeJsonParse(raw) || null;
+}
+
+// Some Playwright setups exit with code 1 even when results were produced.
+// Treat 0 and 1 as usable runs.
+function interpretExitCode(exitCode) {
+  const success = exitCode === 0 || exitCode === 1;
+  const resultLabel =
+    exitCode === 0 ? 'PASS' : exitCode === 1 ? 'PASS (nonzero exit)' : 'FAIL';
+  return { success, resultLabel };
+}
+
+function runPlaywrightOnce({ runIndex, scope, wasmFeatures, preloadWasm }) {
+  safeUnlink(PW_TMP_RESULTS);
+
   const start = Date.now();
   const args = buildPlaywrightArgs(scope);
+
   const result = spawnSync('npx', args, {
     encoding: 'utf-8',
     env: {
       ...process.env,
-      ...(wasmFeatures ? { WASM_FEATURES: wasmFeatures } : {}),
+      ...(wasmFeatures && wasmFeatures !== 'none'
+        ? { WASM_FEATURES: wasmFeatures }
+        : {}),
+      ...(preloadWasm ? { PRELOAD_WASM: '1' } : {}),
     },
-    stdio: 'pipe',
+    stdio: ['ignore', 'inherit', 'pipe'],
   });
+
   const durationMs = Date.now() - start;
-
-  let summary = null;
-  try {
-    summary = JSON.parse(result.stdout || '{}');
-  } catch (e) {
-    summary = null;
-  }
-
+  const summary = readPlaywrightTmpSummary();
   const uiMetrics = summary ? extractUiMetrics(summary) : [];
+
   const exitCode = result.status;
-  const success = exitCode === 0 || exitCode === 1;
-  const resultLabel =
-    exitCode === 0 ? 'PASS' : exitCode === 1 ? 'PASS (nonzero exit)' : 'FAIL';
+  const { success, resultLabel } = interpretExitCode(exitCode);
 
   return {
     run: runIndex,
@@ -208,103 +284,108 @@ function runPlaywrightOnce(runIndex, scope, wasmFeatures) {
     errors: summary?.errors ?? [],
     uiMetrics,
     resultLabel,
-    stdoutPreview: (result.stdout || '').slice(0, 2000),
+    stdoutPreview: '',
     stderrPreview: (result.stderr || '').slice(0, 2000),
   };
 }
 
-function main() {
-  const { runs, scope, wasmFeatures, wasmSequence, wasmFullSet } = parseArgs();
-  const runResults = [];
+function ensureOutFile() {
+  fs.mkdirSync(OUT_DIR, { recursive: true });
+  const timestamp = Date.now();
+  return path.join(OUT_DIR, `bench-runs-${timestamp}.json`);
+}
 
+function writePayload(outFile, payload) {
+  fs.writeFileSync(outFile, JSON.stringify(payload, null, 2));
+}
+
+function maybeEmbedPlaywrightJson(payload) {
+  try {
+    const pwResults = path.join(process.cwd(), 'playwright-results', 'results.json');
+    const raw = safeReadFile(pwResults, 'utf-8');
+    if (!raw) return;
+
+    payload.playwright = safeJsonParse(raw) || { raw };
+
+    // Keep only the combined output file.
+    safeRm(pwResults, { force: true });
+  } catch {
+    // ignore
+  }
+}
+
+// Keep repo clean — HTML reports are not needed for benchmarks.
+function cleanupPlaywrightArtifacts() {
+  const pwReportDir = path.join(process.cwd(), 'playwright-report');
+  safeRm(pwReportDir, { recursive: true, force: true });
+}
+
+function logConfig({ runs, scope, wasm, preloadWasm }) {
   console.log(`Running Playwright benchmark suite ${runs} time(s)...`);
   if (scope) console.log(`Scope: ${scope}`);
-  if (wasmFullSet) {
-    console.log('WASM full set: js -> dist -> tree -> matrix -> nn -> opt -> all');
-  } else if (wasmSequence) {
-    console.log('WASM sequence: dist -> tree -> matrix -> nn -> opt');
-  } else if (wasmFeatures) {
-    console.log(`WASM features: ${wasmFeatures}`);
+
+  if (WASM_MODES.has(wasm)) {
+    console.log(`WASM ${wasm}: ${WASM_MODE_LABELS[wasm]}`);
+  } else if (wasm && wasm !== 'none') {
+    console.log(`WASM features: ${wasm}`);
   }
 
-  const outDir = path.join(process.cwd(), 'bench', 'results');
-  fs.mkdirSync(outDir, { recursive: true });
-  const timestamp = Date.now();
-  const outFile = path.join(outDir, `bench-runs-${timestamp}.json`);
+  if (preloadWasm) {
+    console.log('WASM preload: enabled');
+  }
+}
+
+function main() {
+  const config = parseArgsAndEnv();
+  logConfig(config);
+
+  const outFile = ensureOutFile();
+  const runResults = [];
+
+  if (!process.env.SKIP_BUILD) {
+    console.log('Building benchmark app once before runs...');
+    execSync('yarn build', { stdio: 'inherit' });
+  }
 
   const payload = {
     generatedAt: new Date().toISOString(),
-    runs,
+    runs: config.runs,
     machine: getMachineInfo(),
     git: getGitMeta(),
-    wasmFeatures: wasmFullSet
-      ? 'full'
-      : wasmSequence
-        ? 'sequence'
-        : (wasmFeatures ?? 'none'),
+    wasmFeatures: config.wasm,
+    wasmPreload: config.preloadWasm,
     results: runResults,
   };
 
-  fs.writeFileSync(outFile, JSON.stringify(payload, null, 2));
+  // Preserve partial results if the process crashes mid-run.
+  writePayload(outFile, payload);
 
-  if (wasmFullSet || wasmSequence) {
-    const steps = wasmFullSet ? WASM_FULL_SET : WASM_SEQUENCE;
-    for (const step of steps) {
-      console.log(`\n=== WASM config: ${step.label} (${step.value}) ===`);
-      for (let i = 1; i <= runs; i++) {
-        console.log(`\n--- Run ${i}/${runs} ---`);
-        const res = runPlaywrightOnce(i, scope, step.value);
-        res.sequenceLabel = step.label;
-        runResults.push(res);
-        console.log(`Result: ${res.resultLabel ?? (res.success ? 'PASS' : 'FAIL')} in ${res.durationMs} ms`);
-        if (!res.success) {
-          console.log('stderr preview:', res.stderrPreview);
-        }
+  for (let i = 1; i <= config.runs; i++) {
+    const header = WASM_MODES.has(config.wasm)
+      ? `--- Run ${i}/${config.runs} (WASM ${config.wasm}) ---`
+      : `--- Run ${i}/${config.runs} ---`;
 
-        fs.writeFileSync(outFile, JSON.stringify(payload, null, 2));
-      }
-    }
-  } else {
-    for (let i = 1; i <= runs; i++) {
-      console.log(`\n--- Run ${i}/${runs} ---`);
-      const res = runPlaywrightOnce(i, scope, wasmFeatures);
-      runResults.push(res);
-      console.log(`Result: ${res.resultLabel ?? (res.success ? 'PASS' : 'FAIL')} in ${res.durationMs} ms`);
-      if (!res.success) {
-        console.log('stderr preview:', res.stderrPreview);
-      }
+    console.log(`\n${header}`);
 
-      fs.writeFileSync(outFile, JSON.stringify(payload, null, 2));
-    }
+    const res = runPlaywrightOnce({
+      runIndex: i,
+      scope: config.scope,
+      wasmFeatures: config.wasm,
+      preloadWasm: config.preloadWasm,
+    });
+
+    runResults.push(res);
+
+    console.log(`Result: ${res.resultLabel} in ${res.durationMs} ms`);
+    if (!res.success) console.log('stderr preview:', res.stderrPreview);
+
+    writePayload(outFile, payload);
   }
 
-  // If Playwright wrote a JSON report, embed it into our payload
-  try {
-    const pwResults = path.join(process.cwd(), 'playwright-results', 'results.json');
-    if (fs.existsSync(pwResults)) {
-      const data = fs.readFileSync(pwResults, 'utf-8');
-      try {
-        payload.playwright = JSON.parse(data);
-      } catch (e) {
-        payload.playwright = { raw: data };
-      }
-      // remove the playwright-results file so only our file remains
-      try { fs.rmSync(pwResults, { force: true }); } catch (e) { }
-    }
-  } catch (e) {
-    // ignore
-  }
-  fs.writeFileSync(outFile, JSON.stringify(payload, null, 2));
+  maybeEmbedPlaywrightJson(payload);
+  writePayload(outFile, payload);
 
-  // Remove Playwright HTML report folder (if present) to avoid clutter
-  try {
-    const pwReportDir = path.join(process.cwd(), 'playwright-report');
-    if (fs.existsSync(pwReportDir)) {
-      fs.rmSync(pwReportDir, { recursive: true, force: true });
-    }
-  } catch (e) {
-    // ignore
-  }
+  cleanupPlaywrightArtifacts();
 
   console.log(`\nSaved run data to ${outFile}`);
 }
