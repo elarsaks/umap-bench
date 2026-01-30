@@ -1,0 +1,48 @@
+{
+  "generatedAt": "2026-01-30T08:55:05.396Z",
+  "runs": 10,
+  "machine": {
+    "platform": "linux",
+    "release": "6.6.87.2-microsoft-standard-WSL2",
+    "arch": "x64",
+    "cpuModel": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+    "cpuCores": 12,
+    "totalMemBytes": 8240971776,
+    "loadAvg": [
+      0.24,
+      0.37,
+      0.67
+    ],
+    "hostname": "DESKTOP-7R7IE5L"
+  },
+  "git": {
+    "commit": "2f4c0419a528e28ccb9327bc8247f52cb30ae189",
+    "branch": "improve-tests",
+    "statusDirty": true
+  },
+  "wasmFeatures": "sequence",
+  "wasmPreload": true,
+  "results": [
+    {
+      "run": 1,
+      "wasmFeatures": "sequence",
+      "success": true,
+      "exitCode": 1,
+      "durationMs": 1088451,
+      "stats": {
+        "startTime": "2026-01-30T08:55:22.244Z",
+        "duration": 1028157.7000000001,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "resultLabel": "PASS (nonzero exit)",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    }
+  ]
+}

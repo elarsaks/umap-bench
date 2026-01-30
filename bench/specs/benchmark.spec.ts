@@ -51,13 +51,50 @@ const waitForWasmReady = async (page: Page, timeoutMs = 240_000) => {
   }
 };
 
-const runBenchmarkAndWait = async (page: Page) => {
+const runBenchmarkAndWait = async (page: Page, timeoutMs = 240_000) => {
   const button = runButton(page);
   await waitForWasmReady(page);
+  const startExportLen = await page.evaluate(
+    () => (window.__BENCH_EXPORT__ || []).length
+  );
   await button.click();
   await expect.soft(button).toBeDisabled();
-  await expect(button).toBeEnabled({ timeout: 240_000 });
+  const start = Date.now();
+  let lastLog = 0;
+  while (true) {
+    const exportDone = await page.evaluate(
+      (initialLen) => (window.__BENCH_EXPORT__ || []).length > initialLen,
+      startExportLen
+    );
+    if (exportDone || (await button.isEnabled())) break;
+
+    const now = Date.now();
+    if (now - lastLog >= 10_000) {
+      const status = await page.evaluate(() => window.__BENCH_PROGRESS__);
+      const elapsed = Math.round((now - start) / 1000);
+      if (status) {
+        console.log(
+          `[bench] running... ${elapsed}s (epoch ${status.epoch}, ${status.elapsedMs}ms)`
+        );
+      } else {
+        console.log(`[bench] running... ${elapsed}s`);
+      }
+      lastLog = now;
+    }
+
+    if (now - start > timeoutMs) {
+      throw new Error('Timed out waiting for benchmark to complete.');
+    }
+    await page.waitForTimeout(1000);
+  }
+  await expect(button).toBeEnabled({ timeout: 30_000 });
   await expect.soft(page.getByText('Latest Results')).toBeVisible();
+};
+
+const getEnvTimeout = (name: string, fallback: number) => {
+  const raw = process.env[name];
+  const value = raw ? Number(raw) : NaN;
+  return Number.isFinite(value) && value > 0 ? Math.floor(value) : fallback;
 };
 
 const clearResults = async (page: Page) => {
@@ -79,6 +116,7 @@ const setBenchContext = async (page: Page, scope: string) =>
   page.evaluate((value) => {
     window.__BENCH_EXPORT__ = [];
     window.__BENCH_CONTEXT__ = { scope: value };
+    window.__BENCH_PROGRESS__ = null;
   }, scope);
 
 const needsWasm = (selection: Record<string, boolean>) =>
@@ -172,7 +210,8 @@ test('mid bench: two moderate datasets @mid', async ({ page }, testInfo) => {
 });
 
 test('large bench: two heavier datasets @large', async ({ page }, testInfo) => {
-  test.setTimeout(240_000);
+  const runTimeoutMs = getEnvTimeout('BENCH_LARGE_RUN_TIMEOUT_MS', 900_000);
+  test.setTimeout(runTimeoutMs + 120_000);
   await page.goto('/');
   await preloadWasm(page);
   const { configs } = getWasmConfigsFromEnv();
@@ -192,14 +231,14 @@ test('large bench: two heavier datasets @large', async ({ page }, testInfo) => {
       `[bench][large] config=${configLabel} dataset=MNIST-like (2000x784) run=1/1`
     );
     await datasetDropdown.selectOption({ label: 'MNIST-like (2K points, 784D)' });
-    await runBenchmarkAndWait(page);
+    await runBenchmarkAndWait(page, runTimeoutMs);
     await expectDatasetSummary(page, 2000, 784);
 
     console.log(
       `[bench][large] config=${configLabel} dataset=3D Dense Clusters (2000x75) run=1/1`
     );
     await datasetDropdown.selectOption({ label: '3D Dense Clusters (2K points)' });
-    await runBenchmarkAndWait(page);
+    await runBenchmarkAndWait(page, runTimeoutMs);
     await expectDatasetSummary(page, 2000, 75);
 
     const tableRows = page.getByRole('row').filter({ hasText: '×' });

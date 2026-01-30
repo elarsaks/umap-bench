@@ -28,6 +28,7 @@ declare global {
     __WASM_LOADING__?: boolean;
     __WASM_PROGRESS__?: number;
     __WASM_ENSURE_READY__?: () => Promise<void>;
+    __BENCH_PROGRESS__?: { epoch: number; elapsedMs: number } | null;
   }
 }
 
@@ -302,7 +303,34 @@ function App() {
           useWasmOptimizer: config.useWasmOptimizer,
         });
 
-        const embeddedData = await umap.fitAsync(originalData);
+        const benchContext = window.__BENCH_CONTEXT__ ?? {};
+        const maxRunMs =
+          typeof benchContext.runTimeoutMs === "number"
+            ? benchContext.runTimeoutMs
+            : null;
+        let aborted = false;
+        const runStart = performance.now();
+        if (typeof window !== "undefined") {
+          window.__BENCH_PROGRESS__ = { epoch: 0, elapsedMs: 0 };
+        }
+        const embeddedData = await umap.fitAsync(originalData, (epoch) => {
+          const elapsedMs = Math.round(performance.now() - runStart);
+          if (typeof window !== "undefined") {
+            window.__BENCH_PROGRESS__ = { epoch, elapsedMs };
+          }
+          if (maxRunMs !== null && elapsedMs > maxRunMs) {
+            aborted = true;
+            return false;
+          }
+          return true;
+        });
+        if (aborted) {
+          throw new Error(
+            `Benchmark aborted after ${Math.round(
+              (performance.now() - runStart) / 1000
+            )}s`
+          );
+        }
 
         // Stop FPS monitoring
         fpsMonitor.stop();
@@ -372,8 +400,13 @@ function App() {
         setCurrentEdges(edges);
       } catch (error) {
         console.error("Benchmark failed:", error);
-        alert("Benchmark failed. Check console for details.");
+        if (typeof window !== "undefined" && !window.__BENCH_CONTEXT__?.scope) {
+          alert("Benchmark failed. Check console for details.");
+        }
       } finally {
+        if (typeof window !== "undefined") {
+          window.__BENCH_PROGRESS__ = null;
+        }
         setIsRunning(false);
       }
     },
