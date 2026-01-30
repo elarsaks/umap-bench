@@ -69,7 +69,7 @@ function parseArgsAndEnv() {
     runs: DEFAULT_RUNS,
     scope: null, // 'small' | 'mid' | 'large'
     wasm: 'none', // 'none' | string | 'sequence' | 'full'
-    preloadWasm: null, // null = default based on wasm mode
+    preloadWasm: true, // default on; can be disabled via flag/env
   };
 
   // CLI args
@@ -130,10 +130,6 @@ function parseArgsAndEnv() {
     if (raw) {
       config.preloadWasm = ['1', 'true', 'yes'].includes(raw);
     }
-  }
-
-  if (config.preloadWasm === null) {
-    config.preloadWasm = WASM_MODES.has(config.wasm);
   }
 
   return config;
@@ -330,9 +326,7 @@ function logConfig({ runs, scope, wasm, preloadWasm }) {
     console.log(`WASM features: ${wasm}`);
   }
 
-  if (preloadWasm) {
-    console.log('WASM preload: enabled');
-  }
+  console.log(`WASM preload: ${preloadWasm ? 'enabled' : 'disabled'}`);
 }
 
 function main() {

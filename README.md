@@ -106,6 +106,19 @@ Located in: `bench/`
 	```
 	Scopes: `small`, `mid`, `large`.
 
+### Customization
+- Preload WASM (default on) / disable preload:
+	```bash
+	yarn bench:loop --preload-wasm
+	yarn bench:loop --no-preload-wasm
+	```
+- Examples:
+	```bash
+	yarn bench:loop --runs=5
+	yarn bench:loop --scope=small
+	yarn bench:loop --scope=small --runs=3 --wasm=all
+	```
+
 - Run full test set: JS-only, each single WASM feature, then all WASM
 	```bash
 	yarn bench:loop:full
