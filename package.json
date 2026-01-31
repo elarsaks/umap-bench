@@ -29,6 +29,7 @@
     "bench:loop:small": "node scripts/run-benchmarks.cjs --scope=small",
     "bench:loop:mid": "node scripts/run-benchmarks.cjs --scope=mid",
     "bench:loop:large": "node scripts/run-benchmarks.cjs --scope=large",
+    "bench:full": "RUNS=10 SCOPE=small bash -lc 'set -e; scope=\"${SCOPE}\"; runs=\"${RUNS}\"; for wasm in none all dist tree matrix nn opt; do if [ \"$wasm\" = \"none\" ]; then yarn bench:loop --scope=\"$scope\" --runs=\"$runs\"; else yarn bench:loop --scope=\"$scope\" --runs=\"$runs\" --wasm=\"$wasm\"; fi; done' && RUNS=10 SCOPE=mid bash -lc 'set -e; scope=\"${SCOPE}\"; runs=\"${RUNS}\"; for wasm in none all dist tree matrix nn opt; do if [ \"$wasm\" = \"none\" ]; then yarn bench:loop --scope=\"$scope\" --runs=\"$runs\"; else yarn bench:loop --scope=\"$scope\" --runs=\"$runs\" --wasm=\"$wasm\"; fi; done' && RUNS=10 SCOPE=large bash -lc 'set -e; scope=\"${SCOPE}\"; runs=\"${RUNS}\"; for wasm in none all dist tree matrix nn opt; do if [ \"$wasm\" = \"none\" ]; then yarn bench:loop --scope=\"$scope\" --runs=\"$runs\"; else yarn bench:loop --scope=\"$scope\" --runs=\"$runs\" --wasm=\"$wasm\"; fi; done'",
     "bench:small:3": "yarn bench:loop --scope=small --runs=3 && yarn bench:loop --scope=small --runs=3 --wasm=all",
     "bench:mid:3": "yarn bench:loop --scope=mid --runs=3 && yarn bench:loop --scope=mid --runs=3 --wasm=all",
     "bench:large:3": "yarn bench:loop --scope=large --runs=3 && yarn bench:loop --scope=large --runs=3 --wasm=all",
