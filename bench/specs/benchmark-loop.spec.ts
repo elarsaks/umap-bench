@@ -107,13 +107,13 @@ test("bench loop: 10x small/mid/large with JS then WASM @loop", async (
       dims: 4,
     },
     {
-      label: "Swiss Roll (1K points, 3D manifold)",
-      size: 1000,
+      label: "Swiss Roll (600 points, 3D manifold)",
+      size: 600,
       dims: 3,
     },
     {
-      label: "MNIST-like (2K points, 784D)",
-      size: 2000,
+      label: "MNIST-like (1K points, 784D)",
+      size: 1000,
       dims: 784,
     },
   ];

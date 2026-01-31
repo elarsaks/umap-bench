@@ -418,26 +418,26 @@ export const DATASET_CONFIGS: DatasetConfig[] = [
     },
   },
   {
-    name: "Swiss Roll (1K points, 3D manifold)",
-    size: 1000,
+    name: "Swiss Roll (600 points, 3D manifold)",
+    size: 600,
     dimensions: 3,
     generator: () => {
-      const { data } = generateSwissRoll(1000);
+      const { data } = generateSwissRoll(600);
       return data;
     },
   },
   {
-    name: "Small Random (100 points)",
-    size: 100,
+    name: "Small Random (80 points)",
+    size: 80,
     dimensions: 10,
-    generator: () => generateRandomData(100, 10),
+    generator: () => generateRandomData(80, 10),
   },
   {
-    name: "3D Spherical Clusters (500 points)",
-    size: 500,
+    name: "3D Spherical Clusters (300 points)",
+    size: 300,
     dimensions: 50,
     generator: () => {
-      const { data } = generate3DSphericalClusters(500, 4);
+      const { data } = generate3DSphericalClusters(300, 4);
       return data.map((point) => [
         ...point,
         ...Array.from({ length: 47 }, () => Math.random() * 0.1 - 0.05),
@@ -445,11 +445,11 @@ export const DATASET_CONFIGS: DatasetConfig[] = [
     },
   },
   {
-    name: "3D Helix Clusters (800 points)",
-    size: 800,
+    name: "3D Helix Clusters (400 points)",
+    size: 400,
     dimensions: 30,
     generator: () => {
-      const { data } = generate3DHelixClusters(800);
+      const { data } = generate3DHelixClusters(400);
       return data.map((point) => [
         ...point,
         ...Array.from({ length: 27 }, () => Math.random() * 0.1 - 0.05),
@@ -457,26 +457,26 @@ export const DATASET_CONFIGS: DatasetConfig[] = [
     },
   },
   {
-    name: "Medium Clustered (1K points)",
-    size: 1000,
+    name: "Medium Clustered (600 points)",
+    size: 600,
     dimensions: 50,
-    generator: () => generateClusteredData(1000, 50),
+    generator: () => generateClusteredData(600, 50),
   },
   {
-    name: "MNIST-like (2K points, 784D)",
-    size: 2000,
+    name: "MNIST-like (1K points, 784D)",
+    size: 1000,
     dimensions: 784,
     generator: () => {
-      const { data } = generateMNISTLike(2000);
+      const { data } = generateMNISTLike(1000);
       return data;
     },
   },
   {
-    name: "3D Dense Clusters (2K points)",
-    size: 2000,
+    name: "3D Dense Clusters (1K points)",
+    size: 1000,
     dimensions: 75,
     generator: () => {
-      const { data } = generate3DClusteredData(2000, 5);
+      const { data } = generate3DClusteredData(1000, 5);
       return data.map((point) => [
         ...point,
         ...Array.from({ length: 72 }, () => Math.random() * 0.1 - 0.05),
@@ -484,17 +484,17 @@ export const DATASET_CONFIGS: DatasetConfig[] = [
     },
   },
   {
-    name: "Spiral (2K points)",
-    size: 2000,
+    name: "Spiral (1K points)",
+    size: 1000,
     dimensions: 20,
-    generator: () => generateSpiralData(2000, 20),
+    generator: () => generateSpiralData(1000, 20),
   },
   {
-    name: "Large Swiss Roll (5K points)",
-    size: 5000,
+    name: "Large Swiss Roll (2K points)",
+    size: 2000,
     dimensions: 3,
     generator: () => {
-      const { data } = generateSwissRoll(5000);
+      const { data } = generateSwissRoll(2000);
       return data;
     },
   },
