@@ -9,7 +9,6 @@ const TOGGLE_LABELS = {
 } as const;
 
 const FEATURE_ALIAS_MAP: Record<string, keyof typeof TOGGLE_LABELS> = {
-  distance: "useWasmDistance",
   tree: "useWasmTree",
   matrix: "useWasmMatrix",
   nn: "useWasmNNDescent",
