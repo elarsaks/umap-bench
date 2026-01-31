@@ -120,6 +120,9 @@ Located in: `bench/`
 	yarn bench:loop --scope=small --runs=10 --wasm=opt
 	yarn bench:loop --scope=mid --runs=10 --wasm=opt
 	yarn bench:loop --scope=large --runs=10 --wasm=opt
+
+	# Master command: set RUNS and SCOPE, run JS + all WASM + single features
+	RUNS=10 SCOPE=small bash -lc 'set -e; scope="${SCOPE}"; runs="${RUNS}"; for wasm in none all dist tree matrix nn opt; do if [ "$wasm" = "none" ]; then yarn bench:loop --scope="$scope" --runs="$runs"; else yarn bench:loop --scope="$scope" --runs="$runs" --wasm="$wasm"; fi; done'
 	```
 	Scopes: `small`, `mid`, `large`.
 
