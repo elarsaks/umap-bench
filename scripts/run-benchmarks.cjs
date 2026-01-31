@@ -21,11 +21,10 @@ const PW_TMP_RESULTS = path.join(
 
 const OUT_DIR = path.join(process.cwd(), 'bench', 'results');
 
-// "sequence" and "full" are treated as special WASM modes.
-// They are passed through WASM_FEATURES as literal values.
-const WASM_MODES = new Set(['sequence', 'full']);
+// "full" is treated as a special WASM mode.
+// It is passed through WASM_FEATURES as a literal value.
+const WASM_MODES = new Set(['full']);
 const WASM_MODE_LABELS = {
-  sequence: 'dist -> tree -> matrix -> nn -> opt',
   full: 'js -> dist -> tree -> matrix -> nn -> opt -> all',
 };
 
@@ -68,7 +67,7 @@ function parseArgsAndEnv() {
   const config = {
     runs: DEFAULT_RUNS,
     scope: null, // 'small' | 'mid' | 'large'
-    wasm: 'none', // 'none' | string | 'sequence' | 'full'
+    wasm: 'none', // 'none' | string | 'full'
     preloadWasm: true, // default on; can be disabled via flag/env
   };
 

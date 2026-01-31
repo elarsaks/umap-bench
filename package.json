@@ -25,7 +25,6 @@
     "bench:headed": "playwright test --headed",
     "bench:ui": "playwright test --ui",
     "bench:loop": "node scripts/run-benchmarks.cjs",
-    "bench:loop:sequence": "node scripts/run-benchmarks.cjs --wasm=sequence",
     "bench:loop:full": "node scripts/run-benchmarks.cjs --wasm=full",
     "bench:loop:small": "node scripts/run-benchmarks.cjs --scope=small",
     "bench:loop:mid": "node scripts/run-benchmarks.cjs --scope=mid",

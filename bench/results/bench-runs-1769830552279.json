@@ -1,0 +1,219 @@
+{
+  "generatedAt": "2026-01-31T03:36:06.486Z",
+  "runs": 1,
+  "machine": {
+    "platform": "linux",
+    "release": "6.6.87.2-microsoft-standard-WSL2",
+    "arch": "x64",
+    "cpuModel": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+    "cpuCores": 12,
+    "totalMemBytes": 8240967680,
+    "loadAvg": [
+      0.38,
+      0.61,
+      0.65
+    ],
+    "hostname": "DESKTOP-7R7IE5L"
+  },
+  "git": {
+    "commit": "f9db56e154c49415f7a6a8ddd9c40cfff2a5842b",
+    "branch": "improve-tests",
+    "statusDirty": true
+  },
+  "wasmFeatures": "sequence",
+  "wasmPreload": true,
+  "results": [
+    {
+      "run": 1,
+      "wasmFeatures": "sequence",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 66671,
+      "stats": {
+        "startTime": "2026-01-31T03:36:20.310Z",
+        "duration": 53306.666000000005,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T03:36:38.460Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2336.39999999851,
+              "memoryDeltaMb": -0.025360107421875,
+              "trustworthiness": 0.9871313899450782,
+              "fpsAvg": 60,
+              "responsivenessMs": 7.245454545386813
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T03:36:44.601Z",
+              "scope": "small",
+              "datasetName": "Small Random (100 points)",
+              "datasetSize": 100,
+              "dimensions": 10,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 3341.0999999996275,
+              "memoryDeltaMb": -3.505669593811035,
+              "trustworthiness": 0.8789877300613497,
+              "fpsAvg": 49,
+              "responsivenessMs": 21.919999999925494
+            }
+          ]
+        },
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T03:36:47.420Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Tree",
+              "wasmMode": "wasm:Tree",
+              "runtimeMs": 2316.2000000011176,
+              "memoryDeltaMb": 7.807352066040039,
+              "trustworthiness": 0.9869708491761724,
+              "fpsAvg": 59.99803285142589,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T03:36:52.708Z",
+              "scope": "small",
+              "datasetName": "Small Random (100 points)",
+              "datasetSize": 100,
+              "dimensions": 10,
+              "wasmFeatures": "Tree",
+              "wasmMode": "wasm:Tree",
+              "runtimeMs": 3291.2999999988824,
+              "memoryDeltaMb": 2.249408721923828,
+              "trustworthiness": 0.8740490797546012,
+              "fpsAvg": 48.19988195949041,
+              "responsivenessMs": 20.866666666666667
+            }
+          ]
+        },
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T03:36:55.488Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2303.9000000003725,
+              "memoryDeltaMb": -1.8429069519042969,
+              "trustworthiness": 0.9871440642163075,
+              "fpsAvg": 59.97001499250375,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T03:37:00.870Z",
+              "scope": "small",
+              "datasetName": "Small Random (100 points)",
+              "datasetSize": 100,
+              "dimensions": 10,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 3355.7999999988824,
+              "memoryDeltaMb": 10.770516395568848,
+              "trustworthiness": 0.8529243353783231,
+              "fpsAvg": 46,
+              "responsivenessMs": 18.953333333383004
+            }
+          ]
+        },
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T03:37:03.628Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "NN",
+              "wasmMode": "wasm:NN",
+              "runtimeMs": 2360.10000000149,
+              "memoryDeltaMb": 9.702388763427734,
+              "trustworthiness": 0.9865061258977609,
+              "fpsAvg": 60.00983767830792,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T03:37:09.073Z",
+              "scope": "small",
+              "datasetName": "Small Random (100 points)",
+              "datasetSize": 100,
+              "dimensions": 10,
+              "wasmFeatures": "NN",
+              "wasmMode": "wasm:NN",
+              "runtimeMs": 3440.2999999988824,
+              "memoryDeltaMb": -5.239223480224609,
+              "trustworthiness": 0.8654089979550103,
+              "fpsAvg": 46.99530046997051,
+              "responsivenessMs": 21.286666666716336
+            }
+          ]
+        },
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T03:37:10.044Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 591.6999999992549,
+              "memoryDeltaMb": -18.18655776977539,
+              "trustworthiness": 0.986020278833967,
+              "fpsAvg": 0,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T03:37:12.898Z",
+              "scope": "small",
+              "datasetName": "Small Random (100 points)",
+              "datasetSize": 100,
+              "dimensions": 10,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 731.5,
+              "memoryDeltaMb": 15.330427169799805,
+              "trustworthiness": 0.8525971370143149,
+              "fpsAvg": 0,
+              "responsivenessMs": 16.600000000124176
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    }
+  ]
+}

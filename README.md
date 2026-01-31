@@ -99,10 +99,27 @@ Located in: `bench/`
 	yarn bench:loop --scope=small --runs=10 --wasm=all
 	yarn bench:loop --scope=mid --runs=10 --wasm=all
 	yarn bench:loop --scope=large --runs=10 --wasm=all
-	# Run each single WASM feature (sequential)
-	yarn bench:loop:sequence --scope=small --runs=10
-	yarn bench:loop:sequence --scope=mid --runs=10
-	yarn bench:loop:sequence --scope=large --runs=10
+	
+	# Run each single WASM feature
+	yarn bench:loop --scope=small --runs=10 --wasm=dist
+	yarn bench:loop --scope=mid --runs=10 --wasm=dist
+	yarn bench:loop --scope=large --runs=10 --wasm=dist
+
+	yarn bench:loop --scope=small --runs=10 --wasm=tree
+	yarn bench:loop --scope=mid --runs=10 --wasm=tree
+	yarn bench:loop --scope=large --runs=10 --wasm=tree
+
+	yarn bench:loop --scope=small --runs=10 --wasm=matrix
+	yarn bench:loop --scope=mid --runs=10 --wasm=matrix
+	yarn bench:loop --scope=large --runs=10 --wasm=matrix
+
+	yarn bench:loop --scope=small --runs=10 --wasm=nn
+	yarn bench:loop --scope=mid --runs=10 --wasm=nn
+	yarn bench:loop --scope=large --runs=10 --wasm=nn
+
+	yarn bench:loop --scope=small --runs=10 --wasm=opt
+	yarn bench:loop --scope=mid --runs=10 --wasm=opt
+	yarn bench:loop --scope=large --runs=10 --wasm=opt
 	```
 	Scopes: `small`, `mid`, `large`.
 

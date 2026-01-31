@@ -93,16 +93,6 @@ export const getWasmConfigsFromEnv = (options?: {
     };
   }
 
-  if (lower === "sequence") {
-    return {
-      configs: SEQUENCE_ORDER.map((label) => ({
-        label,
-        selection: buildSelection(label),
-      })),
-      raw,
-    };
-  }
-
   if (lower === "full") {
     return {
       configs: FULL_ORDER.map((label) => ({

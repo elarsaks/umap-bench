@@ -1,0 +1,90 @@
+{
+  "generatedAt": "2026-01-31T03:51:01.151Z",
+  "runs": 3,
+  "machine": {
+    "platform": "linux",
+    "release": "6.6.87.2-microsoft-standard-WSL2",
+    "arch": "x64",
+    "cpuModel": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+    "cpuCores": 12,
+    "totalMemBytes": 8240967680,
+    "loadAvg": [
+      1.65,
+      0.92,
+      0.71
+    ],
+    "hostname": "DESKTOP-7R7IE5L"
+  },
+  "git": {
+    "commit": "f9db56e154c49415f7a6a8ddd9c40cfff2a5842b",
+    "branch": "improve-tests",
+    "statusDirty": true
+  },
+  "wasmFeatures": "dist",
+  "wasmPreload": true,
+  "results": [
+    {
+      "run": 1,
+      "wasmFeatures": "dist",
+      "success": true,
+      "exitCode": 1,
+      "durationMs": 1051035,
+      "stats": {
+        "startTime": "2026-01-31T03:51:14.358Z",
+        "duration": 1038175.448,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "resultLabel": "PASS (nonzero exit)",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 2,
+      "wasmFeatures": "dist",
+      "success": true,
+      "exitCode": 1,
+      "durationMs": 1050267,
+      "stats": {
+        "startTime": "2026-01-31T04:08:45.109Z",
+        "duration": 1037686.1079999999,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "resultLabel": "PASS (nonzero exit)",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 3,
+      "wasmFeatures": "dist",
+      "success": true,
+      "exitCode": 1,
+      "durationMs": 1050995,
+      "stats": {
+        "startTime": "2026-01-31T04:26:15.576Z",
+        "duration": 1038229.749,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "resultLabel": "PASS (nonzero exit)",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    }
+  ]
+}
