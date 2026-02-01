@@ -1,0 +1,425 @@
+{
+  "generatedAt": "2026-02-01T06:47:34.813Z",
+  "runs": 10,
+  "machine": {
+    "platform": "darwin",
+    "release": "25.2.0",
+    "arch": "arm64",
+    "cpuModel": "Apple M4 Pro",
+    "cpuCores": 14,
+    "totalMemBytes": 25769803776,
+    "loadAvg": [
+      8.56640625,
+      8.759765625,
+      7.50341796875
+    ],
+    "hostname": "INBNOT516.local"
+  },
+  "git": {
+    "commit": "cbc0a406e45839ec1b4606f5c003f053c346aecb",
+    "branch": "comprehensive-benchmarks",
+    "statusDirty": true
+  },
+  "wasmFeatures": "tree",
+  "wasmPreload": true,
+  "results": [
+    {
+      "run": 1,
+      "wasmFeatures": "tree",
+      "success": true,
+      "exitCode": 1,
+      "durationMs": 1567,
+      "stats": {
+        "startTime": "2026-02-01T06:47:35.811Z",
+        "duration": 631.0930000000001,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [
+        {
+          "message": "Error: http://localhost:4173 is already used, make sure that nothing is running on the port/url or set reuseExistingServer:true in config.webServer.",
+          "stack": "Error: http://localhost:4173 is already used, make sure that nothing is running on the port/url or set reuseExistingServer:true in config.webServer."
+        }
+      ],
+      "uiMetrics": [],
+      "resultLabel": "PASS (nonzero exit)",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 2,
+      "wasmFeatures": "tree",
+      "success": true,
+      "exitCode": 1,
+      "durationMs": 1663,
+      "stats": {
+        "startTime": "2026-02-01T06:47:37.492Z",
+        "duration": 615.806,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [
+        {
+          "message": "Error: http://localhost:4173 is already used, make sure that nothing is running on the port/url or set reuseExistingServer:true in config.webServer.",
+          "stack": "Error: http://localhost:4173 is already used, make sure that nothing is running on the port/url or set reuseExistingServer:true in config.webServer."
+        }
+      ],
+      "uiMetrics": [],
+      "resultLabel": "PASS (nonzero exit)",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 3,
+      "wasmFeatures": "tree",
+      "success": true,
+      "exitCode": 1,
+      "durationMs": 1596,
+      "stats": {
+        "startTime": "2026-02-01T06:47:39.083Z",
+        "duration": 618.7159999999999,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [
+        {
+          "message": "Error: http://localhost:4173 is already used, make sure that nothing is running on the port/url or set reuseExistingServer:true in config.webServer.",
+          "stack": "Error: http://localhost:4173 is already used, make sure that nothing is running on the port/url or set reuseExistingServer:true in config.webServer."
+        }
+      ],
+      "uiMetrics": [],
+      "resultLabel": "PASS (nonzero exit)",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 4,
+      "wasmFeatures": "tree",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10389,
+      "stats": {
+        "startTime": "2026-02-01T06:47:40.764Z",
+        "duration": 9341.672999999999,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-01T06:47:45.588Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Tree",
+              "wasmMode": "wasm:Tree",
+              "runtimeMs": 2438.599999964237,
+              "memoryDeltaMb": 0.13166236877441406,
+              "trustworthiness": 0.9873384030418251,
+              "fpsAvg": 121.8172740888667,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-01T06:47:49.557Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Tree",
+              "wasmMode": "wasm:Tree",
+              "runtimeMs": 2640.199999988079,
+              "memoryDeltaMb": 2.097306251525879,
+              "trustworthiness": 0.8469004065040651,
+              "fpsAvg": 112.89839145038636,
+              "responsivenessMs": 6.599999996026357
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:84495) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:84495) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 5,
+      "wasmFeatures": "tree",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 11176,
+      "stats": {
+        "startTime": "2026-02-01T06:47:51.060Z",
+        "duration": 10232.809,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-01T06:47:56.785Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Tree",
+              "wasmMode": "wasm:Tree",
+              "runtimeMs": 2449.5,
+              "memoryDeltaMb": 0.19275474548339844,
+              "trustworthiness": 0.9875792141951838,
+              "fpsAvg": 119.98800120417069,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-01T06:48:00.742Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Tree",
+              "wasmMode": "wasm:Tree",
+              "runtimeMs": 2634.900000035763,
+              "memoryDeltaMb": 2.432025909423828,
+              "trustworthiness": 0.8403963414634146,
+              "fpsAvg": 112.09205435703554,
+              "responsivenessMs": 6.666666666666667
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:84955) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:84955) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 6,
+      "wasmFeatures": "tree",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10274,
+      "stats": {
+        "startTime": "2026-02-01T06:48:02.244Z",
+        "duration": 9327.112,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-01T06:48:07.059Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Tree",
+              "wasmMode": "wasm:Tree",
+              "runtimeMs": 2412.7999999523163,
+              "memoryDeltaMb": -0.22262001037597656,
+              "trustworthiness": 0.9898141106886355,
+              "fpsAvg": 121.01974010944153,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-01T06:48:11.043Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Tree",
+              "wasmMode": "wasm:Tree",
+              "runtimeMs": 2654.699999988079,
+              "memoryDeltaMb": 2.421870231628418,
+              "trustworthiness": 0.8751693766937669,
+              "fpsAvg": 111,
+              "responsivenessMs": 6.786666667461395
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:85515) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:85515) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 7,
+      "wasmFeatures": "tree",
+      "success": true,
+      "exitCode": 1,
+      "durationMs": 1571,
+      "stats": {
+        "startTime": "2026-02-01T06:48:12.536Z",
+        "duration": 616.204,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [
+        {
+          "message": "Error: http://localhost:4173 is already used, make sure that nothing is running on the port/url or set reuseExistingServer:true in config.webServer.",
+          "stack": "Error: http://localhost:4173 is already used, make sure that nothing is running on the port/url or set reuseExistingServer:true in config.webServer."
+        }
+      ],
+      "uiMetrics": [],
+      "resultLabel": "PASS (nonzero exit)",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 8,
+      "wasmFeatures": "tree",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10310,
+      "stats": {
+        "startTime": "2026-02-01T06:48:14.115Z",
+        "duration": 9359.096,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-01T06:48:18.982Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Tree",
+              "wasmMode": "wasm:Tree",
+              "runtimeMs": 2484.7000000476837,
+              "memoryDeltaMb": 7.017206192016602,
+              "trustworthiness": 0.9867215885086608,
+              "fpsAvg": 119.98800120417069,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-01T06:48:22.912Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Tree",
+              "wasmMode": "wasm:Tree",
+              "runtimeMs": 2618.5,
+              "memoryDeltaMb": -4.693681716918945,
+              "trustworthiness": 0.8681910569105691,
+              "fpsAvg": 111.02299761962381,
+              "responsivenessMs": 6.320000000794729
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:85935) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:85935) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 9,
+      "wasmFeatures": "tree",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10415,
+      "stats": {
+        "startTime": "2026-02-01T06:48:24.353Z",
+        "duration": 9532.731,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-01T06:48:29.267Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Tree",
+              "wasmMode": "wasm:Tree",
+              "runtimeMs": 2532.899999976158,
+              "memoryDeltaMb": 5.633184432983398,
+              "trustworthiness": 0.9872412336290664,
+              "fpsAvg": 120.00396707187289,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-01T06:48:33.402Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Tree",
+              "wasmMode": "wasm:Tree",
+              "runtimeMs": 2716.7000000476837,
+              "memoryDeltaMb": -8.583946228027344,
+              "trustworthiness": 0.853709349593496,
+              "fpsAvg": 109,
+              "responsivenessMs": 6.413333332538604
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:86393) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:86393) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 10,
+      "wasmFeatures": "tree",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10534,
+      "stats": null,
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:86708) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:86708) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    }
+  ]
+}
