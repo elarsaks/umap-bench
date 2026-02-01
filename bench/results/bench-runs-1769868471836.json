@@ -1,0 +1,587 @@
+{
+  "generatedAt": "2026-01-31T14:08:02.814Z",
+  "runs": 10,
+  "machine": {
+    "platform": "linux",
+    "release": "6.6.87.2-microsoft-standard-WSL2",
+    "arch": "x64",
+    "cpuModel": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+    "cpuCores": 12,
+    "totalMemBytes": 8240967680,
+    "loadAvg": [
+      2.35,
+      1.43,
+      1.2
+    ],
+    "hostname": "DESKTOP-7R7IE5L"
+  },
+  "git": {
+    "commit": "797405cb958467a6e21c0df3e11c8f4e74136a58",
+    "branch": "improve-tests",
+    "statusDirty": true
+  },
+  "wasmFeatures": "none",
+  "wasmPreload": true,
+  "results": [
+    {
+      "run": 1,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 508969,
+      "stats": {
+        "startTime": "2026-01-31T14:08:16.783Z",
+        "duration": 483068.00700000004,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T14:08:56.558Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4663.69999999553,
+              "memoryDeltaMb": 13.513181686401367,
+              "trustworthiness": 0.6067296654780099,
+              "fpsAvg": 59.90415335454347,
+              "responsivenessMs": 120.88181818141179
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T14:09:05.386Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4690.0999999940395,
+              "memoryDeltaMb": 13.582667350769043,
+              "trustworthiness": 0.9972007980981491,
+              "fpsAvg": 48.92661008487269,
+              "responsivenessMs": 32.0933333337307
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 2,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 532072,
+      "stats": {
+        "startTime": "2026-01-31T14:16:45.134Z",
+        "duration": 505873.925,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T14:17:23.875Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4602.10000000149,
+              "memoryDeltaMb": 15.079412460327148,
+              "trustworthiness": 0.6070829512650705,
+              "fpsAvg": 59.958029379255834,
+              "responsivenessMs": 115.10000000081278
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T14:17:34.100Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4755.20000000298,
+              "memoryDeltaMb": 21.984490394592285,
+              "trustworthiness": 0.9969129733401256,
+              "fpsAvg": 50.142562186902836,
+              "responsivenessMs": 31.953333333631356
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 3,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 524323,
+      "stats": {
+        "startTime": "2026-01-31T14:25:36.768Z",
+        "duration": 498613.883,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T14:26:14.680Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4603.19999999553,
+              "memoryDeltaMb": 20.434667587280273,
+              "trustworthiness": 0.6084026150449992,
+              "fpsAvg": 60.086682427372544,
+              "responsivenessMs": 115.61818181723356
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T14:26:23.952Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4439,
+              "memoryDeltaMb": 2.330913543701172,
+              "trustworthiness": 0.9972456274409917,
+              "fpsAvg": 50.21662071674397,
+              "responsivenessMs": 30.38000000019868
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 4,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 518102,
+      "stats": {
+        "startTime": "2026-01-31T14:34:21.083Z",
+        "duration": 493565.05,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T14:34:58.963Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4506.20000000298,
+              "memoryDeltaMb": 20.675539016723633,
+              "trustworthiness": 0.6020555272542027,
+              "fpsAvg": 59.97600959625087,
+              "responsivenessMs": 107.14545454423536
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T14:35:07.806Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4703.60000000149,
+              "memoryDeltaMb": 9.42934513092041,
+              "trustworthiness": 0.9967252504669724,
+              "fpsAvg": 49.22228785172274,
+              "responsivenessMs": 34.05999999990066
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 5,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 505955,
+      "stats": {
+        "startTime": "2026-01-31T14:43:00.127Z",
+        "duration": 482222.63300000003,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T14:43:38.583Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4583.10000000149,
+              "memoryDeltaMb": 4.982363700866699,
+              "trustworthiness": 0.6032490236033283,
+              "fpsAvg": 60.13406940071925,
+              "responsivenessMs": 115.32727272740819
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T14:43:47.155Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4513.29999999702,
+              "memoryDeltaMb": 22.34098529815674,
+              "trustworthiness": 0.9967279673968416,
+              "fpsAvg": 49.995000499875516,
+              "responsivenessMs": 30.23333333283663
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 6,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 534447,
+      "stats": {
+        "startTime": "2026-01-31T14:51:26.533Z",
+        "duration": 509126.25,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T14:52:04.712Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4531.89999999851,
+              "memoryDeltaMb": 2.060694694519043,
+              "trustworthiness": 0.6060688571913737,
+              "fpsAvg": 60.05710347569999,
+              "responsivenessMs": 110.51818181777543
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T14:52:13.060Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4514.5,
+              "memoryDeltaMb": 5.616052627563477,
+              "trustworthiness": 0.9974270674138224,
+              "fpsAvg": 48.9412704752838,
+              "responsivenessMs": 29.673333332935968
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 7,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 529114,
+      "stats": {
+        "startTime": "2026-01-31T15:00:19.767Z",
+        "duration": 503926.413,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T15:00:58.210Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4832.70000000298,
+              "memoryDeltaMb": 20.79848289489746,
+              "trustworthiness": 0.611547376464595,
+              "fpsAvg": 59.934072520138535,
+              "responsivenessMs": 138.62727272781459
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T15:01:06.694Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4509.60000000149,
+              "memoryDeltaMb": 1.259568214416504,
+              "trustworthiness": 0.997024197656648,
+              "fpsAvg": 50.28593965709406,
+              "responsivenessMs": 30.21333333303531
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 8,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 509425,
+      "stats": {
+        "startTime": "2026-01-31T15:09:08.397Z",
+        "duration": 485978.96599999996,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T15:09:46.488Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4602,
+              "memoryDeltaMb": 22.092379570007324,
+              "trustworthiness": 0.6064118695873664,
+              "fpsAvg": 59.880239520958085,
+              "responsivenessMs": 114.14545454559001
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T15:09:55.131Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4639.80000000447,
+              "memoryDeltaMb": 7.591303825378418,
+              "trustworthiness": 0.9972085243674648,
+              "fpsAvg": 50.17215937038859,
+              "responsivenessMs": 29.859999999403954
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 9,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 516141,
+      "stats": {
+        "startTime": "2026-01-31T15:17:38.967Z",
+        "duration": 491259.319,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T15:18:17.593Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4549,
+              "memoryDeltaMb": 20.644938468933105,
+              "trustworthiness": 0.6127514858210222,
+              "fpsAvg": 59.98623266756068,
+              "responsivenessMs": 110.30909090827812
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T15:18:26.211Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4561.5999999940395,
+              "memoryDeltaMb": 16.16423511505127,
+              "trustworthiness": 0.9972207505518764,
+              "fpsAvg": 48.946159224779805,
+              "responsivenessMs": 30.946666666865347
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 10,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 521445,
+      "stats": {
+        "startTime": "2026-01-31T15:26:14.295Z",
+        "duration": 496652.626,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T15:26:53.551Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4767.20000000298,
+              "memoryDeltaMb": 9.178610801696777,
+              "trustworthiness": 0.6181681100356597,
+              "fpsAvg": 59.99400060029756,
+              "responsivenessMs": 110.66363636336543
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T15:27:02.177Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 4580.29999999702,
+              "memoryDeltaMb": 13.590922355651855,
+              "trustworthiness": 0.9968391068093054,
+              "fpsAvg": 50.261160934118664,
+              "responsivenessMs": 32.00666666676601
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    }
+  ]
+}
