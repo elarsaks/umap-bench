@@ -68,6 +68,7 @@ export interface WasmRelease {
 declare global {
   interface Window {
     __BENCH_EXPORT__?: BenchmarkExportRow[];
-    __BENCH_CONTEXT__?: { scope?: string };
+    __BENCH_CONTEXT__?: { scope?: string; runTimeoutMs?: number };
+    __BENCH_PROGRESS__?: { epoch: number; elapsedMs: number } | null;
   }
 }

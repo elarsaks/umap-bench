@@ -134,6 +134,8 @@ interface BenchmarkControlsProps {
   ) => void;
   isRunning: boolean;
   wasmReady: boolean;
+  wasmLoading: boolean;
+  wasmProgress: number;
   onClearResults: () => void;
   wasmConfig: WasmConfig;
   onUpdateWasmConfig: (config: WasmConfig) => void;
@@ -151,6 +153,8 @@ export const BenchmarkControls: React.FC<BenchmarkControlsProps> = ({
   onRunBenchmark,
   isRunning,
   wasmReady,
+  wasmLoading,
+  wasmProgress,
   onClearResults,
   wasmConfig,
   onUpdateWasmConfig,
@@ -200,6 +204,20 @@ export const BenchmarkControls: React.FC<BenchmarkControlsProps> = ({
       <SectionContainer className="control-section">
         <SectionTitle>WASM Optimization Features</SectionTitle>
         <WasmConfigSelector wasmConfig={wasmConfig} onUpdateWasmConfig={onUpdateWasmConfig} />
+        {(wasmLoading || needsWasm) && !wasmReady ? (
+          <div className="wasm-loading">
+            <div className="wasm-loading-title">Loading WASM...</div>
+            <div className="wasm-progress">
+              <div
+                className="wasm-progress-bar"
+                style={{ width: `${Math.max(2, wasmProgress)}%` }}
+              />
+            </div>
+            <div className="wasm-progress-label">
+              {wasmLoading ? `${Math.min(99, wasmProgress)}%` : "Starting..."}
+            </div>
+          </div>
+        ) : null}
       </SectionContainer>
 
       <SectionContainer className="control-section">

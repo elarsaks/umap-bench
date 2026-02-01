@@ -9,7 +9,6 @@ const TOGGLE_LABELS = {
 } as const;
 
 const FEATURE_ALIAS_MAP: Record<string, keyof typeof TOGGLE_LABELS> = {
-  distance: "useWasmDistance",
   tree: "useWasmTree",
   matrix: "useWasmMatrix",
   nn: "useWasmNNDescent",
@@ -21,12 +20,10 @@ const FEATURE_ALIAS_MAP: Record<string, keyof typeof TOGGLE_LABELS> = {
 
 export type WasmConfigSelection = Record<keyof typeof TOGGLE_LABELS, boolean>;
 
-export const getWasmConfigFromEnv = (): {
-  selection: WasmConfigSelection;
-  raw: string;
-} => {
-  const rawValue = (process.env.WASM_FEATURES || "none").trim();
-  const raw = rawValue.length > 0 ? rawValue : "none";
+const SEQUENCE_ORDER = ["dist", "tree", "matrix", "nn", "opt"] as const;
+const FULL_ORDER = ["none", ...SEQUENCE_ORDER, "all"] as const;
+
+const buildSelection = (raw: string): WasmConfigSelection => {
   const lower = raw.toLowerCase();
 
   const defaultSelection: WasmConfigSelection = {
@@ -39,23 +36,23 @@ export const getWasmConfigFromEnv = (): {
 
   if (lower === "all") {
     return {
-      selection: {
-        useWasmDistance: true,
-        useWasmTree: true,
-        useWasmMatrix: true,
-        useWasmNNDescent: true,
-        useWasmOptimizer: true,
-      },
-      raw,
+      useWasmDistance: true,
+      useWasmTree: true,
+      useWasmMatrix: true,
+      useWasmNNDescent: true,
+      useWasmOptimizer: true,
     };
   }
 
   if (lower === "none") {
-    return { selection: defaultSelection, raw };
+    return defaultSelection;
   }
 
   const selection = { ...defaultSelection };
-  const parts = lower.split(",").map((part) => part.trim()).filter(Boolean);
+  const parts = lower
+    .split(",")
+    .map((part) => part.trim())
+    .filter(Boolean);
   for (const part of parts) {
     const mapped = FEATURE_ALIAS_MAP[part];
     if (mapped) {
@@ -63,7 +60,53 @@ export const getWasmConfigFromEnv = (): {
     }
   }
 
-  return { selection, raw };
+  return selection;
+};
+
+export const getWasmConfigFromEnv = (): {
+  selection: WasmConfigSelection;
+  raw: string;
+} => {
+  const rawValue = (process.env.WASM_FEATURES || "none").trim();
+  const raw = rawValue.length > 0 ? rawValue : "none";
+  return { selection: buildSelection(raw), raw };
+};
+
+export const getWasmConfigsFromEnv = (options?: {
+  defaultMode?: "single" | "js-and-all";
+}): {
+  configs: Array<{ label: string; selection: WasmConfigSelection }>;
+  raw: string;
+} => {
+  const defaultMode = options?.defaultMode ?? "single";
+  const rawValue = (process.env.WASM_FEATURES || "").trim();
+  const raw = rawValue.length > 0 ? rawValue : "none";
+  const lower = raw.toLowerCase();
+
+  if (!rawValue && defaultMode === "js-and-all") {
+    return {
+      configs: [
+        { label: "none", selection: buildSelection("none") },
+        { label: "all", selection: buildSelection("all") },
+      ],
+      raw: "default",
+    };
+  }
+
+  if (lower === "full") {
+    return {
+      configs: FULL_ORDER.map((label) => ({
+        label,
+        selection: buildSelection(label),
+      })),
+      raw,
+    };
+  }
+
+  return {
+    configs: [{ label: raw, selection: buildSelection(raw) }],
+    raw,
+  };
 };
 
 const wasmToggle = (page: Page, label: string) =>

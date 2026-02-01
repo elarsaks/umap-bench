@@ -1,5 +1,5 @@
 import { test, expect, type Page } from "@playwright/test";
-import { applyWasmConfig, getWasmConfigFromEnv } from "./wasm-config";
+import { applyWasmConfig, getWasmConfigsFromEnv } from "./wasm-config";
 
 const datasetSelect = (page: Page) =>
   page
@@ -10,20 +10,17 @@ const runButton = (page: Page) => page.locator(".run-benchmark-btn");
 
 const clearButton = (page: Page) => page.locator(".clear-results-btn");
 
-const allDisabledConfig = {
-  useWasmDistance: false,
-  useWasmTree: false,
-  useWasmMatrix: false,
-  useWasmNNDescent: false,
-  useWasmOptimizer: false,
-};
+const shouldPreloadWasm = () =>
+  ["1", "true", "yes"].includes((process.env.PRELOAD_WASM || "").toLowerCase());
 
-const allEnabledConfig = {
-  useWasmDistance: true,
-  useWasmTree: true,
-  useWasmMatrix: true,
-  useWasmNNDescent: true,
-  useWasmOptimizer: true,
+const preloadWasm = async (page: Page) => {
+  if (!shouldPreloadWasm()) return;
+  console.log("[bench] preloading WASM...");
+  await page.evaluate(async () => {
+    if (window.__WASM_ENSURE_READY__) {
+      await window.__WASM_ENSURE_READY__();
+    }
+  });
 };
 
 const clearResults = async (page: Page) => {
@@ -38,6 +35,28 @@ const clearResults = async (page: Page) => {
 
 const runBenchmarkAndWait = async (page: Page) => {
   const button = runButton(page);
+  const start = Date.now();
+  let lastLog = 0;
+  while (!(await button.isEnabled())) {
+    const now = Date.now();
+    if (now - lastLog >= 5_000) {
+      const status = await page.evaluate(() => ({
+        loading: window.__WASM_LOADING__ ?? false,
+        progress: window.__WASM_PROGRESS__ ?? 0,
+      }));
+      const elapsed = Math.round((now - start) / 1000);
+      if (status.loading) {
+        console.log(`[bench] waiting for WASM... ${elapsed}s (${status.progress}%)`);
+      } else {
+        console.log(`[bench] waiting for WASM... ${elapsed}s`);
+      }
+      lastLog = now;
+    }
+    if (now - start > 240_000) {
+      throw new Error("Timed out waiting for WASM to become ready.");
+    }
+    await page.waitForTimeout(500);
+  }
   await button.click();
   await expect(button).toBeDisabled();
   await expect(button).toBeEnabled({ timeout: 240_000 });
@@ -79,8 +98,7 @@ test("bench loop: 10x small/mid/large with JS then WASM @loop", async (
 ) => {
   test.setTimeout(1_800_000);
   await page.goto("/");
-  await setBenchContext(page, "loop");
-
+  await preloadWasm(page);
   const datasetDropdown = datasetSelect(page);
   const datasets = [
     {
@@ -89,33 +107,33 @@ test("bench loop: 10x small/mid/large with JS then WASM @loop", async (
       dims: 4,
     },
     {
-      label: "Swiss Roll (1K points, 3D manifold)",
-      size: 1000,
+      label: "Swiss Roll (600 points, 3D manifold)",
+      size: 600,
       dims: 3,
     },
     {
-      label: "MNIST-like (2K points, 784D)",
-      size: 2000,
+      label: "MNIST-like (1K points, 784D)",
+      size: 1000,
       dims: 784,
     },
   ];
 
-  const envConfig = getWasmConfigFromEnv();
-  const configs = process.env.WASM_FEATURES
-    ? [{ label: `wasm-${envConfig.raw}`, config: envConfig.selection }]
-    : [
-        { label: "js-only", config: allDisabledConfig },
-        { label: "wasm-all", config: allEnabledConfig },
-      ];
+  const { configs } = getWasmConfigsFromEnv({ defaultMode: "js-and-all" });
 
   for (const config of configs) {
-    await applyWasmConfig(page, config.config);
+    const configLabel = config.label;
+    await applyWasmConfig(page, config.selection);
+    await setBenchContext(page, "loop");
 
     for (const dataset of datasets) {
+      const datasetLabel = dataset.label;
       await datasetDropdown.selectOption({ label: dataset.label });
       await clearResults(page);
 
       for (let run = 0; run < 10; run += 1) {
+        console.log(
+          `[bench][loop] config=${configLabel} dataset=${datasetLabel} run=${run + 1}/10`
+        );
         await runBenchmarkAndWait(page);
       }
 
@@ -126,7 +144,7 @@ test("bench loop: 10x small/mid/large with JS then WASM @loop", async (
       const tableRows = page.getByRole("row").filter({ hasText: "×" });
       await expect.soft(tableRows).toHaveCount(10);
     }
-  }
 
-  await attachBenchmarkMetrics(page, testInfo);
+    await attachBenchmarkMetrics(page, testInfo);
+  }
 });

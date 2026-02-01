@@ -22,6 +22,19 @@ import { PerformanceMonitor, FPSMonitor } from "@utils/performanceMonitor";
 import { calculateTrustworthiness } from "@utils/embeddingQuality";
 import "./App.css";
 
+declare global {
+  interface Window {
+    __WASM_READY__?: boolean;
+    __WASM_LOADING__?: boolean;
+    __WASM_PROGRESS__?: number;
+    __WASM_ENSURE_READY__?: () => Promise<void>;
+    __BENCH_PROGRESS__?: { epoch: number; elapsedMs: number } | null;
+  }
+}
+
+type UmapModule = typeof import("@elarsaks/umap-wasm");
+let wasmInitInFlight: Promise<UmapModule> | null = null;
+
 function App() {
   const [results, setResults] = useState<BenchmarkResult[]>([]);
   const [isRunning, setIsRunning] = useState(false);
@@ -31,6 +44,8 @@ function App() {
   const [currentFPS, setCurrentFPS] = useState(0);
   const runCounter = useRef(1);
   const [wasmReady, setWasmReady] = useState(false);
+  const [wasmLoading, setWasmLoading] = useState(false);
+  const [wasmProgress, setWasmProgress] = useState(0);
   const [wasmConfig, setWasmConfig] = useState<WasmConfig>({
     useWasmDistance: false,
     useWasmTree: false,
@@ -38,7 +53,6 @@ function App() {
     useWasmNNDescent: false,
     useWasmOptimizer: false,
   });
-  type UmapModule = typeof import("@elarsaks/umap-wasm");
   const umapModuleRef = useRef<UmapModule | null>(null);
 
   const loadUmapModule = useCallback(async (): Promise<UmapModule> => {
@@ -48,15 +62,113 @@ function App() {
     return mod;
   }, []);
 
+  const getWasmUrl = useCallback(() => {
+    const baseUrl = import.meta.env.BASE_URL || "/";
+    const origin =
+      typeof window !== "undefined" && window.location
+        ? window.location.origin
+        : "";
+    return new URL(
+      "wasm/pkg/web/umap_wasm_core_bg.wasm",
+      origin + baseUrl
+    ).toString();
+  }, []);
+
   const ensureWasmReady = useCallback(async () => {
-    const mod = await loadUmapModule();
-    if (!mod.isWasmAvailable()) {
-      await mod.initWasm();
+    if (wasmInitInFlight) {
+      return wasmInitInFlight;
     }
-    const ready = mod.isWasmAvailable();
-    setWasmReady(ready);
-    return mod;
-  }, [loadUmapModule]);
+
+    const initPromise = (async () => {
+      const mod = await loadUmapModule();
+      if (!mod.isWasmAvailable()) {
+        setWasmLoading(true);
+        setWasmProgress(0);
+        if (typeof window !== "undefined") {
+          window.__WASM_LOADING__ = true;
+          window.__WASM_PROGRESS__ = 0;
+        }
+
+        const runInit = async () => {
+          await mod.initWasm({
+            wasmUrl: getWasmUrl(),
+            onProgress: (progress) => {
+              let next: number | null = null;
+              if (typeof progress?.percent === "number") {
+                next = Math.min(99, Math.max(1, Math.floor(progress.percent)));
+              } else if (progress?.phase === "instantiate") {
+                next = 95;
+              } else if (progress?.phase === "done") {
+                next = 100;
+              }
+              if (next === null) return;
+              setWasmProgress((prev) => {
+                const updated = next > prev ? next : prev;
+                if (typeof window !== "undefined") {
+                  window.__WASM_PROGRESS__ = updated;
+                }
+                return updated;
+              });
+            },
+          });
+        };
+
+        try {
+          const maxAttempts = 2;
+          let lastErr: unknown = null;
+          for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+            try {
+              await runInit();
+              lastErr = null;
+              break;
+            } catch (err) {
+              lastErr = err;
+              if (attempt < maxAttempts) {
+                await new Promise((resolve) => setTimeout(resolve, 300));
+              }
+            }
+          }
+          if (lastErr) {
+            throw lastErr;
+          }
+        } catch (err) {
+          setWasmLoading(false);
+          setWasmProgress(0);
+          if (typeof window !== "undefined") {
+            window.__WASM_LOADING__ = false;
+            window.__WASM_PROGRESS__ = 0;
+            window.__WASM_READY__ = false;
+          }
+          throw err;
+        }
+      }
+      const ready = mod.isWasmAvailable();
+      setWasmReady(ready);
+      if (ready) {
+        setWasmProgress(100);
+        setWasmLoading(false);
+        if (typeof window !== "undefined") {
+          window.__WASM_LOADING__ = false;
+          window.__WASM_PROGRESS__ = 100;
+          window.__WASM_READY__ = true;
+        }
+      }
+      return mod;
+    })();
+
+    wasmInitInFlight = initPromise;
+    try {
+      return await initPromise;
+    } finally {
+      wasmInitInFlight = null;
+    }
+  }, [getWasmUrl, loadUmapModule]);
+
+  useEffect(() => {
+    ensureWasmReady().catch((err) => {
+      console.warn("WASM initialization failed:", err);
+    });
+  }, [ensureWasmReady]);
 
   useEffect(() => {
     const needsWasm = Object.values(wasmConfig).some(Boolean);
@@ -65,6 +177,26 @@ function App() {
       console.warn("WASM initialization failed:", err);
     });
   }, [ensureWasmReady, wasmConfig, wasmReady]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.__WASM_READY__ = wasmReady;
+    }
+  }, [wasmReady]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.__WASM_LOADING__ = wasmLoading;
+    }
+  }, [wasmLoading]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.__WASM_ENSURE_READY__ = async () => {
+        await ensureWasmReady();
+      };
+    }
+  }, [ensureWasmReady]);
 
   const runBenchmark = useCallback(
     async (
@@ -171,7 +303,34 @@ function App() {
           useWasmOptimizer: config.useWasmOptimizer,
         });
 
-        const embeddedData = await umap.fitAsync(originalData);
+        const benchContext = window.__BENCH_CONTEXT__ ?? {};
+        const maxRunMs =
+          typeof benchContext.runTimeoutMs === "number"
+            ? benchContext.runTimeoutMs
+            : null;
+        let aborted = false;
+        const runStart = performance.now();
+        if (typeof window !== "undefined") {
+          window.__BENCH_PROGRESS__ = { epoch: 0, elapsedMs: 0 };
+        }
+        const embeddedData = await umap.fitAsync(originalData, (epoch) => {
+          const elapsedMs = Math.round(performance.now() - runStart);
+          if (typeof window !== "undefined") {
+            window.__BENCH_PROGRESS__ = { epoch, elapsedMs };
+          }
+          if (maxRunMs !== null && elapsedMs > maxRunMs) {
+            aborted = true;
+            return false;
+          }
+          return true;
+        });
+        if (aborted) {
+          throw new Error(
+            `Benchmark aborted after ${Math.round(
+              (performance.now() - runStart) / 1000
+            )}s`
+          );
+        }
 
         // Stop FPS monitoring
         fpsMonitor.stop();
@@ -241,8 +400,13 @@ function App() {
         setCurrentEdges(edges);
       } catch (error) {
         console.error("Benchmark failed:", error);
-        alert("Benchmark failed. Check console for details.");
+        if (typeof window !== "undefined" && !window.__BENCH_CONTEXT__?.scope) {
+          alert("Benchmark failed. Check console for details.");
+        }
       } finally {
+        if (typeof window !== "undefined") {
+          window.__BENCH_PROGRESS__ = null;
+        }
         setIsRunning(false);
       }
     },
@@ -274,6 +438,8 @@ function App() {
             onRunBenchmark={runBenchmark}
             isRunning={isRunning}
             wasmReady={wasmReady}
+            wasmLoading={wasmLoading}
+            wasmProgress={wasmProgress}
             wasmConfig={wasmConfig}
             onUpdateWasmConfig={setWasmConfig}
             onClearResults={clearResults}

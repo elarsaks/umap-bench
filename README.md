@@ -99,12 +99,48 @@ Located in: `bench/`
 	yarn bench:loop --scope=small --runs=10 --wasm=all
 	yarn bench:loop --scope=mid --runs=10 --wasm=all
 	yarn bench:loop --scope=large --runs=10 --wasm=all
-	# Run each single WASM feature (sequential)
-	yarn bench:loop:sequence --scope=small --runs=10
-	yarn bench:loop:sequence --scope=mid --runs=10
-	yarn bench:loop:sequence --scope=large --runs=10
+	
+	# Run each single WASM feature
+	yarn bench:loop --scope=small --runs=10 --wasm=dist
+	yarn bench:loop --scope=mid --runs=10 --wasm=dist
+	yarn bench:loop --scope=large --runs=10 --wasm=dist
+
+	yarn bench:loop --scope=small --runs=10 --wasm=tree
+	yarn bench:loop --scope=mid --runs=10 --wasm=tree
+	yarn bench:loop --scope=large --runs=10 --wasm=tree
+
+	yarn bench:loop --scope=small --runs=10 --wasm=matrix
+	yarn bench:loop --scope=mid --runs=10 --wasm=matrix
+	yarn bench:loop --scope=large --runs=10 --wasm=matrix
+
+	yarn bench:loop --scope=small --runs=10 --wasm=nn
+	yarn bench:loop --scope=mid --runs=10 --wasm=nn
+	yarn bench:loop --scope=large --runs=10 --wasm=nn
+
+	yarn bench:loop --scope=small --runs=10 --wasm=opt
+	yarn bench:loop --scope=mid --runs=10 --wasm=opt
+	yarn bench:loop --scope=large --runs=10 --wasm=opt
+
+	# Master command: set RUNS and SCOPE, run JS + all WASM + single features
+	RUNS=10 SCOPE=small bash -lc 'set -e; scope="${SCOPE}"; runs="${RUNS}"; for wasm in none all dist tree matrix nn opt; do if [ "$wasm" = "none" ]; then yarn bench:loop --scope="$scope" --runs="$runs"; else yarn bench:loop --scope="$scope" --runs="$runs" --wasm="$wasm"; fi; done'
+
+	# Full bench: run small + mid + large with all WASM variants
+	yarn bench:full
 	```
 	Scopes: `small`, `mid`, `large`.
+
+### Customization
+- Preload WASM (default on) / disable preload:
+	```bash
+	yarn bench:loop --preload-wasm
+	yarn bench:loop --no-preload-wasm
+	```
+- Examples:
+	```bash
+	yarn bench:loop --runs=5
+	yarn bench:loop --scope=small
+	yarn bench:loop --scope=small --runs=3 --wasm=all
+	```
 
 - Run full test set: JS-only, each single WASM feature, then all WASM
 	```bash
