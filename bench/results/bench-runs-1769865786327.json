@@ -1,0 +1,587 @@
+{
+  "generatedAt": "2026-01-31T13:23:18.034Z",
+  "runs": 10,
+  "machine": {
+    "platform": "linux",
+    "release": "6.6.87.2-microsoft-standard-WSL2",
+    "arch": "x64",
+    "cpuModel": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+    "cpuCores": 12,
+    "totalMemBytes": 8240967680,
+    "loadAvg": [
+      1.31,
+      1.17,
+      1.09
+    ],
+    "hostname": "DESKTOP-7R7IE5L"
+  },
+  "git": {
+    "commit": "797405cb958467a6e21c0df3e11c8f4e74136a58",
+    "branch": "improve-tests",
+    "statusDirty": true
+  },
+  "wasmFeatures": "none",
+  "wasmPreload": true,
+  "results": [
+    {
+      "run": 1,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 38401,
+      "stats": {
+        "startTime": "2026-01-31T13:23:31.313Z",
+        "duration": 24754.544,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T13:23:49.608Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3056.0999999940395,
+              "memoryDeltaMb": 18.30762004852295,
+              "trustworthiness": 0.9939925480080252,
+              "fpsAvg": 60.0511911795422,
+              "responsivenessMs": 19.75454545495185
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T13:23:56.516Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3691.2999999970198,
+              "memoryDeltaMb": 19.1899356842041,
+              "trustworthiness": 0.9495519250979269,
+              "fpsAvg": 52.99470053026285,
+              "responsivenessMs": 22.01333333303531
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 2,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 37501,
+      "stats": {
+        "startTime": "2026-01-31T13:24:09.067Z",
+        "duration": 24404.673,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T13:24:27.077Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2945.6999999955297,
+              "memoryDeltaMb": 17.29399013519287,
+              "trustworthiness": 0.994540938186682,
+              "fpsAvg": 60.05119117910174,
+              "responsivenessMs": 18.54545454613187
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T13:24:34.004Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3800,
+              "memoryDeltaMb": 1.1870946884155273,
+              "trustworthiness": 0.9508928059615935,
+              "fpsAvg": 52.16535433070866,
+              "responsivenessMs": 22.200000000496704
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 3,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 37272,
+      "stats": {
+        "startTime": "2026-01-31T13:24:46.516Z",
+        "duration": 24167.121,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T13:25:04.618Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2917.6999999955297,
+              "memoryDeltaMb": 19.049559593200684,
+              "trustworthiness": 0.9943159453520588,
+              "fpsAvg": 59.98200539811243,
+              "responsivenessMs": 21.09090909090909
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T13:25:11.308Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3663.89999999851,
+              "memoryDeltaMb": 21.82361602783203,
+              "trustworthiness": 0.9488334766408714,
+              "fpsAvg": 52.97880847668827,
+              "responsivenessMs": 22.406666667262712
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 4,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 37909,
+      "stats": {
+        "startTime": "2026-01-31T13:25:25.075Z",
+        "duration": 24379.578,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T13:25:42.408Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2906.2999999970198,
+              "memoryDeltaMb": 17.9483060836792,
+              "trustworthiness": 0.9941289290149995,
+              "fpsAvg": 59.97001499250375,
+              "responsivenessMs": 19.281818181953646
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T13:25:49.181Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3704.2999999970198,
+              "memoryDeltaMb": 23.975850105285645,
+              "trustworthiness": 0.9526368586987676,
+              "fpsAvg": 53,
+              "responsivenessMs": 23.52666666706403
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 5,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 37552,
+      "stats": {
+        "startTime": "2026-01-31T13:26:02.735Z",
+        "duration": 24277.757999999998,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T13:26:19.885Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2897.5,
+              "memoryDeltaMb": 19.022910118103027,
+              "trustworthiness": 0.9945619566255852,
+              "fpsAvg": 59.956752506037574,
+              "responsivenessMs": 18.80909090963277
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T13:26:26.748Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3761.89999999851,
+              "memoryDeltaMb": 26.942264556884766,
+              "trustworthiness": 0.953518200057323,
+              "fpsAvg": 49.20775514213825,
+              "responsivenessMs": 23.84666666686535
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 6,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 38123,
+      "stats": {
+        "startTime": "2026-01-31T13:26:40.252Z",
+        "duration": 24099.052,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T13:26:57.284Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2914.7000000029802,
+              "memoryDeltaMb": 18.097121238708496,
+              "trustworthiness": 0.9937761536256807,
+              "fpsAvg": 59.96402158740497,
+              "responsivenessMs": 20.03636363622817
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T13:27:04.886Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3763.7999999970198,
+              "memoryDeltaMb": 21.895782470703125,
+              "trustworthiness": 0.9516950893283653,
+              "fpsAvg": 52,
+              "responsivenessMs": 22.400000000496707
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 7,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 37723,
+      "stats": {
+        "startTime": "2026-01-31T13:27:17.412Z",
+        "duration": 24666.979999999996,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T13:27:35.669Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2977.89999999851,
+              "memoryDeltaMb": 18.16609477996826,
+              "trustworthiness": 0.9932836533868348,
+              "fpsAvg": 59.97001499250375,
+              "responsivenessMs": 19.827272726730868
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T13:27:42.615Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3734.60000000149,
+              "memoryDeltaMb": 15.59505844116211,
+              "trustworthiness": 0.9497207891468424,
+              "fpsAvg": 52.12431156546714,
+              "responsivenessMs": 24.133333333333333
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 8,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 37285,
+      "stats": {
+        "startTime": "2026-01-31T13:27:55.064Z",
+        "duration": 24255.038,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T13:28:13.200Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2953.5999999940395,
+              "memoryDeltaMb": 15.787707328796387,
+              "trustworthiness": 0.9936892137193083,
+              "fpsAvg": 59.94005994005994,
+              "responsivenessMs": 18.636363636363637
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T13:28:19.865Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3661.7999999970198,
+              "memoryDeltaMb": 17.71023178100586,
+              "trustworthiness": 0.9513177128116939,
+              "fpsAvg": 53,
+              "responsivenessMs": 21.18000000019868
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 9,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 37749,
+      "stats": {
+        "startTime": "2026-01-31T13:28:32.470Z",
+        "duration": 24598.623999999996,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T13:28:50.940Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2919.6999999955297,
+              "memoryDeltaMb": 18.302878379821777,
+              "trustworthiness": 0.9929972771567784,
+              "fpsAvg": 59.97001499250375,
+              "responsivenessMs": 20.181818181140855
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T13:28:57.640Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3683.2000000029802,
+              "memoryDeltaMb": 17.709590911865234,
+              "trustworthiness": 0.9501256329416261,
+              "fpsAvg": 52.99470052986805,
+              "responsivenessMs": 21.7
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    },
+    {
+      "run": 10,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 37332,
+      "stats": {
+        "startTime": "2026-01-31T13:29:10.136Z",
+        "duration": 24421.882999999998,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-01-31T13:29:27.988Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2949.5,
+              "memoryDeltaMb": 17.421874046325684,
+              "trustworthiness": 0.9936992452469666,
+              "fpsAvg": 60,
+              "responsivenessMs": 21.62727272781459
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-01-31T13:29:34.947Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 3828.5,
+              "memoryDeltaMb": 13.132307052612305,
+              "trustworthiness": 0.9506838158020445,
+              "fpsAvg": 52.11918576072147,
+              "responsivenessMs": 23.453333333631356
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": ""
+    }
+  ]
+}

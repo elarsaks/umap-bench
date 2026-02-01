@@ -1,0 +1,191 @@
+{
+  "generatedAt": "2026-02-01T06:20:46.068Z",
+  "runs": 3,
+  "machine": {
+    "platform": "darwin",
+    "release": "25.2.0",
+    "arch": "arm64",
+    "cpuModel": "Apple M4 Pro",
+    "cpuCores": 14,
+    "totalMemBytes": 25769803776,
+    "loadAvg": [
+      5.11865234375,
+      4.72607421875,
+      6.37744140625
+    ],
+    "hostname": "INBNOT516.local"
+  },
+  "git": null,
+  "wasmFeatures": "none",
+  "wasmPreload": true,
+  "results": [
+    {
+      "run": 1,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 12865,
+      "stats": {
+        "startTime": "2026-02-01T06:20:47.206Z",
+        "duration": 11744.885,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-01T06:20:54.414Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2534.100000023842,
+              "memoryDeltaMb": 0.009084701538085938,
+              "trustworthiness": 0.990190114068441,
+              "fpsAvg": 119.9520191951818,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-01T06:20:58.441Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2688,
+              "memoryDeltaMb": 8.339726448059082,
+              "trustworthiness": 0.846680216802168,
+              "fpsAvg": 108.97820436042704,
+              "responsivenessMs": 6.613333336512247
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:51325) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:51325) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 2,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10531,
+      "stats": {
+        "startTime": "2026-02-01T06:21:00.051Z",
+        "duration": 9434.687,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-01T06:21:04.983Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2539.399999976158,
+              "memoryDeltaMb": 10.121706008911133,
+              "trustworthiness": 0.9870384452893959,
+              "fpsAvg": 120.03968253968254,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-01T06:21:09.016Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2737.400000035763,
+              "memoryDeltaMb": -1.4278898239135742,
+              "trustworthiness": 0.8802845528455284,
+              "fpsAvg": 107.08973723351512,
+              "responsivenessMs": 6.113333332538605
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:51574) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:51574) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 3,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10526,
+      "stats": {
+        "startTime": "2026-02-01T06:21:10.574Z",
+        "duration": 9439.565,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-01T06:21:15.496Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2532,
+              "memoryDeltaMb": 2.9157772064208984,
+              "trustworthiness": 0.9896704689480355,
+              "fpsAvg": 119.97600480047014,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-01T06:21:19.508Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "none",
+              "wasmMode": "js",
+              "runtimeMs": 2696.2999999523163,
+              "memoryDeltaMb": 4.150395393371582,
+              "trustworthiness": 0.8695460704607046,
+              "fpsAvg": 109.11615911507023,
+              "responsivenessMs": 6.626666669050852
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:51795) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:51795) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    }
+  ]
+}

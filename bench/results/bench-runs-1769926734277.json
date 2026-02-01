@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-02-01T06:18:59.463Z",
+  "runs": 3,
+  "machine": {
+    "platform": "darwin",
+    "release": "25.2.0",
+    "arch": "arm64",
+    "cpuModel": "Apple M4 Pro",
+    "cpuCores": 14,
+    "totalMemBytes": 25769803776,
+    "loadAvg": [
+      4.4853515625,
+      4.73046875,
+      6.60888671875
+    ],
+    "hostname": "INBNOT516.local"
+  },
+  "git": null,
+  "wasmFeatures": "none",
+  "wasmPreload": true,
+  "results": [
+    {
+      "run": 1,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 1,
+      "durationMs": 3041,
+      "stats": {
+        "startTime": "2026-02-01T06:19:00.668Z",
+        "duration": 1852.496,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "resultLabel": "PASS (nonzero exit)",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:48709) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:48709) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 2,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 1,
+      "durationMs": 2667,
+      "stats": {
+        "startTime": "2026-02-01T06:19:03.467Z",
+        "duration": 1729.4410000000003,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "resultLabel": "PASS (nonzero exit)",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:48818) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:48818) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 3,
+      "wasmFeatures": "none",
+      "success": true,
+      "exitCode": 1,
+      "durationMs": 2641,
+      "stats": {
+        "startTime": "2026-02-01T06:19:06.135Z",
+        "duration": 1716.9429999999998,
+        "expected": 0,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [],
+      "resultLabel": "PASS (nonzero exit)",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:48937) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:48937) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    }
+  ]
+}
