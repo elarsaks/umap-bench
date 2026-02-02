@@ -1,0 +1,587 @@
+{
+  "generatedAt": "2026-02-02T17:45:36.343Z",
+  "runs": 10,
+  "machine": {
+    "platform": "darwin",
+    "release": "25.2.0",
+    "arch": "arm64",
+    "cpuModel": "Apple M4 Pro",
+    "cpuCores": 14,
+    "totalMemBytes": 25769803776,
+    "loadAvg": [
+      3.40185546875,
+      4.12890625,
+      4.35986328125
+    ],
+    "hostname": "inbnot139.inbank.internal"
+  },
+  "git": {
+    "commit": "4b983b3643146f834466c64a57294ed94849252f",
+    "branch": "benchmark-results",
+    "statusDirty": true
+  },
+  "wasmFeatures": "matrix",
+  "wasmPreload": true,
+  "results": [
+    {
+      "run": 1,
+      "wasmFeatures": "matrix",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10589,
+      "stats": {
+        "startTime": "2026-02-02T17:45:37.514Z",
+        "duration": 9478.946,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:45:42.517Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2585.9000000003725,
+              "memoryDeltaMb": 1.964822769165039,
+              "trustworthiness": 0.9881115335868188,
+              "fpsAvg": 120.01586986695682,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:45:46.552Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2729.39999999851,
+              "memoryDeltaMb": 1.9024295806884766,
+              "trustworthiness": 0.8694444444444445,
+              "fpsAvg": 108.98910108993161,
+              "responsivenessMs": 6.446666666616996
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:65552) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:65552) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 2,
+      "wasmFeatures": "matrix",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 9822,
+      "stats": {
+        "startTime": "2026-02-02T17:45:47.971Z",
+        "duration": 8844.81,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:45:52.321Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2573.699999999255,
+              "memoryDeltaMb": 16.724321365356445,
+              "trustworthiness": 0.9904055766793409,
+              "fpsAvg": 120.08733624458588,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:45:56.391Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2749.5,
+              "memoryDeltaMb": 2.333022117614746,
+              "trustworthiness": 0.862771002710027,
+              "fpsAvg": 108.91286970435823,
+              "responsivenessMs": 6.2866666665921604
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:65741) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:65741) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 3,
+      "wasmFeatures": "matrix",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 9808,
+      "stats": {
+        "startTime": "2026-02-02T17:45:57.734Z",
+        "duration": 8890.913,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:46:02.106Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2589.5,
+              "memoryDeltaMb": 14.297727584838867,
+              "trustworthiness": 0.9881960287283481,
+              "fpsAvg": 120,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:46:06.190Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2764.5,
+              "memoryDeltaMb": -8.557896614074707,
+              "trustworthiness": 0.8632621951219512,
+              "fpsAvg": 107.90288740129863,
+              "responsivenessMs": 6.593333333233992
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:65927) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:65927) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 4,
+      "wasmFeatures": "matrix",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10463,
+      "stats": {
+        "startTime": "2026-02-02T17:46:07.567Z",
+        "duration": 9521.637999999999,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:46:12.570Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2570,
+              "memoryDeltaMb": 12.883354187011719,
+              "trustworthiness": 0.9848457963667089,
+              "fpsAvg": 120.01586986717855,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:46:16.657Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2757.5,
+              "memoryDeltaMb": 1.0941839218139648,
+              "trustworthiness": 0.852269647696477,
+              "fpsAvg": 107.92445288306227,
+              "responsivenessMs": 6.466666666542491
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:66114) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:66114) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 5,
+      "wasmFeatures": "matrix",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10539,
+      "stats": {
+        "startTime": "2026-02-02T17:46:18.097Z",
+        "duration": 9545.559,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:46:23.122Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2576.0999999996275,
+              "memoryDeltaMb": 13.659784317016602,
+              "trustworthiness": 0.9889649345162653,
+              "fpsAvg": 119.9520191922784,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:46:27.215Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2756.10000000149,
+              "memoryDeltaMb": -1.3254261016845703,
+              "trustworthiness": 0.8694275067750677,
+              "fpsAvg": 109.07288051561726,
+              "responsivenessMs": 6.366666666790843
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:66308) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:66308) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 6,
+      "wasmFeatures": "matrix",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10533,
+      "stats": {
+        "startTime": "2026-02-02T17:46:28.720Z",
+        "duration": 9471.024000000001,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:46:33.697Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2576,
+              "memoryDeltaMb": 4.567569732666016,
+              "trustworthiness": 0.9875834389522602,
+              "fpsAvg": 119.92804317414019,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:46:37.729Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2721.4000000003725,
+              "memoryDeltaMb": 1.6969842910766602,
+              "trustworthiness": 0.8467479674796747,
+              "fpsAvg": 110.95561775306412,
+              "responsivenessMs": 6.133333333209157
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:66510) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:66510) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 7,
+      "wasmFeatures": "matrix",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10438,
+      "stats": {
+        "startTime": "2026-02-02T17:46:39.138Z",
+        "duration": 9491.302,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:46:44.139Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2597.699999999255,
+              "memoryDeltaMb": 13.010046005249023,
+              "trustworthiness": 0.9886861005492185,
+              "fpsAvg": 119.90407673874302,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:46:48.175Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2733,
+              "memoryDeltaMb": -9.327879905700684,
+              "trustworthiness": 0.880640243902439,
+              "fpsAvg": 109.12698412698413,
+              "responsivenessMs": 6.140000000099341
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:66705) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:66705) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 8,
+      "wasmFeatures": "matrix",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 9810,
+      "stats": {
+        "startTime": "2026-02-02T17:46:49.560Z",
+        "duration": 8881.657,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:46:53.965Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2591.800000000745,
+              "memoryDeltaMb": 8.381963729858398,
+              "trustworthiness": 0.9885720321081538,
+              "fpsAvg": 120,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:46:57.994Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2729.10000000149,
+              "memoryDeltaMb": 1.0166091918945312,
+              "trustworthiness": 0.8620426829268293,
+              "fpsAvg": 108.96730980697671,
+              "responsivenessMs": 5.993333333358168
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:66887) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:66887) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 9,
+      "wasmFeatures": "matrix",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 9843,
+      "stats": {
+        "startTime": "2026-02-02T17:46:59.384Z",
+        "duration": 8915.608,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:47:03.754Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2565.5999999996275,
+              "memoryDeltaMb": 1.8995990753173828,
+              "trustworthiness": 0.987220109843684,
+              "fpsAvg": 120.003967073203,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:47:07.826Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2713.5,
+              "memoryDeltaMb": 16.153565406799316,
+              "trustworthiness": 0.8487466124661247,
+              "fpsAvg": 108.97820435900641,
+              "responsivenessMs": 6.593333333358169
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:67073) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:67073) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 10,
+      "wasmFeatures": "matrix",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 9739,
+      "stats": {
+        "startTime": "2026-02-02T17:47:09.272Z",
+        "duration": 8782.18,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:47:13.575Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2487.7000000011176,
+              "memoryDeltaMb": 16.25806999206543,
+              "trustworthiness": 0.9891846218842416,
+              "fpsAvg": 120,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:47:17.647Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Matrix",
+              "wasmMode": "wasm:Matrix",
+              "runtimeMs": 2768.39999999851,
+              "memoryDeltaMb": 2.3458023071289062,
+              "trustworthiness": 0.8404471544715447,
+              "fpsAvg": 110.1955723221713,
+              "responsivenessMs": 6.386666666716337
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:67271) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:67271) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    }
+  ]
+}

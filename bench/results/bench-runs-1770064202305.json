@@ -1,0 +1,587 @@
+{
+  "generatedAt": "2026-02-02T20:30:07.138Z",
+  "runs": 10,
+  "machine": {
+    "platform": "darwin",
+    "release": "25.2.0",
+    "arch": "arm64",
+    "cpuModel": "Apple M4 Pro",
+    "cpuCores": 14,
+    "totalMemBytes": 25769803776,
+    "loadAvg": [
+      6.791015625,
+      5.80126953125,
+      5.61767578125
+    ],
+    "hostname": "inbnot139.inbank.internal"
+  },
+  "git": {
+    "commit": "4b983b3643146f834466c64a57294ed94849252f",
+    "branch": "benchmark-results",
+    "statusDirty": true
+  },
+  "wasmFeatures": "opt",
+  "wasmPreload": true,
+  "results": [
+    {
+      "run": 1,
+      "wasmFeatures": "opt",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 147394,
+      "stats": {
+        "startTime": "2026-02-02T20:30:08.328Z",
+        "duration": 146259.465,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T20:30:25.626Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2492.39999999851,
+              "memoryDeltaMb": 3.2890586853027344,
+              "trustworthiness": 0.5654698590592631,
+              "fpsAvg": 65.09910610187379,
+              "responsivenessMs": 58.054545454342254
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T20:30:29.796Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 1907.300000000745,
+              "memoryDeltaMb": 18.276817321777344,
+              "trustworthiness": 0.9969292749193411,
+              "fpsAvg": 55.674936510996794,
+              "responsivenessMs": 12.626666666318973
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:7673) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:7673) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 2,
+      "wasmFeatures": "opt",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 153751,
+      "stats": {
+        "startTime": "2026-02-02T20:32:35.783Z",
+        "duration": 152570.592,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T20:32:53.267Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2458.699999999255,
+              "memoryDeltaMb": -0.07248401641845703,
+              "trustworthiness": 0.5605950925454237,
+              "fpsAvg": 66.63400293973542,
+              "responsivenessMs": 57.64545454559001
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T20:32:57.154Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2793.199999999255,
+              "memoryDeltaMb": -0.35004425048828125,
+              "trustworthiness": 0.9973571064696892,
+              "fpsAvg": 61.83138678976557,
+              "responsivenessMs": 33.733333333333334
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:9842) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:9842) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 3,
+      "wasmFeatures": "opt",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 149433,
+      "stats": {
+        "startTime": "2026-02-02T20:35:09.589Z",
+        "duration": 148206.96099999998,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T20:35:27.098Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2509,
+              "memoryDeltaMb": 4.574337005615234,
+              "trustworthiness": 0.5538742570894889,
+              "fpsAvg": 64.96102338587168,
+              "responsivenessMs": 58.5999999997968
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T20:35:31.160Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2899.5,
+              "memoryDeltaMb": -1.4653205871582031,
+              "trustworthiness": 0.9966138563423331,
+              "fpsAvg": 62.56827887584987,
+              "responsivenessMs": 9.17999999995033
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:11952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:11952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 4,
+      "wasmFeatures": "opt",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 152232,
+      "stats": {
+        "startTime": "2026-02-02T20:37:44.948Z",
+        "duration": 145088.377,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T20:38:03.777Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2479.199999999255,
+              "memoryDeltaMb": 29.66146469116211,
+              "trustworthiness": 0.5502925793852946,
+              "fpsAvg": 64.41538161224284,
+              "responsivenessMs": 58.445454545657746
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T20:38:07.755Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2856.10000000149,
+              "memoryDeltaMb": 5.873283386230469,
+              "trustworthiness": 0.9972002037697402,
+              "fpsAvg": 60.700998629420845,
+              "responsivenessMs": 35.88666666671634
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:14053) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:14053) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 5,
+      "wasmFeatures": "opt",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 148627,
+      "stats": {
+        "startTime": "2026-02-02T20:40:11.332Z",
+        "duration": 147335.92799999999,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T20:40:28.721Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2491.199999999255,
+              "memoryDeltaMb": 32.04149627685547,
+              "trustworthiness": 0.5529486330446596,
+              "fpsAvg": 60.56461854041174,
+              "responsivenessMs": 58.58181818202138
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T20:40:32.721Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2865.400000002235,
+              "memoryDeltaMb": -10.839359283447266,
+              "trustworthiness": 0.997288758702666,
+              "fpsAvg": 58.8004704038491,
+              "responsivenessMs": 36.999999999751644
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:16050) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:16050) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 6,
+      "wasmFeatures": "opt",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 149261,
+      "stats": {
+        "startTime": "2026-02-02T20:42:39.890Z",
+        "duration": 148049.05899999998,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T20:42:57.329Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2469,
+              "memoryDeltaMb": 30.161048889160156,
+              "trustworthiness": 0.5527085243674648,
+              "fpsAvg": 63.607006556275394,
+              "responsivenessMs": 56.92727272754366
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T20:43:01.332Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2877.300000000745,
+              "memoryDeltaMb": -9.347480773925781,
+              "trustworthiness": 0.996915520461878,
+              "fpsAvg": 56.807051909892266,
+              "responsivenessMs": 36.78666666696469
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:18254) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:18254) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 7,
+      "wasmFeatures": "opt",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 144984,
+      "stats": {
+        "startTime": "2026-02-02T20:45:09.135Z",
+        "duration": 143799.057,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T20:45:26.344Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2481.900000002235,
+              "memoryDeltaMb": 16.58999252319336,
+              "trustworthiness": 0.5644896417048735,
+              "fpsAvg": 62.65296133137543,
+              "responsivenessMs": 58.445454545657746
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T20:45:30.381Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2875.89999999851,
+              "memoryDeltaMb": 27.103506088256836,
+              "trustworthiness": 0.9966937510613008,
+              "fpsAvg": 60.440631702261776,
+              "responsivenessMs": 37.5
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:20253) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:20253) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 8,
+      "wasmFeatures": "opt",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 139205,
+      "stats": {
+        "startTime": "2026-02-02T20:47:34.104Z",
+        "duration": 138049.576,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T20:47:51.327Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2469.2000000029802,
+              "memoryDeltaMb": 3.3762168884277344,
+              "trustworthiness": 0.5676545253863134,
+              "fpsAvg": 62.5,
+              "responsivenessMs": 57.87272727286274
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T20:47:55.355Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2890,
+              "memoryDeltaMb": 27.102110862731934,
+              "trustworthiness": 0.9970639327559857,
+              "fpsAvg": 59.35006810659251,
+              "responsivenessMs": 36.04000000009934
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:22172) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:22172) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 9,
+      "wasmFeatures": "opt",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 146308,
+      "stats": {
+        "startTime": "2026-02-02T20:49:53.287Z",
+        "duration": 145177.946,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T20:50:10.457Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2466,
+              "memoryDeltaMb": 24.75780487060547,
+              "trustworthiness": 0.5623323144846324,
+              "fpsAvg": 66.55574043266084,
+              "responsivenessMs": 57.70000000027093
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T20:50:14.487Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2899.900000002235,
+              "memoryDeltaMb": -18.13861083984375,
+              "trustworthiness": 0.9970791305824418,
+              "fpsAvg": 54.69371519503008,
+              "responsivenessMs": 36.9066666662693
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:23992) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:23992) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 10,
+      "wasmFeatures": "opt",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 150353,
+      "stats": {
+        "startTime": "2026-02-02T20:52:19.612Z",
+        "duration": 149208.619,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T20:52:37.150Z",
+              "scope": "large",
+              "datasetName": "MNIST-like (1K points, 784D)",
+              "datasetSize": 1000,
+              "dimensions": 784,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2610.699999999255,
+              "memoryDeltaMb": 29.706836700439453,
+              "trustworthiness": 0.5536137714382747,
+              "fpsAvg": 64.84080131612474,
+              "responsivenessMs": 67.71818181770769
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T20:52:41.170Z",
+              "scope": "large",
+              "datasetName": "3D Dense Clusters (1K points)",
+              "datasetSize": 1000,
+              "dimensions": 75,
+              "wasmFeatures": "Opt",
+              "wasmMode": "wasm:Opt",
+              "runtimeMs": 2892.099999997765,
+              "memoryDeltaMb": 18.392494201660156,
+              "trustworthiness": 0.9970942435048396,
+              "fpsAvg": 54.710036804893306,
+              "responsivenessMs": 36.873333333432676
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:26184) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:26184) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    }
+  ]
+}
