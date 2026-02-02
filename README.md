@@ -124,7 +124,7 @@ Located in: `bench/`
 	# Master command: set RUNS and SCOPE, run JS + all WASM + single features
 	RUNS=10 SCOPE=small bash -lc 'set -e; scope="${SCOPE}"; runs="${RUNS}"; for wasm in none all dist tree matrix nn opt; do if [ "$wasm" = "none" ]; then yarn bench:loop --scope="$scope" --runs="$runs"; else yarn bench:loop --scope="$scope" --runs="$runs" --wasm="$wasm"; fi; done'
 
-	# Full bench: run small + mid + large with all WASM variants
+	# Full bench: run small + mid + large with all WASM variants (Used to produce all thesis data)
 	yarn bench:full
 	```
 	Scopes: `small`, `mid`, `large`.
