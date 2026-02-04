@@ -1,0 +1,587 @@
+{
+  "generatedAt": "2026-02-02T17:52:22.734Z",
+  "runs": 10,
+  "machine": {
+    "platform": "darwin",
+    "release": "25.2.0",
+    "arch": "arm64",
+    "cpuModel": "Apple M4 Pro",
+    "cpuCores": 14,
+    "totalMemBytes": 25769803776,
+    "loadAvg": [
+      3.4111328125,
+      4.07958984375,
+      4.29541015625
+    ],
+    "hostname": "inbnot139.inbank.internal"
+  },
+  "git": {
+    "commit": "4b983b3643146f834466c64a57294ed94849252f",
+    "branch": "benchmark-results",
+    "statusDirty": true
+  },
+  "wasmFeatures": "all",
+  "wasmPreload": true,
+  "results": [
+    {
+      "run": 1,
+      "wasmFeatures": "all",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 8290,
+      "stats": {
+        "startTime": "2026-02-02T17:52:23.992Z",
+        "duration": 7094.315,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:52:27.735Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 1079.5999999996275,
+              "memoryDeltaMb": 22.919736862182617,
+              "trustworthiness": 0.9943856883538741,
+              "fpsAvg": 104.63968410661401,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:52:30.580Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 2170.39999999851,
+              "memoryDeltaMb": 15.11430835723877,
+              "trustworthiness": 0.9483873125059712,
+              "fpsAvg": 100.13744355000718,
+              "responsivenessMs": 25.64000000009934
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:73699) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:73699) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 2,
+      "wasmFeatures": "all",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 7998,
+      "stats": {
+        "startTime": "2026-02-02T17:52:32.044Z",
+        "duration": 7054.133,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:52:35.785Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 1084.800000000745,
+              "memoryDeltaMb": 22.40641212463379,
+              "trustworthiness": 0.9928422661698671,
+              "fpsAvg": 105.90468578275606,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:52:38.608Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 2140.5,
+              "memoryDeltaMb": 17.275068283081055,
+              "trustworthiness": 0.9490976402025413,
+              "fpsAvg": 100.79840319361277,
+              "responsivenessMs": 24.666666666790842
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:73858) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:73858) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 3,
+      "wasmFeatures": "all",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 8015,
+      "stats": {
+        "startTime": "2026-02-02T17:52:40.089Z",
+        "duration": 7035.719999999999,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:52:43.782Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 1082.699999999255,
+              "memoryDeltaMb": 23.310365676879883,
+              "trustworthiness": 0.9940840259864335,
+              "fpsAvg": 107.84313725490196,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:52:46.666Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 2201.199999999255,
+              "memoryDeltaMb": 17.46159553527832,
+              "trustworthiness": 0.946329177414732,
+              "fpsAvg": 93.11899627530815,
+              "responsivenessMs": 26.53333333345751
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:74024) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:74024) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 4,
+      "wasmFeatures": "all",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 7665,
+      "stats": {
+        "startTime": "2026-02-02T17:52:48.120Z",
+        "duration": 6673.004,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:52:51.289Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 1094.2000000011176,
+              "memoryDeltaMb": 23.588464736938477,
+              "trustworthiness": 0.9932108053883635,
+              "fpsAvg": 100.92015434854575,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:52:54.303Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 1310.1000000014901,
+              "memoryDeltaMb": 2.1386289596557617,
+              "trustworthiness": 0.9464507499761154,
+              "fpsAvg": 85.00543639425061,
+              "responsivenessMs": 7.146666666616996
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:74175) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:74175) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 5,
+      "wasmFeatures": "all",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 8082,
+      "stats": {
+        "startTime": "2026-02-02T17:52:55.766Z",
+        "duration": 7107.6,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:52:59.533Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 1087.6000000014901,
+              "memoryDeltaMb": 7.877497673034668,
+              "trustworthiness": 0.9940372121906945,
+              "fpsAvg": 106.82085456679754,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:53:02.360Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 2156.5,
+              "memoryDeltaMb": 33.02778911590576,
+              "trustworthiness": 0.9482514091907901,
+              "fpsAvg": 96.66600907487476,
+              "responsivenessMs": 25.666666666666668
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:74336) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:74336) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 6,
+      "wasmFeatures": "all",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 7412,
+      "stats": {
+        "startTime": "2026-02-02T17:53:03.818Z",
+        "duration": 6470.469999999999,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:53:06.962Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 1078.5,
+              "memoryDeltaMb": 22.963136672973633,
+              "trustworthiness": 0.9936144549536639,
+              "fpsAvg": 104.38207779419005,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:53:09.787Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 2149,
+              "memoryDeltaMb": 17.071553230285645,
+              "trustworthiness": 0.9475924333619948,
+              "fpsAvg": 97.8952520802741,
+              "responsivenessMs": 25.1
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:74496) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:74496) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 7,
+      "wasmFeatures": "all",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 8031,
+      "stats": {
+        "startTime": "2026-02-02T17:53:11.299Z",
+        "duration": 7034.233,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:53:15.079Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 1100.0999999996275,
+              "memoryDeltaMb": 19.302560806274414,
+              "trustworthiness": 0.994378045285182,
+              "fpsAvg": 104.42320953604462,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:53:17.900Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 2150,
+              "memoryDeltaMb": 17.30141544342041,
+              "trustworthiness": 0.9476743575045381,
+              "fpsAvg": 99.9020568070519,
+              "responsivenessMs": 25.226666666691504
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:74659) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:74659) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 8,
+      "wasmFeatures": "all",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 8046,
+      "stats": {
+        "startTime": "2026-02-02T17:53:19.291Z",
+        "duration": 7103.17,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:53:23.063Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 1096.9000000003725,
+              "memoryDeltaMb": 20.475427627563477,
+              "trustworthiness": 0.9941406324639342,
+              "fpsAvg": 99.67433139240673,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:53:25.898Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 2157.9000000003725,
+              "memoryDeltaMb": 21.29287624359131,
+              "trustworthiness": 0.949628116938951,
+              "fpsAvg": 96.8063872255489,
+              "responsivenessMs": 25.419999999925494
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:74822) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:74822) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 9,
+      "wasmFeatures": "all",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 7972,
+      "stats": {
+        "startTime": "2026-02-02T17:53:27.346Z",
+        "duration": 7033.994,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:53:31.036Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 1079,
+              "memoryDeltaMb": 8.707404136657715,
+              "trustworthiness": 0.9934133467087035,
+              "fpsAvg": 105.36681437715411,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:53:33.859Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 2143,
+              "memoryDeltaMb": 34.27458095550537,
+              "trustworthiness": 0.9499281073851151,
+              "fpsAvg": 95.14370664023787,
+              "responsivenessMs": 25.733333333209156
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:74983) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:74983) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 10,
+      "wasmFeatures": "all",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 8037,
+      "stats": {
+        "startTime": "2026-02-02T17:53:35.333Z",
+        "duration": 7084.063,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:53:39.088Z",
+              "scope": "mid",
+              "datasetName": "Swiss Roll (600 points, 3D manifold)",
+              "datasetSize": 600,
+              "dimensions": 3,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 1071.9000000003725,
+              "memoryDeltaMb": 8.658797264099121,
+              "trustworthiness": 0.9941525747587656,
+              "fpsAvg": 107.98494154939546,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:53:41.941Z",
+              "scope": "mid",
+              "datasetName": "Medium Clustered (600 points)",
+              "datasetSize": 600,
+              "dimensions": 50,
+              "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+              "wasmMode": "wasm:Dist,Tree,Matrix,NN,Opt",
+              "runtimeMs": 2173.5999999996275,
+              "memoryDeltaMb": 40.78872585296631,
+              "trustworthiness": 0.9508395433266457,
+              "fpsAvg": 97.63873667437755,
+              "responsivenessMs": 26.413333333283664
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:75134) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:75134) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    }
+  ]
+}

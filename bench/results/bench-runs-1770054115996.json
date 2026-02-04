@@ -1,0 +1,587 @@
+{
+  "generatedAt": "2026-02-02T17:42:00.280Z",
+  "runs": 10,
+  "machine": {
+    "platform": "darwin",
+    "release": "25.2.0",
+    "arch": "arm64",
+    "cpuModel": "Apple M4 Pro",
+    "cpuCores": 14,
+    "totalMemBytes": 25769803776,
+    "loadAvg": [
+      4.6728515625,
+      4.39013671875,
+      4.482421875
+    ],
+    "hostname": "inbnot139.inbank.internal"
+  },
+  "git": {
+    "commit": "4b983b3643146f834466c64a57294ed94849252f",
+    "branch": "benchmark-results",
+    "statusDirty": true
+  },
+  "wasmFeatures": "dist",
+  "wasmPreload": true,
+  "results": [
+    {
+      "run": 1,
+      "wasmFeatures": "dist",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10604,
+      "stats": {
+        "startTime": "2026-02-02T17:42:01.411Z",
+        "duration": 9538.430999999999,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:42:06.435Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2595.300000000745,
+              "memoryDeltaMb": -0.1544361114501953,
+              "trustworthiness": 0.9884241656104774,
+              "fpsAvg": 120,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:42:10.494Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2750.9000000003725,
+              "memoryDeltaMb": 5.300858497619629,
+              "trustworthiness": 0.8551829268292683,
+              "fpsAvg": 108.91286970415553,
+              "responsivenessMs": 6.766666666790843
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:61266) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:61266) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 2,
+      "wasmFeatures": "dist",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10511,
+      "stats": {
+        "startTime": "2026-02-02T17:42:12.071Z",
+        "duration": 9393.824999999999,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:42:16.942Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2519.199999999255,
+              "memoryDeltaMb": 2.795724868774414,
+              "trustworthiness": 0.9881580059146599,
+              "fpsAvg": 119.97600479890613,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:42:21.030Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2751.9000000003725,
+              "memoryDeltaMb": 2.556171417236328,
+              "trustworthiness": 0.8735602981029811,
+              "fpsAvg": 108.97820435920936,
+              "responsivenessMs": 6.633333333209157
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:61540) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:61540) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 3,
+      "wasmFeatures": "dist",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10629,
+      "stats": {
+        "startTime": "2026-02-02T17:42:22.596Z",
+        "duration": 9510.304,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:42:27.626Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2598.800000000745,
+              "memoryDeltaMb": 0.03456306457519531,
+              "trustworthiness": 0.9880650612589776,
+              "fpsAvg": 120.0277750221418,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:42:31.687Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2758.0999999996275,
+              "memoryDeltaMb": 14.672127723693848,
+              "trustworthiness": 0.8638719512195122,
+              "fpsAvg": 109.20281941836795,
+              "responsivenessMs": 6.139999999850988
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:61876) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:61876) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 4,
+      "wasmFeatures": "dist",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10667,
+      "stats": {
+        "startTime": "2026-02-02T17:42:33.246Z",
+        "duration": 9528.646999999999,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:42:38.274Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2599.699999999255,
+              "memoryDeltaMb": -0.06988334655761719,
+              "trustworthiness": 0.9880397127165188,
+              "fpsAvg": 120.03968253968254,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:42:42.361Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2776,
+              "memoryDeltaMb": 2.772062301635742,
+              "trustworthiness": 0.8777439024390243,
+              "fpsAvg": 108.09202697338331,
+              "responsivenessMs": 6.560000000149012
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:62065) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:62065) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 5,
+      "wasmFeatures": "dist",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10450,
+      "stats": {
+        "startTime": "2026-02-02T17:42:43.749Z",
+        "duration": 9487.078,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:42:48.785Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2583.89999999851,
+              "memoryDeltaMb": -0.10499000549316406,
+              "trustworthiness": 0.9882678495986481,
+              "fpsAvg": 120,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:42:52.812Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2749.9000000003725,
+              "memoryDeltaMb": 14.245381355285645,
+              "trustworthiness": 0.8884993224932249,
+              "fpsAvg": 109.9780043992021,
+              "responsivenessMs": 6.133333333333334
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:62256) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:62256) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 6,
+      "wasmFeatures": "dist",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10471,
+      "stats": {
+        "startTime": "2026-02-02T17:42:54.203Z",
+        "duration": 9518.314,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:42:59.208Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2606.4000000003725,
+              "memoryDeltaMb": 5.672346115112305,
+              "trustworthiness": 0.9895226024503591,
+              "fpsAvg": 120.08733624458588,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:43:03.290Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2770.800000000745,
+              "memoryDeltaMb": -9.693891525268555,
+              "trustworthiness": 0.85204945799458,
+              "fpsAvg": 108.09202697358297,
+              "responsivenessMs": 6.306666666517655
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:62451) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:62451) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 7,
+      "wasmFeatures": "dist",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10513,
+      "stats": {
+        "startTime": "2026-02-02T17:43:04.676Z",
+        "duration": 9561.603000000001,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:43:09.740Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2614.7999999988824,
+              "memoryDeltaMb": 1.774068832397461,
+              "trustworthiness": 0.9877777777777778,
+              "fpsAvg": 120,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:43:13.809Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2757.699999999255,
+              "memoryDeltaMb": 1.8595733642578125,
+              "trustworthiness": 0.8859756097560976,
+              "fpsAvg": 109.15947206517944,
+              "responsivenessMs": 6.626666666567326
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:62638) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:62638) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 8,
+      "wasmFeatures": "dist",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10469,
+      "stats": {
+        "startTime": "2026-02-02T17:43:15.201Z",
+        "duration": 9523.760999999999,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:43:20.231Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2604.5,
+              "memoryDeltaMb": 0.24858665466308594,
+              "trustworthiness": 0.9876975073933248,
+              "fpsAvg": 120,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:43:24.317Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2786,
+              "memoryDeltaMb": 13.25157642364502,
+              "trustworthiness": 0.850609756097561,
+              "fpsAvg": 108.91286970415553,
+              "responsivenessMs": 6.519999999925494
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:62837) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:62837) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 9,
+      "wasmFeatures": "dist",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 9887,
+      "stats": {
+        "startTime": "2026-02-02T17:43:25.709Z",
+        "duration": 8923.769,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:43:30.119Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2602.699999999255,
+              "memoryDeltaMb": -0.023187637329101562,
+              "trustworthiness": 0.9893071398394593,
+              "fpsAvg": 119.9520191922784,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:43:34.220Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2784.0999999996275,
+              "memoryDeltaMb": 7.749390602111816,
+              "trustworthiness": 0.8462059620596206,
+              "fpsAvg": 109,
+              "responsivenessMs": 6.486666666592161
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:63019) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:63019) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    },
+    {
+      "run": 10,
+      "wasmFeatures": "dist",
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 10535,
+      "stats": {
+        "startTime": "2026-02-02T17:43:35.617Z",
+        "duration": 9560.445,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "status": null,
+      "errors": [],
+      "uiMetrics": [
+        {
+          "rows": [
+            {
+              "runId": 1,
+              "timestamp": "2026-02-02T17:43:40.657Z",
+              "scope": "small",
+              "datasetName": "Iris Dataset (150 points, 4D)",
+              "datasetSize": 150,
+              "dimensions": 4,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2607.800000000745,
+              "memoryDeltaMb": 1.467050552368164,
+              "trustworthiness": 0.9888466413181242,
+              "fpsAvg": 119.89694807755252,
+              "responsivenessMs": 0
+            },
+            {
+              "runId": 2,
+              "timestamp": "2026-02-02T17:43:44.771Z",
+              "scope": "small",
+              "datasetName": "Small Random (80 points)",
+              "datasetSize": 80,
+              "dimensions": 10,
+              "wasmFeatures": "Dist",
+              "wasmMode": "wasm:Dist",
+              "runtimeMs": 2779.4000000003725,
+              "memoryDeltaMb": 2.308516502380371,
+              "trustworthiness": 0.8311483739837399,
+              "fpsAvg": 109.06206623025727,
+              "responsivenessMs": 6.6
+            }
+          ]
+        }
+      ],
+      "resultLabel": "PASS",
+      "stdoutPreview": "",
+      "stderrPreview": "\u001b[1A\u001b[2K(node:63214) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\u001b[1A\u001b[2K(node:63214) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    }
+  ]
+}
