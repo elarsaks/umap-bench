@@ -163,7 +163,7 @@ const expectDatasetSummary = async (page: Page, size: number, dims: number) => {
 const setBenchContext = async (page: Page, scope: string) =>
   page.evaluate((value) => {
     window.__BENCH_EXPORT__ = [];
-    window.__BENCH_CONTEXT__ = { scope: value };
+    window.__BENCH_CONTEXT__ = { scope: value, renderingEnabled: false };
     window.__BENCH_PROGRESS__ = null;
   }, scope);
 

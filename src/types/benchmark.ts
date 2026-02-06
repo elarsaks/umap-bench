@@ -24,6 +24,7 @@ export interface BenchmarkExportRow {
   trustworthiness: number;
   fpsAvg: number;
   responsivenessMs: number;
+  renderingEnabled: boolean;
 }
 
 export interface PerformanceMetrics {
@@ -68,7 +69,11 @@ export interface WasmRelease {
 declare global {
   interface Window {
     __BENCH_EXPORT__?: BenchmarkExportRow[];
-    __BENCH_CONTEXT__?: { scope?: string; runTimeoutMs?: number };
+    __BENCH_CONTEXT__?: { 
+      scope?: string; 
+      runTimeoutMs?: number;
+      renderingEnabled?: boolean;
+    };
     __BENCH_PROGRESS__?: { epoch: number; elapsedMs: number } | null;
   }
 }

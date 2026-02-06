@@ -498,4 +498,25 @@ export const DATASET_CONFIGS: DatasetConfig[] = [
       return data;
     },
   },
+  {
+    name: "Large Clustered (5K points, 100D)",
+    size: 5000,
+    dimensions: 100,
+    generator: () => generateClusteredData(5000, 100),
+  },
+  {
+    name: "Very Large Random (10K points, 50D)",
+    size: 10000,
+    dimensions: 50,
+    generator: () => generateRandomData(10000, 50),
+  },
+  {
+    name: "MNIST-scale (10K points, 784D)",
+    size: 10000,
+    dimensions: 784,
+    generator: () => {
+      const { data } = generateMNISTLike(10000);
+      return data;
+    },
+  },
 ];
