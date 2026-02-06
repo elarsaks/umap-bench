@@ -380,23 +380,19 @@ function App() {
         ].filter(Boolean);
         const wasmEnabled = wasmFeatureList.length > 0;
         const wasmFeatures = wasmEnabled ? wasmFeatureList.join(",") : "none";
-        const wasmMode = wasmEnabled ? `wasm:${wasmFeatures}` : "js";
 
         const exportRow: BenchmarkExportRow = {
-          runId: runCounter.current++,
+          datasetIndex: runCounter.current++,
           timestamp: new Date().toISOString(),
-          scope: window.__BENCH_CONTEXT__?.scope ?? null,
           datasetName: datasetConfig.name,
           datasetSize: datasetConfig.size,
           dimensions: datasetConfig.dimensions,
           wasmFeatures,
-          wasmMode,
           runtimeMs: runtime,
           memoryDeltaMb: memoryUsage,
           trustworthiness,
           fpsAvg: visualizationFPS,
           responsivenessMs: responsiveness,
-          renderingEnabled,
         };
         if (!window.__BENCH_EXPORT__) window.__BENCH_EXPORT__ = [];
         window.__BENCH_EXPORT__.push(exportRow);

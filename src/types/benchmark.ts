@@ -11,20 +11,19 @@ export interface BenchmarkResult {
 }
 
 export interface BenchmarkExportRow {
-  runId: number;
+  /** Sequential index of dataset within this benchmark run (1-based) */
+  datasetIndex: number;
   timestamp: string;
-  scope: string | null;
   datasetName: string;
   datasetSize: number;
   dimensions: number;
+  /** "none" for JS, or comma-separated features like "Dist,Tree,Matrix,NN,Opt" */
   wasmFeatures: string;
-  wasmMode: string;
   runtimeMs: number;
   memoryDeltaMb: number;
   trustworthiness: number;
   fpsAvg: number;
   responsivenessMs: number;
-  renderingEnabled: boolean;
 }
 
 export interface PerformanceMetrics {

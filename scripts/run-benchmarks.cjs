@@ -263,24 +263,26 @@ function runPlaywrightOnce({ runIndex, scope, wasmFeatures, preloadWasm }) {
 
   const durationMs = Date.now() - start;
   const summary = readPlaywrightTmpSummary();
-  const uiMetrics = summary ? extractUiMetrics(summary) : [];
+  const rawMetrics = summary ? extractUiMetrics(summary) : [];
+  // Flatten: each entry has { rows: [...] }, extract just the rows
+  const metrics = rawMetrics.flatMap((m) => m.rows || []);
 
   const exitCode = result.status;
   const { success, resultLabel } = interpretExitCode(exitCode);
 
+  const stderrPreview = (result.stderr || '').slice(0, 2000);
+
   return {
     run: runIndex,
-    wasmFeatures: wasmFeatures ?? 'none',
     success,
     exitCode,
     durationMs,
     stats: summary?.stats ?? null,
-    status: summary?.status ?? null,
     errors: summary?.errors ?? [],
-    uiMetrics,
+    metrics,
     resultLabel,
-    stdoutPreview: '',
-    stderrPreview: (result.stderr || '').slice(0, 2000),
+    // Only include stderr if non-empty (for debugging failures)
+    ...(stderrPreview ? { stderrPreview } : {}),
   };
 }
 

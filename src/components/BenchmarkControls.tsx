@@ -130,7 +130,8 @@ interface BenchmarkControlsProps {
   onRunBenchmark: (
     datasetConfig: DatasetConfig,
     umapConfig: UMAPConfig,
-    wasmConfig: WasmConfig
+    wasmConfig: WasmConfig,
+    renderingEnabled: boolean
   ) => void;
   isRunning: boolean;
   wasmReady: boolean;
