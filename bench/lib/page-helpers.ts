@@ -46,10 +46,36 @@ export const attachPageDiagnostics = (page: Page, label: string) => {
   if ((page as unknown as Record<string, boolean>)[marker]) return;
   (page as unknown as Record<string, boolean>)[marker] = true;
 
+  // Control verbosity via env var: set BENCH_VERBOSE=1 to see all console messages.
+  const VERBOSE = ['1', 'true', 'yes'].includes((process.env.BENCH_VERBOSE || '').toLowerCase());
+
+  // Blacklist patterns for noisy messages we don't want to see by default.
+  const noisePatterns: RegExp[] = [
+    /GL Driver Message/i,
+    /ReadPixels/i,
+    /swiftshader/i,
+    /enable-unsafe-swiftshader/i,
+    /GPU stall/i,
+  ];
+
   page.on('console', (msg) => {
     const type = msg.type();
     const text = msg.text();
-    console.log(`[bench][${label}][console:${type}] ${text}`);
+
+    // Always show errors.
+    if (type === 'error') {
+      console.error(`[bench][${label}][console:${type}] ${text}`);
+      return;
+    }
+
+    // Filter warnings/info that match known noisy patterns unless VERBOSE is enabled.
+    if (!VERBOSE && (type === 'warning' || type === 'info')) {
+      if (noisePatterns.some((r) => r.test(text))) return;
+    }
+
+    // Otherwise log at appropriate level.
+    if (type === 'warning') console.warn(`[bench][${label}][console:${type}] ${text}`);
+    else console.log(`[bench][${label}][console:${type}] ${text}`);
   });
 
   page.on('pageerror', (err) => {
