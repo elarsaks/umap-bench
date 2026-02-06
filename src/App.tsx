@@ -202,7 +202,8 @@ function App() {
     async (
       datasetConfig: DatasetConfig,
       umapConfig: UMAPConfig,
-      config: WasmConfig
+      config: WasmConfig,
+      renderingEnabled: boolean
     ) => {
       const mod = await loadUmapModule();
       const { UMAP, isWasmAvailable } = mod;
@@ -282,12 +283,16 @@ function App() {
         // Start monitoring
         perfMonitor.startMonitoring();
 
-        // Measure FPS during computation
+        // Measure FPS during computation (only if rendering is enabled)
         let visualizationFPS = 0;
-        fpsMonitor.start((fps) => {
-          visualizationFPS = fps;
-          setCurrentFPS(fps);
-        });
+        if (renderingEnabled) {
+          fpsMonitor.start((fps) => {
+            visualizationFPS = fps;
+            setCurrentFPS(fps);
+          });
+        } else {
+          setCurrentFPS(0);
+        }
 
         // Run UMAP
         const umap = new UMAP({
@@ -332,8 +337,10 @@ function App() {
           );
         }
 
-        // Stop FPS monitoring
-        fpsMonitor.stop();
+        // Stop FPS monitoring (only if it was started)
+        if (renderingEnabled) {
+          fpsMonitor.stop();
+        }
 
         // End performance monitoring
         const metrics = perfMonitor.endMonitoring();
@@ -389,15 +396,24 @@ function App() {
           trustworthiness,
           fpsAvg: visualizationFPS,
           responsivenessMs: responsiveness,
+          renderingEnabled,
         };
         if (!window.__BENCH_EXPORT__) window.__BENCH_EXPORT__ = [];
         window.__BENCH_EXPORT__.push(exportRow);
 
         // Update state
         setResults((prev) => [...prev, result]);
-        setCurrentEmbedding(embeddedData);
-        setCurrentClusters(clusters);
-        setCurrentEdges(edges);
+        // Update visualization only if rendering is enabled
+        if (renderingEnabled) {
+          setCurrentEmbedding(embeddedData);
+          setCurrentClusters(clusters);
+          setCurrentEdges(edges);
+        } else {
+          // Clear visualization when rendering is disabled
+          setCurrentEmbedding([]);
+          setCurrentClusters([]);
+          setCurrentEdges([]);
+        }
       } catch (error) {
         console.error("Benchmark failed:", error);
         if (typeof window !== "undefined" && !window.__BENCH_CONTEXT__?.scope) {
@@ -459,9 +475,21 @@ function App() {
                 3D Plotly Visualization (FPS: {currentFPS.toFixed(1)})
               </div>
             </div>
+          ) : isRunning ? (
+            <div className="no-visualization">
+              <p>Benchmark running...</p>
+              <p className="hint" style={{ fontSize: '0.9em', opacity: 0.7 }}>
+                {currentFPS === 0 
+                  ? '⚡ Rendering disabled for optimal performance' 
+                  : 'Visualization will appear after benchmark completes'}
+              </p>
+            </div>
           ) : (
             <div className="no-visualization">
               <p>Run a benchmark to see the UMAP embedding visualization</p>
+              <p className="hint" style={{ fontSize: '0.9em', opacity: 0.7 }}>
+                Enable the visualization checkbox above for 3D rendering
+              </p>
             </div>
           )}
         </div>

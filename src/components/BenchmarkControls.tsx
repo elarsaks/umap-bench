@@ -162,11 +162,15 @@ export const BenchmarkControls: React.FC<BenchmarkControlsProps> = ({
   const [selectedDataset, setSelectedDataset] = useState<DatasetConfig>(
     DATASET_CONFIGS[0]
   );
+  const [renderingEnabled, setRenderingEnabled] = useState<boolean>(() => {
+    // Default: disabled for benchmark mode, enabled for interactive use
+    return !window.__BENCH_CONTEXT__?.scope;
+  });
   const [umapConfig, setUmapConfig] = useState<UMAPConfig>(DEFAULT_UMAP_CONFIG);
 
   const handleRunBenchmark = () => {
     if (!isRunning) {
-      onRunBenchmark(selectedDataset, umapConfig, wasmConfig);
+      onRunBenchmark(selectedDataset, umapConfig, wasmConfig, renderingEnabled);
     }
   };
   const needsWasm = Object.values(wasmConfig).some(Boolean);
@@ -199,6 +203,17 @@ export const BenchmarkControls: React.FC<BenchmarkControlsProps> = ({
           <span>Size: {selectedDataset.size} points</span>
           <span>Dimensions: {selectedDataset.dimensions}</span>
         </DatasetInfo>
+
+        <label style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '8px', cursor: 'pointer' }}>
+          <input
+            type="checkbox"
+            checked={renderingEnabled}
+            onChange={(e) => setRenderingEnabled(e.target.checked)}
+            disabled={isRunning}
+            style={{ cursor: 'pointer' }}
+          />
+          <span>Enable 3D Visualization (may impact performance on large datasets)</span>
+        </label>
       </SectionContainer>
 
       <SectionContainer className="control-section">

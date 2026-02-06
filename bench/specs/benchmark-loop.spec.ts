@@ -78,7 +78,7 @@ const expectDatasetSummary = async (
 const setBenchContext = async (page: Page, scope: string) =>
   page.evaluate((value) => {
     window.__BENCH_EXPORT__ = [];
-    window.__BENCH_CONTEXT__ = { scope: value };
+    window.__BENCH_CONTEXT__ = { scope: value, renderingEnabled: false };
   }, scope);
 
 const attachBenchmarkMetrics = async (
