@@ -1,0 +1,7 @@
+# Generated outputs (reproducible from results/)
+outputs/
+preprocessed.csv
+analysis_outputs/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
