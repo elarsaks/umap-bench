@@ -1,185 +1,24 @@
-import { test, expect, type Page } from '@playwright/test';
-import { applyWasmConfig, getWasmConfigsFromEnv } from './wasm-config';
+/**
+ * Benchmark spec for scope-based performance testing.
+ * Uses shared helpers from bench/lib/.
+ */
 
-const datasetSelect = (page: Page) =>
-  page.locator('.control-section', { hasText: 'Dataset Selection' }).getByRole('combobox');
-
-const runButton = (page: Page) => page.locator('.run-benchmark-btn');
-
-const clearButton = (page: Page) => page.locator('.clear-results-btn');
-
-const shouldPreloadWasm = () =>
-  ['1', 'true', 'yes'].includes((process.env.PRELOAD_WASM || '').toLowerCase());
-
-const attachPageDiagnostics = (page: Page, label: string) => {
-  const marker = '__benchDiagnosticsAttached__';
-  if ((page as unknown as Record<string, boolean>)[marker]) return;
-  (page as unknown as Record<string, boolean>)[marker] = true;
-
-  page.on('console', (msg) => {
-    const type = msg.type();
-    const text = msg.text();
-    console.log(`[bench][${label}][console:${type}] ${text}`);
-  });
-
-  page.on('pageerror', (err) => {
-    console.error(`[bench][${label}][pageerror]`, err);
-  });
-
-  page.on('crash', () => {
-    console.error(`[bench][${label}][crash] page crashed`);
-  });
-
-  page.on('requestfailed', (req) => {
-    const url = req.url();
-    const failure = req.failure()?.errorText || 'unknown';
-    console.warn(`[bench][${label}][requestfailed] ${failure} ${url}`);
-  });
-};
-
-const preloadWasm = async (page: Page) => {
-  if (!shouldPreloadWasm()) return;
-  console.log('[bench] preloading WASM...');
-  await page.evaluate(async () => {
-    if (window.__WASM_ENSURE_READY__) {
-      await window.__WASM_ENSURE_READY__();
-    }
-  });
-};
-
-const waitForWasmReady = async (page: Page, timeoutMs = 240_000) => {
-  const button = runButton(page);
-  const start = Date.now();
-  let lastLog = 0;
-
-  while (true) {
-    if (await button.isEnabled()) return;
-
-    const now = Date.now();
-    if (now - lastLog >= 5_000) {
-      const status = await page.evaluate(() => {
-        const button = document.querySelector<HTMLButtonElement>('.run-benchmark-btn');
-        return {
-          loading: window.__WASM_LOADING__ ?? false,
-          progress: window.__WASM_PROGRESS__ ?? 0,
-          buttonDisabled: button ? button.disabled : null,
-          buttonText: button?.textContent?.trim() || null,
-        };
-      });
-      const elapsed = Math.round((now - start) / 1000);
-      if (status.loading) {
-        console.log(
-          `[bench] waiting for WASM... ${elapsed}s (${status.progress}%)` +
-            ` btnDisabled=${status.buttonDisabled} btnText=${status.buttonText}`
-        );
-      } else {
-        console.log(
-          `[bench] waiting for WASM... ${elapsed}s` +
-            ` btnDisabled=${status.buttonDisabled} btnText=${status.buttonText}`
-        );
-      }
-      lastLog = now;
-    }
-
-    if (now - start > timeoutMs) {
-      throw new Error('Timed out waiting for WASM to become ready.');
-    }
-    await page.waitForTimeout(500);
-  }
-};
-
-const runBenchmarkAndWait = async (page: Page, timeoutMs = 240_000) => {
-  const button = runButton(page);
-  await waitForWasmReady(page);
-  const startExportLen = await page.evaluate(
-    () => (window.__BENCH_EXPORT__ || []).length
-  );
-  await button.click();
-  await expect.soft(button).toBeDisabled();
-  const start = Date.now();
-  let lastLog = 0;
-  while (true) {
-    const exportDone = await page.evaluate(
-      (initialLen) => (window.__BENCH_EXPORT__ || []).length > initialLen,
-      startExportLen
-    );
-    if (exportDone || (await button.isEnabled())) break;
-
-    const now = Date.now();
-    if (now - lastLog >= 10_000) {
-      const status = await page.evaluate(() => {
-        const button = document.querySelector<HTMLButtonElement>('.run-benchmark-btn');
-        return {
-          progress: window.__BENCH_PROGRESS__ ?? null,
-          buttonDisabled: button ? button.disabled : null,
-          buttonText: button?.textContent?.trim() || null,
-        };
-      });
-      const elapsed = Math.round((now - start) / 1000);
-      if (status.progress) {
-        console.log(
-          `[bench] running... ${elapsed}s (epoch ${status.progress.epoch}, ${status.progress.elapsedMs}ms)` +
-            ` btnDisabled=${status.buttonDisabled} btnText=${status.buttonText}`
-        );
-      } else {
-        console.log(
-          `[bench] running... ${elapsed}s` +
-            ` btnDisabled=${status.buttonDisabled} btnText=${status.buttonText}`
-        );
-      }
-      lastLog = now;
-    }
-
-    if (now - start > timeoutMs) {
-      throw new Error('Timed out waiting for benchmark to complete.');
-    }
-    await page.waitForTimeout(1000);
-  }
-  // Rely on export completion instead of button re-enable for long JS-only runs.
-  await expect.soft(page.getByText('Latest Results')).toBeVisible();
-};
-
-const getEnvTimeout = (name: string, fallback: number) => {
-  const raw = process.env[name];
-  const value = raw ? Number(raw) : NaN;
-  return Number.isFinite(value) && value > 0 ? Math.floor(value) : fallback;
-};
-
-const clearResults = async (page: Page) => {
-  const button = clearButton(page);
-  await button.click();
-  await expect(
-    page.getByText('No benchmark results yet. Run a benchmark to see performance metrics.')
-  ).toBeVisible();
-};
-
-const expectDatasetSummary = async (page: Page, size: number, dims: number) => {
-  await expect
-    .soft(page.getByText(`Dataset: ${size} points, ${dims} dimensions`))
-    .toBeVisible();
-  await expect.soft(page.getByRole('cell', { name: `${size}×${dims}` })).toBeVisible();
-};
-
-const setBenchContext = async (page: Page, scope: string) =>
-  page.evaluate((value) => {
-    window.__BENCH_EXPORT__ = [];
-    window.__BENCH_CONTEXT__ = { scope: value, renderingEnabled: false };
-    window.__BENCH_PROGRESS__ = null;
-  }, scope);
-
-const needsWasm = (selection: Record<string, boolean>) =>
-  Object.values(selection).some(Boolean);
-
-const attachBenchmarkMetrics = async (
-  page: Page,
-  testInfo: { attach: (name: string, payload: { body: string; contentType: string }) => Promise<void> }
-) => {
-  const rows = await page.evaluate(() => window.__BENCH_EXPORT__ || []);
-  await testInfo.attach('benchmark-metrics', {
-    body: JSON.stringify({ rows }, null, 2),
-    contentType: 'application/json',
-  });
-};
+import { test, expect } from '@playwright/test';
+import {
+  applyWasmConfig,
+  getWasmConfigsFromEnv,
+  datasetSelect,
+  attachPageDiagnostics,
+  preloadWasm,
+  waitForWasmReady,
+  runBenchmarkAndWait,
+  clearResults,
+  expectDatasetSummary,
+  setBenchContext,
+  needsWasm,
+  attachBenchmarkMetrics,
+  getEnvTimeout,
+} from '../lib';
 
 test('small bench: sequential lightweight datasets @small', async ({ page }, testInfo) => {
   test.setTimeout(240_000);
