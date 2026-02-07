@@ -10,18 +10,6 @@ export class FlatTree {
    */
   hyperplanes(): Float64Array;
   /**
-   * Get the dimensionality
-   */
-  dim(): number;
-  /**
-   * Get the leaf indices array
-   */
-  indices(): Int32Array;
-  /**
-   * Get number of nodes
-   */
-  n_nodes(): number;
-  /**
    * Get the offsets as a Float64Array
    */
   offsets(): Float64Array;
@@ -29,39 +17,51 @@ export class FlatTree {
    * Get the children array (pairs of child indices)
    */
   children(): Int32Array;
+  /**
+   * Get the leaf indices array
+   */
+  indices(): Int32Array;
+  /**
+   * Get the dimensionality
+   */
+  dim(): number;
+  /**
+   * Get number of nodes
+   */
+  n_nodes(): number;
 }
 
 export class OptimizerState {
   free(): void;
   [Symbol.dispose](): void;
   /**
-   * Seed the internal RNG used by the optimizer.
+   * Create a new optimizer state with the given parameters.
    */
-  set_rng_seed(seed: bigint): void;
-  /**
-   * Get the length of the embedding buffer.
-   */
-  head_embedding_len(): number;
+  constructor(head: Uint32Array, tail: Uint32Array, head_embedding: Float64Array, tail_embedding: Float64Array, epochs_per_sample: Float64Array, epochs_per_negative_sample: Float64Array, move_other: boolean, initial_alpha: number, gamma: number, a: number, b: number, dim: number, n_epochs: number, n_vertices: number);
   /**
    * Get a pointer to the embedding buffer (for zero-copy views).
    */
   head_embedding_ptr(): number;
   /**
-   * Create a new optimizer state with the given parameters.
+   * Get the length of the embedding buffer.
    */
-  constructor(head: Uint32Array, tail: Uint32Array, head_embedding: Float64Array, tail_embedding: Float64Array, epochs_per_sample: Float64Array, epochs_per_negative_sample: Float64Array, move_other: boolean, initial_alpha: number, gamma: number, a: number, b: number, dim: number, n_epochs: number, n_vertices: number);
+  head_embedding_len(): number;
+  /**
+   * Seed the internal RNG used by the optimizer.
+   */
+  set_rng_seed(seed: bigint): void;
   /**
    * Get the current RNG seed/state.
    */
   rng_seed(): bigint;
   /**
-   * Get the current epoch number.
-   */
-  readonly current_epoch: number;
-  /**
    * Get the current embedding as a flat array.
    */
   readonly head_embedding: Float64Array;
+  /**
+   * Get the current epoch number.
+   */
+  readonly current_epoch: number;
   /**
    * Get the total number of epochs.
    */
@@ -71,22 +71,6 @@ export class OptimizerState {
 export class WasmSparseMatrix {
   free(): void;
   [Symbol.dispose](): void;
-  /**
-   * Get all values
-   */
-  get_values(): Float64Array;
-  /**
-   * Apply a scalar operation to all values (map with scalar)
-   */
-  map_scalar(operation: string, scalar: number): WasmSparseMatrix;
-  /**
-   * Get all entries as flat arrays [rows, cols, values] - ordered by row then col
-   */
-  get_all_ordered(): Float64Array;
-  /**
-   * Get a value at the given row and column, with a default value if not present
-   */
-  get(row: number, col: number, default_value: number): number;
   /**
    * Create a new sparse matrix from rows, cols, values, and dimensions.
    * 
@@ -99,17 +83,13 @@ export class WasmSparseMatrix {
    */
   constructor(rows: Int32Array, cols: Int32Array, values: Float64Array, n_rows: number, n_cols: number);
   /**
-   * Get number of non-zero entries
-   */
-  nnz(): number;
-  /**
    * Set a value at the given row and column
    */
   set(row: number, col: number, value: number): void;
   /**
-   * Get all column indices
+   * Get a value at the given row and column, with a default value if not present
    */
-  get_cols(): Int32Array;
+  get(row: number, col: number, default_value: number): number;
   /**
    * Get the dimensions as [nRows, nCols]
    */
@@ -119,17 +99,37 @@ export class WasmSparseMatrix {
    */
   get_rows(): Int32Array;
   /**
+   * Get all column indices
+   */
+  get_cols(): Int32Array;
+  /**
+   * Get all values
+   */
+  get_values(): Float64Array;
+  /**
+   * Get all entries as flat arrays [rows, cols, values] - ordered by row then col
+   */
+  get_all_ordered(): Float64Array;
+  /**
+   * Get number of non-zero entries
+   */
+  nnz(): number;
+  /**
    * Convert to dense 2D array (row-major, flattened)
    */
   to_array(): Float64Array;
   /**
-   * Get the number of columns
+   * Apply a scalar operation to all values (map with scalar)
    */
-  readonly n_cols: number;
+  map_scalar(operation: string, scalar: number): WasmSparseMatrix;
   /**
    * Get the number of rows
    */
   readonly n_rows: number;
+  /**
+   * Get the number of columns
+   */
+  readonly n_cols: number;
 }
 
 /**
