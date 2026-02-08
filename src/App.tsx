@@ -443,6 +443,16 @@ function App() {
         <p>
           Comprehensive performance testing for UMAP.js with real-time metrics
         </p>
+        <button 
+          className="analysis-button"
+          onClick={() => {
+            const baseUrl = import.meta.env.BASE_URL || '/';
+            window.open(`${baseUrl}analysis.html`, '_blank');
+          }}
+          title="View detailed performance analysis"
+        >
+          📊 View Analysis Report
+        </button>
       </header>
 
       <div className="app-content">
