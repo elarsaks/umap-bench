@@ -49,7 +49,8 @@
           "memoryDeltaMb": 8.005553245544434,
           "trustworthiness": 0.9939044138721697,
           "fpsAvg": 49.64469969838212,
-          "responsivenessMs": 13.59999999945814
+          "responsivenessMs": 13.59999999945814,
+          "renderingEnabled": true
         },
         {
           "datasetIndex": 2,
@@ -62,7 +63,8 @@
           "memoryDeltaMb": 15.502522468566895,
           "trustworthiness": 0.9479972771567784,
           "fpsAvg": 48.42854318978324,
-          "responsivenessMs": 19.37999999920527
+          "responsivenessMs": 19.37999999920527,
+          "renderingEnabled": true
         }
       ],
       "resultLabel": "PASS",
@@ -94,7 +96,8 @@
           "memoryDeltaMb": 18.509940147399902,
           "trustworthiness": 0.9937759147797841,
           "fpsAvg": 48.64489228645386,
-          "responsivenessMs": 14.790909091180021
+          "responsivenessMs": 14.790909091180021,
+          "renderingEnabled": true
         },
         {
           "datasetIndex": 2,
@@ -107,7 +110,8 @@
           "memoryDeltaMb": -6.314270973205566,
           "trustworthiness": 0.9472315372121907,
           "fpsAvg": 39.607881968277965,
-          "responsivenessMs": 17.586666666467984
+          "responsivenessMs": 17.586666666467984,
+          "renderingEnabled": true
         }
       ],
       "resultLabel": "PASS",
@@ -139,7 +143,8 @@
           "memoryDeltaMb": 18.22097682952881,
           "trustworthiness": 0.9937816470813031,
           "fpsAvg": 50.12777668610987,
-          "responsivenessMs": 14.309090908278119
+          "responsivenessMs": 14.309090908278119,
+          "renderingEnabled": true
         },
         {
           "datasetIndex": 2,
@@ -152,7 +157,8 @@
           "memoryDeltaMb": -6.487176895141602,
           "trustworthiness": 0.9486017961211426,
           "fpsAvg": 49.35834155972359,
-          "responsivenessMs": 18.613333332538605
+          "responsivenessMs": 18.613333332538605,
+          "renderingEnabled": true
         }
       ],
       "resultLabel": "PASS",
@@ -184,7 +190,8 @@
           "memoryDeltaMb": 18.561396598815918,
           "trustworthiness": 0.9933407375561288,
           "fpsAvg": 48.795060744726726,
-          "responsivenessMs": 15.40000000054186
+          "responsivenessMs": 15.40000000054186,
+          "renderingEnabled": true
         },
         {
           "datasetIndex": 2,
@@ -197,7 +204,8 @@
           "memoryDeltaMb": 13.044676780700684,
           "trustworthiness": 0.9482093723129836,
           "fpsAvg": 38.937699680742895,
-          "responsivenessMs": 16.766666666666666
+          "responsivenessMs": 16.766666666666666,
+          "renderingEnabled": true
         }
       ],
       "resultLabel": "PASS",
@@ -229,7 +237,8 @@
           "memoryDeltaMb": 18.466219902038574,
           "trustworthiness": 0.9927099455431355,
           "fpsAvg": 48.48604789262715,
-          "responsivenessMs": 15.39090909063816
+          "responsivenessMs": 15.39090909063816,
+          "renderingEnabled": true
         },
         {
           "datasetIndex": 2,
@@ -242,7 +251,8 @@
           "memoryDeltaMb": 11.588593482971191,
           "trustworthiness": 0.9507908187637336,
           "fpsAvg": 38.38204901114927,
-          "responsivenessMs": 18.02666666706403
+          "responsivenessMs": 18.02666666706403,
+          "renderingEnabled": true
         }
       ],
       "resultLabel": "PASS",
@@ -274,7 +284,8 @@
           "memoryDeltaMb": 7.931857109069824,
           "trustworthiness": 0.9936053788095921,
           "fpsAvg": 49.97060552572333,
-          "responsivenessMs": 13.209090908819979
+          "responsivenessMs": 13.209090908819979,
+          "renderingEnabled": true
         },
         {
           "datasetIndex": 2,
@@ -287,7 +298,8 @@
           "memoryDeltaMb": 0.6684436798095703,
           "trustworthiness": 0.9457459157351676,
           "fpsAvg": 39.82080637132902,
-          "responsivenessMs": 17.019999997814498
+          "responsivenessMs": 17.019999997814498,
+          "renderingEnabled": true
         }
       ],
       "resultLabel": "PASS",
@@ -319,7 +331,8 @@
           "memoryDeltaMb": 8.777365684509277,
           "trustworthiness": 0.994294688067259,
           "fpsAvg": 50.75636942690213,
-          "responsivenessMs": 13.463636364449155
+          "responsivenessMs": 13.463636364449155,
+          "renderingEnabled": true
         },
         {
           "datasetIndex": 2,
@@ -332,7 +345,8 @@
           "memoryDeltaMb": -9.968247413635254,
           "trustworthiness": 0.9488669150663992,
           "fpsAvg": 38.141809290953546,
-          "responsivenessMs": 18.739999999602635
+          "responsivenessMs": 18.739999999602635,
+          "renderingEnabled": true
         }
       ],
       "resultLabel": "PASS",
@@ -364,7 +378,8 @@
           "memoryDeltaMb": 19.947550773620605,
           "trustworthiness": 0.9940252698958632,
           "fpsAvg": 49.115913555992144,
-          "responsivenessMs": 15.054545455358245
+          "responsivenessMs": 15.054545455358245,
+          "renderingEnabled": true
         },
         {
           "datasetIndex": 2,
@@ -377,7 +392,8 @@
           "memoryDeltaMb": -8.200613021850586,
           "trustworthiness": 0.9478035731346135,
           "fpsAvg": 38.40850896175996,
-          "responsivenessMs": 18.033333333333335
+          "responsivenessMs": 18.033333333333335,
+          "renderingEnabled": true
         }
       ],
       "resultLabel": "PASS",
@@ -409,7 +425,8 @@
           "memoryDeltaMb": 19.7080717086792,
           "trustworthiness": 0.9942378427438616,
           "fpsAvg": 48.94283476927537,
-          "responsivenessMs": 15.027272727001797
+          "responsivenessMs": 15.027272727001797,
+          "renderingEnabled": true
         },
         {
           "datasetIndex": 2,
@@ -422,7 +439,8 @@
           "memoryDeltaMb": -10.34512996673584,
           "trustworthiness": 0.9498676793732683,
           "fpsAvg": 39.19647231749143,
-          "responsivenessMs": 19.1
+          "responsivenessMs": 19.1,
+          "renderingEnabled": true
         }
       ],
       "resultLabel": "PASS",
@@ -454,7 +472,8 @@
           "memoryDeltaMb": 8.226737022399902,
           "trustworthiness": 0.9941642782077004,
           "fpsAvg": 49.28536224741252,
-          "responsivenessMs": 13.436363636092706
+          "responsivenessMs": 13.436363636092706,
+          "renderingEnabled": true
         },
         {
           "datasetIndex": 2,
@@ -467,7 +486,8 @@
           "memoryDeltaMb": 16.349064826965332,
           "trustworthiness": 0.9486509983758479,
           "fpsAvg": 49.33885928528312,
-          "responsivenessMs": 17.633333333333333
+          "responsivenessMs": 17.633333333333333,
+          "renderingEnabled": true
         }
       ],
       "resultLabel": "PASS",

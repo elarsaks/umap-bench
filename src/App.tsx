@@ -388,6 +388,7 @@ function App() {
           datasetSize: datasetConfig.size,
           dimensions: datasetConfig.dimensions,
           wasmFeatures,
+          renderingEnabled,
           runtimeMs: runtime,
           memoryDeltaMb: memoryUsage,
           trustworthiness,
