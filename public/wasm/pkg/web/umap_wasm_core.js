@@ -187,32 +187,6 @@ export class FlatTree {
         return ret;
     }
     /**
-     * Get the dimensionality
-     * @returns {number}
-     */
-    dim() {
-        const ret = wasm.flattree_dim(this.__wbg_ptr);
-        return ret >>> 0;
-    }
-    /**
-     * Get the leaf indices array
-     * @returns {Int32Array}
-     */
-    indices() {
-        const ret = wasm.flattree_indices(this.__wbg_ptr);
-        var v1 = getArrayI32FromWasm0(ret[0], ret[1]).slice();
-        wasm.__wbindgen_free(ret[0], ret[1] * 4, 4);
-        return v1;
-    }
-    /**
-     * Get number of nodes
-     * @returns {number}
-     */
-    n_nodes() {
-        const ret = wasm.flattree_n_nodes(this.__wbg_ptr);
-        return ret >>> 0;
-    }
-    /**
      * Get the offsets as a Float64Array
      * @returns {Float64Array}
      */
@@ -229,6 +203,32 @@ export class FlatTree {
         var v1 = getArrayI32FromWasm0(ret[0], ret[1]).slice();
         wasm.__wbindgen_free(ret[0], ret[1] * 4, 4);
         return v1;
+    }
+    /**
+     * Get the leaf indices array
+     * @returns {Int32Array}
+     */
+    indices() {
+        const ret = wasm.flattree_indices(this.__wbg_ptr);
+        var v1 = getArrayI32FromWasm0(ret[0], ret[1]).slice();
+        wasm.__wbindgen_free(ret[0], ret[1] * 4, 4);
+        return v1;
+    }
+    /**
+     * Get the dimensionality
+     * @returns {number}
+     */
+    dim() {
+        const ret = wasm.flattree_dim(this.__wbg_ptr);
+        return ret >>> 0;
+    }
+    /**
+     * Get number of nodes
+     * @returns {number}
+     */
+    n_nodes() {
+        const ret = wasm.flattree_n_nodes(this.__wbg_ptr);
+        return ret >>> 0;
     }
 }
 if (Symbol.dispose) FlatTree.prototype[Symbol.dispose] = FlatTree.prototype.free;
@@ -247,47 +247,6 @@ export class OptimizerState {
     free() {
         const ptr = this.__destroy_into_raw();
         wasm.__wbg_optimizerstate_free(ptr, 0);
-    }
-    /**
-     * Seed the internal RNG used by the optimizer.
-     * @param {bigint} seed
-     */
-    set_rng_seed(seed) {
-        wasm.optimizerstate_set_rng_seed(this.__wbg_ptr, seed);
-    }
-    /**
-     * Get the current epoch number.
-     * @returns {number}
-     */
-    get current_epoch() {
-        const ret = wasm.optimizerstate_current_epoch(this.__wbg_ptr);
-        return ret >>> 0;
-    }
-    /**
-     * Get the current embedding as a flat array.
-     * @returns {Float64Array}
-     */
-    get head_embedding() {
-        const ret = wasm.optimizerstate_head_embedding(this.__wbg_ptr);
-        var v1 = getArrayF64FromWasm0(ret[0], ret[1]).slice();
-        wasm.__wbindgen_free(ret[0], ret[1] * 8, 8);
-        return v1;
-    }
-    /**
-     * Get the length of the embedding buffer.
-     * @returns {number}
-     */
-    head_embedding_len() {
-        const ret = wasm.optimizerstate_head_embedding_len(this.__wbg_ptr);
-        return ret >>> 0;
-    }
-    /**
-     * Get a pointer to the embedding buffer (for zero-copy views).
-     * @returns {number}
-     */
-    head_embedding_ptr() {
-        const ret = wasm.optimizerstate_head_embedding_ptr(this.__wbg_ptr);
-        return ret >>> 0;
     }
     /**
      * Create a new optimizer state with the given parameters.
@@ -325,12 +284,53 @@ export class OptimizerState {
         return this;
     }
     /**
+     * Get the current embedding as a flat array.
+     * @returns {Float64Array}
+     */
+    get head_embedding() {
+        const ret = wasm.optimizerstate_head_embedding(this.__wbg_ptr);
+        var v1 = getArrayF64FromWasm0(ret[0], ret[1]).slice();
+        wasm.__wbindgen_free(ret[0], ret[1] * 8, 8);
+        return v1;
+    }
+    /**
+     * Get a pointer to the embedding buffer (for zero-copy views).
+     * @returns {number}
+     */
+    head_embedding_ptr() {
+        const ret = wasm.optimizerstate_head_embedding_ptr(this.__wbg_ptr);
+        return ret >>> 0;
+    }
+    /**
+     * Get the length of the embedding buffer.
+     * @returns {number}
+     */
+    head_embedding_len() {
+        const ret = wasm.optimizerstate_head_embedding_len(this.__wbg_ptr);
+        return ret >>> 0;
+    }
+    /**
+     * Get the current epoch number.
+     * @returns {number}
+     */
+    get current_epoch() {
+        const ret = wasm.optimizerstate_current_epoch(this.__wbg_ptr);
+        return ret >>> 0;
+    }
+    /**
      * Get the total number of epochs.
      * @returns {number}
      */
     get n_epochs() {
         const ret = wasm.optimizerstate_n_epochs(this.__wbg_ptr);
         return ret >>> 0;
+    }
+    /**
+     * Seed the internal RNG used by the optimizer.
+     * @param {bigint} seed
+     */
+    set_rng_seed(seed) {
+        wasm.optimizerstate_set_rng_seed(this.__wbg_ptr, seed);
     }
     /**
      * Get the current RNG seed/state.
@@ -368,53 +368,6 @@ export class WasmSparseMatrix {
         wasm.__wbg_wasmsparsematrix_free(ptr, 0);
     }
     /**
-     * Get all values
-     * @returns {Float64Array}
-     */
-    get_values() {
-        const ret = wasm.wasmsparsematrix_get_values(this.__wbg_ptr);
-        return ret;
-    }
-    /**
-     * Apply a scalar operation to all values (map with scalar)
-     * @param {string} operation
-     * @param {number} scalar
-     * @returns {WasmSparseMatrix}
-     */
-    map_scalar(operation, scalar) {
-        const ptr0 = passStringToWasm0(operation, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-        const len0 = WASM_VECTOR_LEN;
-        const ret = wasm.wasmsparsematrix_map_scalar(this.__wbg_ptr, ptr0, len0, scalar);
-        if (ret[2]) {
-            throw takeFromExternrefTable0(ret[1]);
-        }
-        return WasmSparseMatrix.__wrap(ret[0]);
-    }
-    /**
-     * Get all entries as flat arrays [rows, cols, values] - ordered by row then col
-     * @returns {Float64Array}
-     */
-    get_all_ordered() {
-        const ret = wasm.wasmsparsematrix_get_all_ordered(this.__wbg_ptr);
-        var v1 = getArrayF64FromWasm0(ret[0], ret[1]).slice();
-        wasm.__wbindgen_free(ret[0], ret[1] * 8, 8);
-        return v1;
-    }
-    /**
-     * Get a value at the given row and column, with a default value if not present
-     * @param {number} row
-     * @param {number} col
-     * @param {number} default_value
-     * @returns {number}
-     */
-    get(row, col, default_value) {
-        const ret = wasm.wasmsparsematrix_get(this.__wbg_ptr, row, col, default_value);
-        if (ret[2]) {
-            throw takeFromExternrefTable0(ret[1]);
-        }
-        return ret[0];
-    }
-    /**
      * Create a new sparse matrix from rows, cols, values, and dimensions.
      *
      * # Arguments
@@ -445,11 +398,19 @@ export class WasmSparseMatrix {
         return this;
     }
     /**
-     * Get number of non-zero entries
+     * Get the number of rows
      * @returns {number}
      */
-    nnz() {
-        const ret = wasm.wasmsparsematrix_nnz(this.__wbg_ptr);
+    get n_rows() {
+        const ret = wasm.wasmsparsematrix_n_rows(this.__wbg_ptr);
+        return ret >>> 0;
+    }
+    /**
+     * Get the number of columns
+     * @returns {number}
+     */
+    get n_cols() {
+        const ret = wasm.wasmsparsematrix_n_cols(this.__wbg_ptr);
         return ret >>> 0;
     }
     /**
@@ -465,28 +426,18 @@ export class WasmSparseMatrix {
         }
     }
     /**
-     * Get the number of columns
+     * Get a value at the given row and column, with a default value if not present
+     * @param {number} row
+     * @param {number} col
+     * @param {number} default_value
      * @returns {number}
      */
-    get n_cols() {
-        const ret = wasm.wasmsparsematrix_n_cols(this.__wbg_ptr);
-        return ret >>> 0;
-    }
-    /**
-     * Get the number of rows
-     * @returns {number}
-     */
-    get n_rows() {
-        const ret = wasm.wasmsparsematrix_n_rows(this.__wbg_ptr);
-        return ret >>> 0;
-    }
-    /**
-     * Get all column indices
-     * @returns {Int32Array}
-     */
-    get_cols() {
-        const ret = wasm.wasmsparsematrix_get_cols(this.__wbg_ptr);
-        return ret;
+    get(row, col, default_value) {
+        const ret = wasm.wasmsparsematrix_get(this.__wbg_ptr, row, col, default_value);
+        if (ret[2]) {
+            throw takeFromExternrefTable0(ret[1]);
+        }
+        return ret[0];
     }
     /**
      * Get the dimensions as [nRows, nCols]
@@ -507,12 +458,61 @@ export class WasmSparseMatrix {
         return ret;
     }
     /**
+     * Get all column indices
+     * @returns {Int32Array}
+     */
+    get_cols() {
+        const ret = wasm.wasmsparsematrix_get_cols(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+     * Get all values
+     * @returns {Float64Array}
+     */
+    get_values() {
+        const ret = wasm.wasmsparsematrix_get_values(this.__wbg_ptr);
+        return ret;
+    }
+    /**
+     * Get all entries as flat arrays [rows, cols, values] - ordered by row then col
+     * @returns {Float64Array}
+     */
+    get_all_ordered() {
+        const ret = wasm.wasmsparsematrix_get_all_ordered(this.__wbg_ptr);
+        var v1 = getArrayF64FromWasm0(ret[0], ret[1]).slice();
+        wasm.__wbindgen_free(ret[0], ret[1] * 8, 8);
+        return v1;
+    }
+    /**
+     * Get number of non-zero entries
+     * @returns {number}
+     */
+    nnz() {
+        const ret = wasm.wasmsparsematrix_nnz(this.__wbg_ptr);
+        return ret >>> 0;
+    }
+    /**
      * Convert to dense 2D array (row-major, flattened)
      * @returns {Float64Array}
      */
     to_array() {
         const ret = wasm.wasmsparsematrix_to_array(this.__wbg_ptr);
         return ret;
+    }
+    /**
+     * Apply a scalar operation to all values (map with scalar)
+     * @param {string} operation
+     * @param {number} scalar
+     * @returns {WasmSparseMatrix}
+     */
+    map_scalar(operation, scalar) {
+        const ptr0 = passStringToWasm0(operation, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ret = wasm.wasmsparsematrix_map_scalar(this.__wbg_ptr, ptr0, len0, scalar);
+        if (ret[2]) {
+            throw takeFromExternrefTable0(ret[1]);
+        }
+        return WasmSparseMatrix.__wrap(ret[0]);
     }
 }
 if (Symbol.dispose) WasmSparseMatrix.prototype[Symbol.dispose] = WasmSparseMatrix.prototype.free;
