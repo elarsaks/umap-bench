@@ -1,0 +1,497 @@
+{
+  "generatedAt": "2026-02-08T09:30:39.435Z",
+  "runs": 10,
+  "machine": {
+    "platform": "linux",
+    "release": "6.6.87.2-microsoft-standard-WSL2",
+    "arch": "x64",
+    "cpuModel": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+    "cpuCores": 12,
+    "totalMemBytes": 8240963584,
+    "loadAvg": [
+      1.33,
+      1.22,
+      1.08
+    ],
+    "hostname": "DESKTOP-7R7IE5L"
+  },
+  "git": {
+    "commit": "01ee311278917334bc1254a7d081a9fa89a4907a",
+    "branch": "clean",
+    "statusDirty": true
+  },
+  "wasmFeatures": "opt",
+  "wasmPreload": true,
+  "results": [
+    {
+      "run": 1,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 564568,
+      "stats": {
+        "startTime": "2026-02-08T09:30:52.437Z",
+        "duration": 551967.0040000001,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T09:31:41.021Z",
+          "datasetName": "MNIST-like (1K points, 784D)",
+          "datasetSize": 1000,
+          "dimensions": 784,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 4106.300000011921,
+          "memoryDeltaMb": 5.995819091796875,
+          "trustworthiness": 0.5532944472745798,
+          "fpsAvg": 36.9470102090423,
+          "responsivenessMs": 140.0000000027093
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T09:31:49.592Z",
+          "datasetName": "3D Dense Clusters (1K points)",
+          "datasetSize": 1000,
+          "dimensions": 75,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 3701.300000011921,
+          "memoryDeltaMb": 15.330860137939453,
+          "trustworthiness": 0.9969164544065207,
+          "fpsAvg": 34.948063295027964,
+          "responsivenessMs": 33.51333333253861
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][large][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][large][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 2,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 612904,
+      "stats": {
+        "startTime": "2026-02-08T09:40:19.712Z",
+        "duration": 597584.848,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T09:41:11.620Z",
+          "datasetName": "MNIST-like (1K points, 784D)",
+          "datasetSize": 1000,
+          "dimensions": 784,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 4620.100000023842,
+          "memoryDeltaMb": 0.758087158203125,
+          "trustworthiness": 0.5704320767532689,
+          "fpsAvg": 32.947378329668865,
+          "responsivenessMs": 136.02727272835645
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T09:41:20.435Z",
+          "datasetName": "3D Dense Clusters (1K points)",
+          "datasetSize": 1000,
+          "dimensions": 75,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 4038.9000000059605,
+          "memoryDeltaMb": 4.536211967468262,
+          "trustworthiness": 0.9969753778230599,
+          "fpsAvg": 30.10293260792498,
+          "responsivenessMs": 34.38666666547457
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][large][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][large][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 3,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 567735,
+      "stats": {
+        "startTime": "2026-02-08T09:50:33.026Z",
+        "duration": 552024.525,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T09:51:28.517Z",
+          "datasetName": "MNIST-like (1K points, 784D)",
+          "datasetSize": 1000,
+          "dimensions": 784,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 4744.300000011921,
+          "memoryDeltaMb": 1.2505035400390625,
+          "trustworthiness": 0.5536852606554594,
+          "fpsAvg": 33.040687246852464,
+          "responsivenessMs": 141.4090909090909
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T09:51:37.301Z",
+          "datasetName": "3D Dense Clusters (1K points)",
+          "datasetSize": 1000,
+          "dimensions": 75,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 4004.9000000059605,
+          "memoryDeltaMb": 3.148630142211914,
+          "trustworthiness": 0.99688597384955,
+          "fpsAvg": 30.288226673180265,
+          "responsivenessMs": 34.44666666388512
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][large][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][large][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 4,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 564159,
+      "stats": {
+        "startTime": "2026-02-08T09:59:59.277Z",
+        "duration": 549940.6070000001,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T10:00:49.611Z",
+          "datasetName": "MNIST-like (1K points, 784D)",
+          "datasetSize": 1000,
+          "dimensions": 784,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 4234.199999988079,
+          "memoryDeltaMb": 1.0313949584960938,
+          "trustworthiness": 0.5581331295635932,
+          "fpsAvg": 32.94728434426365,
+          "responsivenessMs": 124.69090909307653
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T10:00:57.903Z",
+          "datasetName": "3D Dense Clusters (1K points)",
+          "datasetSize": 1000,
+          "dimensions": 75,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 3803.199999988079,
+          "memoryDeltaMb": 2.8329696655273438,
+          "trustworthiness": 0.9971962132789948,
+          "fpsAvg": 34.387895460395036,
+          "responsivenessMs": 35.620000000794725
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][large][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][large][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 5,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 540684,
+      "stats": {
+        "startTime": "2026-02-08T10:09:35.797Z",
+        "duration": 514128.61000000004,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T10:10:35.657Z",
+          "datasetName": "MNIST-like (1K points, 784D)",
+          "datasetSize": 1000,
+          "dimensions": 784,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 4802.800000011921,
+          "memoryDeltaMb": -0.9331417083740234,
+          "trustworthiness": 0.5630826965528952,
+          "fpsAvg": 33.61183136521754,
+          "responsivenessMs": 143.0545454567129
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T10:10:45.785Z",
+          "datasetName": "3D Dense Clusters (1K points)",
+          "datasetSize": 1000,
+          "dimensions": 75,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 6834.899999976158,
+          "memoryDeltaMb": 6.700985908508301,
+          "trustworthiness": 0.9970086602139582,
+          "fpsAvg": 30.519790176442537,
+          "responsivenessMs": 27.22666666706403
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][large][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][large][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 6,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 513370,
+      "stats": {
+        "startTime": "2026-02-08T10:18:23.331Z",
+        "duration": 499968.432,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T10:19:10.137Z",
+          "datasetName": "MNIST-like (1K points, 784D)",
+          "datasetSize": 1000,
+          "dimensions": 784,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 3882.2999999821186,
+          "memoryDeltaMb": 0.21884536743164062,
+          "trustworthiness": 0.5752107318729835,
+          "fpsAvg": 40.84478979949229,
+          "responsivenessMs": 112.47272727164355
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T10:19:17.765Z",
+          "datasetName": "3D Dense Clusters (1K points)",
+          "datasetSize": 1000,
+          "dimensions": 75,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 3527.4000000059605,
+          "memoryDeltaMb": 3.168855667114258,
+          "trustworthiness": 0.9971922227882493,
+          "fpsAvg": 37.73950067824635,
+          "responsivenessMs": 31.84666666785876
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][large][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][large][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 7,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 484171,
+      "stats": {
+        "startTime": "2026-02-08T10:26:56.159Z",
+        "duration": 471320.269,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T10:27:42.836Z",
+          "datasetName": "MNIST-like (1K points, 784D)",
+          "datasetSize": 1000,
+          "dimensions": 784,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 3856,
+          "memoryDeltaMb": 0.3725872039794922,
+          "trustworthiness": 0.5628610969604347,
+          "fpsAvg": 41.01096804959466,
+          "responsivenessMs": 120.63636363365434
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T10:27:50.349Z",
+          "datasetName": "3D Dense Clusters (1K points)",
+          "datasetSize": 1000,
+          "dimensions": 75,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 3485.5,
+          "memoryDeltaMb": 3.9216957092285156,
+          "trustworthiness": 0.9972692307692308,
+          "fpsAvg": 36.90036900433077,
+          "responsivenessMs": 30.479999999205273
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][large][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][large][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 8,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 498759,
+      "stats": {
+        "startTime": "2026-02-08T10:35:00.130Z",
+        "duration": 486110.494,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T10:35:45.430Z",
+          "datasetName": "MNIST-like (1K points, 784D)",
+          "datasetSize": 1000,
+          "dimensions": 784,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 3858.9000000059605,
+          "memoryDeltaMb": 0.8704509735107422,
+          "trustworthiness": 0.5581560536593649,
+          "fpsAvg": 37.62662807525326,
+          "responsivenessMs": 111.83636363798922
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T10:35:52.925Z",
+          "datasetName": "3D Dense Clusters (1K points)",
+          "datasetSize": 1000,
+          "dimensions": 75,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 3462.5999999940395,
+          "memoryDeltaMb": 11.656904220581055,
+          "trustworthiness": 0.9972225335371031,
+          "fpsAvg": 36.86099524665854,
+          "responsivenessMs": 31.68000000119209
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][large][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][large][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 9,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 473065,
+      "stats": {
+        "startTime": "2026-02-08T10:43:18.648Z",
+        "duration": 460660.435,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T10:44:04.117Z",
+          "datasetName": "MNIST-like (1K points, 784D)",
+          "datasetSize": 1000,
+          "dimensions": 784,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 3837.5,
+          "memoryDeltaMb": 2.482616424560547,
+          "trustworthiness": 0.5598370691119036,
+          "fpsAvg": 37.65205638219084,
+          "responsivenessMs": 113.09999999945813
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T10:44:11.697Z",
+          "datasetName": "3D Dense Clusters (1K points)",
+          "datasetSize": 1000,
+          "dimensions": 75,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 3502.199999988079,
+          "memoryDeltaMb": 3.425079345703125,
+          "trustworthiness": 0.9971734589913398,
+          "fpsAvg": 35.64203833947832,
+          "responsivenessMs": 31.493333331743877
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][large][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][large][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 10,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 469868,
+      "stats": {
+        "startTime": "2026-02-08T10:51:11.609Z",
+        "duration": 457586.371,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T10:51:57.441Z",
+          "datasetName": "MNIST-like (1K points, 784D)",
+          "datasetSize": 1000,
+          "dimensions": 784,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 3807.5999999940395,
+          "memoryDeltaMb": 5.7499847412109375,
+          "trustworthiness": 0.5684285956868739,
+          "fpsAvg": 40.05340453961352,
+          "responsivenessMs": 112.9818181801926
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T10:52:05.063Z",
+          "datasetName": "3D Dense Clusters (1K points)",
+          "datasetSize": 1000,
+          "dimensions": 75,
+          "wasmFeatures": "Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 3503.0999999940395,
+          "memoryDeltaMb": -0.7245264053344727,
+          "trustworthiness": 0.997122431652233,
+          "fpsAvg": 39.23107100732116,
+          "responsivenessMs": 34.14666666587194
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][large][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][large][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    }
+  ]
+}

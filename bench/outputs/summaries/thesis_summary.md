@@ -2,7 +2,7 @@
 # UMAP WebAssembly Performance Analysis - Summary
 
 ## Analysis Configuration
-- **Total Measurements**: 380
+- **Total Measurements**: 484
 - **Datasets Tested**: 6
 - **Features Tested**: 7
 
@@ -12,7 +12,7 @@
 
 **Speedup ranges (median across all tests):**
 
-- **All Features**: 1.58x (range: 1.18x - 1.89x) - ✓ Performance improvement
+- **All Features**: 1.74x (range: 1.18x - 4.04x) - ✓ Performance improvement
 
 - **Distance**: 0.99x (range: 0.95x - 1.01x) - ≈ Negligible difference
 
@@ -22,14 +22,14 @@
 
 - **NN Descent**: 0.99x (range: 0.94x - 1.01x) - ≈ Negligible difference
 
-- **Optimizer**: 1.47x (range: 1.17x - 1.85x) - ✓ Performance improvement
+- **Optimizer**: 1.66x (range: 1.17x - 3.46x) - ✓ Performance improvement
 
 
 ### RQ2: All Features Combined vs Individual Features
 
 
-- **All Features Combined**: 1.58x median speedup
-- **Best Individual Feature**: Optimizer (1.47x)
+- **All Features Combined**: 1.74x median speedup
+- **Best Individual Feature**: Optimizer (1.66x)
 - **Comparison**: All Features is best
 
 
@@ -38,30 +38,30 @@
 
 - **Total comparisons**: 6
 - **Significant results (p < 0.05)**: 2 (33.3%)
-- **Large effect sizes (|Cliff's δ| > 0.474)**: 0
-- **Medium effect sizes (0.33 < |Cliff's δ| < 0.474)**: 2
+- **Large effect sizes (|Cliff's δ| > 0.474)**: 1
+- **Medium effect sizes (0.33 < |Cliff's δ| < 0.474)**: 1
 
 
 ### Quality Trade-offs
 
 
-- **Mean Trustworthiness**: 0.8953 (±0.1489)
-- **Quality Range**: 0.5576 - 0.9975
-- **Quality Stability**: All features maintain trustworthiness > 0.969
+- **Mean Trustworthiness**: 0.8974 (±0.1462)
+- **Quality Range**: 0.5533 - 0.9975
+- **Quality Stability**: All features maintain trustworthiness > 0.967
 
 ### Performance Rankings
 
 **Top 3 Features by Composite Score:**
 
-1. **Optimizer** (score: 0.896)
-   - Speedup: 1.27x
-   - Quality ratio: 1.003
-   - FPS ratio: 0.732
+1. **All Features** (score: 1.102)
+   - Speedup: 1.75x
+   - Quality ratio: 0.999
+   - FPS ratio: 0.681
 
-2. **All Features** (score: 0.822)
-   - Speedup: 1.26x
-   - Quality ratio: 1.003
-   - FPS ratio: 0.687
+2. **Optimizer** (score: 1.035)
+   - Speedup: 1.49x
+   - Quality ratio: 0.998
+   - FPS ratio: 0.690
 
 3. **Matrix** (score: 0.807)
    - Speedup: 1.03x
@@ -77,17 +77,17 @@
 - **Tree**: degrades (1.05x → 1.04x, -1.6%)
 - **Matrix**: improves (1.01x → 1.02x, +0.5%)
 - **NN Descent**: improves (0.94x → 0.99x, +4.9%)
-- **All Features**: degrades (1.84x → 1.26x, -31.5%)
-- **Optimizer**: degrades (1.67x → 1.26x, -24.6%)
+- **Optimizer**: degrades (3.46x → 1.20x, -65.2%)
+- **All Features**: degrades (4.04x → 1.26x, -68.8%)
 
 
 ## Recommendations
 
 
-1. **Best Overall Performance**: Optimizer (composite score: 0.896)
-2. **Fastest Execution**: All Features (1.58x speedup)
+1. **Best Overall Performance**: All Features (composite score: 1.102)
+2. **Fastest Execution**: All Features (1.74x speedup)
 3. **Most Consistent**: Feature with lowest variance across datasets
-4. **Quality Preservation**: All WASM features maintain high trustworthiness (> 0.969)
+4. **Quality Preservation**: All WASM features maintain high trustworthiness (> 0.967)
 
 
 ## Analysis Methodology
@@ -98,4 +98,4 @@
 - **Significance Level**: α = 0.05
 
 ---
-*Analysis performed with 380 measurements across 6 datasets*
+*Analysis performed with 484 measurements across 6 datasets*
