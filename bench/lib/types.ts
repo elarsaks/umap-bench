@@ -40,6 +40,7 @@ export interface BenchmarkMetric {
   datasetSize: number;
   dimensions: number;
   wasmFeatures: string;
+  renderingEnabled: boolean;
   runtimeMs: number;
   memoryDeltaMb: number;
   trustworthiness: number;
