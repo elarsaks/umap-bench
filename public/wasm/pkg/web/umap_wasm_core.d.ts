@@ -10,18 +10,6 @@ export class FlatTree {
    */
   hyperplanes(): Float64Array;
   /**
-   * Get the dimensionality
-   */
-  dim(): number;
-  /**
-   * Get the leaf indices array
-   */
-  indices(): Int32Array;
-  /**
-   * Get number of nodes
-   */
-  n_nodes(): number;
-  /**
    * Get the offsets as a Float64Array
    */
   offsets(): Float64Array;
@@ -29,39 +17,51 @@ export class FlatTree {
    * Get the children array (pairs of child indices)
    */
   children(): Int32Array;
+  /**
+   * Get the leaf indices array
+   */
+  indices(): Int32Array;
+  /**
+   * Get the dimensionality
+   */
+  dim(): number;
+  /**
+   * Get number of nodes
+   */
+  n_nodes(): number;
 }
 
 export class OptimizerState {
   free(): void;
   [Symbol.dispose](): void;
   /**
-   * Seed the internal RNG used by the optimizer.
+   * Create a new optimizer state with the given parameters.
    */
-  set_rng_seed(seed: bigint): void;
-  /**
-   * Get the length of the embedding buffer.
-   */
-  head_embedding_len(): number;
+  constructor(head: Uint32Array, tail: Uint32Array, head_embedding: Float64Array, tail_embedding: Float64Array, epochs_per_sample: Float64Array, epochs_per_negative_sample: Float64Array, move_other: boolean, initial_alpha: number, gamma: number, a: number, b: number, dim: number, n_epochs: number, n_vertices: number);
   /**
    * Get a pointer to the embedding buffer (for zero-copy views).
    */
   head_embedding_ptr(): number;
   /**
-   * Create a new optimizer state with the given parameters.
+   * Get the length of the embedding buffer.
    */
-  constructor(head: Uint32Array, tail: Uint32Array, head_embedding: Float64Array, tail_embedding: Float64Array, epochs_per_sample: Float64Array, epochs_per_negative_sample: Float64Array, move_other: boolean, initial_alpha: number, gamma: number, a: number, b: number, dim: number, n_epochs: number, n_vertices: number);
+  head_embedding_len(): number;
+  /**
+   * Seed the internal RNG used by the optimizer.
+   */
+  set_rng_seed(seed: bigint): void;
   /**
    * Get the current RNG seed/state.
    */
   rng_seed(): bigint;
   /**
-   * Get the current epoch number.
-   */
-  readonly current_epoch: number;
-  /**
    * Get the current embedding as a flat array.
    */
   readonly head_embedding: Float64Array;
+  /**
+   * Get the current epoch number.
+   */
+  readonly current_epoch: number;
   /**
    * Get the total number of epochs.
    */
@@ -71,22 +71,6 @@ export class OptimizerState {
 export class WasmSparseMatrix {
   free(): void;
   [Symbol.dispose](): void;
-  /**
-   * Get all values
-   */
-  get_values(): Float64Array;
-  /**
-   * Apply a scalar operation to all values (map with scalar)
-   */
-  map_scalar(operation: string, scalar: number): WasmSparseMatrix;
-  /**
-   * Get all entries as flat arrays [rows, cols, values] - ordered by row then col
-   */
-  get_all_ordered(): Float64Array;
-  /**
-   * Get a value at the given row and column, with a default value if not present
-   */
-  get(row: number, col: number, default_value: number): number;
   /**
    * Create a new sparse matrix from rows, cols, values, and dimensions.
    * 
@@ -99,17 +83,13 @@ export class WasmSparseMatrix {
    */
   constructor(rows: Int32Array, cols: Int32Array, values: Float64Array, n_rows: number, n_cols: number);
   /**
-   * Get number of non-zero entries
-   */
-  nnz(): number;
-  /**
    * Set a value at the given row and column
    */
   set(row: number, col: number, value: number): void;
   /**
-   * Get all column indices
+   * Get a value at the given row and column, with a default value if not present
    */
-  get_cols(): Int32Array;
+  get(row: number, col: number, default_value: number): number;
   /**
    * Get the dimensions as [nRows, nCols]
    */
@@ -119,17 +99,37 @@ export class WasmSparseMatrix {
    */
   get_rows(): Int32Array;
   /**
+   * Get all column indices
+   */
+  get_cols(): Int32Array;
+  /**
+   * Get all values
+   */
+  get_values(): Float64Array;
+  /**
+   * Get all entries as flat arrays [rows, cols, values] - ordered by row then col
+   */
+  get_all_ordered(): Float64Array;
+  /**
+   * Get number of non-zero entries
+   */
+  nnz(): number;
+  /**
    * Convert to dense 2D array (row-major, flattened)
    */
   to_array(): Float64Array;
   /**
-   * Get the number of columns
+   * Apply a scalar operation to all values (map with scalar)
    */
-  readonly n_cols: number;
+  map_scalar(operation: string, scalar: number): WasmSparseMatrix;
   /**
    * Get the number of rows
    */
   readonly n_rows: number;
+  /**
+   * Get the number of columns
+   */
+  readonly n_cols: number;
 }
 
 /**
@@ -325,61 +325,61 @@ export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembl
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
-  readonly __wbg_flattree_free: (a: number, b: number) => void;
-  readonly __wbg_optimizerstate_free: (a: number, b: number) => void;
-  readonly __wbg_wasmsparsematrix_free: (a: number, b: number) => void;
-  readonly build_rp_tree: (a: number, b: number, c: number, d: number, e: number, f: bigint) => number;
-  readonly cosine: (a: number, b: number, c: number, d: number) => number;
-  readonly euclidean: (a: number, b: number, c: number, d: number) => number;
-  readonly flattree_children: (a: number) => [number, number];
-  readonly flattree_dim: (a: number) => number;
-  readonly flattree_hyperplanes: (a: number) => any;
-  readonly flattree_indices: (a: number) => [number, number];
-  readonly flattree_n_nodes: (a: number) => number;
-  readonly flattree_offsets: (a: number) => any;
-  readonly nn_descent: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number, n: number, o: number, p: number, q: bigint) => [number, number, number, number];
-  readonly optimize_layout_batch: (a: number, b: number) => [number, number];
-  readonly optimize_layout_batch_in_place: (a: number, b: number) => void;
-  readonly optimize_layout_step: (a: number) => [number, number];
-  readonly optimize_layout_step_in_place: (a: number) => void;
-  readonly optimizerstate_current_epoch: (a: number) => number;
-  readonly optimizerstate_head_embedding: (a: number) => [number, number];
-  readonly optimizerstate_head_embedding_len: (a: number) => number;
-  readonly optimizerstate_head_embedding_ptr: (a: number) => number;
-  readonly optimizerstate_n_epochs: (a: number) => number;
-  readonly optimizerstate_new: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number, n: number, o: number, p: number, q: number, r: number, s: number, t: number) => number;
-  readonly optimizerstate_rng_seed: (a: number) => bigint;
-  readonly optimizerstate_set_rng_seed: (a: number, b: bigint) => void;
-  readonly search_flat_tree: (a: number, b: number, c: number, d: bigint) => [number, number];
-  readonly sparse_add: (a: number, b: number) => number;
-  readonly sparse_eliminate_zeros: (a: number) => number;
-  readonly sparse_get_csr: (a: number) => any;
-  readonly sparse_identity: (a: number) => number;
-  readonly sparse_maximum: (a: number, b: number) => number;
-  readonly sparse_multiply_scalar: (a: number, b: number) => number;
-  readonly sparse_normalize: (a: number, b: number, c: number) => number;
-  readonly sparse_pairwise_multiply: (a: number, b: number) => number;
-  readonly sparse_subtract: (a: number, b: number) => number;
-  readonly sparse_transpose: (a: number) => number;
   readonly version: () => [number, number];
+  readonly euclidean: (a: number, b: number, c: number, d: number) => number;
+  readonly cosine: (a: number, b: number, c: number, d: number) => number;
+  readonly __wbg_wasmsparsematrix_free: (a: number, b: number) => void;
+  readonly wasmsparsematrix_new: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number) => [number, number, number];
+  readonly wasmsparsematrix_n_rows: (a: number) => number;
+  readonly wasmsparsematrix_n_cols: (a: number) => number;
+  readonly wasmsparsematrix_set: (a: number, b: number, c: number, d: number) => [number, number];
   readonly wasmsparsematrix_get: (a: number, b: number, c: number, d: number) => [number, number, number];
-  readonly wasmsparsematrix_get_all_ordered: (a: number) => [number, number];
-  readonly wasmsparsematrix_get_cols: (a: number) => any;
   readonly wasmsparsematrix_get_dims: (a: number) => [number, number];
   readonly wasmsparsematrix_get_rows: (a: number) => any;
+  readonly wasmsparsematrix_get_cols: (a: number) => any;
   readonly wasmsparsematrix_get_values: (a: number) => any;
-  readonly wasmsparsematrix_map_scalar: (a: number, b: number, c: number, d: number) => [number, number, number];
-  readonly wasmsparsematrix_n_cols: (a: number) => number;
-  readonly wasmsparsematrix_n_rows: (a: number) => number;
-  readonly wasmsparsematrix_new: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number) => [number, number, number];
+  readonly wasmsparsematrix_get_all_ordered: (a: number) => [number, number];
   readonly wasmsparsematrix_nnz: (a: number) => number;
-  readonly wasmsparsematrix_set: (a: number, b: number, c: number, d: number) => [number, number];
   readonly wasmsparsematrix_to_array: (a: number) => any;
+  readonly wasmsparsematrix_map_scalar: (a: number, b: number, c: number, d: number) => [number, number, number];
+  readonly sparse_transpose: (a: number) => number;
+  readonly sparse_identity: (a: number) => number;
+  readonly sparse_add: (a: number, b: number) => number;
+  readonly sparse_subtract: (a: number, b: number) => number;
+  readonly sparse_pairwise_multiply: (a: number, b: number) => number;
+  readonly sparse_maximum: (a: number, b: number) => number;
+  readonly sparse_multiply_scalar: (a: number, b: number) => number;
+  readonly sparse_eliminate_zeros: (a: number) => number;
+  readonly sparse_normalize: (a: number, b: number, c: number) => number;
+  readonly sparse_get_csr: (a: number) => any;
+  readonly nn_descent: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number, n: number, o: number, p: number, q: bigint) => [number, number, number, number];
+  readonly __wbg_optimizerstate_free: (a: number, b: number) => void;
+  readonly optimizerstate_new: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number, n: number, o: number, p: number, q: number, r: number, s: number, t: number) => number;
+  readonly optimizerstate_head_embedding: (a: number) => [number, number];
+  readonly optimizerstate_head_embedding_ptr: (a: number) => number;
+  readonly optimizerstate_head_embedding_len: (a: number) => number;
+  readonly optimizerstate_current_epoch: (a: number) => number;
+  readonly optimizerstate_n_epochs: (a: number) => number;
+  readonly optimizerstate_set_rng_seed: (a: number, b: bigint) => void;
+  readonly optimizerstate_rng_seed: (a: number) => bigint;
+  readonly optimize_layout_step: (a: number) => [number, number];
+  readonly optimize_layout_step_in_place: (a: number) => void;
+  readonly optimize_layout_batch: (a: number, b: number) => [number, number];
+  readonly optimize_layout_batch_in_place: (a: number, b: number) => void;
+  readonly __wbg_flattree_free: (a: number, b: number) => void;
+  readonly flattree_hyperplanes: (a: number) => any;
+  readonly flattree_offsets: (a: number) => any;
+  readonly flattree_children: (a: number) => [number, number];
+  readonly flattree_indices: (a: number) => [number, number];
+  readonly flattree_dim: (a: number) => number;
+  readonly flattree_n_nodes: (a: number) => number;
+  readonly build_rp_tree: (a: number, b: number, c: number, d: number, e: number, f: bigint) => number;
+  readonly search_flat_tree: (a: number, b: number, c: number, d: bigint) => [number, number];
   readonly __wbindgen_externrefs: WebAssembly.Table;
-  readonly __wbindgen_malloc: (a: number, b: number) => number;
-  readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
-  readonly __externref_table_dealloc: (a: number) => void;
   readonly __wbindgen_free: (a: number, b: number, c: number) => void;
+  readonly __wbindgen_malloc: (a: number, b: number) => number;
+  readonly __externref_table_dealloc: (a: number) => void;
+  readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
   readonly __wbindgen_start: () => void;
 }
 

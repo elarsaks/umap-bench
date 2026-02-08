@@ -1,0 +1,477 @@
+{
+  "generatedAt": "2026-02-07T04:43:51.223Z",
+  "runs": 10,
+  "machine": {
+    "platform": "linux",
+    "release": "6.6.87.2-microsoft-standard-WSL2",
+    "arch": "x64",
+    "cpuModel": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+    "cpuCores": 12,
+    "totalMemBytes": 8240963584,
+    "loadAvg": [
+      1.25,
+      1.31,
+      1.25
+    ],
+    "hostname": "DESKTOP-7R7IE5L"
+  },
+  "git": {
+    "commit": "81a06d89cee35796844f6d872a476a67b89a138c",
+    "branch": "improve-analytics",
+    "statusDirty": true
+  },
+  "wasmFeatures": "dist",
+  "wasmPreload": true,
+  "results": [
+    {
+      "run": 1,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 35564,
+      "stats": {
+        "startTime": "2026-02-07T04:44:03.743Z",
+        "duration": 23382.466,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-07T04:44:20.137Z",
+          "datasetName": "Swiss Roll (600 points, 3D manifold)",
+          "datasetSize": 600,
+          "dimensions": 3,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 3091.2999999970198,
+          "memoryDeltaMb": 12.418742179870605,
+          "trustworthiness": 0.9936882583357218,
+          "fpsAvg": 60.0157418335717,
+          "responsivenessMs": 18.663636363365434
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-07T04:44:26.856Z",
+          "datasetName": "Medium Clustered (600 points)",
+          "datasetSize": 600,
+          "dimensions": 50,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 3725.4000000059605,
+          "memoryDeltaMb": 25.942928314208984,
+          "trustworthiness": 0.9510614311646126,
+          "fpsAvg": 53.17053958282485,
+          "responsivenessMs": 25.32666666607062
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][mid][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][mid][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 2,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 34482,
+      "stats": {
+        "startTime": "2026-02-07T04:44:38.663Z",
+        "duration": 22948.980000000003,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-07T04:44:54.943Z",
+          "datasetName": "Swiss Roll (600 points, 3D manifold)",
+          "datasetSize": 600,
+          "dimensions": 3,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 2932.9000000059605,
+          "memoryDeltaMb": 16.790717124938965,
+          "trustworthiness": 0.99439022642591,
+          "fpsAvg": 60.039370078740156,
+          "responsivenessMs": 16.38181818073446
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-07T04:45:01.347Z",
+          "datasetName": "Medium Clustered (600 points)",
+          "datasetSize": 600,
+          "dimensions": 50,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 3643.0999999940395,
+          "memoryDeltaMb": 12.131438255310059,
+          "trustworthiness": 0.949746106811885,
+          "fpsAvg": 52.93647622836819,
+          "responsivenessMs": 18.913333334525426
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][mid][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][mid][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 3,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 34500,
+      "stats": {
+        "startTime": "2026-02-07T04:45:13.149Z",
+        "duration": 22965.104,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-07T04:45:29.396Z",
+          "datasetName": "Swiss Roll (600 points, 3D manifold)",
+          "datasetSize": 600,
+          "dimensions": 3,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 2983.5999999940395,
+          "memoryDeltaMb": 18.714369773864746,
+          "trustworthiness": 0.9944504155918601,
+          "fpsAvg": 60.0039346845934,
+          "responsivenessMs": 18.30909090827812
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-07T04:45:35.859Z",
+          "datasetName": "Medium Clustered (600 points)",
+          "datasetSize": 600,
+          "dimensions": 50,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 3647.5,
+          "memoryDeltaMb": 6.52789306640625,
+          "trustworthiness": 0.9503917072704691,
+          "fpsAvg": 53.935277666639294,
+          "responsivenessMs": 22.313333332538605
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][mid][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][mid][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 4,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 34732,
+      "stats": {
+        "startTime": "2026-02-07T04:45:47.927Z",
+        "duration": 22921.262000000002,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-07T04:46:04.170Z",
+          "datasetName": "Swiss Roll (600 points, 3D manifold)",
+          "datasetSize": 600,
+          "dimensions": 3,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 2946.2999999970198,
+          "memoryDeltaMb": 16.528849601745605,
+          "trustworthiness": 0.9945461927964078,
+          "fpsAvg": 59.988002399341354,
+          "responsivenessMs": 18.11818181926554
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-07T04:46:10.611Z",
+          "datasetName": "Medium Clustered (600 points)",
+          "datasetSize": 600,
+          "dimensions": 50,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 3623.8999999910593,
+          "memoryDeltaMb": 5.818046569824219,
+          "trustworthiness": 0.9488845896627496,
+          "fpsAvg": 54.10723069355632,
+          "responsivenessMs": 20.066666667660076
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][mid][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][mid][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 5,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 34938,
+      "stats": {
+        "startTime": "2026-02-07T04:46:22.472Z",
+        "duration": 23318.826,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-07T04:46:38.685Z",
+          "datasetName": "Swiss Roll (600 points, 3D manifold)",
+          "datasetSize": 600,
+          "dimensions": 3,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 2947.2999999970198,
+          "memoryDeltaMb": 23.972453117370605,
+          "trustworthiness": 0.9933361994840929,
+          "fpsAvg": 59.99803285120605,
+          "responsivenessMs": 18.172727273269132
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-07T04:46:45.524Z",
+          "datasetName": "Medium Clustered (600 points)",
+          "datasetSize": 600,
+          "dimensions": 50,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 3696.5,
+          "memoryDeltaMb": 24.279800415039062,
+          "trustworthiness": 0.9500054934556225,
+          "fpsAvg": 52.989402119418195,
+          "responsivenessMs": 22.99333333472411
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][mid][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][mid][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 6,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 34322,
+      "stats": {
+        "startTime": "2026-02-07T04:46:57.408Z",
+        "duration": 22707.861,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-07T04:47:13.568Z",
+          "datasetName": "Swiss Roll (600 points, 3D manifold)",
+          "datasetSize": 600,
+          "dimensions": 3,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 2948,
+          "memoryDeltaMb": 18.706146240234375,
+          "trustworthiness": 0.9936170822585269,
+          "fpsAvg": 60.03346127296847,
+          "responsivenessMs": 17.836363636634566
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-07T04:47:19.869Z",
+          "datasetName": "Medium Clustered (600 points)",
+          "datasetSize": 600,
+          "dimensions": 50,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 3587.7000000029802,
+          "memoryDeltaMb": 16.44028091430664,
+          "trustworthiness": 0.9490064010700296,
+          "fpsAvg": 55,
+          "responsivenessMs": 20.780000000198683
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][mid][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][mid][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 7,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 34779,
+      "stats": {
+        "startTime": "2026-02-07T04:47:31.688Z",
+        "duration": 23209.289,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-07T04:47:48.091Z",
+          "datasetName": "Swiss Roll (600 points, 3D manifold)",
+          "datasetSize": 600,
+          "dimensions": 3,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 2937.5,
+          "memoryDeltaMb": 17.630358695983887,
+          "trustworthiness": 0.9940818763733639,
+          "fpsAvg": 60.02755363099892,
+          "responsivenessMs": 16.645454544912685
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-07T04:47:54.647Z",
+          "datasetName": "Medium Clustered (600 points)",
+          "datasetSize": 600,
+          "dimensions": 50,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 3697.2999999970198,
+          "memoryDeltaMb": 19.199384689331055,
+          "trustworthiness": 0.9519028852584313,
+          "fpsAvg": 53.967619427860775,
+          "responsivenessMs": 22.84666666686535
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][mid][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][mid][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 8,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 34685,
+      "stats": {
+        "startTime": "2026-02-07T04:48:06.425Z",
+        "duration": 23159.873000000003,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-07T04:48:22.845Z",
+          "datasetName": "Swiss Roll (600 points, 3D manifold)",
+          "datasetSize": 600,
+          "dimensions": 3,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 3094,
+          "memoryDeltaMb": 19.58931255340576,
+          "trustworthiness": 0.9935967803573135,
+          "fpsAvg": 60,
+          "responsivenessMs": 18.854545455087315
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-07T04:48:29.367Z",
+          "datasetName": "Medium Clustered (600 points)",
+          "datasetSize": 600,
+          "dimensions": 50,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 3644,
+          "memoryDeltaMb": 22.69594097137451,
+          "trustworthiness": 0.9504621668099742,
+          "fpsAvg": 53,
+          "responsivenessMs": 20.92666666706403
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][mid][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][mid][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 9,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 34877,
+      "stats": {
+        "startTime": "2026-02-07T04:48:41.452Z",
+        "duration": 23013.003999999997,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-07T04:48:57.726Z",
+          "datasetName": "Swiss Roll (600 points, 3D manifold)",
+          "datasetSize": 600,
+          "dimensions": 3,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 2980.6000000089407,
+          "memoryDeltaMb": 21.250534057617188,
+          "trustworthiness": 0.9920168147511226,
+          "fpsAvg": 59.96402158740497,
+          "responsivenessMs": 17.563636362552643
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-07T04:49:04.214Z",
+          "datasetName": "Medium Clustered (600 points)",
+          "datasetSize": 600,
+          "dimensions": 50,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 3647.2999999970198,
+          "memoryDeltaMb": 19.190608978271484,
+          "trustworthiness": 0.9512730486290245,
+          "fpsAvg": 54.10723069355632,
+          "responsivenessMs": 21.53333333233992
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][mid][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][mid][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 10,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 34617,
+      "stats": {
+        "startTime": "2026-02-07T04:49:16.175Z",
+        "duration": 22910.051,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-07T04:49:32.444Z",
+          "datasetName": "Swiss Roll (600 points, 3D manifold)",
+          "datasetSize": 600,
+          "dimensions": 3,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 2963,
+          "memoryDeltaMb": 18.15806484222412,
+          "trustworthiness": 0.993802904366103,
+          "fpsAvg": 60.021647151607674,
+          "responsivenessMs": 18.845454543828964
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-07T04:49:38.848Z",
+          "datasetName": "Medium Clustered (600 points)",
+          "datasetSize": 600,
+          "dimensions": 50,
+          "wasmFeatures": "Dist",
+          "runtimeMs": 3617.5,
+          "memoryDeltaMb": 19.144694328308105,
+          "trustworthiness": 0.9496305053979173,
+          "fpsAvg": 53.978408636223776,
+          "responsivenessMs": 19.713333332538603
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][mid][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][mid][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    }
+  ]
+}
