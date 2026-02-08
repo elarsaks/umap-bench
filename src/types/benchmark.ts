@@ -19,6 +19,7 @@ export interface BenchmarkExportRow {
   dimensions: number;
   /** "none" for JS, or comma-separated features like "Dist,Tree,Matrix,NN,Opt" */
   wasmFeatures: string;
+  renderingEnabled: boolean;
   runtimeMs: number;
   memoryDeltaMb: number;
   trustworthiness: number;
@@ -63,16 +64,4 @@ export interface WasmRelease {
   releaseUrl: string;
   sourceZipUrl: string;
   notes?: string;
-}
-
-declare global {
-  interface Window {
-    __BENCH_EXPORT__?: BenchmarkExportRow[];
-    __BENCH_CONTEXT__?: { 
-      scope?: string; 
-      runTimeoutMs?: number;
-      renderingEnabled?: boolean;
-    };
-    __BENCH_PROGRESS__?: { epoch: number; elapsedMs: number } | null;
-  }
 }

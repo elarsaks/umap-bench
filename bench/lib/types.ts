@@ -84,8 +84,9 @@ declare global {
     __WASM_PROGRESS__?: number;
     __WASM_ENSURE_READY__?: () => Promise<void>;
 
-    // Benchmark export data
-    __BENCH_EXPORT__?: BenchmarkMetric[];
+    // Benchmark export data - using any[] to be compatible with both
+    // BenchmarkMetric (bench tests) and BenchmarkExportRow (React app)
+    __BENCH_EXPORT__?: any[];
     __BENCH_CONTEXT__?: {
       scope?: string;
       runTimeoutMs?: number;
