@@ -2,7 +2,7 @@
 # UMAP WebAssembly Performance Analysis - Summary
 
 ## Analysis Configuration
-- **Total Measurements**: 484
+- **Total Measurements**: 500
 - **Datasets Tested**: 6
 - **Features Tested**: 7
 
@@ -45,7 +45,7 @@
 ### Quality Trade-offs
 
 
-- **Mean Trustworthiness**: 0.8974 (±0.1462)
+- **Mean Trustworthiness**: 0.8937 (±0.1503)
 - **Quality Range**: 0.5533 - 0.9975
 - **Quality Stability**: All features maintain trustworthiness > 0.967
 
@@ -53,15 +53,15 @@
 
 **Top 3 Features by Composite Score:**
 
-1. **All Features** (score: 1.102)
-   - Speedup: 1.75x
-   - Quality ratio: 0.999
-   - FPS ratio: 0.681
-
-2. **Optimizer** (score: 1.035)
+1. **Optimizer** (score: 1.035)
    - Speedup: 1.49x
    - Quality ratio: 0.998
    - FPS ratio: 0.690
+
+2. **All Features** (score: 1.008)
+   - Speedup: 1.57x
+   - Quality ratio: 0.999
+   - FPS ratio: 0.666
 
 3. **Matrix** (score: 0.807)
    - Speedup: 1.03x
@@ -78,13 +78,13 @@
 - **Matrix**: improves (1.01x → 1.02x, +0.5%)
 - **NN Descent**: improves (0.94x → 0.99x, +4.9%)
 - **Optimizer**: degrades (3.46x → 1.20x, -65.2%)
-- **All Features**: degrades (4.04x → 1.26x, -68.8%)
+- **All Features**: degrades (4.04x → 1.22x, -69.8%)
 
 
 ## Recommendations
 
 
-1. **Best Overall Performance**: All Features (composite score: 1.102)
+1. **Best Overall Performance**: Optimizer (composite score: 1.035)
 2. **Fastest Execution**: All Features (1.74x speedup)
 3. **Most Consistent**: Feature with lowest variance across datasets
 4. **Quality Preservation**: All WASM features maintain high trustworthiness (> 0.967)
@@ -98,4 +98,4 @@
 - **Significance Level**: α = 0.05
 
 ---
-*Analysis performed with 484 measurements across 6 datasets*
+*Analysis performed with 500 measurements across 6 datasets*

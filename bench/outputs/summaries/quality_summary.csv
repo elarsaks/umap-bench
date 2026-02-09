@@ -1,7 +1,7 @@
 ,trustworthiness,trustworthiness,trustworthiness,trustworthiness,fps_avg,fps_avg,responsiveness_ms,responsiveness_ms
 ,mean,median,std,count,mean,median,mean,median
 feature_name,,,,,,,,
-All Features,0.904,0.9675,0.145,84,33.3068,39.1444,30.5861,19.6033
+All Features,0.8845,0.9675,0.1648,100,33.7349,38.2619,36.7135,20.9333
 Baseline (JS),0.9001,0.9688,0.1394,60,55.4251,57.4631,34.197,21.4867
 Distance,0.9012,0.9691,0.1394,60,55.1506,57.4607,35.1522,21.53
 Matrix,0.9,0.9696,0.1407,60,55.5525,57.5096,31.7933,19.5167
