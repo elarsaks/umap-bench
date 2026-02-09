@@ -178,3 +178,14 @@ Note: Playwright writes machine-readable JSON results to `bench/results/` and re
 - **Release Selection** - Select different umap-wasm releases directly from the UI to compare performance
 - **Performance Metrics** - Track runtime, memory usage, embedding quality, FPS, and responsiveness
 - **Visualization** - Interactive 3D visualization of UMAP embeddings using Plotly
+
+## Notebook automation
+
+- **Convert analysis notebook to HTML**: A script is provided to convert the analysis notebook to HTML and place it in the `public/` folder so it can be served with the site.
+
+Run manually:
+```bash
+yarn notebook:convert
+```
+
+This script is invoked automatically as part of the `prebuild` step so `public/analysis.html` is refreshed before `yarn build`.

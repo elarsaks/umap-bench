@@ -12,8 +12,9 @@
   "scripts": {
     "postinstall": "mkdir -p public/wasm/pkg && cp -r node_modules/@elarsaks/umap-wasm/wasm/pkg/* public/wasm/pkg/",
     "predev": "node scripts/sync-wasm.cjs",
+    "notebook:convert": "jupyter nbconvert --to html bench/analysis/analysis.ipynb --output-dir=public --output=analysis.html",
     "dev": "vite",
-    "prebuild": "node scripts/sync-wasm.cjs",
+    "prebuild": "node scripts/sync-wasm.cjs && yarn notebook:convert",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
