@@ -1,0 +1,497 @@
+{
+  "generatedAt": "2026-02-08T09:12:30.192Z",
+  "runs": 10,
+  "machine": {
+    "platform": "linux",
+    "release": "6.6.87.2-microsoft-standard-WSL2",
+    "arch": "x64",
+    "cpuModel": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+    "cpuCores": 12,
+    "totalMemBytes": 8240963584,
+    "loadAvg": [
+      1.47,
+      1.25,
+      0.85
+    ],
+    "hostname": "DESKTOP-7R7IE5L"
+  },
+  "git": {
+    "commit": "01ee311278917334bc1254a7d081a9fa89a4907a",
+    "branch": "clean",
+    "statusDirty": true
+  },
+  "wasmFeatures": "all",
+  "wasmPreload": true,
+  "results": [
+    {
+      "run": 1,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 38294,
+      "stats": {
+        "startTime": "2026-02-08T09:12:45.866Z",
+        "duration": 23102.413,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T09:13:02.987Z",
+          "datasetName": "Iris Dataset (150 points, 4D)",
+          "datasetSize": 150,
+          "dimensions": 4,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 663,
+          "memoryDeltaMb": 12.638181686401367,
+          "trustworthiness": 0.9885551330798479,
+          "fpsAvg": 0,
+          "responsivenessMs": 10.090909088199789
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T09:13:08.531Z",
+          "datasetName": "Small Random (80 points)",
+          "datasetSize": 80,
+          "dimensions": 10,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 1343.5999999940395,
+          "memoryDeltaMb": 2.080838203430176,
+          "trustworthiness": 0.8471714092140922,
+          "fpsAvg": 30.812046515520706,
+          "responsivenessMs": 30.286666667461397
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][small][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][small][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 2,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 38963,
+      "stats": {
+        "startTime": "2026-02-08T09:13:27.423Z",
+        "duration": 20519.634000000002,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T09:13:43.626Z",
+          "datasetName": "Iris Dataset (150 points, 4D)",
+          "datasetSize": 150,
+          "dimensions": 4,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 646.5,
+          "memoryDeltaMb": 12.815945625305176,
+          "trustworthiness": 0.9854034643008027,
+          "fpsAvg": 0,
+          "responsivenessMs": 9.118181816556238
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T09:13:47.200Z",
+          "datasetName": "Small Random (80 points)",
+          "datasetSize": 80,
+          "dimensions": 10,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 784.1999999880791,
+          "memoryDeltaMb": -4.7186174392700195,
+          "trustworthiness": 0.8352642276422764,
+          "fpsAvg": 0,
+          "responsivenessMs": 21.89999999801318
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][small][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][small][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 3,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 34726,
+      "stats": {
+        "startTime": "2026-02-08T09:14:02.065Z",
+        "duration": 20608.755000000005,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T09:14:18.342Z",
+          "datasetName": "Iris Dataset (150 points, 4D)",
+          "datasetSize": 150,
+          "dimensions": 4,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 671.0999999940395,
+          "memoryDeltaMb": 12.65962028503418,
+          "trustworthiness": 0.9849471905365441,
+          "fpsAvg": 0,
+          "responsivenessMs": 10.781818183985623
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T09:14:21.893Z",
+          "datasetName": "Small Random (80 points)",
+          "datasetSize": 80,
+          "dimensions": 10,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 747.0999999940395,
+          "memoryDeltaMb": 12.685601234436035,
+          "trustworthiness": 0.8594512195121952,
+          "fpsAvg": 0,
+          "responsivenessMs": 20.193333331743876
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][small][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][small][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 4,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 39748,
+      "stats": {
+        "startTime": "2026-02-08T09:14:38.450Z",
+        "duration": 23970.707,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T09:14:57.511Z",
+          "datasetName": "Iris Dataset (150 points, 4D)",
+          "datasetSize": 150,
+          "dimensions": 4,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 661.8000000119209,
+          "memoryDeltaMb": 10.982514381408691,
+          "trustworthiness": 0.9871102661596958,
+          "fpsAvg": 0,
+          "responsivenessMs": 11.445454545996405
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T09:15:01.665Z",
+          "datasetName": "Small Random (80 points)",
+          "datasetSize": 80,
+          "dimensions": 10,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 934.1000000238419,
+          "memoryDeltaMb": -7.802629470825195,
+          "trustworthiness": 0.844359756097561,
+          "fpsAvg": 0,
+          "responsivenessMs": 26.293333331743877
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][small][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][small][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 5,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 35695,
+      "stats": {
+        "startTime": "2026-02-08T09:15:17.326Z",
+        "duration": 20795.407,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T09:15:33.587Z",
+          "datasetName": "Iris Dataset (150 points, 4D)",
+          "datasetSize": 150,
+          "dimensions": 4,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 652,
+          "memoryDeltaMb": 12.675783157348633,
+          "trustworthiness": 0.9866920152091255,
+          "fpsAvg": 0,
+          "responsivenessMs": 10.500000002709301
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T09:15:37.315Z",
+          "datasetName": "Small Random (80 points)",
+          "datasetSize": 80,
+          "dimensions": 10,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 789,
+          "memoryDeltaMb": -5.093606948852539,
+          "trustworthiness": 0.8401084010840109,
+          "fpsAvg": 0,
+          "responsivenessMs": 23.15333333412806
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][small][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][small][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 6,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 35542,
+      "stats": {
+        "startTime": "2026-02-08T09:15:52.836Z",
+        "duration": 20830.553,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T09:16:09.115Z",
+          "datasetName": "Iris Dataset (150 points, 4D)",
+          "datasetSize": 150,
+          "dimensions": 4,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 667.5,
+          "memoryDeltaMb": 12.477121353149414,
+          "trustworthiness": 0.9867089142374313,
+          "fpsAvg": 0,
+          "responsivenessMs": 10.790909092534672
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T09:16:12.877Z",
+          "datasetName": "Small Random (80 points)",
+          "datasetSize": 80,
+          "dimensions": 10,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 768.5999999940395,
+          "memoryDeltaMb": -4.600847244262695,
+          "trustworthiness": 0.8358231707317073,
+          "fpsAvg": 0,
+          "responsivenessMs": 22.353333336114883
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][small][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][small][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 7,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 36128,
+      "stats": {
+        "startTime": "2026-02-08T09:16:28.613Z",
+        "duration": 21186.065000000002,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T09:16:45.352Z",
+          "datasetName": "Iris Dataset (150 points, 4D)",
+          "datasetSize": 150,
+          "dimensions": 4,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 658.9000000059605,
+          "memoryDeltaMb": 12.052980422973633,
+          "trustworthiness": 0.9881875792141952,
+          "fpsAvg": 0,
+          "responsivenessMs": 10.136363636363637
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T09:16:49.069Z",
+          "datasetName": "Small Random (80 points)",
+          "datasetSize": 80,
+          "dimensions": 10,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 894,
+          "memoryDeltaMb": 2.8721437454223633,
+          "trustworthiness": 0.8597052845528456,
+          "fpsAvg": 0,
+          "responsivenessMs": 21.060000000397363
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][small][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][small][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 8,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 35224,
+      "stats": {
+        "startTime": "2026-02-08T09:17:04.217Z",
+        "duration": 20810.829,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T09:17:20.664Z",
+          "datasetName": "Iris Dataset (150 points, 4D)",
+          "datasetSize": 150,
+          "dimensions": 4,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 664,
+          "memoryDeltaMb": 13.857915878295898,
+          "trustworthiness": 0.9841909590198563,
+          "fpsAvg": 0,
+          "responsivenessMs": 10.527272728356449
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T09:17:24.254Z",
+          "datasetName": "Small Random (80 points)",
+          "datasetSize": 80,
+          "dimensions": 10,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 748.5,
+          "memoryDeltaMb": -1.334345817565918,
+          "trustworthiness": 0.8325033875338753,
+          "fpsAvg": 0,
+          "responsivenessMs": 20.44666666785876
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][small][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][small][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 9,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 33926,
+      "stats": {
+        "startTime": "2026-02-08T09:17:38.969Z",
+        "duration": 19987.711999999996,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T09:17:54.655Z",
+          "datasetName": "Iris Dataset (150 points, 4D)",
+          "datasetSize": 150,
+          "dimensions": 4,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 629,
+          "memoryDeltaMb": 11.148926734924316,
+          "trustworthiness": 0.9864385297845374,
+          "fpsAvg": 0,
+          "responsivenessMs": 9.481818180192601
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T09:17:58.162Z",
+          "datasetName": "Small Random (80 points)",
+          "datasetSize": 80,
+          "dimensions": 10,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 775.8000000119209,
+          "memoryDeltaMb": -8.553765296936035,
+          "trustworthiness": 0.8252879403794038,
+          "fpsAvg": 0,
+          "responsivenessMs": 22.44666666785876
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][small][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][small][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    },
+    {
+      "run": 10,
+      "success": true,
+      "exitCode": 0,
+      "durationMs": 33929,
+      "stats": {
+        "startTime": "2026-02-08T09:18:12.483Z",
+        "duration": 20405.805999999997,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "errors": [],
+      "metrics": [
+        {
+          "datasetIndex": 1,
+          "timestamp": "2026-02-08T09:18:28.689Z",
+          "datasetName": "Iris Dataset (150 points, 4D)",
+          "datasetSize": 150,
+          "dimensions": 4,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 678.2000000178814,
+          "memoryDeltaMb": 12.276700973510742,
+          "trustworthiness": 0.9851668779045205,
+          "fpsAvg": 0,
+          "responsivenessMs": 10.872727274894714
+        },
+        {
+          "datasetIndex": 2,
+          "timestamp": "2026-02-08T09:18:32.104Z",
+          "datasetName": "Small Random (80 points)",
+          "datasetSize": 80,
+          "dimensions": 10,
+          "wasmFeatures": "Dist,Tree,Matrix,NN,Opt",
+          "renderingEnabled": true,
+          "runtimeMs": 718.8000000119209,
+          "memoryDeltaMb": 10.76979923248291,
+          "trustworthiness": 0.8405149051490515,
+          "fpsAvg": 0,
+          "responsivenessMs": 19.839999999602636
+        }
+      ],
+      "resultLabel": "PASS",
+      "stderrPreview": "\u001b[1A\u001b[2K[bench][small][console:warning] using deprecated parameters for the initialization function; pass a single object instead\n\u001b[1A\u001b[2K[bench][small][console:warning] Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently\n"
+    }
+  ]
+}

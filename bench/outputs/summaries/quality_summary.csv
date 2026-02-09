@@ -1,0 +1,10 @@
+,trustworthiness,trustworthiness,trustworthiness,trustworthiness,fps_avg,fps_avg,responsiveness_ms,responsiveness_ms
+,mean,median,std,count,mean,median,mean,median
+feature_name,,,,,,,,
+All Features,0.8845,0.9675,0.1648,100,33.7349,38.2619,36.7135,20.9333
+Baseline (JS),0.9001,0.9688,0.1394,60,55.4251,57.4631,34.197,21.4867
+Distance,0.9012,0.9691,0.1394,60,55.1506,57.4607,35.1522,21.53
+Matrix,0.9,0.9696,0.1407,60,55.5525,57.5096,31.7933,19.5167
+NN Descent,0.8988,0.9698,0.1419,60,55.3074,57.0057,34.6985,20.4267
+Optimizer,0.8832,0.9666,0.1671,100,34.4725,39.6597,42.0478,24.6367
+Tree,0.9009,0.9701,0.1389,60,55.2963,56.9785,32.7646,20.8167
