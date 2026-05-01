@@ -1,0 +1,35 @@
+\begin{table}
+\caption{Aggregated Performance Metrics by Scope and WASM Feature}
+\label{tab:aggregated_comparison}
+\begin{tabular}{llrrrrrr}
+\toprule
+ &  & Runtime (ms) & Speedup (×) & Quality (Trust.) & FPS & Latency (ms) & Memory (MB) \\
+Scope & feature_name &  &  &  &  &  &  \\
+\midrule
+\multirow[t]{7}{*}{large} & All Features & 3715.45 & 1.22 & 0.79 & 37.10 & 62.13 & 22.74 \\
+ & Baseline (JS) & 4535.25 & 1.00 & 0.81 & 55.56 & 67.63 & 16.53 \\
+ & Distance & 4562.20 & 0.99 & 0.80 & 55.60 & 70.00 & 10.29 \\
+ & Matrix & 4447.45 & 1.02 & 0.81 & 55.57 & 64.64 & 16.61 \\
+ & NN Descent & 4590.80 & 0.99 & 0.80 & 55.55 & 66.34 & 21.74 \\
+ & Optimizer & 3766.50 & 1.20 & 0.79 & 37.37 & 68.67 & 4.17 \\
+ & Tree & 4380.40 & 1.04 & 0.81 & 55.87 & 63.67 & 17.64 \\
+\cline{1-8}
+\multirow[t]{7}{*}{mid} & All Features & 1853.45 & 1.79 & 0.97 & 47.93 & 16.92 & 9.14 \\
+ & Baseline (JS) & 3319.80 & 1.00 & 0.97 & 57.49 & 19.56 & 17.73 \\
+ & Distance & 3340.85 & 0.99 & 0.97 & 57.48 & 18.88 & 18.71 \\
+ & Matrix & 3269.05 & 1.02 & 0.97 & 57.54 & 17.85 & 13.97 \\
+ & NN Descent & 3286.65 & 1.01 & 0.97 & 57.05 & 17.89 & 21.46 \\
+ & Optimizer & 1993.35 & 1.67 & 0.97 & 47.36 & 20.30 & 14.50 \\
+ & Tree & 3341.35 & 0.99 & 0.97 & 57.03 & 19.17 & 18.10 \\
+\cline{1-8}
+\multirow[t]{7}{*}{small} & All Features & 698.50 & 3.84 & 0.92 & 0.00 & 15.64 & 11.07 \\
+ & Baseline (JS) & 2680.45 & 1.00 & 0.93 & 54.59 & 14.04 & 3.03 \\
+ & Distance & 2761.65 & 0.97 & 0.94 & 54.98 & 15.69 & 1.61 \\
+ & Matrix & 2658.60 & 1.01 & 0.94 & 55.08 & 13.52 & 4.40 \\
+ & NN Descent & 2840.05 & 0.94 & 0.93 & 54.58 & 15.92 & 11.84 \\
+ & Optimizer & 815.65 & 3.29 & 0.92 & 0.00 & 19.24 & 0.23 \\
+ & Tree & 2668.95 & 1.00 & 0.93 & 54.10 & 13.73 & 5.82 \\
+\cline{1-8}
+\bottomrule
+\end{tabular}
+\end{table}
