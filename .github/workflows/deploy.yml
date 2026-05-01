@@ -34,8 +34,11 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install Jupyter
-        run: pip install jupyter nbconvert
+      - name: Install uv
+        run: python -m pip install uv
+
+      - name: Install Python dependencies
+        run: uv sync --locked
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile || yarn install
