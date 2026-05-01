@@ -5,6 +5,7 @@ Minimal Vite + React + TypeScript benchmark app for experimenting with UMAP impl
 ## Prerequisites
 - Node.js 22+ (recommended)
 - npm or yarn
+- uv for Python notebook environments
 
 ## Environment setup
 
@@ -12,6 +13,38 @@ Minimal Vite + React + TypeScript benchmark app for experimenting with UMAP impl
 ```bash
 yarn install
 ```
+
+### Set up Python notebooks
+The preprocessing and analysis notebooks use a `uv`-managed Python environment defined in `pyproject.toml`.
+
+Install `uv` if needed:
+```bash
+# macOS
+brew install uv
+
+# Or with the standalone installer
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Create/update the local Python environment:
+```bash
+uv sync
+```
+
+Register the notebook kernel:
+```bash
+uv run python -m ipykernel install --sys-prefix \
+  --name umap-bench \
+  --display-name "Python (umap-bench)"
+```
+
+Run Jupyter from the notebook folder so relative input/output paths resolve correctly:
+```bash
+cd bench/analysis
+uv run jupyter notebook
+```
+
+In the notebook UI, open `preprocess.ipynb` or `analysis.ipynb` and select the `Python (umap-bench)` kernel.
 
 ### Install Playwright browsers
 - macOS / Windows
@@ -164,8 +197,8 @@ Performance tests include smoke checks and performance measurements. Results are
 
 **After benchmarking**, preprocess results for analysis:
 ```bash
-cd bench
-jupyter notebook preprocess.ipynb
+cd bench/analysis
+uv run jupyter notebook preprocess.ipynb
 # Converts JSON to preprocessed.csv
 ```
 
@@ -183,9 +216,24 @@ Note: Playwright writes machine-readable JSON results to `bench/results/` and re
 
 - **Convert analysis notebook to HTML**: A script is provided to convert the analysis notebook to HTML and place it in the `public/` folder so it can be served with the site.
 
+Make sure the Python notebook environment exists first:
+```bash
+uv sync
+```
+
 Run manually:
 ```bash
 yarn notebook:convert
 ```
 
 This script is invoked automatically as part of the `prebuild` step so `public/analysis.html` is refreshed before `yarn build`.
+
+Execute the full analysis notebook from the command line:
+```bash
+cd bench/analysis
+uv run jupyter nbconvert \
+  --to notebook \
+  --execute analysis.ipynb \
+  --output /tmp/analysis_executed.ipynb \
+  --ExecutePreprocessor.timeout=900
+```
