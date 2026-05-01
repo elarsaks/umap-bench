@@ -1,6 +1,10 @@
 # umap-bench
 
-Minimal Vite + React + TypeScript benchmark app for experimenting with UMAP implementations.
+Minimal Vite + React + TypeScript benchmark app for experimenting with [umap-wasm](https://github.com/elarsaks/umap-wasm) implementations.
+
+**[Live site](https://elarsaks.github.io/umap-bench/)** · **[Analysis](https://elarsaks.github.io/umap-bench/analysis.html)**
+
+![umap-bench screenshot](docs/assets/umap-bench-screenshot.png)
 
 ## Prerequisites
 - Node.js 22+ (recommended)
