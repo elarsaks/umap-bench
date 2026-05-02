@@ -176,7 +176,7 @@ L 568.887656 48.744962
      </g>
     </g>
     <g id="text_10">
-     <text style="font-weight: 700; font-size: 12px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="15.935625" y="202.021031" transform="rotate(-90 15.935625 202.021031)">FPS Change vs Baseline (%)</text>
+     <text style="font-weight: 700; font-size: 12px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="15.935625" y="202.021031" transform="rotate(-90 15.935625 202.021031)">FPS Change vs Baseline (JS) (%)</text>
     </g>
    </g>
    <g id="PathCollection_1">
@@ -431,7 +431,7 @@ L 505.57125 354.880969
 " style="fill: none; stroke-dasharray: 7.4,3.2; stroke-dashoffset: 0; stroke: #333333; stroke-opacity: 0.5; stroke-width: 2"/>
     </g>
     <g id="text_18">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="512.77125" y="358.030969" transform="rotate(-0 512.77125 358.030969)">Baseline</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="512.77125" y="358.030969" transform="rotate(-0 512.77125 358.030969)">Baseline (JS)</text>
     </g>
    </g>
   </g>
@@ -616,7 +616,7 @@ L 1135.927031 44.928876
      </g>
     </g>
     <g id="text_31">
-     <text style="font-weight: 700; font-size: 12px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="589.092031" y="202.021031" transform="rotate(-90 589.092031 202.021031)">Latency Change vs Baseline (%)</text>
+     <text style="font-weight: 700; font-size: 12px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="589.092031" y="202.021031" transform="rotate(-90 589.092031 202.021031)">Latency Change vs Baseline (JS) (%)</text>
     </g>
    </g>
    <g id="PathCollection_13">
@@ -793,7 +793,7 @@ L 1072.610625 60.360469
 " style="fill: none; stroke-dasharray: 7.4,3.2; stroke-dashoffset: 0; stroke: #333333; stroke-opacity: 0.5; stroke-width: 2"/>
     </g>
     <g id="text_39">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="1079.810625" y="63.510469" transform="rotate(-0 1079.810625 63.510469)">Baseline</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="1079.810625" y="63.510469" transform="rotate(-0 1079.810625 63.510469)">Baseline (JS)</text>
     </g>
    </g>
   </g>

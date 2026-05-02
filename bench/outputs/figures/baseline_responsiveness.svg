@@ -440,7 +440,7 @@ L 694.07559 22.505156
 " style="fill: none"/>
    </g>
    <g id="text_16">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="368.724748" y="16.505156" transform="rotate(-0 368.724748 16.505156)">Baseline: Interaction Latency</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="368.724748" y="16.505156" transform="rotate(-0 368.724748 16.505156)">Baseline (JS): Interaction Latency</text>
    </g>
    <g id="legend_1">
     <g id="text_17">

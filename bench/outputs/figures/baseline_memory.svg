@@ -414,7 +414,7 @@ L 694.078559 22.505156
 " style="fill: none"/>
    </g>
    <g id="text_14">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="365.667717" y="16.505156" transform="rotate(-0 365.667717 16.505156)">Baseline: Memory Usage</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="365.667717" y="16.505156" transform="rotate(-0 365.667717 16.505156)">Baseline (JS): Memory Usage</text>
    </g>
    <g id="legend_1">
     <g id="text_15">
