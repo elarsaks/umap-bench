@@ -170,12 +170,12 @@ Located in: `bench/`
 
 **WASM Configurations:**
 - `none` - Pure JavaScript (baseline)
-- `dist` - Distance calculations only
-- `tree` - KD-tree operations only
-- `matrix` - Matrix operations only
-- `nn` - Nearest neighbor descent only
-- `opt` - Optimizer only
-- `all` - All WASM features enabled
+- `dist` - Configuration incorporating distance calculations
+- `tree` - Configuration incorporating KD-tree operations
+- `matrix` - Configuration incorporating matrix operations
+- `nn` - Configuration incorporating nearest neighbor descent
+- `opt` - Configuration incorporating optimizer routines
+- `all` - Fully WASM-enabled configuration
 
 **Additional Datasets** (available in interactive mode):
 - Spiral (1K points, 20D)

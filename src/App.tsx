@@ -207,7 +207,7 @@ function App() {
     ) => {
       const mod = await loadUmapModule();
       const { UMAP, isWasmAvailable } = mod;
-      // Check if WASM features are requested but WASM is not available
+      // Check if WASM configuration components are requested but WASM is not available
       const needsWasm =
         config.useWasmDistance ||
         config.useWasmTree ||
@@ -217,9 +217,9 @@ function App() {
       if (needsWasm && !isWasmAvailable()) {
         try {
           await ensureWasmReady();
-        } catch (err) {
+        } catch {
           alert(
-            "WASM initialization failed. Please disable WASM features or try again."
+            "WASM initialization failed. Please disable WASM configuration components or try again."
           );
           return;
         }

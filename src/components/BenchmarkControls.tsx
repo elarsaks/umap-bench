@@ -218,7 +218,7 @@ export const BenchmarkControls: React.FC<BenchmarkControlsProps> = ({
       </SectionContainer>
 
       <SectionContainer className="control-section">
-        <SectionTitle>WASM Optimization Features</SectionTitle>
+        <SectionTitle>WASM Optimization Configurations</SectionTitle>
         <WasmConfigSelector wasmConfig={wasmConfig} onUpdateWasmConfig={onUpdateWasmConfig} />
         {(wasmLoading || needsWasm) && !wasmReady ? (
           <div className="wasm-loading">

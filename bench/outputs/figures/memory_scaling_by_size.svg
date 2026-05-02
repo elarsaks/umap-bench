@@ -503,7 +503,7 @@ z
 " style="fill: #ff7f0e; opacity: 0.8"/>
     </g>
     <g id="text_42">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="71.495313" y="50.879531" transform="rotate(-0 71.495313 50.879531)">Distance</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="71.495313" y="50.879531" transform="rotate(-0 71.495313 50.879531)">Configuration incorporating Distance</text>
     </g>
     <g id="patch_37">
      <path d="M 46.295313 63.610313 
@@ -514,7 +514,7 @@ z
 " style="fill: #2ca02c; opacity: 0.8"/>
     </g>
     <g id="text_43">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="71.495313" y="63.610313" transform="rotate(-0 71.495313 63.610313)">Tree</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="71.495313" y="63.610313" transform="rotate(-0 71.495313 63.610313)">Configuration incorporating Tree</text>
     </g>
     <g id="patch_38">
      <path d="M 46.295313 76.341094 
@@ -525,7 +525,7 @@ z
 " style="fill: #d62728; opacity: 0.8"/>
     </g>
     <g id="text_44">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="71.495313" y="76.341094" transform="rotate(-0 71.495313 76.341094)">Matrix</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="71.495313" y="76.341094" transform="rotate(-0 71.495313 76.341094)">Configuration incorporating Matrix</text>
     </g>
     <g id="patch_39">
      <path d="M 143.014375 38.043281 
@@ -536,7 +536,7 @@ z
 " style="fill: #9467bd; opacity: 0.8"/>
     </g>
     <g id="text_45">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="168.214375" y="38.043281" transform="rotate(-0 168.214375 38.043281)">NN Descent</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="168.214375" y="38.043281" transform="rotate(-0 168.214375 38.043281)">Configuration incorporating NN Descent</text>
     </g>
     <g id="patch_40">
      <path d="M 143.014375 50.889375 
@@ -547,7 +547,7 @@ z
 " style="fill: #8c564b; opacity: 0.8"/>
     </g>
     <g id="text_46">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="168.214375" y="50.889375" transform="rotate(-0 168.214375 50.889375)">Optimizer</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="168.214375" y="50.889375" transform="rotate(-0 168.214375 50.889375)">Configuration incorporating Optimizer</text>
     </g>
     <g id="patch_41">
      <path d="M 143.014375 63.620156 
@@ -558,7 +558,7 @@ z
 " style="fill: #e377c2; opacity: 0.8"/>
     </g>
     <g id="text_47">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="168.214375" y="63.620156" transform="rotate(-0 168.214375 63.620156)">All Features</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="168.214375" y="63.620156" transform="rotate(-0 168.214375 63.620156)">Fully WASM-enabled configuration</text>
     </g>
    </g>
   </g>

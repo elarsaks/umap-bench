@@ -45,6 +45,7 @@ describe('BenchmarkResults', () => {
     expect(screen.getByText(/60.*fps/i)).toBeInTheDocument();
     expect(screen.getByText(/16.*ms/i)).toBeInTheDocument();
     expect(screen.getByText(/1000 points/i)).toBeInTheDocument();
+    expect(screen.getByText('Configuration incorporating Distance, Matrix')).toBeInTheDocument();
   });
 
   it('should display average results only with multiple results', () => {
@@ -84,5 +85,6 @@ describe('BenchmarkResults', () => {
     render(<BenchmarkResults results={[edgeCaseResult]} isRunning={false} />);
     
     expect(screen.getByText('Latest Results')).toBeInTheDocument();
+    expect(screen.getByText('Baseline (JS)')).toBeInTheDocument();
   });
 });

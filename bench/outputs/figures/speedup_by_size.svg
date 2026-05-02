@@ -969,7 +969,7 @@ z
      </g>
     </g>
     <g id="text_13">
-     <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="772.038437" y="39.549375" transform="rotate(-0 772.038437 39.549375)">Distance</text>
+     <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="772.038437" y="39.549375" transform="rotate(-0 772.038437 39.549375)">Configuration incorporating Distance</text>
     </g>
     <g id="PathCollection_8">
      <g>
@@ -977,7 +977,7 @@ z
      </g>
     </g>
     <g id="text_14">
-     <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="772.038437" y="53.694687" transform="rotate(-0 772.038437 53.694687)">Tree</text>
+     <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="772.038437" y="53.694687" transform="rotate(-0 772.038437 53.694687)">Configuration incorporating Tree</text>
     </g>
     <g id="PathCollection_9">
      <g>
@@ -985,7 +985,7 @@ z
      </g>
     </g>
     <g id="text_15">
-     <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="772.038437" y="67.84" transform="rotate(-0 772.038437 67.84)">Matrix</text>
+     <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="772.038437" y="67.84" transform="rotate(-0 772.038437 67.84)">Configuration incorporating Matrix</text>
     </g>
     <g id="PathCollection_10">
      <g>
@@ -993,7 +993,7 @@ z
      </g>
     </g>
     <g id="text_16">
-     <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="772.038437" y="81.985312" transform="rotate(-0 772.038437 81.985312)">NN Descent</text>
+     <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="772.038437" y="81.985312" transform="rotate(-0 772.038437 81.985312)">Configuration incorporating NN Descent</text>
     </g>
     <g id="PathCollection_11">
      <g>
@@ -1001,7 +1001,7 @@ z
      </g>
     </g>
     <g id="text_17">
-     <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="772.038437" y="96.25875" transform="rotate(-0 772.038437 96.25875)">Optimizer</text>
+     <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="772.038437" y="96.25875" transform="rotate(-0 772.038437 96.25875)">Configuration incorporating Optimizer</text>
     </g>
     <g id="PathCollection_12">
      <g>
@@ -1009,7 +1009,7 @@ z
      </g>
     </g>
     <g id="text_18">
-     <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="772.038437" y="110.404062" transform="rotate(-0 772.038437 110.404062)">All Features</text>
+     <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="772.038437" y="110.404062" transform="rotate(-0 772.038437 110.404062)">Fully WASM-enabled configuration</text>
     </g>
     <g id="line2d_36">
      <path d="M 744.038437 121.17125 
