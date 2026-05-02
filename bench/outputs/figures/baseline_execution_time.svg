@@ -415,7 +415,7 @@ L 694.072621 22.505156
 " style="fill: none"/>
    </g>
    <g id="text_14">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="371.781779" y="16.505156" transform="rotate(-0 371.781779 16.505156)">Baseline: Execution Time Distribution</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="371.781779" y="16.505156" transform="rotate(-0 371.781779 16.505156)">Baseline (JS): Execution Time Distribution</text>
    </g>
    <g id="legend_1">
     <g id="text_15">

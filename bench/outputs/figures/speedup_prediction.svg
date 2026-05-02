@@ -254,7 +254,7 @@ L 991.655 50.925066
      </g>
     </g>
     <g id="text_14">
-     <text style="font-weight: 700; font-size: 12px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="15.935625" y="274.021031" transform="rotate(-90 15.935625 274.021031)">Predicted Speedup vs Baseline</text>
+     <text style="font-weight: 700; font-size: 12px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="15.935625" y="274.021031" transform="rotate(-90 15.935625 274.021031)">Predicted Speedup vs Baseline (JS)</text>
     </g>
    </g>
    <g id="PathCollection_1">
@@ -1169,7 +1169,7 @@ L 882.823906 60.790781
 " style="fill: none; stroke-dasharray: 7.4,3.2; stroke-dashoffset: 0; stroke: #333333; stroke-opacity: 0.5; stroke-width: 2"/>
     </g>
     <g id="text_22">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="890.023906" y="63.940781" transform="rotate(-0 890.023906 63.940781)">Baseline (1.0x)</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="890.023906" y="63.940781" transform="rotate(-0 890.023906 63.940781)">Baseline (JS) (1.0x)</text>
     </g>
    </g>
   </g>

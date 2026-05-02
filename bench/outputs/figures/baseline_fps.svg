@@ -459,7 +459,7 @@ L 693.72559 22.505156
 " style="fill: none"/>
    </g>
    <g id="text_17">
-    <text style="font-weight: 700; font-size: 13px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="365.359748" y="16.505156" transform="rotate(-0 365.359748 16.505156)">Baseline: Frame Rate</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="365.359748" y="16.505156" transform="rotate(-0 365.359748 16.505156)">Baseline (JS): Frame Rate</text>
    </g>
    <g id="legend_1">
     <g id="text_18">
