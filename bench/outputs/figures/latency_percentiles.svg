@@ -57,7 +57,7 @@ L 159.836118 23.391562
      </g>
      <g id="line2d_4"/>
      <g id="text_2">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #ff7f0e" transform="translate(128.029461 383.249786) rotate(-45)">Distance (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #ff7f0e" transform="translate(128.029461 383.249786) rotate(-45)">Distance</text>
      </g>
     </g>
     <g id="xtick_3">
@@ -68,7 +68,7 @@ L 228.396222 23.391562
      </g>
      <g id="line2d_6"/>
      <g id="text_3">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #2ca02c" transform="translate(211.15055 368.6888) rotate(-45)">Tree (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #2ca02c" transform="translate(211.15055 368.6888) rotate(-45)">Tree</text>
      </g>
     </g>
     <g id="xtick_4">
@@ -79,7 +79,7 @@ L 296.956325 23.391562
      </g>
      <g id="line2d_8"/>
      <g id="text_4">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #d62728" transform="translate(274.237979 374.161475) rotate(-45)">Matrix (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #d62728" transform="translate(274.237979 374.161475) rotate(-45)">Matrix</text>
      </g>
     </g>
     <g id="xtick_5">
@@ -90,7 +90,7 @@ L 365.516429 23.391562
      </g>
      <g id="line2d_10"/>
      <g id="text_5">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #9467bd" transform="translate(322.042509 394.917048) rotate(-45)">NN-Descent (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #9467bd" transform="translate(322.042509 394.917048) rotate(-45)">NN-Descent</text>
      </g>
     </g>
     <g id="xtick_6">
@@ -101,7 +101,7 @@ L 434.076532 23.391562
      </g>
      <g id="line2d_12"/>
      <g id="text_6">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #8c564b" transform="translate(399.254617 386.364702) rotate(-45)">Optimizer (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #8c564b" transform="translate(399.254617 386.364702) rotate(-45)">Optimizer</text>
      </g>
     </g>
     <g id="xtick_7">
@@ -497,7 +497,7 @@ L 1135.608269 312.211381
      </g>
      <g id="line2d_43"/>
      <g id="text_41">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #2ca02c" x="626.820306" y="316.148178" transform="rotate(-0 626.820306 316.148178)">Tree (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #2ca02c" x="626.820306" y="316.148178" transform="rotate(-0 626.820306 316.148178)">Tree</text>
      </g>
     </g>
     <g id="ytick_9">
@@ -508,7 +508,7 @@ L 1135.608269 269.359776
      </g>
      <g id="line2d_45"/>
      <g id="text_42">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #8c564b" x="626.820306" y="273.367042" transform="rotate(-0 626.820306 273.367042)">Optimizer (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #8c564b" x="626.820306" y="273.367042" transform="rotate(-0 626.820306 273.367042)">Optimizer</text>
      </g>
     </g>
     <g id="ytick_10">
@@ -530,7 +530,7 @@ L 1135.608269 183.656566
      </g>
      <g id="line2d_49"/>
      <g id="text_44">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #ff7f0e" x="626.820306" y="187.593363" transform="rotate(-0 626.820306 187.593363)">Distance (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #ff7f0e" x="626.820306" y="187.593363" transform="rotate(-0 626.820306 187.593363)">Distance</text>
      </g>
     </g>
     <g id="ytick_12">
@@ -552,7 +552,7 @@ L 1135.608269 97.953355
      </g>
      <g id="line2d_53"/>
      <g id="text_46">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #d62728" x="626.820306" y="101.890152" transform="rotate(-0 626.820306 101.890152)">Matrix (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #d62728" x="626.820306" y="101.890152" transform="rotate(-0 626.820306 101.890152)">Matrix</text>
      </g>
     </g>
     <g id="ytick_14">
@@ -563,7 +563,7 @@ L 1135.608269 55.10175
      </g>
      <g id="line2d_55"/>
      <g id="text_47">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #9467bd" x="626.820306" y="59.038547" transform="rotate(-0 626.820306 59.038547)">NN-Descent (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #9467bd" x="626.820306" y="59.038547" transform="rotate(-0 626.820306 59.038547)">NN-Descent</text>
      </g>
     </g>
    </g>

@@ -139,7 +139,7 @@ L 703.515156 343.679785
      </g>
      <g id="line2d_18"/>
      <g id="text_10">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="347.687051" transform="rotate(-0 66.495156 347.687051)">Optimizer (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="347.687051" transform="rotate(-0 66.495156 347.687051)">Optimizer</text>
      </g>
     </g>
     <g id="ytick_3">
@@ -150,7 +150,7 @@ L 703.515156 275.388053
      </g>
      <g id="line2d_20"/>
      <g id="text_11">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="279.32485" transform="rotate(-0 66.495156 279.32485)">Matrix (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="279.32485" transform="rotate(-0 66.495156 279.32485)">Matrix</text>
      </g>
     </g>
     <g id="ytick_4">
@@ -161,7 +161,7 @@ L 703.515156 207.096322
      </g>
      <g id="line2d_22"/>
      <g id="text_12">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="211.033118" transform="rotate(-0 66.495156 211.033118)">Tree (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="211.033118" transform="rotate(-0 66.495156 211.033118)">Tree</text>
      </g>
     </g>
     <g id="ytick_5">
@@ -172,7 +172,7 @@ L 703.515156 138.80459
      </g>
      <g id="line2d_24"/>
      <g id="text_13">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="142.741386" transform="rotate(-0 66.495156 142.741386)">Distance (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="142.741386" transform="rotate(-0 66.495156 142.741386)">Distance</text>
      </g>
     </g>
     <g id="ytick_6">
@@ -183,7 +183,7 @@ L 703.515156 70.512858
      </g>
      <g id="line2d_26"/>
      <g id="text_14">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="74.449654" transform="rotate(-0 66.495156 74.449654)">NN-Descent (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="74.449654" transform="rotate(-0 66.495156 74.449654)">NN-Descent</text>
      </g>
     </g>
    </g>
