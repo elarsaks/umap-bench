@@ -11,7 +11,7 @@ Minimal Vite + React + TypeScript benchmark app for experimenting with [umap-was
 - **Dataset Selection** - Choose from various pre-configured datasets or generate custom synthetic data
 - **UMAP Configuration** - Adjust n_neighbors, min_dist, n_components, spread, and learning rate parameters
 - **Release Selection** - Select different umap-wasm releases directly from the UI to compare performance
-- **Performance Metrics** - Track runtime, memory usage, embedding quality, FPS, and responsiveness
+- **Performance Metrics** - Track execution time, memory usage, embedding quality, FPS, and responsiveness
 - **Visualization** - Interactive 3D visualization of UMAP embeddings using Plotly
 
 ## Quick start

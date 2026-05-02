@@ -41,7 +41,7 @@ export interface BenchmarkMetric {
   dimensions: number;
   wasmFeatures: string;
   renderingEnabled: boolean;
-  runtimeMs: number;
+  executionTimeMs: number;
   memoryDeltaMb: number;
   trustworthiness: number;
   fpsAvg: number;

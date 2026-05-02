@@ -50,8 +50,8 @@ export const BenchmarkResults: React.FC<BenchmarkResultsProps> = ({
           <h4>Latest Results</h4>
           <div className="metrics-grid">
             <div className="metric-card">
-              <div className="metric-label">Runtime</div>
-              <div className="metric-value">{latest.runtime.toFixed(2)} ms</div>
+              <div className="metric-label">Execution Time</div>
+              <div className="metric-value">{latest.executionTime.toFixed(2)} ms</div>
             </div>
             <div className="metric-card">
               <div className="metric-label">Memory Usage</div>
@@ -91,9 +91,9 @@ export const BenchmarkResults: React.FC<BenchmarkResultsProps> = ({
           <h4>Average Results ({results.length} runs)</h4>
           <div className="metrics-grid">
             <div className="metric-card">
-              <div className="metric-label">Runtime</div>
+              <div className="metric-label">Execution Time</div>
               <div className="metric-value">
-                {average.runtime.toFixed(2)} ms
+                {average.executionTime.toFixed(2)} ms
               </div>
             </div>
             <div className="metric-card">
@@ -131,7 +131,7 @@ export const BenchmarkResults: React.FC<BenchmarkResultsProps> = ({
             <thead>
               <tr>
                 <th>Run</th>
-                <th>Runtime (ms)</th>
+                <th>Execution Time (ms)</th>
                 <th>Memory (MB)</th>
                 <th>Quality (%)</th>
                 <th>FPS</th>
@@ -144,7 +144,7 @@ export const BenchmarkResults: React.FC<BenchmarkResultsProps> = ({
               {results.map((result, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
-                  <td>{result.runtime.toFixed(2)}</td>
+                  <td>{result.executionTime.toFixed(2)}</td>
                   <td>{result.memoryUsage.toFixed(2)}</td>
                   <td>{(result.embeddingQuality * 100).toFixed(1)}</td>
                   <td>{result.visualizationFPS.toFixed(1)}</td>
@@ -166,7 +166,7 @@ export const BenchmarkResults: React.FC<BenchmarkResultsProps> = ({
 function calculateAverages(results: BenchmarkResult[]): BenchmarkResult {
   if (results.length === 0) {
     return {
-      runtime: 0,
+      executionTime: 0,
       memoryUsage: 0,
       embeddingQuality: 0,
       visualizationFPS: 0,
@@ -186,7 +186,7 @@ function calculateAverages(results: BenchmarkResult[]): BenchmarkResult {
 
   const totals = results.reduce(
     (acc, result) => ({
-      runtime: acc.runtime + result.runtime,
+      executionTime: acc.executionTime + result.executionTime,
       memoryUsage: acc.memoryUsage + result.memoryUsage,
       embeddingQuality: acc.embeddingQuality + result.embeddingQuality,
       visualizationFPS: acc.visualizationFPS + result.visualizationFPS,
@@ -195,7 +195,7 @@ function calculateAverages(results: BenchmarkResult[]): BenchmarkResult {
       dimensions: acc.dimensions + result.dimensions,
     }),
     {
-      runtime: 0,
+      executionTime: 0,
       memoryUsage: 0,
       embeddingQuality: 0,
       visualizationFPS: 0,
@@ -207,7 +207,7 @@ function calculateAverages(results: BenchmarkResult[]): BenchmarkResult {
 
   const count = results.length;
   return {
-    runtime: totals.runtime / count,
+    executionTime: totals.executionTime / count,
     memoryUsage: totals.memoryUsage / count,
     embeddingQuality: totals.embeddingQuality / count,
     visualizationFPS: totals.visualizationFPS / count,

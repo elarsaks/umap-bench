@@ -352,7 +352,7 @@ function App() {
         );
 
         // Calculate metrics
-        const runtime = metrics.end - metrics.start;
+        const executionTime = metrics.end - metrics.start;
         const memoryUsage = metrics.memoryAfter - metrics.memoryBefore;
         const responsiveness = PerformanceMonitor.getAverageEventLatency(
           metrics.eventLatencies
@@ -360,7 +360,7 @@ function App() {
 
         // Create result
         const result: BenchmarkResult = {
-          runtime,
+          executionTime,
           memoryUsage,
           embeddingQuality: trustworthiness,
           visualizationFPS,
@@ -389,7 +389,7 @@ function App() {
           dimensions: datasetConfig.dimensions,
           wasmFeatures,
           renderingEnabled,
-          runtimeMs: runtime,
+          executionTimeMs: executionTime,
           memoryDeltaMb: memoryUsage,
           trustworthiness,
           fpsAvg: visualizationFPS,

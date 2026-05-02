@@ -6,7 +6,7 @@ import type { BenchmarkResult } from '@/types/benchmark';
 
 describe('BenchmarkResults', () => {
   const mockResult: BenchmarkResult = {
-    runtime: 1500,
+    executionTime: 1500,
     memoryUsage: 256,
     embeddingQuality: 0.85,
     visualizationFPS: 60,
@@ -52,9 +52,9 @@ describe('BenchmarkResults', () => {
     expect(screen.queryByText(/average results/i)).not.toBeInTheDocument();
 
     const multipleResults = [
-      { ...mockResult, runtime: 1000 },
-      { ...mockResult, runtime: 1500 },
-      { ...mockResult, runtime: 2000 },
+      { ...mockResult, executionTime: 1000 },
+      { ...mockResult, executionTime: 1500 },
+      { ...mockResult, executionTime: 2000 },
     ];
     rerender(<BenchmarkResults results={multipleResults} isRunning={false} />);
     
@@ -64,7 +64,7 @@ describe('BenchmarkResults', () => {
 
   it('should handle edge case values gracefully', () => {
     const edgeCaseResult: BenchmarkResult = {
-      runtime: 0,
+      executionTime: 0,
       memoryUsage: 9999.123,
       embeddingQuality: 0,
       visualizationFPS: 999999,
