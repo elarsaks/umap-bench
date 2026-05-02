@@ -57,7 +57,7 @@ L 108.718992 22.663594
      </g>
      <g id="line2d_4"/>
      <g id="text_2">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #ff7f0e" transform="translate(95.599399 389.181817) rotate(-45)">Configuration incorporating Distance</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #ff7f0e" transform="translate(95.599399 389.181817) rotate(-45)">Distance (WASM)</text>
      </g>
     </g>
     <g id="xtick_3">
@@ -68,7 +68,7 @@ L 157.809883 22.663594
      </g>
      <g id="line2d_6"/>
      <g id="text_3">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #2ca02c" transform="translate(151.970783 374.620831) rotate(-45)">Configuration incorporating Tree</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #2ca02c" transform="translate(151.970783 374.620831) rotate(-45)">Tree (WASM)</text>
      </g>
     </g>
     <g id="xtick_4">
@@ -79,7 +79,7 @@ L 206.900774 22.663594
      </g>
      <g id="line2d_8"/>
      <g id="text_4">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #d62728" transform="translate(198.325336 380.093506) rotate(-45)">Configuration incorporating Matrix</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #d62728" transform="translate(198.325336 380.093506) rotate(-45)">Matrix (WASM)</text>
      </g>
     </g>
     <g id="xtick_5">
@@ -90,7 +90,7 @@ L 255.991665 22.663594
      </g>
      <g id="line2d_10"/>
      <g id="text_5">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #9467bd" transform="translate(237.038441 400.849079) rotate(-45)">Configuration incorporating NN Descent</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #9467bd" transform="translate(237.038441 400.849079) rotate(-45)">NN-Descent (WASM)</text>
      </g>
     </g>
     <g id="xtick_6">
@@ -101,7 +101,7 @@ L 305.082555 22.663594
      </g>
      <g id="line2d_12"/>
      <g id="text_6">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #8c564b" transform="translate(290.505162 392.296733) rotate(-45)">Configuration incorporating Optimizer</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #8c564b" transform="translate(290.505162 392.296733) rotate(-45)">Optimizer (WASM)</text>
      </g>
     </g>
     <g id="xtick_7">
@@ -112,7 +112,7 @@ L 354.173446 22.663594
      </g>
      <g id="line2d_14"/>
      <g id="text_7">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #e377c2" transform="translate(335.435337 400.418849) rotate(-45)">Fully WASM-enabled configuration</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #e377c2" transform="translate(335.435337 400.418849) rotate(-45)">All WASM</text>
      </g>
     </g>
     <g id="text_8">
@@ -381,7 +381,7 @@ L 585.748992 22.663594
      </g>
      <g id="line2d_24"/>
      <g id="text_36">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #ff7f0e" transform="translate(572.629399 389.181817) rotate(-45)">Configuration incorporating Distance</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #ff7f0e" transform="translate(572.629399 389.181817) rotate(-45)">Distance (WASM)</text>
      </g>
     </g>
     <g id="xtick_10">
@@ -392,7 +392,7 @@ L 634.839883 22.663594
      </g>
      <g id="line2d_26"/>
      <g id="text_37">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #2ca02c" transform="translate(629.000783 374.620831) rotate(-45)">Configuration incorporating Tree</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #2ca02c" transform="translate(629.000783 374.620831) rotate(-45)">Tree (WASM)</text>
      </g>
     </g>
     <g id="xtick_11">
@@ -403,7 +403,7 @@ L 683.930774 22.663594
      </g>
      <g id="line2d_28"/>
      <g id="text_38">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #d62728" transform="translate(675.355336 380.093506) rotate(-45)">Configuration incorporating Matrix</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #d62728" transform="translate(675.355336 380.093506) rotate(-45)">Matrix (WASM)</text>
      </g>
     </g>
     <g id="xtick_12">
@@ -414,7 +414,7 @@ L 733.021665 22.663594
      </g>
      <g id="line2d_30"/>
      <g id="text_39">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #9467bd" transform="translate(714.068441 400.849079) rotate(-45)">Configuration incorporating NN Descent</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #9467bd" transform="translate(714.068441 400.849079) rotate(-45)">NN-Descent (WASM)</text>
      </g>
     </g>
     <g id="xtick_13">
@@ -425,7 +425,7 @@ L 782.112555 22.663594
      </g>
      <g id="line2d_32"/>
      <g id="text_40">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #8c564b" transform="translate(767.535162 392.296733) rotate(-45)">Configuration incorporating Optimizer</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #8c564b" transform="translate(767.535162 392.296733) rotate(-45)">Optimizer (WASM)</text>
      </g>
     </g>
     <g id="xtick_14">
@@ -436,7 +436,7 @@ L 831.203446 22.663594
      </g>
      <g id="line2d_34"/>
      <g id="text_41">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #e377c2" transform="translate(812.465337 400.418849) rotate(-45)">Fully WASM-enabled configuration</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #e377c2" transform="translate(812.465337 400.418849) rotate(-45)">All WASM</text>
      </g>
     </g>
     <g id="text_42">
@@ -705,7 +705,7 @@ L 1062.778992 22.663594
      </g>
      <g id="line2d_44"/>
      <g id="text_70">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #ff7f0e" transform="translate(1049.659399 389.181817) rotate(-45)">Configuration incorporating Distance</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #ff7f0e" transform="translate(1049.659399 389.181817) rotate(-45)">Distance (WASM)</text>
      </g>
     </g>
     <g id="xtick_17">
@@ -716,7 +716,7 @@ L 1111.869883 22.663594
      </g>
      <g id="line2d_46"/>
      <g id="text_71">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #2ca02c" transform="translate(1106.030783 374.620831) rotate(-45)">Configuration incorporating Tree</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #2ca02c" transform="translate(1106.030783 374.620831) rotate(-45)">Tree (WASM)</text>
      </g>
     </g>
     <g id="xtick_18">
@@ -727,7 +727,7 @@ L 1160.960774 22.663594
      </g>
      <g id="line2d_48"/>
      <g id="text_72">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #d62728" transform="translate(1152.385336 380.093506) rotate(-45)">Configuration incorporating Matrix</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #d62728" transform="translate(1152.385336 380.093506) rotate(-45)">Matrix (WASM)</text>
      </g>
     </g>
     <g id="xtick_19">
@@ -738,7 +738,7 @@ L 1210.051665 22.663594
      </g>
      <g id="line2d_50"/>
      <g id="text_73">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #9467bd" transform="translate(1191.098441 400.849079) rotate(-45)">Configuration incorporating NN Descent</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #9467bd" transform="translate(1191.098441 400.849079) rotate(-45)">NN-Descent (WASM)</text>
      </g>
     </g>
     <g id="xtick_20">
@@ -749,7 +749,7 @@ L 1259.142555 22.663594
      </g>
      <g id="line2d_52"/>
      <g id="text_74">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #8c564b" transform="translate(1244.565162 392.296733) rotate(-45)">Configuration incorporating Optimizer</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #8c564b" transform="translate(1244.565162 392.296733) rotate(-45)">Optimizer (WASM)</text>
      </g>
     </g>
     <g id="xtick_21">
@@ -760,7 +760,7 @@ L 1308.233446 22.663594
      </g>
      <g id="line2d_54"/>
      <g id="text_75">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #e377c2" transform="translate(1289.495337 400.418849) rotate(-45)">Fully WASM-enabled configuration</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #e377c2" transform="translate(1289.495337 400.418849) rotate(-45)">All WASM</text>
      </g>
     </g>
     <g id="text_76">
@@ -1029,7 +1029,7 @@ L 108.718992 448.723594
      </g>
      <g id="line2d_64"/>
      <g id="text_104">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #ff7f0e" transform="translate(95.599399 815.241817) rotate(-45)">Configuration incorporating Distance</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #ff7f0e" transform="translate(95.599399 815.241817) rotate(-45)">Distance (WASM)</text>
      </g>
     </g>
     <g id="xtick_24">
@@ -1040,7 +1040,7 @@ L 157.809883 448.723594
      </g>
      <g id="line2d_66"/>
      <g id="text_105">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #2ca02c" transform="translate(151.970783 800.680831) rotate(-45)">Configuration incorporating Tree</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #2ca02c" transform="translate(151.970783 800.680831) rotate(-45)">Tree (WASM)</text>
      </g>
     </g>
     <g id="xtick_25">
@@ -1051,7 +1051,7 @@ L 206.900774 448.723594
      </g>
      <g id="line2d_68"/>
      <g id="text_106">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #d62728" transform="translate(198.325336 806.153506) rotate(-45)">Configuration incorporating Matrix</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #d62728" transform="translate(198.325336 806.153506) rotate(-45)">Matrix (WASM)</text>
      </g>
     </g>
     <g id="xtick_26">
@@ -1062,7 +1062,7 @@ L 255.991665 448.723594
      </g>
      <g id="line2d_70"/>
      <g id="text_107">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #9467bd" transform="translate(237.038441 826.909079) rotate(-45)">Configuration incorporating NN Descent</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #9467bd" transform="translate(237.038441 826.909079) rotate(-45)">NN-Descent (WASM)</text>
      </g>
     </g>
     <g id="xtick_27">
@@ -1073,7 +1073,7 @@ L 305.082555 448.723594
      </g>
      <g id="line2d_72"/>
      <g id="text_108">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #8c564b" transform="translate(290.505162 818.356733) rotate(-45)">Configuration incorporating Optimizer</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #8c564b" transform="translate(290.505162 818.356733) rotate(-45)">Optimizer (WASM)</text>
      </g>
     </g>
     <g id="xtick_28">
@@ -1084,7 +1084,7 @@ L 354.173446 448.723594
      </g>
      <g id="line2d_74"/>
      <g id="text_109">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #e377c2" transform="translate(335.435337 826.478849) rotate(-45)">Fully WASM-enabled configuration</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #e377c2" transform="translate(335.435337 826.478849) rotate(-45)">All WASM</text>
      </g>
     </g>
     <g id="text_110">
@@ -1353,7 +1353,7 @@ L 585.748992 448.723594
      </g>
      <g id="line2d_84"/>
      <g id="text_138">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #ff7f0e" transform="translate(572.629399 815.241817) rotate(-45)">Configuration incorporating Distance</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #ff7f0e" transform="translate(572.629399 815.241817) rotate(-45)">Distance (WASM)</text>
      </g>
     </g>
     <g id="xtick_31">
@@ -1364,7 +1364,7 @@ L 634.839883 448.723594
      </g>
      <g id="line2d_86"/>
      <g id="text_139">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #2ca02c" transform="translate(629.000783 800.680831) rotate(-45)">Configuration incorporating Tree</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #2ca02c" transform="translate(629.000783 800.680831) rotate(-45)">Tree (WASM)</text>
      </g>
     </g>
     <g id="xtick_32">
@@ -1375,7 +1375,7 @@ L 683.930774 448.723594
      </g>
      <g id="line2d_88"/>
      <g id="text_140">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #d62728" transform="translate(675.355336 806.153506) rotate(-45)">Configuration incorporating Matrix</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #d62728" transform="translate(675.355336 806.153506) rotate(-45)">Matrix (WASM)</text>
      </g>
     </g>
     <g id="xtick_33">
@@ -1386,7 +1386,7 @@ L 733.021665 448.723594
      </g>
      <g id="line2d_90"/>
      <g id="text_141">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #9467bd" transform="translate(714.068441 826.909079) rotate(-45)">Configuration incorporating NN Descent</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #9467bd" transform="translate(714.068441 826.909079) rotate(-45)">NN-Descent (WASM)</text>
      </g>
     </g>
     <g id="xtick_34">
@@ -1397,7 +1397,7 @@ L 782.112555 448.723594
      </g>
      <g id="line2d_92"/>
      <g id="text_142">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #8c564b" transform="translate(767.535162 818.356733) rotate(-45)">Configuration incorporating Optimizer</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #8c564b" transform="translate(767.535162 818.356733) rotate(-45)">Optimizer (WASM)</text>
      </g>
     </g>
     <g id="xtick_35">
@@ -1408,7 +1408,7 @@ L 831.203446 448.723594
      </g>
      <g id="line2d_94"/>
      <g id="text_143">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #e377c2" transform="translate(812.465337 826.478849) rotate(-45)">Fully WASM-enabled configuration</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #e377c2" transform="translate(812.465337 826.478849) rotate(-45)">All WASM</text>
      </g>
     </g>
     <g id="text_144">
@@ -1677,7 +1677,7 @@ L 1062.778992 448.723594
      </g>
      <g id="line2d_104"/>
      <g id="text_172">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #ff7f0e" transform="translate(1049.659399 815.241817) rotate(-45)">Configuration incorporating Distance</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #ff7f0e" transform="translate(1049.659399 815.241817) rotate(-45)">Distance (WASM)</text>
      </g>
     </g>
     <g id="xtick_38">
@@ -1688,7 +1688,7 @@ L 1111.869883 448.723594
      </g>
      <g id="line2d_106"/>
      <g id="text_173">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #2ca02c" transform="translate(1106.030783 800.680831) rotate(-45)">Configuration incorporating Tree</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #2ca02c" transform="translate(1106.030783 800.680831) rotate(-45)">Tree (WASM)</text>
      </g>
     </g>
     <g id="xtick_39">
@@ -1699,7 +1699,7 @@ L 1160.960774 448.723594
      </g>
      <g id="line2d_108"/>
      <g id="text_174">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #d62728" transform="translate(1152.385336 806.153506) rotate(-45)">Configuration incorporating Matrix</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #d62728" transform="translate(1152.385336 806.153506) rotate(-45)">Matrix (WASM)</text>
      </g>
     </g>
     <g id="xtick_40">
@@ -1710,7 +1710,7 @@ L 1210.051665 448.723594
      </g>
      <g id="line2d_110"/>
      <g id="text_175">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #9467bd" transform="translate(1191.098441 826.909079) rotate(-45)">Configuration incorporating NN Descent</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #9467bd" transform="translate(1191.098441 826.909079) rotate(-45)">NN-Descent (WASM)</text>
      </g>
     </g>
     <g id="xtick_41">
@@ -1721,7 +1721,7 @@ L 1259.142555 448.723594
      </g>
      <g id="line2d_112"/>
      <g id="text_176">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #8c564b" transform="translate(1244.565162 818.356733) rotate(-45)">Configuration incorporating Optimizer</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #8c564b" transform="translate(1244.565162 818.356733) rotate(-45)">Optimizer (WASM)</text>
      </g>
     </g>
     <g id="xtick_42">
@@ -1732,7 +1732,7 @@ L 1308.233446 448.723594
      </g>
      <g id="line2d_114"/>
      <g id="text_177">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #e377c2" transform="translate(1289.495337 826.478849) rotate(-45)">Fully WASM-enabled configuration</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #e377c2" transform="translate(1289.495337 826.478849) rotate(-45)">All WASM</text>
      </g>
     </g>
     <g id="text_178">

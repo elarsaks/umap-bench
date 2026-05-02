@@ -1577,7 +1577,7 @@ L 991.298987 23.391563
      </g>
     </g>
     <g id="text_12">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="76.53125" y="50.989219" transform="rotate(-0 76.53125 50.989219)">Configuration incorporating Distance (observed)</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="76.53125" y="50.989219" transform="rotate(-0 76.53125 50.989219)">Distance (WASM) (observed)</text>
     </g>
     <g id="PathCollection_17">
      <g>
@@ -1585,7 +1585,7 @@ L 991.298987 23.391563
      </g>
     </g>
     <g id="text_13">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="76.53125" y="63.935156" transform="rotate(-0 76.53125 63.935156)">Configuration incorporating Tree (observed)</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="76.53125" y="63.935156" transform="rotate(-0 76.53125 63.935156)">Tree (WASM) (observed)</text>
     </g>
     <g id="PathCollection_18">
      <g>
@@ -1593,7 +1593,7 @@ L 991.298987 23.391563
      </g>
     </g>
     <g id="text_14">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="76.53125" y="76.881094" transform="rotate(-0 76.53125 76.881094)">Configuration incorporating Matrix (observed)</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="76.53125" y="76.881094" transform="rotate(-0 76.53125 76.881094)">Matrix (WASM) (observed)</text>
     </g>
     <g id="PathCollection_19">
      <g>
@@ -1601,7 +1601,7 @@ L 991.298987 23.391563
      </g>
     </g>
     <g id="text_15">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="218.765" y="38.043281" transform="rotate(-0 218.765 38.043281)">Configuration incorporating NN Descent (observed)</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="218.765" y="38.043281" transform="rotate(-0 218.765 38.043281)">NN-Descent (WASM) (observed)</text>
     </g>
     <g id="PathCollection_20">
      <g>
@@ -1609,7 +1609,7 @@ L 991.298987 23.391563
      </g>
     </g>
     <g id="text_16">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="218.765" y="50.994844" transform="rotate(-0 218.765 50.994844)">Configuration incorporating Optimizer (observed)</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="218.765" y="50.994844" transform="rotate(-0 218.765 50.994844)">Optimizer (WASM) (observed)</text>
     </g>
     <g id="PathCollection_21">
      <g>
@@ -1617,7 +1617,7 @@ L 991.298987 23.391563
      </g>
     </g>
     <g id="text_17">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="218.765" y="63.940781" transform="rotate(-0 218.765 63.940781)">Fully WASM-enabled configuration (observed)</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="218.765" y="63.940781" transform="rotate(-0 218.765 63.940781)">All WASM (observed)</text>
     </g>
    </g>
   </g>
