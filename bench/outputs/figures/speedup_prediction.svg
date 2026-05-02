@@ -1120,7 +1120,7 @@ L 991.655 23.391563
      </g>
     </g>
     <g id="text_16">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="752.795" y="38.048906" transform="rotate(-0 752.795 38.048906)">Distance (WASM) (observed)</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="752.795" y="38.048906" transform="rotate(-0 752.795 38.048906)">Distance (observed)</text>
     </g>
     <g id="PathCollection_14">
      <g>
@@ -1128,7 +1128,7 @@ L 991.655 23.391563
      </g>
     </g>
     <g id="text_17">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="752.795" y="50.994844" transform="rotate(-0 752.795 50.994844)">Tree (WASM) (observed)</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="752.795" y="50.994844" transform="rotate(-0 752.795 50.994844)">Tree (observed)</text>
     </g>
     <g id="PathCollection_15">
      <g>
@@ -1136,7 +1136,7 @@ L 991.655 23.391563
      </g>
     </g>
     <g id="text_18">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="752.795" y="63.940781" transform="rotate(-0 752.795 63.940781)">Matrix (WASM) (observed)</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="752.795" y="63.940781" transform="rotate(-0 752.795 63.940781)">Matrix (observed)</text>
     </g>
     <g id="PathCollection_16">
      <g>
@@ -1144,7 +1144,7 @@ L 991.655 23.391563
      </g>
     </g>
     <g id="text_19">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="752.795" y="76.886719" transform="rotate(-0 752.795 76.886719)">NN-Descent (WASM) (observed)</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="752.795" y="76.886719" transform="rotate(-0 752.795 76.886719)">NN-Descent (observed)</text>
     </g>
     <g id="PathCollection_17">
      <g>
@@ -1152,7 +1152,7 @@ L 991.655 23.391563
      </g>
     </g>
     <g id="text_20">
-     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="890.023906" y="38.048906" transform="rotate(-0 890.023906 38.048906)">Optimizer (WASM) (observed)</text>
+     <text style="font-size: 9px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="890.023906" y="38.048906" transform="rotate(-0 890.023906 38.048906)">Optimizer (observed)</text>
     </g>
     <g id="PathCollection_18">
      <g>

@@ -47,31 +47,31 @@ z
     <g id="xtick_2">
      <g id="line2d_2"/>
      <g id="text_2">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #262626" transform="translate(203.621389 383.249786) rotate(-45)">Distance (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #262626" transform="translate(203.621389 383.249786) rotate(-45)">Distance</text>
      </g>
     </g>
     <g id="xtick_3">
      <g id="line2d_3"/>
      <g id="text_3">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #262626" transform="translate(325.649204 368.6888) rotate(-45)">Tree (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #262626" transform="translate(325.649204 368.6888) rotate(-45)">Tree</text>
      </g>
     </g>
     <g id="xtick_4">
      <g id="line2d_4"/>
      <g id="text_4">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #262626" transform="translate(437.660188 374.161475) rotate(-45)">Matrix (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #262626" transform="translate(437.660188 374.161475) rotate(-45)">Matrix</text>
      </g>
     </g>
     <g id="xtick_5">
      <g id="line2d_5"/>
      <g id="text_5">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #262626" transform="translate(542.029723 394.917048) rotate(-45)">NN-Descent (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #262626" transform="translate(542.029723 394.917048) rotate(-45)">NN-Descent</text>
      </g>
     </g>
     <g id="xtick_6">
      <g id="line2d_6"/>
      <g id="text_6">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #262626" transform="translate(661.152875 386.364702) rotate(-45)">Optimizer (WASM)</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; fill: #262626" transform="translate(661.152875 386.364702) rotate(-45)">Optimizer</text>
      </g>
     </g>
     <g id="xtick_7">
