@@ -139,7 +139,7 @@ L 703.515156 347.758351
      </g>
      <g id="line2d_18"/>
      <g id="text_10">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="351.695148" transform="rotate(-0 66.495156 351.695148)">All Features</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="351.695148" transform="rotate(-0 66.495156 351.695148)">Fully WASM-enabled configuration</text>
      </g>
     </g>
     <g id="ytick_2">
@@ -150,7 +150,7 @@ L 703.515156 290.751886
      </g>
      <g id="line2d_20"/>
      <g id="text_11">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="294.759151" transform="rotate(-0 66.495156 294.759151)">Optimizer</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="294.759151" transform="rotate(-0 66.495156 294.759151)">Configuration incorporating Optimizer</text>
      </g>
     </g>
     <g id="ytick_3">
@@ -161,7 +161,7 @@ L 703.515156 233.74542
      </g>
      <g id="line2d_22"/>
      <g id="text_12">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="237.682217" transform="rotate(-0 66.495156 237.682217)">Matrix</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="237.682217" transform="rotate(-0 66.495156 237.682217)">Configuration incorporating Matrix</text>
      </g>
     </g>
     <g id="ytick_4">
@@ -172,7 +172,7 @@ L 703.515156 176.738955
      </g>
      <g id="line2d_24"/>
      <g id="text_13">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="180.675752" transform="rotate(-0 66.495156 180.675752)">Tree</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="180.675752" transform="rotate(-0 66.495156 180.675752)">Configuration incorporating Tree</text>
      </g>
     </g>
     <g id="ytick_5">
@@ -183,7 +183,7 @@ L 703.515156 119.732489
      </g>
      <g id="line2d_26"/>
      <g id="text_14">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="123.669286" transform="rotate(-0 66.495156 123.669286)">Distance</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="123.669286" transform="rotate(-0 66.495156 123.669286)">Configuration incorporating Distance</text>
      </g>
     </g>
     <g id="ytick_6">
@@ -194,7 +194,7 @@ L 703.515156 62.726024
      </g>
      <g id="line2d_28"/>
      <g id="text_15">
-      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="66.662821" transform="rotate(-0 66.495156 66.662821)">NN Descent</text>
+      <text style="font-size: 11px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="66.495156" y="66.662821" transform="rotate(-0 66.495156 66.662821)">Configuration incorporating NN Descent</text>
      </g>
     </g>
    </g>
@@ -368,7 +368,7 @@ z
     <text style="font-weight: 700; font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="413.130326" y="65.318211" transform="rotate(-0 413.130326 65.318211)">0.99x</text>
    </g>
    <g id="text_22">
-    <text style="font-weight: 700; font-size: 14px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="386.755156" y="17.391562" transform="rotate(-0 386.755156 17.391562)">Median Speedup by WASM Feature</text>
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="386.755156" y="17.391562" transform="rotate(-0 386.755156 17.391562)">Median Speedup by WASM Configuration</text>
    </g>
    <g id="legend_1">
     <g id="line2d_30">

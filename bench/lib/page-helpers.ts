@@ -239,7 +239,7 @@ export const setBenchContext = async (page: Page, scope: string) =>
     window.__BENCH_PROGRESS__ = null;
   }, scope);
 
-/** Check if any WASM features are enabled */
+/** Check if any WASM configuration components are enabled */
 export const needsWasm = (selection: Record<string, boolean>) =>
   Object.values(selection).some(Boolean);
 

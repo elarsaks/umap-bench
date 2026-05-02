@@ -110,7 +110,7 @@ L 810.451875 82.358682
      </g>
      <g id="line2d_12"/>
      <g id="text_7">
-      <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="81.926875" y="85.937589" transform="rotate(-0 81.926875 85.937589)">Distance</text>
+      <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="81.926875" y="85.937589" transform="rotate(-0 81.926875 85.937589)">Configuration incorporating Distance</text>
      </g>
     </g>
     <g id="ytick_3">
@@ -121,7 +121,7 @@ L 810.451875 121.670096
      </g>
      <g id="line2d_14"/>
      <g id="text_8">
-      <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="81.926875" y="125.249002" transform="rotate(-0 81.926875 125.249002)">Tree</text>
+      <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="81.926875" y="125.249002" transform="rotate(-0 81.926875 125.249002)">Configuration incorporating Tree</text>
      </g>
     </g>
     <g id="ytick_4">
@@ -132,7 +132,7 @@ L 810.451875 160.981509
      </g>
      <g id="line2d_16"/>
      <g id="text_9">
-      <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="81.926875" y="164.560415" transform="rotate(-0 81.926875 164.560415)">Matrix</text>
+      <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="81.926875" y="164.560415" transform="rotate(-0 81.926875 164.560415)">Configuration incorporating Matrix</text>
      </g>
     </g>
     <g id="ytick_5">
@@ -143,7 +143,7 @@ L 810.451875 200.292922
      </g>
      <g id="line2d_18"/>
      <g id="text_10">
-      <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="81.926875" y="203.871828" transform="rotate(-0 81.926875 203.871828)">NN Descent</text>
+      <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="81.926875" y="203.871828" transform="rotate(-0 81.926875 203.871828)">Configuration incorporating NN Descent</text>
      </g>
     </g>
     <g id="ytick_6">
@@ -154,7 +154,7 @@ L 810.451875 239.604335
      </g>
      <g id="line2d_20"/>
      <g id="text_11">
-      <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="81.926875" y="243.247304" transform="rotate(-0 81.926875 243.247304)">Optimizer</text>
+      <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="81.926875" y="243.247304" transform="rotate(-0 81.926875 243.247304)">Configuration incorporating Optimizer</text>
      </g>
     </g>
     <g id="ytick_7">
@@ -165,11 +165,11 @@ L 810.451875 278.915749
      </g>
      <g id="line2d_22"/>
      <g id="text_12">
-      <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="81.926875" y="282.494655" transform="rotate(-0 81.926875 282.494655)">All Features</text>
+      <text style="font-size: 10px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: end; fill: #262626" x="81.926875" y="282.494655" transform="rotate(-0 81.926875 282.494655)">Fully WASM-enabled configuration</text>
      </g>
     </g>
     <g id="text_13">
-     <text style="font-weight: 700; font-size: 12px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="15.935625" y="160.981509" transform="rotate(-90 15.935625 160.981509)">Feature Configuration</text>
+     <text style="font-weight: 700; font-size: 12px; font-family: 'Arial', 'Liberation Sans', 'DejaVu Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: middle; fill: #262626" x="15.935625" y="160.981509" transform="rotate(-90 15.935625 160.981509)">Configuration</text>
     </g>
    </g>
    <g id="patch_3">

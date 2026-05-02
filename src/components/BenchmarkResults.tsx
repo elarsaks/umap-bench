@@ -7,13 +7,16 @@ interface BenchmarkResultsProps {
 }
 
 function formatWasmConfig(config: WasmConfig): string {
-  const enabled: string[] = [];
-  if (config.useWasmDistance) enabled.push("Dist");
-  if (config.useWasmTree) enabled.push("Tree");
-  if (config.useWasmMatrix) enabled.push("Matrix");
-  if (config.useWasmNNDescent) enabled.push("NN");
-  if (config.useWasmOptimizer) enabled.push("Opt");
-  return enabled.length > 0 ? enabled.join(", ") : "None";
+  const enabledComponents: string[] = [];
+  if (config.useWasmDistance) enabledComponents.push("Distance");
+  if (config.useWasmTree) enabledComponents.push("Tree");
+  if (config.useWasmMatrix) enabledComponents.push("Matrix");
+  if (config.useWasmNNDescent) enabledComponents.push("NN Descent");
+  if (config.useWasmOptimizer) enabledComponents.push("Optimizer");
+
+  if (enabledComponents.length === 0) return "Baseline (JS)";
+  if (enabledComponents.length === 5) return "Fully WASM-enabled configuration";
+  return `Configuration incorporating ${enabledComponents.join(", ")}`;
 }
 
 export const BenchmarkResults: React.FC<BenchmarkResultsProps> = ({
@@ -136,7 +139,7 @@ export const BenchmarkResults: React.FC<BenchmarkResultsProps> = ({
                 <th>Quality (%)</th>
                 <th>FPS</th>
                 <th>Latency (ms)</th>
-                <th>WASM Features</th>
+                <th>WASM Configuration</th>
                 <th>Dataset</th>
               </tr>
             </thead>

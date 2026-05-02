@@ -17,7 +17,7 @@ export interface BenchmarkExportRow {
   datasetName: string;
   datasetSize: number;
   dimensions: number;
-  /** "none" for JS, or comma-separated features like "Dist,Tree,Matrix,NN,Opt" */
+  /** "none" for JS, or comma-separated WASM configuration components like "Dist,Tree,Matrix,NN,Opt" */
   wasmFeatures: string;
   renderingEnabled: boolean;
   executionTimeMs: number;
