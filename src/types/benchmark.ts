@@ -1,5 +1,5 @@
 export interface BenchmarkResult {
-  runtime: number;
+  executionTime: number;
   memoryUsage: number;
   embeddingQuality: number;
   visualizationFPS: number;
@@ -20,7 +20,7 @@ export interface BenchmarkExportRow {
   /** "none" for JS, or comma-separated features like "Dist,Tree,Matrix,NN,Opt" */
   wasmFeatures: string;
   renderingEnabled: boolean;
-  runtimeMs: number;
+  executionTimeMs: number;
   memoryDeltaMb: number;
   trustworthiness: number;
   fpsAvg: number;

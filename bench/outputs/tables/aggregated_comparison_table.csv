@@ -1,4 +1,4 @@
-Scope,feature_name,Runtime (ms),Speedup (×),Quality (Trust.),FPS,Latency (ms),Memory (MB)
+Scope,feature_name,Execution Time (ms),Speedup (×),Quality (Trust.),FPS,Latency (ms),Memory (MB)
 large,All Features,3715.45,1.2206462205131159,0.79,37.1,62.13,22.74
 large,Baseline (JS),4535.25,1.0,0.81,55.56,67.63,16.53
 large,Distance,4562.2,0.9940927622647941,0.8,55.6,70.0,10.29
